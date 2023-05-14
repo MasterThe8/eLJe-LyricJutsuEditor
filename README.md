@@ -1,1 +1,1 @@
-# Chart-Text-Editor
+# Lyric-Jutsu-Chart-Text-Editor
