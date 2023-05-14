@@ -18,4 +18,4 @@ Bugs yang belum diperbaiki :
 - Fitur `Replace` tidak berfungsi.
 
 ## Release
-https://github.com/MasterThe8/Lyric-Jutsu-Chart-Text-Editor/releases
+https://github.com/MasterThe8/eLJe-LyricJutsuChartEditor/releases
