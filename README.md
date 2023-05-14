@@ -7,7 +7,7 @@ Software untuk mempermudah Charter Clone Hero dalam membuat Lyric Jutsu (sebutan
 
 **Software ini masih dalam tahap pengembangan, jadi jangan berharap banyak.**
 
-$${\color{red}**Software ini masih dalam tahap pengembangan, jadi jangan berharap banyak!**}$$
+$${\color{red}**Software \space ini \space masih \space dalam \space tahap \space pengembangan, \space jadi \space jangan \space berharap  \space banyak!**}$$
 
 ## Feature & Bugs
 Fitur yang ada pada Software :
