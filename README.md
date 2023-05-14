@@ -5,7 +5,7 @@ Belajar bikin aplikasi dengan Python QT (coding manual tanpa Designer).
 ## About
 Software untuk mempermudah Charter Clone Hero dalam membuat Lyric Jutsu (sebutan/istilah asal) atau Teknik/Method memanipulasi Lirik pada Chart. 
 
-#### **Software ini masih dalam tahap pengembangan, jadi jangan berharap banyak.**
+### **Software ini masih dalam tahap pengembangan, jadi jangan berharap banyak.**
 
 ## Feature & Bugs
 Fitur yang ada pada Software :
