@@ -1,4 +1,4 @@
-# eLJe-LyricJutsuChartEditor
+# eLJe | Lyric Jutsu Chart Editor
 
 Belajar bikin aplikasi dengan Python QT (coding manual tanpa Designer).
 
