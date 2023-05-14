@@ -1,1 +1,1 @@
-# Chart-Editor
+# Chart-Lyric-Editor
