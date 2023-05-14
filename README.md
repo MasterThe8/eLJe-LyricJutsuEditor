@@ -7,6 +7,7 @@ Software untuk mempermudah Charter Clone Hero dalam membuat Lyric Jutsu (sebutan
 
 ## Feature & Bugs
 Fitur yang ada pada Software :
+- `Highlight Color Text` : Tampilan warna/Highlight pada Teks, sehingga memudahkan penglihatan ketika mengedit teks.
 - `Find` : Fitur yang wajib ada pada aplikasi Text Editor.
 - `Add Jutsu` : Berfungsi untuk menambahkan **Script** Lyric Jutsu.
 
