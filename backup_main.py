@@ -3,15 +3,20 @@ import typing
 import chardet
 import codecs
 import re
-from data import *
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit, QAction, QFileDialog, QDialog,  QFontDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QMessageBox, QScrollBar, QVBoxLayout, QWidget, QScrollArea, QAbstractScrollArea, QLineEdit, QComboBox, QTabWidget, QTextEdit, QColorDialog
-from PyQt5.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter, QTextCursor, QTextDocument
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit, QAction, QFileDialog, QDialog,  QFontDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QMessageBox, QScrollBar, QVBoxLayout, QWidget, QScrollArea, QAbstractScrollArea, QLineEdit, QComboBox
+from PyQt5.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter, QTextCursor
 from PyQt5.QtCore import Qt, QRegExp
-        
+
+from data import *
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.setWindowTitle("Chart File Editor")
+        self.setGeometry(150,80, 300,300)
+        self.resize(1000,600)
         
         # Menu Bar
         menu_bar = self.menuBar()
@@ -43,11 +48,7 @@ class MainWindow(QMainWindow):
         # Add Jutsu Action
         addjutsu_action = QAction("Add Jutsu", self)
         addjutsu_action.triggered.connect(self.add_jutsu)
-        
-        # Color Picker Action
-        colorpick_action = QAction("Color Picker", self)
-        colorpick_action.triggered.connect(self.color_picker)
-        
+         
         # Exit Menu & Action
         exit_action = QAction("Exit", self)
         exit_action.triggered.connect(self.close)
@@ -69,117 +70,23 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(replace_action)
         self.toolbar = self.addToolBar("Add Jutsu")
         self.toolbar.addAction(addjutsu_action)
-        self.toolbar = self.addToolBar("Color Picker")
-        self.toolbar.addAction(colorpick_action)
         
         # Add Widget
-        # central_widget = QLabel("Chart File Editor")
-        # self.setCentralWidget(self.initUI())
-        self.tabWidget = QTabWidget(self)
-        self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Tab')
-        self.tabWidget.addTab(self.tabRichTextEdit(), 'RichText Tab')
-        self.setCentralWidget(self.tabWidget)
-        self.setWindowTitle("Chart File Editor")
-        self.setGeometry(150,80, 300,300)
-        self.resize(1000,600)
-        self.show()
-        
-    def tabPlainTextEdit(self):
+        central_widget = QLabel("Chart File Editor")
+        self.setCentralWidget(central_widget)
+
         # Membuat objek QPlainTextEdit sebagai editor teks
-        self.plainTextEdit = QPlainTextEdit(self)
-        self.plainTextEdit.textChanged.connect(self.onPlainTextChanged)
+        self.text_edit = QPlainTextEdit(self)
+        self.setCentralWidget(self.text_edit)
         
         # Styling QPlainTextEdit
-        self.highlighter = Highlighter(self.plainTextEdit.document())
-        self.plainTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
-        
+        self.highlighter = Highlighter(self.text_edit.document())
+        self.text_edit.setStyleSheet("background-color: #282a36; color: #FFF;")
         font = QFont()
         font.setPointSize(12)
         font.setFamily("Consolas")
-        self.plainTextEdit.setFont(font)
+        self.text_edit.setFont(font)
         
-        return self.plainTextEdit
-    
-    def tabRichTextEdit(self):
-        richTextEdit = QTextEdit(self)
-        # richTextEdit.textChanged.connect(self.onRichTextChanged)
-        font = QFont()
-        font.setPointSize(12)
-        font.setFamily("Consolas")
-        richTextEdit.setFont(font)
-        
-        return richTextEdit
-    
-    def onPlainTextChanged(self):
-        plainTextEdit = self.tabWidget.currentWidget()
-        richTextEdit = self.tabWidget.widget(1)
-        
-        plainText = plainTextEdit.toPlainText()
-        # richText = self.convertPlainTextToRichText(plainText)
-        richText = self.convertHTMLToRichText(plainText)
-        richTextEdit.setHtml(richText)
-
-    def convertHTMLToRichText(self, plainText):
-        rich_text = ""
-                                   
-        bold_format = QTextCharFormat()
-        bold_format.setFontWeight(QFont.Bold)
-        italic_format = QTextCharFormat()
-        italic_format.setFontItalic(True)
-
-        start_index = plainText.find("<b>")
-        end_index = plainText.find("</b>")
-        i_start_index = plainText.find("<i>")
-        i_end_index = plainText.find("</i>")
-        c_start_index = plainText.find("<color=")
-        c_end_index = plainText.find("</color>")
-        
-        while start_index != -1 and end_index != -1 and i_start_index != -1 and i_end_index != -1 and c_start_index != -1 and c_end_index != -1:
-            index = min(start_index, i_start_index, c_start_index)
-            tag_end = "</b>" if start_index < i_start_index and start_index < c_start_index else "</i>" if i_start_index < c_start_index else "</color>"
-            
-            rich_text += plainText[:index]
-            
-            if tag_end == "</b>":
-                text = plainText[index + 3 : end_index]
-                rich_text += "<span style='font-weight: bold;'>{}</span>".format(text)
-                plainText = plainText[end_index + 4:]
-            elif tag_end == "</i>":
-                text = plainText[index + 3 : i_end_index]
-                rich_text += "<span style='font-style: italic;'>{}</span>".format(text)
-                plainText = plainText[i_end_index + 4:]
-            elif tag_end == "</color>":
-                color_start_index = c_start_index + 8
-                color_end_index = plainText.find(">", color_start_index)
-                color_tag = plainText[color_start_index:color_end_index]
-                color_value = color_tag.split("=")[1].strip("#>")
-                text_start_index = color_end_index + 1
-                text_end_index = plainText.find("</color>", text_start_index)
-                text = plainText[text_start_index:text_end_index]
-
-                rich_text += "<span style='color: {};'>{}</span>".format(color_value, text)
-
-                plainText = plainText[text_end_index + 8:]
-
-            
-            start_index = plainText.find("<b>")
-            end_index = plainText.find("</b>")
-            i_start_index = plainText.find("<i>")
-            i_end_index = plainText.find("</i>")
-            c_start_index = plainText.find("<color=")
-            c_end_index = plainText.find("</color>")
-
-        rich_text += plainText
-        return rich_text
-
-    def color_picker(self):
-        color = QColorDialog.getColor()
-
-        if color.isValid():
-            print("Selected color:", color.name())
-
-    # ===========================================================
-    
     # Fungsi Open File
     def open_file(self):
         # Dialog Open File
@@ -197,30 +104,10 @@ class MainWindow(QMainWindow):
                 sync_temp1 = sync_track_text.split('{')
                 txtemp = 'replaced'
                 sync_temp2 = sync_temp1[1].replace('}', '')
+                
                 synctrack_text = sync_temp1[0] + '{\n' + txtemp + '\n}'
                 
                 song_text = file_contents.decode()[file_contents.decode().find('[Song]'):file_contents.decode().find('}', file_contents.decode().find('[Song]'))+1]
-                
-                events_text = file_contents.decode()[file_contents.decode().find('[Events]'):file_contents.decode().find('}', file_contents.decode().find('[Events]'))+1]
-                events_split = events_text.split('{')
-                songrex = 'songrex'
-                events_display = events_split[1].replace('}','')
-                events_temp = events_split[0] + '{\n' + songrex +'\n}\n'
-                
-                
-                expert_single = file_contents.decode()[file_contents.decode().find('[ExpertSingle]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertSingle]'))+1]
-                hard_single = file_contents.decode()[file_contents.decode().find('[HardSingle]'):file_contents.decode().find('}', file_contents.decode().find('[HardSingle]'))+1]
-                medium_single = file_contents.decode()[file_contents.decode().find('[MediumSingle]'):file_contents.decode().find('}', file_contents.decode().find('[MediumSingle]'))+1]
-                easy_single = file_contents.decode()[file_contents.decode().find('[EasySingle]'):file_contents.decode().find('}', file_contents.decode().find('[EasySingle]'))+1]
-                # DoubleGuitar
-                # DoubleBass
-                # DoubleRhythm
-                # Keyboard
-                # Drums
-                # GHLGuitar
-                # GHLBass
-                # GHLRhythm
-                # GHLCoop
 
             
             with open(file_name, 'r', encoding=encoding) as f:
@@ -229,7 +116,7 @@ class MainWindow(QMainWindow):
                 
             # self.text_edit.setPlainText(file_contents)
             
-            self.text_edit.setPlainText(file_contents)
+            self.text_edit.setPlainText(synctrack_text + '\n==========\n' + sync_temp2)
 
     # Fungsi Save File
     def save_file(self):
@@ -312,7 +199,7 @@ class MainWindow(QMainWindow):
             plainTextEdit.moveCursor(QTextCursor.End)
 
     
-    # Fungsi Add Jutsu
+    # Fungsi Add Jutsu     
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())
         plainTextEdit = main_window.text_edit

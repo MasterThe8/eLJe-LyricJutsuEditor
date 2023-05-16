@@ -35,7 +35,7 @@ class Highlighter(QSyntaxHighlighter):
         
         classFormat = QTextCharFormat()
         classFormat.setFontWeight(QFont.Bold)
-        classFormat.setForeground(Qt.darkMagenta)
+        classFormat.setForeground(Qt.white)
         self.highlightingRules.append((QRegExp('\\b[A-Z][a-z]+\\b'), classFormat))
 
         variableFormat = QTextCharFormat()
