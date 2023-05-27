@@ -5,10 +5,28 @@ import codecs
 import re
 from data import *
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit, QAction, QFileDialog, QDialog,  QFontDialog, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QMessageBox, QScrollBar, QVBoxLayout, QWidget, QScrollArea, QAbstractScrollArea, QLineEdit, QComboBox, QTabWidget, QTextEdit, QColorDialog
-from PyQt5.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter, QTextCursor, QTextDocument
-from PyQt5.QtCore import Qt, QRegExp
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
         
+        
+class GlobalText:
+    sync_track_text = ''
+    song_text = ''
+    events_temp = ''
+    
+    single = ''
+    double_guitar = ''
+    double_bass = ''
+    double_rhythm = ''
+    keyboard = ''
+    drums = ''
+    
+    ghl_guitar = ''
+    ghl_bass = ''
+    ghl_rhythm = ''
+    ghl_coop = ''
+    
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -72,9 +90,6 @@ class MainWindow(QMainWindow):
         self.toolbar = self.addToolBar("Color Picker")
         self.toolbar.addAction(colorpick_action)
         
-        # Add Widget
-        # central_widget = QLabel("Chart File Editor")
-        # self.setCentralWidget(self.initUI())
         self.tabWidget = QTabWidget(self)
         self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Tab')
         self.tabWidget.addTab(self.tabRichTextEdit(), 'RichText Tab')
@@ -85,9 +100,9 @@ class MainWindow(QMainWindow):
         self.show()
         
     def tabPlainTextEdit(self):
-        # Membuat objek QPlainTextEdit sebagai editor teks
         self.plainTextEdit = QPlainTextEdit(self)
         self.plainTextEdit.textChanged.connect(self.onPlainTextChanged)
+        self.plainTextEdit.setLineWrapMode(QPlainTextEdit.NoWrap)
         
         # Styling QPlainTextEdit
         self.highlighter = Highlighter(self.plainTextEdit.document())
@@ -95,17 +110,17 @@ class MainWindow(QMainWindow):
         
         font = QFont()
         font.setPointSize(12)
-        font.setFamily("Consolas")
+        font.setFamily("Consolas, 'Courier New', monospace")
         self.plainTextEdit.setFont(font)
         
         return self.plainTextEdit
-    
+        
     def tabRichTextEdit(self):
         richTextEdit = QTextEdit(self)
         # richTextEdit.textChanged.connect(self.onRichTextChanged)
         font = QFont()
         font.setPointSize(12)
-        font.setFamily("Consolas")
+        font.setFamily("Consolas, 'Courier New', monospace")
         richTextEdit.setFont(font)
         
         return richTextEdit
@@ -114,14 +129,15 @@ class MainWindow(QMainWindow):
         plainTextEdit = self.tabWidget.currentWidget()
         richTextEdit = self.tabWidget.widget(1)
         
+        plainTextEdit = self.sender()
         plainText = plainTextEdit.toPlainText()
-        # richText = self.convertPlainTextToRichText(plainText)
-        richText = self.convertHTMLToRichText(plainText)
+        
+        html_text = plainText.replace('\n', '<br>')
+        richText = self.convertHTMLToRichText(html_text)
         richTextEdit.setHtml(richText)
 
     def convertHTMLToRichText(self, plainText):
         rich_text = ""
-                                   
         bold_format = QTextCharFormat()
         bold_format.setFontWeight(QFont.Bold)
         italic_format = QTextCharFormat()
@@ -161,7 +177,6 @@ class MainWindow(QMainWindow):
 
                 plainText = plainText[text_end_index + 8:]
 
-            
             start_index = plainText.find("<b>")
             end_index = plainText.find("</b>")
             i_start_index = plainText.find("<i>")
@@ -180,110 +195,118 @@ class MainWindow(QMainWindow):
 
     # ===========================================================
     
-    # Fungsi Open File
+# Fungsi Open File
     def open_file(self):
         # Dialog Open File
         file_name, _ = QFileDialog.getOpenFileName(self, 'Open file', '.', 'Chart files (*.chart)')
         
         # Membaca dan menampilkan textnya pada jendela
         if file_name:
-            with open(file_name, 'rb') as f:
-                file_contents = f.read()
-                encoding = chardet.detect(file_contents)['encoding']
-                # display_text = file_contents.decode().split('{')[1].split('}')[0]
-                
-                sync_track_text = file_contents.decode()[file_contents.decode().find('[SyncTrack]'):file_contents.decode().find('}', file_contents.decode().find('[SyncTrack]'))+1]
-                
-                sync_temp1 = sync_track_text.split('{')
-                txtemp = 'replaced'
-                sync_temp2 = sync_temp1[1].replace('}', '')
-                synctrack_text = sync_temp1[0] + '{\n' + txtemp + '\n}'
-                
-                song_text = file_contents.decode()[file_contents.decode().find('[Song]'):file_contents.decode().find('}', file_contents.decode().find('[Song]'))+1]
-                        
-                events_text = file_contents.decode()[file_contents.decode().find('[Events]'):file_contents.decode().find('}', file_contents.decode().find('[Events]'))+1]
-                events_split = events_text.split('{')
-                songrex = 'songrex'
-                events_display = events_split[1].replace('}','')
-                events_temp = events_split[0] + '{\n' + songrex +'\n}\n'
-                
-                
-                expert_single = file_contents.decode()[file_contents.decode().find('[ExpertSingle]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertSingle]'))+1]
-                hard_single = file_contents.decode()[file_contents.decode().find('[HardSingle]'):file_contents.decode().find('}', file_contents.decode().find('[HardSingle]'))+1]
-                medium_single = file_contents.decode()[file_contents.decode().find('[MediumSingle]'):file_contents.decode().find('}', file_contents.decode().find('[MediumSingle]'))+1]
-                easy_single = file_contents.decode()[file_contents.decode().find('[EasySingle]'):file_contents.decode().find('}', file_contents.decode().find('[EasySingle]'))+1]
-                
-                # DoubleGuitar
-                expert_double_guitar = file_contents.decode()[file_contents.decode().find('[ExpertDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleGuitar]'))+1]
-                hard_double_guitar = file_contents.decode()[file_contents.decode().find('[HardDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleGuitar]'))+1]
-                medium_double_guitar = file_contents.decode()[file_contents.decode().find('[MediumDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleGuitar]'))+1]
-                easy_double_guitar = file_contents.decode()[file_contents.decode().find('[EasyDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleGuitar]'))+1]
-                
-                # DoubleBass
-                expert_double_bass = file_contents.decode()[file_contents.decode().find('[ExpertDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleBass]'))+1]
-                hard_double_bass = file_contents.decode()[file_contents.decode().find('[HardDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleBass]'))+1]
-                medium_double_bass = file_contents.decode()[file_contents.decode().find('[MediumDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleBass]'))+1]
-                easy_double_bass = file_contents.decode()[file_contents.decode().find('[EasyDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleBass]'))+1]
-                
-                # DoubleRhythm
-                expert_double_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleRhythm]'))+1]
-                hard_double_rhythm = file_contents.decode()[file_contents.decode().find('[HardDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleRhythm]'))+1]
-                medium_double_rhythm = file_contents.decode()[file_contents.decode().find('[MediumDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleRhythm]'))+1]
-                easy_double_rhythm = file_contents.decode()[file_contents.decode().find('[EasyDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleRhythm]'))+1]
-                
-                # Keyboard
-                expert_keyboard = file_contents.decode()[file_contents.decode().find('[ExpertKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertKeyboard]'))+1]
-                hard_keyboard = file_contents.decode()[file_contents.decode().find('[HardKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[HardKeyboard]'))+1]
-                medium_keyboard = file_contents.decode()[file_contents.decode().find('[MediumKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[MediumKeyboard]'))+1]
-                easy_keyboard = file_contents.decode()[file_contents.decode().find('[EasyKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[EasyKeyboard]'))+1]
-                
-                # Drums
-                expert_drums = file_contents.decode()[file_contents.decode().find('[ExpertDrums]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDrums]'))+1]
-                hard_drums = file_contents.decode()[file_contents.decode().find('[HardDrums]'):file_contents.decode().find('}', file_contents.decode().find('[HardDrums]'))+1]
-                medium_drums = file_contents.decode()[file_contents.decode().find('[MediumDrums]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDrums]'))+1]
-                easy_drums = file_contents.decode()[file_contents.decode().find('[EasyDrums]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDrums]'))+1]
-                
-                # GHLGuitar
-                expert_ghl_guitar = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                hard_ghl_guitar = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                medium_ghl_guitar = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                easy_ghl_guitar = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
-                
-                # GHLBass
-                expert_ghl_bass = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                hard_ghl_bass = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                medium_ghl_bass = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                easy_ghl_bass = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
-                
-                # GHLRhythm
-                expert_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                hard_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                medium_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                easy_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
-                
-                # GHLCoop
-                expert_ghl_coop = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                hard_ghl_coop = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                medium_ghl_coop = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                easy_ghl_coop = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
-                
-            with open(file_name, 'r', encoding=encoding) as f:
-                file_contents = f.read()
-                display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
-                
-            # self.text_edit.setPlainText(file_contents)
-            
-            self.text_edit.setPlainText(events_display)
+            try:
+                with open(file_name, 'rb') as f:
+                    file_contents = f.read()
+                    encoding = chardet.detect(file_contents)['encoding']
+                    # display_text = file_contents.decode().split('{')[1].split('}')[0]
+                    
+                    sync_track_text = file_contents.decode()[file_contents.decode().find('[SyncTrack]'):file_contents.decode().find('}', file_contents.decode().find('[SyncTrack]'))+1]
+                    
+                    song_text = file_contents.decode()[file_contents.decode().find('[Song]'):file_contents.decode().find('}', file_contents.decode().find('[Song]'))+1]
+                    
+                    events_text = file_contents.decode()[file_contents.decode().find('[Events]'):file_contents.decode().find('}', file_contents.decode().find('[Events]'))+1]
+                    events_split = events_text.split('{')
+                    songrex = 'songrex'
+                    
+                    events_display = events_split[1].replace('}','')
+                    events_temp = events_split[0] + '{\n' + songrex +'\n}\n'
+                    
+                    expert_single = file_contents.decode()[file_contents.decode().find('[ExpertSingle]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertSingle]'))+1]
+                    hard_single = file_contents.decode()[file_contents.decode().find('[HardSingle]'):file_contents.decode().find('}', file_contents.decode().find('[HardSingle]'))+1]
+                    medium_single = file_contents.decode()[file_contents.decode().find('[MediumSingle]'):file_contents.decode().find('}', file_contents.decode().find('[MediumSingle]'))+1]
+                    easy_single = file_contents.decode()[file_contents.decode().find('[EasySingle]'):file_contents.decode().find('}', file_contents.decode().find('[EasySingle]'))+1]
+                    
+                    # DoubleGuitar
+                    expert_double_guitar = file_contents.decode()[file_contents.decode().find('[ExpertDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleGuitar]'))+1]
+                    hard_double_guitar = file_contents.decode()[file_contents.decode().find('[HardDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleGuitar]'))+1]
+                    medium_double_guitar = file_contents.decode()[file_contents.decode().find('[MediumDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleGuitar]'))+1]
+                    easy_double_guitar = file_contents.decode()[file_contents.decode().find('[EasyDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleGuitar]'))+1]
+                    
+                    # DoubleBass
+                    expert_double_bass = file_contents.decode()[file_contents.decode().find('[ExpertDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleBass]'))+1]
+                    hard_double_bass = file_contents.decode()[file_contents.decode().find('[HardDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleBass]'))+1]
+                    medium_double_bass = file_contents.decode()[file_contents.decode().find('[MediumDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleBass]'))+1]
+                    easy_double_bass = file_contents.decode()[file_contents.decode().find('[EasyDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleBass]'))+1]
+                    
+                    # DoubleRhythm
+                    expert_double_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleRhythm]'))+1]
+                    hard_double_rhythm = file_contents.decode()[file_contents.decode().find('[HardDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleRhythm]'))+1]
+                    medium_double_rhythm = file_contents.decode()[file_contents.decode().find('[MediumDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleRhythm]'))+1]
+                    easy_double_rhythm = file_contents.decode()[file_contents.decode().find('[EasyDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleRhythm]'))+1]
+                    
+                    # Keyboard
+                    expert_keyboard = file_contents.decode()[file_contents.decode().find('[ExpertKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertKeyboard]'))+1]
+                    hard_keyboard = file_contents.decode()[file_contents.decode().find('[HardKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[HardKeyboard]'))+1]
+                    medium_keyboard = file_contents.decode()[file_contents.decode().find('[MediumKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[MediumKeyboard]'))+1]
+                    easy_keyboard = file_contents.decode()[file_contents.decode().find('[EasyKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[EasyKeyboard]'))+1]
+                    
+                    # Drums
+                    expert_drums = file_contents.decode()[file_contents.decode().find('[ExpertDrums]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDrums]'))+1]
+                    hard_drums = file_contents.decode()[file_contents.decode().find('[HardDrums]'):file_contents.decode().find('}', file_contents.decode().find('[HardDrums]'))+1]
+                    medium_drums = file_contents.decode()[file_contents.decode().find('[MediumDrums]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDrums]'))+1]
+                    easy_drums = file_contents.decode()[file_contents.decode().find('[EasyDrums]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDrums]'))+1]
+                    
+                    # GHLGuitar
+                    expert_ghl_guitar = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
+                    hard_ghl_guitar = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
+                    medium_ghl_guitar = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
+                    easy_ghl_guitar = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+                    
+                    # GHLBass
+                    expert_ghl_bass = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
+                    hard_ghl_bass = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
+                    medium_ghl_bass = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
+                    easy_ghl_bass = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+                    
+                    # GHLRhythm
+                    expert_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
+                    hard_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
+                    medium_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
+                    easy_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+                    
+                    # GHLCoop
+                    expert_ghl_coop = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
+                    hard_ghl_coop = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
+                    medium_ghl_coop = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
+                    easy_ghl_coop = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
 
-            
-            with open(file_name, 'r', encoding=encoding) as f:
-                file_contents = f.read()
-                display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
                 
-            # self.text_edit.setPlainText(file_contents)
+                with open(file_name, 'r', encoding=encoding) as f:
+                    file_contents = f.read()
+                    display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
+                    
+                # self.text_edit.setPlainText(file_contents)
+                GlobalText.sync_track_text = sync_track_text
+                GlobalText.song_text = song_text
+                GlobalText.events_temp = events_temp
+                
+                GlobalText.single = expert_single + '\n' + hard_single + '\n' + medium_single + '\n' + easy_single
+                GlobalText.double_guitar = expert_double_guitar + '\n' + hard_double_guitar + '\n' + medium_double_guitar + '\n' + easy_double_guitar
+                GlobalText.double_bass = expert_double_bass + '\n' + hard_double_bass + '\n' + medium_double_bass + '\n' + easy_double_bass
+                GlobalText.double_rhythm = expert_double_rhythm + '\n' + hard_double_rhythm + '\n' + medium_double_rhythm + '\n' + easy_double_rhythm
+                GlobalText.keyboard = expert_keyboard + '\n' + hard_keyboard + '\n' + medium_keyboard + '\n' + easy_keyboard
+                GlobalText.drums = expert_drums + '\n' + hard_drums + '\n' + medium_drums + '\n' + easy_drums
+                
+                GlobalText.ghl_guitar = expert_ghl_guitar + '\n' + hard_ghl_guitar + '\n' + medium_ghl_guitar + '\n' + easy_ghl_guitar
+                GlobalText.ghl_bass = expert_ghl_bass + '\n' + hard_ghl_bass + '\n' + medium_ghl_bass + '\n' + easy_ghl_bass
+                GlobalText.ghl_rhythm = expert_ghl_rhythm + '\n' + hard_ghl_rhythm + '\n' + medium_ghl_rhythm + '\n' + easy_ghl_rhythm
+                GlobalText.ghl_coop = expert_ghl_coop + '\n' + hard_ghl_coop + '\n' + medium_ghl_coop + '\n' + easy_ghl_coop
+                
+                display = events_display.replace('\n  ', '\n')
+                self.plainTextEdit.setPlainText(display.strip())
             
-            self.text_edit.setPlainText(file_contents)
-
+            except Exception as e:
+                error_message = f"Error occurred while opening file:\n{str(e)}"
+                QMessageBox.critical(self, "Error", error_message)
+                
     # Fungsi Save File
     def save_file(self):
         # Dialog Save File
@@ -292,14 +315,14 @@ class MainWindow(QMainWindow):
         # Menyimpan file berdasarkan nama file yang diambil sebelumnya
         if file_name:
             with open(file_name, 'wb') as f:
-                f.write(self.text_edit.toPlainText().encode())
+                f.write(self.plainTextEdit.toPlainText().encode())
 
             with open(file_name, 'rb') as f:
                 file_contents = f.read()
                 encoding = chardet.detect(file_contents)['encoding']
 
             with open(file_name, 'w', encoding=encoding) as f:
-                f.write(self.text_edit.toPlainText())
+                f.write(self.plainTextEdit.toPlainText())
                 
     def font_setting(self):
         font2, ok = QFontDialog.getFont()
@@ -329,7 +352,7 @@ class MainWindow(QMainWindow):
     # Fungsi Find Text
     def find_text(plainTextEdit):
         dialog = FindTextDialog(plainTextEdit.window())
-        plainTextEdit = main_window.text_edit
+        plainTextEdit = main_window.tabWidget.currentWidget()
         
         if dialog.exec_() == QDialog.Accepted:
             text = dialog.text()
