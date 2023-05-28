@@ -29,47 +29,14 @@ class MainWindow(QMainWindow):
                     
         lines = text.split("\n")
         
+        position = []
+        event_name_temp = []
         values = []
-        current_phrase = []
-        for line in lines:
-            if line.strip() != "":
-                event_start_index = line.find('"')
-                event_end_index = line.rfind('"')
+        
+        for val in lines:
+            position_temp = lines.split()
+            if  len(val) > 0:
                 
-                event_name = line[event_start_index + 1: event_end_index].strip()
-                value = line[event_end_index + 1:].strip()
-                
-                if event_name == "phrase_start":
-                    if current_phrase:
-                        values.append(" ".join(current_phrase))
-                        current_phrase = []
-                else:
-                    current_phrase.append(value)
-                    
-        if current_phrase:
-            values.append(" ".join(current_phrase))
-
-        richTextEdit = self.tabWidget.widget(1)  # Mengambil objek QTextEdit pada tab "RichText Tab"
-        richTextEdit.setPlainText("\n".join(current_phrase))  # Menampilkan nilai-nilai di QTextEdit
-
-    def onRichTextChanged(self):
-        richTextEdit = self.sender()  # Mendapatkan objek QTextEdit yang memicu sinyal
-        values = richTextEdit.toPlainText().split("\n")  # Mendapatkan nilai-nilai dari QTextEdit
-
-        plainTextEdit = self.tabWidget.widget(0)  # Mengambil objek QPlainTextEdit pada tab "PlainText Tab"
-        plainText = plainTextEdit.toPlainText()  # Mendapatkan isi teks dari QPlainTextEdit
-
-        lines = plainText.split("\n")  # Memisahkan setiap baris
-
-        modified_lines = []
-        for i, line in enumerate(lines):
-            if line.strip() != "":
-                value = values[i] if i < len(values) else ""
-                modified_line = line[:line.find('"') + 1] + value + line[line.rfind('"'):]
-                modified_lines.append(modified_line)
-
-        modified_text = "\n".join(modified_lines)
-        plainTextEdit.setPlainText(modified_text)  # Memperbarui nilai di QPlainTextEdit
 
 # Contoh penggunaan:
 app = QApplication(sys.argv)

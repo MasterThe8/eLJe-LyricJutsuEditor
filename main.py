@@ -91,8 +91,8 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(colorpick_action)
         
         self.tabWidget = QTabWidget(self)
-        self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Tab')
-        self.tabWidget.addTab(self.tabRichTextEdit(), 'RichText Tab')
+        self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Lyrics')
+        self.tabWidget.addTab(self.tabRichTextEdit(), 'Display Lyrics')
         self.setCentralWidget(self.tabWidget)
         self.setWindowTitle("Chart File Editor")
         self.setGeometry(150,80, 300,300)
@@ -120,6 +120,7 @@ class MainWindow(QMainWindow):
         # richTextEdit.textChanged.connect(self.onRichTextChanged)
         font = QFont()
         font.setPointSize(12)
+        richTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
         font.setFamily("Consolas, 'Courier New', monospace")
         richTextEdit.setFont(font)
         
@@ -133,9 +134,40 @@ class MainWindow(QMainWindow):
         plainText = plainTextEdit.toPlainText()
         
         html_text = plainText.replace('\n', '<br>')
-        richText = self.convertHTMLToRichText(html_text)
-        richTextEdit.setHtml(richText)
-
+        # richText = self.convertHTMLToRichText(html_text)
+        plainText_line = plainText.split('\n')
+        array_teks = [line for line in plainText_line if line.strip()]
+        richText = self.toRichText(array_teks)
+        # print(richText)
+        display = '<br>'.join(''.join(line) for line in richText)
+        plainText_display = self.convertHTMLToRichText(display)
+        richTextEdit.setHtml(plainText_display)
+        
+    def toRichText(self, plainText):
+        lines = []
+        current_line = ''
+        for event in plainText:
+            pos, event_data = event.split(' = ')
+            event_name, *value = event_data.strip('E "').split(' ')
+            value = ' '.join(value)
+            
+            if event_name == 'phrase_start':
+                if current_line:
+                    lines.append(current_line.strip())
+                    current_line = ''
+            elif event_name == 'lyric':
+                if '-' in value:
+                    if current_line and not current_line.endswith('-'):
+                        current_line += ' '
+                    current_line += value
+                else:
+                    current_line += ' ' + value
+        
+        if current_line:
+            lines.append(current_line.strip())
+        
+        return lines
+    
     def convertHTMLToRichText(self, plainText):
         rich_text = ""
         bold_format = QTextCharFormat()
@@ -174,8 +206,8 @@ class MainWindow(QMainWindow):
                 text = plainText[text_start_index:text_end_index]
 
                 rich_text += "<span style='color: {};'>{}</span>".format(color_value, text)
-
-                plainText = plainText[text_end_index + 8:]
+                
+                plainText = plainText[c_end_index + 8:]
 
             start_index = plainText.find("<b>")
             end_index = plainText.find("</b>")
@@ -261,22 +293,22 @@ class MainWindow(QMainWindow):
                     easy_ghl_guitar = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
                     
                     # GHLBass
-                    expert_ghl_bass = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                    hard_ghl_bass = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                    medium_ghl_bass = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                    easy_ghl_bass = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+                    expert_ghl_bass = file_contents.decode()[file_contents.decode().find('[ExpertGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLBass]'))+1]
+                    hard_ghl_bass = file_contents.decode()[file_contents.decode().find('[HardGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLBass]'))+1]
+                    medium_ghl_bass = file_contents.decode()[file_contents.decode().find('[MediumGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLBass]'))+1]
+                    easy_ghl_bass = file_contents.decode()[file_contents.decode().find('[EasyGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLBass]'))+1]
                     
                     # GHLRhythm
-                    expert_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                    hard_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                    medium_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                    easy_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+                    expert_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLRhythm]'))+1]
+                    hard_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[HardGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLRhythm]'))+1]
+                    medium_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[MediumGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLRhythm]'))+1]
+                    easy_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[EasyGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLRhythm]'))+1]
                     
                     # GHLCoop
-                    expert_ghl_coop = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                    hard_ghl_coop = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                    medium_ghl_coop = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                    easy_ghl_coop = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+                    expert_ghl_coop = file_contents.decode()[file_contents.decode().find('[ExpertGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLCoop]'))+1]
+                    hard_ghl_coop = file_contents.decode()[file_contents.decode().find('[HardGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLCoop]'))+1]
+                    medium_ghl_coop = file_contents.decode()[file_contents.decode().find('[MediumGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLCoop]'))+1]
+                    easy_ghl_coop = file_contents.decode()[file_contents.decode().find('[EasyGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLCoop]'))+1]
 
                 
                 with open(file_name, 'r', encoding=encoding) as f:
@@ -284,21 +316,21 @@ class MainWindow(QMainWindow):
                     display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
                     
                 # self.text_edit.setPlainText(file_contents)
-                GlobalText.sync_track_text = sync_track_text
-                GlobalText.song_text = song_text
-                GlobalText.events_temp = events_temp
+                GlobalText.sync_track_text = sync_track_text + '\n'
+                GlobalText.song_text = song_text + '\n'
+                GlobalText.events_temp = events_temp + '\n'
                 
-                GlobalText.single = expert_single + '\n' + hard_single + '\n' + medium_single + '\n' + easy_single
-                GlobalText.double_guitar = expert_double_guitar + '\n' + hard_double_guitar + '\n' + medium_double_guitar + '\n' + easy_double_guitar
-                GlobalText.double_bass = expert_double_bass + '\n' + hard_double_bass + '\n' + medium_double_bass + '\n' + easy_double_bass
-                GlobalText.double_rhythm = expert_double_rhythm + '\n' + hard_double_rhythm + '\n' + medium_double_rhythm + '\n' + easy_double_rhythm
-                GlobalText.keyboard = expert_keyboard + '\n' + hard_keyboard + '\n' + medium_keyboard + '\n' + easy_keyboard
-                GlobalText.drums = expert_drums + '\n' + hard_drums + '\n' + medium_drums + '\n' + easy_drums
+                GlobalText.single = expert_single + '\n' + hard_single + '\n' + medium_single + '\n' + easy_single + '\n'
+                GlobalText.double_guitar = expert_double_guitar + '\n' + hard_double_guitar + '\n' + medium_double_guitar + '\n' + easy_double_guitar + '\n'
+                GlobalText.double_bass = expert_double_bass + '\n' + hard_double_bass + '\n' + medium_double_bass + '\n' + easy_double_bass + '\n'
+                GlobalText.double_rhythm = expert_double_rhythm + '\n' + hard_double_rhythm + '\n' + medium_double_rhythm + '\n' + easy_double_rhythm + '\n'
+                GlobalText.keyboard = expert_keyboard + '\n' + hard_keyboard + '\n' + medium_keyboard + '\n' + easy_keyboard + '\n'
+                GlobalText.drums = expert_drums + '\n' + hard_drums + '\n' + medium_drums + '\n' + easy_drums + '\n'
                 
-                GlobalText.ghl_guitar = expert_ghl_guitar + '\n' + hard_ghl_guitar + '\n' + medium_ghl_guitar + '\n' + easy_ghl_guitar
-                GlobalText.ghl_bass = expert_ghl_bass + '\n' + hard_ghl_bass + '\n' + medium_ghl_bass + '\n' + easy_ghl_bass
-                GlobalText.ghl_rhythm = expert_ghl_rhythm + '\n' + hard_ghl_rhythm + '\n' + medium_ghl_rhythm + '\n' + easy_ghl_rhythm
-                GlobalText.ghl_coop = expert_ghl_coop + '\n' + hard_ghl_coop + '\n' + medium_ghl_coop + '\n' + easy_ghl_coop
+                GlobalText.ghl_guitar = expert_ghl_guitar + '\n' + hard_ghl_guitar + '\n' + medium_ghl_guitar + '\n' + easy_ghl_guitar + '\n'
+                GlobalText.ghl_bass = expert_ghl_bass + '\n' + hard_ghl_bass + '\n' + medium_ghl_bass + '\n' + easy_ghl_bass + '\n'
+                GlobalText.ghl_rhythm = expert_ghl_rhythm + '\n' + hard_ghl_rhythm + '\n' + medium_ghl_rhythm + '\n' + easy_ghl_rhythm + '\n'
+                GlobalText.ghl_coop = expert_ghl_coop + '\n' + hard_ghl_coop + '\n' + medium_ghl_coop + '\n' + easy_ghl_coop + '\n'
                 
                 display = events_display.replace('\n  ', '\n')
                 self.plainTextEdit.setPlainText(display.strip())
@@ -312,17 +344,21 @@ class MainWindow(QMainWindow):
         # Dialog Save File
         file_name, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Chart Files (*.chart)")
 
-        # Menyimpan file berdasarkan nama file yang diambil sebelumnya
         if file_name:
             with open(file_name, 'wb') as f:
-                f.write(self.plainTextEdit.toPlainText().encode())
-
-            with open(file_name, 'rb') as f:
-                file_contents = f.read()
-                encoding = chardet.detect(file_contents)['encoding']
-
-            with open(file_name, 'w', encoding=encoding) as f:
-                f.write(self.plainTextEdit.toPlainText())
+                
+                temp1 = GlobalText.sync_track_text + GlobalText.song_text + GlobalText.events_temp
+                temp2 = GlobalText.single + GlobalText.double_guitar + GlobalText.double_bass + GlobalText.double_rhythm + GlobalText.keyboard + GlobalText.drums + GlobalText.ghl_guitar + GlobalText.ghl_bass + GlobalText.ghl_rhythm + GlobalText.ghl_coop
+                
+                pte = self.plainTextEdit.toPlainText()
+                nl = pte.replace('\n', '\n  ')
+                fl = '  ' + nl
+                temp = temp1.replace("songrex", fl)
+                
+                temp3 = temp+temp2
+                
+                f.write(temp3.encode())
+                
                 
     def font_setting(self):
         font2, ok = QFontDialog.getFont()

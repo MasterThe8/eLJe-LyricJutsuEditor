@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
         plainTextEdit = self.sender()  # Mendapatkan objek QPlainTextEdit yang memicu sinyal
         text = plainTextEdit.toPlainText()  # Mendapatkan isi teks dari QPlainTextEdit
         event_name = ["Default","default", "Section", "section", "phrase_start","phrase_end","lyric","idle","play","half_tempo","normal_tempo","verse","chorus","music_start","lighting ()","lighting (flare)","lighting (blackout)","lighting (chase)","lighting (strobe)","lighting (color1)","lighting (color2)","lighting (sweep)","crowd_lighters_fast","crowd_lighters_off","crowd_lighters_slow","crowd_half_tempo","crowd_normal_tempo","crowd_double_tempo","band_jump","sync_head_bang","sync_wag"]
-                    
+
         lines = text.split("\n")
         
         values = []

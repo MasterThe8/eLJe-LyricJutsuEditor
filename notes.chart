@@ -1745,6 +1745,9 @@
 }
 [ExpertSingle]
 {
+  384 = E Default
+  480 = E Default
+  576 = E Default
   1536 = N 0 240
   1536 = N 6 0
   1824 = N 1 0

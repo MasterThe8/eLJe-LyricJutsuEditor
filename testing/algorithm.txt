@@ -1,0 +1,53 @@
+Script berikut merupakan script yang ada pada file tertentu yang berfungsi untuk menampilkan lirik.
+format script: '[posisi, type=int] = E "[nama_event, type=string] [value, type=string]"'
+
+Contoh script:
+120 = E "phrase_start"
+123 = E "lyric Satu"
+
+"123" adalah posisi, "lyric" adalah nama_event, dan "Satu" adalah value. Jika nama_event adalah "phrase_start", maka baris baru dibuat karena tidak memiliki value.
+
+Contoh penggunaan:
+Input:
+120 = E "phrase_start"
+123 = E "lyric Satu"
+125 = E "phrase_start"
+128 = E "lyric Du-"
+130 = E "lyric a"
+132 = E "lyric Ti-"
+134 = E "lyric ga"
+145 = E "phrase_start"
+150 = E "lyric Empat"
+154 = E "lyric Lima"
+
+Output:
+Satu
+Du-a Ti-ga
+Lima
+
+Penjelasan :
+Baris yang memiliki nama event "phrase_start" menandakan event "lyric" akan ditampilkan sampai dengan "phrase_start" selanjutnya menjadi satu baris. Baris baru tidak akan dibuat sebelum bertemu dengan event "phrase_start".
+Misalkan pada posisi "125", event "lyric" yang ditampilkan adalah pada posisi "128","130","132",dan "134". Event "lyric" yang memiliki "value" ditampilkan menjadi satu baris, dengan kondisi gabung semua value yang terdapat tanda "-" di akhir sebelum tanda tutup petik dua menjadi satu kata. Jika tidak terdapat tanda "-", maka pisah dengan spasi.
+- Posisi "120" merupakan event "phrase_start", maka baris baru dibuat dan diisi dengan event "lyric".
+- Posisi "123" merupakan event "lyric" yang memiliki value "Satu". Tampilkan value tersebut pada baris pertama.
+- Posisi "125" merupakan event "phrase_start", maka buat baris baru.
+- Posisi "128" merupakan event "lyric" yang memiliki value "Di-". Terdapat tanda "-" pada value, maka gabung dengan value pada event "lyric" di baris selanjutnya. Tampilkan value tersebut pada baris kedua. Jadi, hasil baris kedua adalah "Du-"
+- Posisi "130" merupakan event "lyric" yang memiliki value "a". Satukan dengan value pada baris kedua dan tampilkan value tersebut pada baris kedua. Jadi, hasil pada baris kedua menjadi "Du-a"
+- Posisi "132" merupakan event "lyric" yang memiliki value "Ti-". Terdapat tanda "-" pada value, maka gabung dengan value pada event "lyric" di baris selanjutnya. Karena tidak terdapat tanda "-" pada value "a" sebelumnya, maka Tampilkan value "Ti-" pada baris kedua dipisahkan dengan spasi. Jadi, hasil pada baris kedua menjadi "Du-a Ti-"
+- Posisi "134" merupakan event "lyric" yang memiliki value "ga". Terdapat tanda "-" pada value sebelumnya yaitu "Ti-", maka satukan menjadi satu kata dengan value sebelumnya. Jadi, hasil baris kedua menjadi "Du-a Ti-ga"
+- Posisi "145" merupakan event "phrase_start", maka buat baris baru.
+- Posisi "150" merupakan event "lyric" yang memiliki value "Empat". Tidak terdapat tanda "-" pada value, maka jangan satukan dengan value pada baris selanjutnya. Tampilkan value tersebut pada baris ketiga. Jadi, hasil pada baris ketiga adalah "Empat"
+- Posisi "154" merupakan event "lyric" yang memiliki value "Lima". Tidak terdapat tanda "-" pada value sebelumnya, jadi buat spasi dan tampilkan pada baris ketiga. Jadi, hasil pada baris ketiga adalah "Empat Lima"
+
+Buat program Python berdasarkan permasalahan tersebut!
+
+Mungkin Algoritma pada program seperti ini:
+- Mulai
+- Buat variable array untuk menyimpan nilai posisi.
+- Buat variable array yang menyimpan nama event. Isi array nama event dengan nilai "phrase_start" dan "lyric"
+- Buat variable untuk menyimpan value dari nama event "lyric".
+- Lakukan looping untuk mengambil nilai setiap baris pada script.
+- Dapatkan nilai posisi pada baris, dan periksa nama event pada baris tersebut.
+- Jika nama event adalah "phrase_start", maka ambil baris selanjutnya sampai dengan event "phrase_start" selanjutnya.
+- Jika nama event adalah "lyric", maka ambil "value" dan masukkan ke dalam variable sementara.
+- 

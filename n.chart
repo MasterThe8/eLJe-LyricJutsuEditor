@@ -1,1721 +1,3676 @@
-1344 = E "phrase_start"
-1536 = E "lyric Ha-"
-1536 = E "section Intro"
-1632 = E "lyric i-"
-1728 = E "lyric ki"
-1824 = E "lyric ni"
-1920 = E "lyric yo-"
-2064 = E "lyric tta"
-2208 = E "lyric ke-"
-2400 = E "lyric e-"
-2496 = E "lyric den-"
-2640 = E "lyric su"
-2736 = E "phrase_start"
-2784 = E "lyric Mo-"
-2880 = E "lyric u"
-2976 = E "lyric i-"
-3072 = E "lyric ya"
-3168 = E "lyric na"
-3264 = E "lyric ko-"
-3360 = E "lyric to"
-3456 = E "lyric zen-"
-3648 = E "lyric bu"
-3744 = E "lyric na-"
-3936 = E "lyric ge-"
-4032 = E "lyric da-"
-4128 = E "lyric shi-"
-4224 = E "lyric te"
-4512 = E "phrase_start"
-4608 = E "lyric Ka-"
-4800 = E "lyric ku"
-4896 = E "lyric ni-"
-4992 = E "lyric go-"
-5136 = E "lyric tta"
-5280 = E "lyric se-"
-5376 = E "lyric i-"
-5472 = E "lyric gi"
-5568 = E "lyric e"
-5808 = E "phrase_start"
-5856 = E "lyric To-"
-5952 = E "lyric u"
-6048 = E "lyric a-"
-6144 = E "lyric na-"
-6240 = E "lyric ta"
-6336 = E "lyric no"
-6432 = E "lyric ha-"
-6624 = E "lyric na-"
-6720 = E "lyric shi"
-6816 = E "lyric wa"
-7104 = E "phrase_start"
-7200 = E "lyric Tsu-"
-7296 = E "lyric ma-"
-7392 = E "lyric n-"
-7488 = E "lyric na-"
-7584 = E "lyric i"
-7678 = E "lyric yo"
-7679 = E "phrase_start"
-7680 = E "lyric <i></i>"
-7680 = E "section Main Theme A"
-7681 = E "phrase_start"
-7682 = E "lyric <color=#f50000>Tsumannai yo</color>"
-7824 = E "lyric _"
-7825 = E "phrase_start"
-7826 = E "lyric <color=#edf500>Tsumannai yo</color>"
-7968 = E "lyric _"
-7969 = E "phrase_start"
-7970 = E "lyric <color=#00f500>Tsumannai yo</color>"
-8064 = E "lyric _"
-8065 = E "phrase_start"
-8066 = E "lyric <color=#0000f5>Tsumannai yo</color>"
-8160 = E "lyric _"
-8161 = E "phrase_start"
-8162 = E "lyric <color=#f500bc>Tsumannai yo</color>"
-8256 = E "lyric _"
-8257 = E "phrase_start"
-8258 = E "lyric <color=#f57b00>Tsumannai yo</color>"
-8352 = E "lyric _"
-8353 = E "phrase_start"
-8354 = E "lyric <color=#ac00f5>Tsumannai yo</color>"
-8448 = E "lyric _"
-8449 = E "phrase_start"
-8450 = E "lyric <color=#f50000>T_s_u_m_a_n_n_a_i_y_o</color>"
-8640 = E "lyric _"
-8641 = E "phrase_start"
-8642 = E "lyric <color=#f57b00>T__s__u__m__a__n__n__a__i__y__o</color>"
-8832 = E "lyric _"
-8833 = E "phrase_start"
-8834 = E "lyric <color=#edf500>T___s___u___m___a___n___n___a___i___y___o</color>"
-9024 = E "lyric _"
-9025 = E "phrase_start"
-9026 = E "lyric <color=#00f500>T____s____u____m____a____n____n____a____i____y____o</color>"
-9216 = E "lyric _"
-9217 = E "phrase_start"
-9218 = E "lyric <color=#00f5f0>♬____s____u____m____a____n____n____a____i____y____o</color>"
-9408 = E "lyric _"
-9409 = E "phrase_start"
-9410 = E "lyric <color=#0000f5>≠____♬____u____m____a____n____n____a____i____y____o</color>"
-9600 = E "lyric _"
-9601 = E "phrase_start"
-9602 = E "lyric <color=#ac00f5>ø____≠____♬____m____a____n____n____a____i____y____o</color>"
-9792 = E "lyric _"
-9793 = E "phrase_start"
-9794 = E "lyric <color=#f500bc>♫____ø____≠____♬____a____n____n____a____i____y____o</color>"
-9984 = E "lyric _"
-9985 = E "phrase_start"
-9986 = E "lyric <color=#f50000>♯____♫____ø____≠____♬____n____n____a____i____y____o</color>"
-10176 = E "lyric _"
-10177 = E "phrase_start"
-10178 = E "lyric <color=#f57b00>♮____♯____♫____ø____≠____♬____n____a____i____y____o</color>"
-10368 = E "lyric _"
-10369 = E "phrase_start"
-10370 = E "lyric <color=#edf500>♪____♮____♯____♫____ø____≠____♬____a____i____y____o</color>"
-10560 = E "lyric _"
-10561 = E "phrase_start"
-10562 = E "lyric <color=#f50000>♭____♪____♮____♯____♫____ø____≠____♬____i____y____o</color>"
-10752 = E "lyric _"
-10753 = E "phrase_start"
-10754 = E "lyric <color=#00f500>♬____♭____♪____♮____♯____♫____ø____≠____♬____y____o</color>"
-10944 = E "lyric _"
-10945 = E "phrase_start"
-10946 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____o</color>"
-11136 = E "lyric _"
-11137 = E "phrase_start"
-11138 = E "lyric <color=#ac00f5>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
-11328 = E "lyric _"
-11329 = E "phrase_start"
-11330 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-11376 = E "lyric _"
-11377 = E "phrase_start"
-11378 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
-11424 = E "lyric _"
-11425 = E "phrase_start"
-11426 = E "lyric <color=#edf500>♬____ø____♮____♯____♪____♬____≠____♭____♫____ø____♪</color>"
-11472 = E "lyric _"
-11473 = E "phrase_start"
-11474 = E "lyric <color=#00f500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-11520 = E "lyric _"
-11521 = E "phrase_start"
-11522 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
-11712 = E "lyric _"
-11713 = E "phrase_start"
-11714 = E "lyric <color=#f57b00>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-11904 = E "lyric _"
-11905 = E "phrase_start"
-11906 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-12096 = E "lyric _"
-12097 = E "phrase_start"
-12098 = E "lyric <color=#00f500>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-12288 = E "lyric _"
-12289 = E "phrase_start"
-12290 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____♭</color>"
-12480 = E "lyric _"
-12481 = E "phrase_start"
-12482 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-12672 = E "lyric _"
-12673 = E "phrase_start"
-12674 = E "lyric <color=#ac00f5>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
-12864 = E "lyric _"
-12865 = E "phrase_start"
-12866 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-13056 = E "lyric _"
-13057 = E "phrase_start"
-13058 = E "lyric <color=#f50000>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-13248 = E "lyric _"
-13249 = E "phrase_start"
-13250 = E "lyric <color=#f57b00>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
-13440 = E "lyric _"
-13441 = E "phrase_start"
-13442 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-13632 = E "lyric _"
-13633 = E "phrase_start"
-13634 = E "lyric <color=#00f500>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
-13824 = E "lyric _"
-13825 = E "phrase_start"
-13826 = E "lyric <color=#00f5f0>♬____ø____♮____♯____♪____♬____≠____♭____♫____ø____♪</color>"
-14016 = E "lyric _"
-14017 = E "phrase_start"
-14018 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-14208 = E "lyric _"
-14209 = E "phrase_start"
-14210 = E "lyric <color=#ffffff><color=#00ff0c>♯</color>____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-14256 = E "lyric _"
-14257 = E "phrase_start"
-14258 = E "lyric <color=#ffffff>♯____<color=#ff0000>♫</color>____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-14304 = E "lyric _"
-14305 = E "phrase_start"
-14306 = E "lyric <color=#ffffff>♯____♫____<color=#eaff00>ø</color>____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-14352 = E "lyric _"
-14353 = E "phrase_start"
-14354 = E "lyric <color=#ffffff>♯____♫____ø____<color=#008aff>≠</color>____♬____♮____♪____♬____♭____♪____ø</color>"
-14400 = E "lyric _"
-14401 = E "phrase_start"
-14402 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____<color=#ff0000>♬</color>____♭____♪____ø</color>"
-14448 = E "lyric _"
-14449 = E "phrase_start"
-14450 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____♬____<color=#eaff00>♭</color>____♪____ø</color>"
-14496 = E "lyric _"
-14497 = E "phrase_start"
-14498 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____♬____♭____<color=#008aff>♪</color>____ø</color>"
-14544 = E "lyric _"
-14545 = E "phrase_start"
-14546 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____<color=#ffa200>ø</color></color>"
-14592 = E "lyric _"
-14592 = E "section Main Theme B"
-14593 = E "phrase_start"
-14594 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
-14784 = E "lyric _"
-14785 = E "phrase_start"
-14786 = E "lyric <color=#f57b00>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-14976 = E "lyric _"
-14977 = E "phrase_start"
-14978 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-15168 = E "lyric _"
-15169 = E "phrase_start"
-15170 = E "lyric <color=#00f500>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-15360 = E "lyric _"
-15361 = E "phrase_start"
-15362 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____♭</color>"
-15552 = E "lyric _"
-15553 = E "phrase_start"
-15554 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-15744 = E "lyric _"
-15745 = E "phrase_start"
-15746 = E "lyric <color=#ac00f5>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
-15936 = E "lyric _"
-15937 = E "phrase_start"
-15938 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-16128 = E "lyric _"
-16129 = E "phrase_start"
-16130 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
-16320 = E "lyric _"
-16321 = E "phrase_start"
-16322 = E "lyric <color=#f57b00>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-16512 = E "lyric _"
-16513 = E "phrase_start"
-16514 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-16704 = E "lyric _"
-16705 = E "phrase_start"
-16706 = E "lyric <color=#00f500>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-16896 = E "lyric _"
-16897 = E "phrase_start"
-16898 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____♭</color>"
-17040 = E "lyric _"
-17041 = E "phrase_start"
-17042 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
-17184 = E "lyric _"
-17185 = E "phrase_start"
-17186 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
-17280 = E "lyric <i></i>"
-17281 = E "phrase_start"
-17282 = E "lyric <i></i>"
-17283 = E "phrase_start"
-17284 = E "lyric ︻╦╤─"
-17328 = E "lyric <i></i>"
-17329 = E "phrase_start"
-17330 = E "lyric <i></i>"
-17331 = E "phrase_start"
-17332 = E "lyric ︻╦╤──"
-17472 = E "lyric <i></i>"
-17473 = E "phrase_start"
-17474 = E "lyric <i></i>"
-17475 = E "phrase_start"
-17476 = E "lyric ︻╦╤──◀</color>"
-17664 = E "lyric <i></i>"
-17665 = E "phrase_start"
-17666 = E "lyric <i></i>"
-17667 = E "phrase_start"
-17668 = E "lyric <color=#ffffff><i>☆Snooze☆</i></color>"
-17760 = E "lyric <i></i>"
-17761 = E "phrase_start"
-17762 = E "lyric <i></i>"
-17763 = E "phrase_start"
-17764 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
-17806 = E "lyric <i></i>"
-17807 = E "phrase_start"
-17808 = E "lyric <i></i>"
-17809 = E "phrase_start"
-17810 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
-17854 = E "lyric <i></i>"
-17855 = E "phrase_start"
-17856 = E "lyric <i></i>"
-17857 = E "phrase_start"
-17858 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
-17902 = E "lyric <i></i>"
-17903 = E "phrase_start"
-17904 = E "lyric <i></i>"
-17905 = E "phrase_start"
-17906 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
-17950 = E "lyric <i></i>"
-17951 = E "phrase_start"
-17952 = E "lyric <i></i>"
-17953 = E "phrase_start"
-17954 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
-17996 = E "lyric <i></i>"
-17997 = E "phrase_start"
-17998 = E "lyric <i></i>"
-17999 = E "phrase_start"
-18000 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
-18044 = E "lyric <i></i>"
-18045 = E "phrase_start"
-18046 = E "lyric <i></i>"
-18047 = E "phrase_start"
-18048 = E "lyric <color=#ac00f5><i>☆Snooze☆</i></color>"
-18092 = E "lyric <i></i>"
-18093 = E "phrase_start"
-18094 = E "lyric <i></i>"
-18095 = E "phrase_start"
-18096 = E "lyric <color=#f500bc><i>☆Snooze☆</i></color>"
-18142 = E "lyric <i></i>"
-18143 = E "phrase_start"
-18144 = E "lyric <i></i>"
-18145 = E "phrase_start"
-18146 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
-18188 = E "lyric <i></i>"
-18189 = E "phrase_start"
-18190 = E "lyric <i></i>"
-18191 = E "phrase_start"
-18192 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
-18236 = E "lyric <i></i>"
-18237 = E "phrase_start"
-18238 = E "lyric <i></i>"
-18239 = E "phrase_start"
-18240 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
-18284 = E "lyric <i></i>"
-18285 = E "phrase_start"
-18286 = E "lyric <i></i>"
-18287 = E "phrase_start"
-18288 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
-18332 = E "lyric <i></i>"
-18333 = E "phrase_start"
-18334 = E "lyric <i></i>"
-18335 = E "phrase_start"
-18336 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
-18378 = E "lyric <i></i>"
-18379 = E "phrase_start"
-18380 = E "lyric <i></i>"
-18381 = E "phrase_start"
-18382 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
-18430 = E "lyric <i></i>"
-18431 = E "phrase_start"
-18432 = E "lyric <i></i>"
-18433 = E "phrase_start"
-18434 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
-18454 = E "lyric <i></i>"
-18455 = E "phrase_start"
-18456 = E "lyric <i></i>"
-18457 = E "phrase_start"
-18458 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
-18478 = E "lyric <i></i>"
-18479 = E "phrase_start"
-18480 = E "lyric <i></i>"
-18481 = E "phrase_start"
-18482 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
-18502 = E "lyric <i></i>"
-18503 = E "phrase_start"
-18504 = E "lyric <i></i>"
-18505 = E "phrase_start"
-18506 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
-18526 = E "lyric <i></i>"
-18527 = E "phrase_start"
-18528 = E "lyric <i></i>"
-18529 = E "phrase_start"
-18530 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
-18572 = E "lyric <i></i>"
-18573 = E "phrase_start"
-18574 = E "lyric <i></i>"
-18575 = E "phrase_start"
-18576 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
-18598 = E "lyric <i></i>"
-18599 = E "phrase_start"
-18600 = E "lyric <i></i>"
-18601 = E "phrase_start"
-18602 = E "lyric <color=#ac00f5><i>☆Snooze☆</i></color>"
-18622 = E "lyric <i></i>"
-18623 = E "phrase_start"
-18624 = E "lyric <i></i>"
-18625 = E "phrase_start"
-18626 = E "lyric <color=#f500bc><i>☆Snooze☆</i></color>"
-18646 = E "lyric <i></i>"
-18647 = E "phrase_start"
-18648 = E "lyric <i></i>"
-18649 = E "phrase_start"
-18650 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
-18670 = E "lyric <i></i>"
-18671 = E "phrase_start"
-18672 = E "lyric <i></i>"
-18673 = E "phrase_start"
-18674 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
-18718 = E "lyric <i></i>"
-18719 = E "phrase_start"
-18720 = E "lyric <i></i>"
-18721 = E "phrase_start"
-18722 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
-18766 = E "lyric <i></i>"
-18767 = E "phrase_start"
-18768 = E "lyric <i></i>"
-18769 = E "phrase_start"
-18770 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
-18814 = E "lyric <i></i>"
-18815 = E "phrase_start"
-18816 = E "lyric <i></i>"
-18817 = E "phrase_start"
-18818 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
-18838 = E "lyric <i></i>"
-18839 = E "phrase_start"
-18840 = E "lyric <i></i>"
-18841 = E "phrase_start"
-18842 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
-18862 = E "lyric <i></i>"
-18863 = E "phrase_start"
-18864 = E "lyric <i></i>"
-18865 = E "phrase_start"
-18866 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
-18886 = E "lyric <i></i>"
-18887 = E "phrase_start"
-18888 = E "lyric <i></i>"
-18889 = E "phrase_start"
-18890 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
-18910 = E "lyric <i></i>"
-18911 = E "phrase_start"
-18912 = E "lyric <i></i>"
-18913 = E "phrase_start"
-18914 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
-18958 = E "lyric <i></i>"
-18959 = E "phrase_start"
-18960 = E "lyric <i></i>"
-18961 = E "phrase_start"
-18962 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
-19200 = E "lyric _"
-19201 = E "phrase_start"
-19202 = E "lyric <color=#ac00f5><i>☆Snooze</i></color>"
-19392 = E "lyric _"
-19393 = E "phrase_start"
-19394 = E "lyric <color=#0000f5><i>☆Snooz</i></color>"
-19584 = E "lyric _"
-19585 = E "phrase_start"
-19586 = E "lyric <color=#00f5f0><i>☆Snoo</i></color>"
-19776 = E "lyric _"
-19777 = E "phrase_start"
-19778 = E "lyric <color=#00f500><i>☆Sno</i></color>"
-19968 = E "lyric _"
-19969 = E "phrase_start"
-19970 = E "lyric <color=#edf500><i>☆Sn</i></color>"
-20160 = E "lyric _"
-20161 = E "phrase_start"
-20162 = E "lyric <color=#f57b00><i>☆S</i></color>"
-20352 = E "lyric <i></i>"
-20353 = E "phrase_start"
-20354 = E "lyric _"
-20355 = E "phrase_start"
-20356 = E "lyric <color=#f50000><i>☆</i></color>"
-20448 = E "lyric <i></i>"
-20449 = E "phrase_start"
-20450 = E "lyric _"
-20451 = E "phrase_start"
-20452 = E "lyric -"
-20736 = E "lyric Da-"
-20736 = E "section Chorus 1A"
-20832 = E "lyric a-"
-20928 = E "lyric ku-"
-21024 = E "lyric ma-"
-21120 = E "lyric taa"
-21264 = E "lyric no"
-21408 = E "lyric se-"
-21600 = E "lyric i"
-21696 = E "lyric de"
-21936 = E "phrase_start"
-21984 = E "lyric U-"
-22080 = E "lyric ma-"
-22176 = E "lyric re-"
-22272 = E "lyric ta"
-22368 = E "lyric ji-"
-22464 = E "lyric da-"
-22560 = E "lyric i"
-22656 = E "lyric ga"
-22752 = E "lyric wa-"
-22848 = E "lyric ru-"
-22944 = E "lyric ka-"
-23136 = E "lyric tta"
-23232 = E "lyric se-"
-23328 = E "lyric i"
-23424 = E "lyric de"
-23712 = E "phrase_start"
-23808 = E "lyric Zen-"
-24000 = E "lyric bu"
-24096 = E "lyric a-"
-24192 = E "lyric na-"
-24288 = E "lyric ta"
-24384 = E "lyric no"
-24480 = E "lyric se-"
-24672 = E "lyric i"
-24768 = E "lyric de"
-24960 = E "phrase_start"
-25056 = E "lyric Kyo"
-25248 = E "lyric ka-"
-25344 = E "lyric sa"
-25440 = E "lyric o"
-25536 = E "lyric mo-"
-25728 = E "lyric tte"
-25824 = E "lyric ku-"
-25920 = E "lyric ru"
-26016 = E "lyric no"
-26208 = E "lyric o"
-26304 = E "lyric wa-"
-26400 = E "lyric su-"
-26496 = E "lyric re-"
-26592 = E "lyric ta"
-26880 = E "phrase_start"
-26880 = E "section Chorus 1B"
-26976 = E "lyric Kyou-"
-27168 = E "lyric mi"
-27264 = E "lyric na-"
-27360 = E "lyric i"
-27456 = E "lyric son-"
-27648 = E "lyric na"
-27936 = E "lyric to-"
-28032 = E "lyric pi-"
-28224 = E "lyric kku"
-28288 = E "phrase_start"
-28320 = E "lyric Ma-"
-28368 = E "lyric chi-"
-28416 = E "lyric ga-"
-28512 = E "lyric tta"
-28560 = E "lyric gu-"
-28656 = E "lyric ze"
-28752 = E "lyric ni"
-28800 = E "lyric za-"
-28848 = E "lyric i"
-28896 = E "lyric o"
-29040 = E "phrase_start"
-29088 = E "lyric A-"
-29136 = E "lyric ra-"
-29184 = E "lyric ga-"
-29280 = E "lyric tta"
-29328 = E "lyric gun-"
-29424 = E "lyric shu"
-29520 = E "lyric ni"
-29568 = E "lyric ga-"
-29616 = E "lyric i"
-29664 = E "lyric o"
-29952 = E "phrase_start"
-30048 = E "lyric He-"
-30096 = E "lyric ru-"
-30144 = E "lyric me-"
-30240 = E "lyric tto"
-30288 = E "lyric zu-"
-30336 = E "lyric ga-"
-30432 = E "lyric i"
-30480 = E "lyric o"
-30528 = E "lyric wa-"
-30576 = E "lyric tta"
-30624 = E "lyric you"
-30720 = E "lyric na"
-30912 = E "phrase_start"
-31008 = E "lyric Sa-"
-31104 = E "lyric un-"
-31296 = E "lyric do"
-31392 = E "lyric ga-"
-31440 = E "lyric so-"
-31488 = E "lyric rin"
-31584 = E "lyric ka-"
-31632 = E "lyric o-"
-31728 = E "lyric tta"
-31776 = E "lyric ni-"
-31824 = E "lyric chi-"
-31872 = E "lyric jou"
-31968 = E "lyric no"
-32112 = E "phrase_start"
-32160 = E "lyric Re-"
-32208 = E "lyric i-"
-32256 = E "lyric me-"
-32304 = E "lyric i"
-32352 = E "lyric no"
-32400 = E "lyric chou-"
-32496 = E "lyric kou"
-32592 = E "lyric ma-"
-32640 = E "lyric da"
-32736 = E "lyric mi-"
-32832 = E "lyric e-"
-32928 = E "lyric na-"
-33024 = E "section Break"
-33696 = E "lyric i"
-34080 = E "phrase_end"
-39168 = E "section Build Up"
-45024 = E "phrase_start"
-45072 = E "lyric _"
-45120 = E "lyric _"
-45121 = E "phrase_start"
-45122 = E "lyric _"
-45123 = E "phrase_start"
-45124 = E "lyric -"
-45312 = E "lyric 排"
-45312 = E "section Drop snooze A"
-45313 = E "phrase_start"
-45314 = E "lyric _"
-45315 = E "phrase_start"
-45316 = E "lyric <color=#ff0000>排</color>"
-45600 = E "lyric _"
-45601 = E "phrase_start"
-45602 = E "lyric <i>hai</i>"
-45603 = E "phrase_start"
-45604 = E "lyric <color=#1800ff>排</color>"
-45648 = E "lyric _"
-45649 = E "phrase_start"
-45650 = E "lyric <i>i</i>"
-45651 = E "phrase_start"
-45652 = E "lyric <color=#00ff0c>排</color>"
-45696 = E "lyric _"
-45697 = E "phrase_start"
-45698 = E "lyric <i>i</i>"
-45699 = E "phrase_start"
-45700 = E "lyric <color=#8e15bb>排</color>"
-45840 = E "lyric _"
-45841 = E "phrase_start"
-45842 = E "lyric <i>hai</i>"
-45843 = E "phrase_start"
-45844 = E "lyric <color=#eaff00>排</color>"
-45984 = E "lyric _"
-45985 = E "phrase_start"
-45986 = E "lyric <i>hai</i>"
-45987 = E "phrase_start"
-45988 = E "lyric <color=#00f0ff>排</color>"
-46176 = E "lyric _"
-46177 = E "phrase_start"
-46178 = E "lyric <i>hai</i>"
-46179 = E "phrase_start"
-46180 = E "lyric ケ-"
-46272 = E "lyric ー-"
-46368 = E "lyric デンス"
-46464 = E "lyric _"
-46465 = E "phrase_start"
-46466 = E "lyric <i>keedensu</i>"
-46467 = E "phrase_start"
-46468 = E "lyric <color=#ff00a2>ケーデンス</color>"
-46496 = E "lyric _"
-46497 = E "phrase_start"
-46498 = E "lyric <i>keedensu</i>"
-46499 = E "phrase_start"
-46500 = E "lyric <color=#8e15bb>ケーデンス</color>"
-46608 = E "lyric _"
-46609 = E "phrase_start"
-46610 = E "lyric <i>keedensu</i>"
-46611 = E "phrase_start"
-46612 = E "lyric <color=#1800ff>ケーデンス</color>"
-46656 = E "lyric _"
-46657 = E "phrase_start"
-46658 = E "lyric <i>keedensu</i>"
-46659 = E "phrase_start"
-46660 = E "lyric な-"
-46752 = E "lyric い-"
-46848 = E "lyric よ"
-47232 = E "lyric _"
-47233 = E "phrase_start"
-47234 = E "lyric <i>nai yo</i>"
-47235 = E "phrase_start"
-47236 = E "lyric 嫌-"
-47328 = E "lyric な"
-47329 = E "phrase_start"
-47330 = E "lyric <i>iya na</i>"
-47331 = E "phrase_start"
-47332 = E "lyric 嫌な"
-47424 = E "lyric _"
-47425 = E "phrase_start"
-47426 = E "lyric <i>iya na</i>"
-47427 = E "phrase_start"
-47428 = E "lyric 嫌-"
-47520 = E "lyric な"
-47521 = E "phrase_start"
-47522 = E "lyric <i>iya na</i>"
-47523 = E "phrase_start"
-47524 = E "lyric 嫌な"
-47616 = E "lyric _"
-47617 = E "phrase_start"
-47618 = E "lyric <i>iya na</i>"
-47619 = E "phrase_start"
-47620 = E "lyric 全-"
-47808 = E "lyric 部"
-47809 = E "phrase_start"
-47810 = E "lyric <i>zenbu</i>"
-47811 = E "phrase_start"
-47812 = E "lyric 全部"
-47904 = E "lyric _"
-47905 = E "phrase_start"
-47906 = E "lyric <i>zenbu</i>"
-47907 = E "phrase_start"
-47908 = E "lyric つ-"
-48000 = E "lyric まんないよ"
-48001 = E "phrase_start"
-48002 = E "lyric <i>Tsumannai yo</i>"
-48003 = E "phrase_start"
-48004 = E "lyric つまん"
-48096 = E "lyric ないよ"
-48097 = E "phrase_start"
-48098 = E "lyric <i>Tsumannai yo</i>"
-48099 = E "phrase_start"
-48100 = E "lyric <color=#eaff00>つまん</color>"
-48192 = E "lyric ないよ"
-48193 = E "phrase_start"
-48194 = E "lyric <i>Tsumannai yo</i>"
-48195 = E "phrase_start"
-48196 = E "lyric つまんない"
-48288 = E "lyric よ"
-48289 = E "phrase_start"
-48290 = E "lyric <i>Tsumannai yo</i>"
-48291 = E "phrase_start"
-48292 = E "lyric <color=#00ff0c>つまんない</color>"
-48384 = E "lyric よ"
-48385 = E "phrase_start"
-48386 = E "lyric <i>Tsumannai yo</i>"
-48387 = E "phrase_start"
-48388 = E "lyric つまんないよ"
-48576 = E "lyric <i></i>"
-48577 = E "phrase_start"
-48578 = E "lyric <i>Tsumannai yo</i>"
-48579 = E "phrase_start"
-48580 = E "lyric <sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup>"
-49056 = E "lyric <i></i>"
-49057 = E "phrase_start"
-49058 = E "lyric _"
-49059 = E "phrase_start"
-49060 = E "lyric <color=#eaff00><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
-49248 = E "lyric <i></i>"
-49249 = E "phrase_start"
-49250 = E "lyric _"
-49251 = E "phrase_start"
-49252 = E "lyric <color=#1800ff><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
-49296 = E "lyric <i></i>"
-49297 = E "phrase_start"
-49298 = E "lyric _"
-49299 = E "phrase_start"
-49300 = E "lyric <color=#ff00a2><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
-49392 = E "lyric <i></i>"
-49393 = E "phrase_start"
-49394 = E "lyric _"
-49395 = E "phrase_start"
-49396 = E "lyric <color=#00f0ff><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
-49488 = E "lyric <i></i>"
-49489 = E "phrase_start"
-49490 = E "lyric _"
-49491 = E "phrase_start"
-49492 = E "lyric <color=#ff0000><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
-49512 = E "lyric _"
-49513 = E "phrase_start"
-49514 = E "lyric _"
-49515 = E "phrase_start"
-49516 = E "lyric つ-"
-49536 = E "lyric まんないよ"
-49537 = E "phrase_start"
-49538 = E "lyric <i>Tsumannai yo</i>"
-49539 = E "phrase_start"
-49540 = E "lyric つまん"
-49728 = E "lyric ないよ"
-49729 = E "phrase_start"
-49730 = E "lyric <i>Tsumannai yo</i>"
-49731 = E "phrase_start"
-49732 = E "lyric つまんない"
-49920 = E "lyric よ"
-49921 = E "phrase_start"
-49922 = E "lyric <i>Tsumannai yo</i>"
-49923 = E "phrase_start"
-49924 = E "lyric つまんないよ"
-50976 = E "lyric _"
-50977 = E "phrase_start"
-50978 = E "lyric <i>Tsumannai yo</i>"
-50979 = E "phrase_start"
-50980 = E "lyric つ-"
-51072 = E "lyric まんないよ"
-51073 = E "phrase_start"
-51074 = E "lyric <i>Tsumannai yo</i>"
-51075 = E "phrase_start"
-51076 = E "lyric つまん"
-51264 = E "lyric ないよ"
-51265 = E "phrase_start"
-51266 = E "lyric <i>Tsumannai yo</i>"
-51267 = E "phrase_start"
-51268 = E "lyric つまんない"
-51456 = E "lyric よ"
-51456 = E "section Drop snooze B"
-51457 = E "phrase_start"
-51458 = E "lyric <i>Tsumannai yo</i>"
-51459 = E "phrase_start"
-51460 = E "lyric つまんないよ"
-51552 = E "lyric _"
-51553 = E "phrase_start"
-51554 = E "lyric _"
-51555 = E "phrase_start"
-51556 = E "lyric <color=#ff0000>排</color>"
-51600 = E "lyric 排"
-51601 = E "phrase_start"
-51602 = E "lyric <i>hai</i>"
-51603 = E "phrase_start"
-51604 = E "lyric <color=#eaff00>排</color>"
-51744 = E "lyric _"
-51745 = E "phrase_start"
-51746 = E "lyric <i>hai</i>"
-51747 = E "phrase_start"
-51748 = E "lyric <color=#1800ff>排</color>"
-51792 = E "lyric _"
-51793 = E "phrase_start"
-51794 = E "lyric <i>i</i>"
-51795 = E "phrase_start"
-51796 = E "lyric <color=#00ff0c>排</color>"
-51840 = E "lyric _"
-51841 = E "phrase_start"
-51842 = E "lyric <i>i</i>"
-51843 = E "phrase_start"
-51844 = E "lyric <color=#8e15bb>排</color>"
-51984 = E "lyric _"
-51985 = E "phrase_start"
-51986 = E "lyric <i>hai</i>"
-51987 = E "phrase_start"
-51988 = E "lyric <color=#eaff00>排</color>"
-52128 = E "lyric _"
-52129 = E "phrase_start"
-52130 = E "lyric <i>hai</i>"
-52131 = E "phrase_start"
-52132 = E "lyric <color=#00f0ff>排</color>"
-52320 = E "lyric _"
-52321 = E "phrase_start"
-52322 = E "lyric <i>hai</i>"
-52323 = E "phrase_start"
-52324 = E "lyric ケ-"
-52416 = E "lyric ー-"
-52512 = E "lyric デンス"
-52608 = E "lyric _"
-52609 = E "phrase_start"
-52610 = E "lyric <i>keedensu</i>"
-52611 = E "phrase_start"
-52612 = E "lyric <color=#ff00a2>ケーデンス</color>"
-52640 = E "lyric _"
-52641 = E "phrase_start"
-52642 = E "lyric <i>keedensu</i>"
-52643 = E "phrase_start"
-52644 = E "lyric <color=#8e15bb>ケーデンス</color>"
-52752 = E "lyric _"
-52753 = E "phrase_start"
-52754 = E "lyric <i>keedensu</i>"
-52755 = E "phrase_start"
-52756 = E "lyric <color=#1800ff>ケーデンス</color>"
-52848 = E "lyric _"
-52849 = E "phrase_start"
-52850 = E "lyric <i>keedensu</i>"
-52851 = E "phrase_start"
-52852 = E "lyric も-"
-52896 = E "lyric う"
-52897 = E "phrase_start"
-52898 = E "lyric <i>Mou</i>"
-52899 = E "phrase_start"
-52900 = E "lyric もう"
-52992 = E "lyric _"
-52993 = E "phrase_start"
-52994 = E "lyric <i>Mou</i>"
-52995 = E "phrase_start"
-52996 = E "lyric 嫌-"
-53088 = E "lyric な"
-53089 = E "phrase_start"
-53090 = E "lyric <i>iya na</i>"
-53091 = E "phrase_start"
-53092 = E "lyric 嫌な"
-53184 = E "lyric _"
-53185 = E "phrase_start"
-53186 = E "lyric <i>iya na</i>"
-53187 = E "phrase_start"
-53188 = E "lyric 嫌-"
-53280 = E "lyric な"
-53281 = E "phrase_start"
-53282 = E "lyric <i>iya na</i>"
-53283 = E "phrase_start"
-53284 = E "lyric 嫌な"
-53376 = E "lyric _"
-53377 = E "phrase_start"
-53378 = E "lyric <i>iya na</i>"
-53379 = E "phrase_start"
-53380 = E "lyric 全-"
-53472 = E "lyric 部"
-53473 = E "phrase_start"
-53474 = E "lyric <i>zenbu</i>"
-53475 = E "phrase_start"
-53476 = E "lyric <color=#ff0000>全-</color>"
-53496 = E "lyric 部"
-53497 = E "phrase_start"
-53498 = E "lyric <i>zenbu</i>"
-53499 = E "phrase_start"
-53500 = E "lyric <color=#8e15bb>全-</color>"
-53520 = E "lyric 部"
-53521 = E "phrase_start"
-53522 = E "lyric <i>zenbu</i>"
-53523 = E "phrase_start"
-53524 = E "lyric <color=#ff00a2>全-</color>"
-53568 = E "lyric 部"
-53569 = E "phrase_start"
-53570 = E "lyric <i>zenbu</i>"
-53571 = E "phrase_start"
-53572 = E "lyric 全部"
-53664 = E "lyric 部"
-53665 = E "phrase_start"
-53666 = E "lyric <i>zenbu</i>"
-53667 = E "phrase_start"
-53668 = E "lyric 投-"
-53808 = E "lyric げ出して"
-53809 = E "phrase_start"
-53810 = E "lyric <i>nagedashite</i>"
-53811 = E "phrase_start"
-53812 = E "lyric 投-"
-53904 = E "lyric げ出して"
-53905 = E "phrase_start"
-53906 = E "lyric <i>nagedashite</i>"
-53907 = E "phrase_start"
-53908 = E "lyric 投-"
-53952 = E "lyric げ出して"
-53953 = E "phrase_start"
-53954 = E "lyric <i>nagedashite</i>"
-53955 = E "phrase_start"
-53956 = E "lyric 投げ-"
-54048 = E "lyric 出して"
-54049 = E "phrase_start"
-54050 = E "lyric <i>nagedashite</i>"
-54051 = E "phrase_start"
-54052 = E "lyric 投げ出-"
-54144 = E "lyric して"
-54145 = E "phrase_start"
-54146 = E "lyric <i>nagedashite</i>"
-54147 = E "phrase_start"
-54148 = E "lyric 投げ出して"
-54336 = E "lyric _"
-54337 = E "phrase_start"
-54338 = E "lyric <i>nagedashite</i>"
-54339 = E "phrase_start"
-54340 = E "lyric <color=#00f0ff>投げ出して</color>"
-54408 = E "lyric _"
-54409 = E "phrase_start"
-54410 = E "lyric <i>nagedashite</i>"
-54411 = E "phrase_start"
-54412 = E "lyric <color=#eaff00>投げ出して</color>"
-54432 = E "lyric _"
-54433 = E "phrase_start"
-54434 = E "lyric <i>nagedashite</i>"
-54435 = E "phrase_start"
-54436 = E "lyric <color=#8e15bb>投げ出して</color>"
-54456 = E "lyric _"
-54457 = E "phrase_start"
-54458 = E "lyric <i>nagedashite</i>"
-54459 = E "phrase_start"
-54460 = E "lyric <color=#00ff0c>投げ出して</color>"
-54480 = E "lyric _"
-54481 = E "phrase_start"
-54482 = E "lyric <i>nagedashite</i>"
-54483 = E "phrase_start"
-54484 = E "lyric <color=#1800ff>投げ出して</color>"
-54504 = E "lyric _"
-54505 = E "phrase_start"
-54506 = E "lyric <i>nagedashite</i>"
-54507 = E "phrase_start"
-54508 = E "lyric <color=#ff0000>投げ出して</color>"
-54624 = E "lyric _"
-54625 = E "phrase_start"
-54626 = E "lyric <i>nagedashite</i>"
-54627 = E "phrase_start"
-54628 = E "lyric 斯"
-54672 = E "lyric _"
-54673 = E "phrase_start"
-54674 = E "lyric <i>Ka</i>"
-54675 = E "phrase_start"
-54676 = E "lyric <color=#00ff0c>斯</color>"
-54720 = E "lyric _"
-54721 = E "phrase_start"
-54722 = E "lyric <i>Ka</i>"
-54723 = E "phrase_start"
-54724 = E "lyric <color=#1800ff>斯く</color>"
-54768 = E "lyric _"
-54769 = E "phrase_start"
-54770 = E "lyric <i>Ku</i>"
-54771 = E "phrase_start"
-54772 = E "lyric <color=#8e15bb>濁</color>"
-54816 = E "lyric _"
-54817 = E "phrase_start"
-54818 = E "lyric <i>Ni</i>"
-54819 = E "phrase_start"
-54820 = E "lyric <color=#eaff00>斯く</color>"
-54864 = E "lyric _"
-54865 = E "phrase_start"
-54866 = E "lyric <i>Ku</i>"
-54867 = E "phrase_start"
-54868 = E "lyric <color=#ff00a2>濁</color>"
-54912 = E "lyric _"
-54913 = E "phrase_start"
-54914 = E "lyric <i>Ni</i>"
-54915 = E "phrase_start"
-54916 = E "lyric -"
-55056 = E "lyric った"
-55057 = E "phrase_start"
-55058 = E "lyric <i>gotta</i>"
-55059 = E "phrase_start"
-55060 = E "lyric った"
-55200 = E "lyric _"
-55201 = E "phrase_start"
-55202 = E "lyric <i>gotta</i>"
-55203 = E "phrase_start"
-55204 = E "lyric -"
-55344 = E "lyric った"
-55345 = E "phrase_start"
-55346 = E "lyric <i>gotta</i>"
-55347 = E "phrase_start"
-55348 = E "lyric った"
-55488 = E "lyric _"
-55489 = E "phrase_start"
-55490 = E "lyric <i>gotta</i>"
-55491 = E "phrase_start"
-55492 = E "lyric -"
-55632 = E "lyric った"
-55633 = E "phrase_start"
-55634 = E "lyric <i>gotta</i>"
-55635 = E "phrase_start"
-55636 = E "lyric った"
-55776 = E "lyric _"
-55777 = E "phrase_start"
-55778 = E "lyric <i>gotta</i>"
-55779 = E "phrase_start"
-55780 = E "lyric -"
-55920 = E "lyric った"
-55921 = E "phrase_start"
-55922 = E "lyric <i>gotta</i>"
-55923 = E "phrase_start"
-55924 = E "lyric った"
-56064 = E "lyric _"
-56065 = E "phrase_start"
-56066 = E "lyric <i>gotta</i>"
-56067 = E "phrase_start"
-56068 = E "lyric あ"
-56160 = E "lyric なたの話"
-56161 = E "phrase_start"
-56162 = E "lyric <i>anata no hanashi</i>"
-56163 = E "phrase_start"
-56164 = E "lyric あな"
-56256 = E "lyric たの話"
-56257 = E "phrase_start"
-56258 = E "lyric <i>anata no hanashi</i>"
-56259 = E "phrase_start"
-56260 = E "lyric あなた"
-56352 = E "lyric の話"
-56353 = E "phrase_start"
-56354 = E "lyric <i>anata no hanashi</i>"
-56355 = E "phrase_start"
-56356 = E "lyric あなたの話"
-56496 = E "lyric _"
-56497 = E "phrase_start"
-56498 = E "lyric <i>anata no hanashi</i>"
-56499 = E "phrase_start"
-56500 = E "lyric <color=#ff00a2>あな</color>"
-56592 = E "lyric _"
-56593 = E "phrase_start"
-56594 = E "lyric <i>anata no</i>"
-56595 = E "phrase_start"
-56596 = E "lyric <color=#00f0ff>た</color>"
-56640 = E "lyric _"
-56641 = E "phrase_start"
-56642 = E "lyric <i>anata</i>"
-56643 = E "phrase_start"
-56644 = E "lyric <color=#eaff00>あなたの</color>"
-56688 = E "lyric _"
-56689 = E "phrase_start"
-56690 = E "lyric <i>anata no hanashi</i>"
-56691 = E "phrase_start"
-56692 = E "lyric <color=#8e15bb>は</color>"
-56736 = E "lyric _"
-56737 = E "phrase_start"
-56738 = E "lyric <i>Wa</i>"
-56739 = E "phrase_start"
-56740 = E "lyric <color=#00ff0c>あな</color>"
-56784 = E "lyric _"
-56785 = E "phrase_start"
-56786 = E "lyric <i>no</i>"
-56787 = E "phrase_start"
-56788 = E "lyric <color=#1800ff>た</color>"
-56832 = E "lyric _"
-56833 = E "phrase_start"
-56834 = E "lyric <i>hanashi</i>"
-56835 = E "phrase_start"
-56836 = E "lyric <color=#00f0ff>は</color>"
-56880 = E "lyric _"
-56881 = E "phrase_start"
-56882 = E "lyric <i>Wa</i>"
-56883 = E "phrase_start"
-56884 = E "lyric <color=#8e15bb>の話</color>"
-56928 = E "lyric _"
-56929 = E "phrase_start"
-56930 = E "lyric <i>hanashi</i>"
-56931 = E "phrase_start"
-56932 = E "lyric <color=#ff0000>は</color>"
-57120 = E "lyric _"
-57121 = E "phrase_start"
-57122 = E "lyric <i>Wa</i>"
-57123 = E "phrase_start"
-57124 = E "lyric つ-"
-57216 = E "lyric まんないよ"
-57217 = E "phrase_start"
-57218 = E "lyric <i>Tsumannai yo</i>"
-57219 = E "phrase_start"
-57220 = E "lyric つまん"
-57408 = E "lyric ないよ"
-57409 = E "phrase_start"
-57410 = E "lyric <i>Tsumannai yo</i>"
-57411 = E "phrase_start"
-57412 = E "lyric つまんない"
-57600 = E "lyric よ"
-57600 = E "section Chorus 2A"
-57601 = E "phrase_start"
-57602 = E "lyric <i>Tsumannai yo</i>"
-57603 = E "phrase_start"
-57604 = E "lyric Han-"
-57792 = E "lyric ki"
-57888 = E "lyric o"
-57984 = E "lyric mo-"
-58128 = E "lyric tta"
-58272 = E "lyric me-"
-58464 = E "lyric e-"
-58560 = E "lyric dee"
-58800 = E "phrase_start"
-58848 = E "lyric Mo-"
-58944 = E "lyric u"
-59040 = E "lyric i-"
-59136 = E "lyric ya"
-59232 = E "lyric na"
-59328 = E "lyric ko-"
-59424 = E "lyric to"
-59520 = E "lyric zen-"
-59712 = E "lyric bu"
-59808 = E "lyric na-"
-60000 = E "lyric ge-"
-60096 = E "lyric da-"
-60192 = E "lyric shi-"
-60288 = E "lyric ta-"
-60336 = E "lyric i"
-60384 = E "lyric ne"
-60576 = E "phrase_start"
-60672 = E "lyric A-"
-60768 = E "lyric i-"
-60864 = E "lyric su"
-60960 = E "lyric o-"
-61056 = E "lyric go-"
-61248 = E "lyric tte"
-61344 = E "lyric ku-"
-61392 = E "lyric r-"
-61536 = E "lyric e-"
-61632 = E "lyric e"
-61824 = E "phrase_start"
-61920 = E "lyric Kyo-"
-62016 = E "lyric u"
-62112 = E "lyric sa-"
-62208 = E "lyric i-"
-62304 = E "lyric fu"
-62400 = E "lyric mo-"
-62592 = E "lyric tte"
-62688 = E "lyric ku-"
-62784 = E "lyric ru"
-62880 = E "lyric no"
-63072 = E "lyric o"
-63168 = E "lyric wa-"
-63264 = E "lyric su-"
-63360 = E "lyric re-"
-63456 = E "lyric ta"
-63744 = E "phrase_start"
-63744 = E "section Chorus 2B"
-63840 = E "lyric Ka-"
-63936 = E "lyric ke"
-64032 = E "lyric no"
-64128 = E "lyric na-"
-64224 = E "lyric i"
-64320 = E "lyric poo-"
-64512 = E "lyric kaa"
-64800 = E "lyric mi-"
-64896 = E "lyric ta-"
-64992 = E "lyric i"
-65088 = E "lyric na"
-65136 = E "phrase_start"
-65184 = E "lyric Tsu-"
-65232 = E "lyric ma-"
-65280 = E "lyric ra-"
-65376 = E "lyric na-"
-65424 = E "lyric ku"
-65520 = E "lyric na-"
-65616 = E "lyric tta"
-65664 = E "lyric sen-"
-65760 = E "lyric sou"
-65904 = E "phrase_start"
-65952 = E "lyric Kek-"
-66048 = E "lyric kyo-"
-66096 = E "lyric ku"
-66144 = E "lyric ta-"
-66192 = E "lyric nin"
-66288 = E "lyric ga"
-66384 = E "lyric ko-"
-66432 = E "lyric wa-"
-66480 = E "lyric i"
-66528 = E "lyric no"
-66816 = E "phrase_start"
-66912 = E "lyric E-"
-66960 = E "lyric ki-"
-67008 = E "lyric shou"
-67104 = E "lyric ni"
-67152 = E "lyric u-"
-67200 = E "lyric tsu-"
-67296 = E "lyric tta"
-67344 = E "lyric ryo-"
-67440 = E "lyric shi-"
-67488 = E "lyric ron"
-67584 = E "lyric ga"
-67872 = E "phrase_start"
-67968 = E "lyric Don-"
-68160 = E "lyric na"
-68256 = E "lyric mi-"
-68352 = E "lyric ra-"
-68400 = E "lyric i"
-68448 = E "lyric o"
-68496 = E "lyric shou-"
-68592 = E "lyric sha"
-68640 = E "lyric ni"
-68688 = E "lyric e-"
-68736 = E "lyric ra-"
-68832 = E "lyric nde"
-68976 = E "phrase_start"
-69024 = E "lyric Da-"
-69072 = E "lyric re"
-69120 = E "lyric ga"
-69168 = E "lyric i-"
-69264 = E "lyric ke-"
-69360 = E "lyric nie"
-69456 = E "lyric ni"
-69504 = E "lyric na-"
-69600 = E "lyric ru"
-69696 = E "lyric ka"
-69792 = E "lyric na"
-70464 = E "lyric _"
-70465 = E "phrase_start"
-70466 = E "lyric _"
-70654 = E "lyric _"
-70655 = E "phrase_start"
-70656 = E "lyric <i></i>"
-70656 = E "section Outro A"
-70657 = E "phrase_start"
-70658 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-70848 = E "lyric <i></i>"
-70849 = E "phrase_start"
-70850 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-70944 = E "lyric <i></i>"
-70945 = E "phrase_start"
-70946 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-70992 = E "lyric <i></i>"
-70993 = E "phrase_start"
-70994 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-71040 = E "lyric <i></i>"
-71041 = E "phrase_start"
-71042 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-71136 = E "lyric <i></i>"
-71137 = E "phrase_start"
-71138 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-71232 = E "lyric <i></i>"
-71233 = E "phrase_start"
-71234 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-71616 = E "lyric <i></i>"
-71617 = E "phrase_start"
-71618 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-71712 = E "lyric <i></i>"
-71713 = E "phrase_start"
-71714 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-71808 = E "lyric <i></i>"
-71809 = E "phrase_start"
-71810 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-71904 = E "lyric <i></i>"
-71905 = E "phrase_start"
-71906 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-71936 = E "lyric <i></i>"
-71937 = E "phrase_start"
-71938 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-71968 = E "lyric <i></i>"
-71969 = E "phrase_start"
-71970 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-72000 = E "lyric <i></i>"
-72001 = E "phrase_start"
-72002 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-72096 = E "lyric <i></i>"
-72097 = E "phrase_start"
-72098 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-72192 = E "lyric <i></i>"
-72193 = E "phrase_start"
-72194 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-72384 = E "lyric <i></i>"
-72385 = E "phrase_start"
-72386 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-72480 = E "lyric <i></i>"
-72481 = E "phrase_start"
-72482 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-72528 = E "lyric <i></i>"
-72529 = E "phrase_start"
-72530 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-72576 = E "lyric <i></i>"
-72577 = E "phrase_start"
-72578 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-72672 = E "lyric <i></i>"
-72673 = E "phrase_start"
-72674 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-72768 = E "lyric <i></i>"
-72769 = E "phrase_start"
-72770 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-73152 = E "lyric <i></i>"
-73153 = E "phrase_start"
-73154 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-73248 = E "lyric <i></i>"
-73249 = E "phrase_start"
-73250 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-73344 = E "lyric <i></i>"
-73345 = E "phrase_start"
-73346 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-73440 = E "lyric <i></i>"
-73441 = E "phrase_start"
-73442 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-73472 = E "lyric <i></i>"
-73473 = E "phrase_start"
-73474 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-73504 = E "lyric <i></i>"
-73505 = E "phrase_start"
-73506 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-73536 = E "lyric <i></i>"
-73537 = E "phrase_start"
-73538 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-73632 = E "lyric <i></i>"
-73633 = E "phrase_start"
-73634 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-73728 = E "lyric <i></i>"
-73729 = E "phrase_start"
-73730 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-73920 = E "lyric <i></i>"
-73921 = E "phrase_start"
-73922 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-74016 = E "lyric <i></i>"
-74017 = E "phrase_start"
-74018 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-74064 = E "lyric <i></i>"
-74065 = E "phrase_start"
-74066 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-74112 = E "lyric <i></i>"
-74113 = E "phrase_start"
-74114 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-74208 = E "lyric <i></i>"
-74209 = E "phrase_start"
-74210 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-74304 = E "lyric <i></i>"
-74305 = E "phrase_start"
-74306 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-74688 = E "lyric <i></i>"
-74689 = E "phrase_start"
-74690 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-74784 = E "lyric <i></i>"
-74785 = E "phrase_start"
-74786 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-74880 = E "lyric <i></i>"
-74881 = E "phrase_start"
-74882 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-74976 = E "lyric <i></i>"
-74977 = E "phrase_start"
-74978 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-75008 = E "lyric <i></i>"
-75009 = E "phrase_start"
-75010 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-75040 = E "lyric <i></i>"
-75041 = E "phrase_start"
-75042 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-75072 = E "lyric <i></i>"
-75073 = E "phrase_start"
-75074 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-75168 = E "lyric <i></i>"
-75169 = E "phrase_start"
-75170 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-75264 = E "lyric <i></i>"
-75265 = E "phrase_start"
-75266 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-75456 = E "lyric <i></i>"
-75457 = E "phrase_start"
-75458 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-75552 = E "lyric <i></i>"
-75553 = E "phrase_start"
-75554 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
-75600 = E "lyric <i></i>"
-75601 = E "phrase_start"
-75602 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-75648 = E "lyric <i></i>"
-75649 = E "phrase_start"
-75650 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-75744 = E "lyric <i></i>"
-75745 = E "phrase_start"
-75746 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-75840 = E "lyric <i></i>"
-75841 = E "phrase_start"
-75842 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-76224 = E "lyric <i></i>"
-76225 = E "phrase_start"
-76226 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-76320 = E "lyric <i></i>"
-76321 = E "phrase_start"
-76322 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-76416 = E "lyric <i></i>"
-76417 = E "phrase_start"
-76418 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-76512 = E "lyric <i></i>"
-76513 = E "phrase_start"
-76514 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-76544 = E "lyric <i></i>"
-76545 = E "phrase_start"
-76546 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
-76576 = E "lyric <i></i>"
-76577 = E "phrase_start"
-76578 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
-76608 = E "lyric <i></i>"
-76609 = E "phrase_start"
-76610 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
-76704 = E "lyric <i></i>"
-76705 = E "phrase_start"
-76706 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
-76799 = E "lyric _"
-76800 = E "phrase_start"
-76800 = E "section Outro B"
-76801 = E "lyric _"
-76992 = E "lyric 驕る 鳥 は 墜ち"
-76993 = E "phrase_start"
-76994 = E "lyric O-"
-77088 = E "lyric goる 鳥 は 墜ち"
-77089 = E "phrase_start"
-77090 = E "lyric Ogo-"
-77136 = E "lyric る 鳥 は 墜ち"
-77137 = E "phrase_start"
-77138 = E "lyric Ogoru "
-77184 = E "lyric 鳥 は 墜ち"
-77185 = E "phrase_start"
-77186 = E "lyric Ogoru to-"
-77232 = E "lyric ri は 墜ち"
-77233 = E "phrase_start"
-77234 = E "lyric Ogoru tori "
-77328 = E "lyric は 墜ち"
-77329 = E "phrase_start"
-77330 = E "lyric Ogoru tori wa "
-77376 = E "lyric 墜ち"
-77377 = E "phrase_start"
-77378 = E "lyric Ogoru tori wa o-"
-77472 = E "lyric ち"
-77473 = E "phrase_start"
-77474 = E "lyric Ogoru tori wa ochi"
-77712 = E "phrase_start"
-77736 = E "lyric _"
-77760 = E "lyric 頭垂 れて 乞い"
-77761 = E "phrase_start"
-77762 = E "lyric Ko-"
-77824 = E "lyric u垂 れて 乞い"
-77825 = E "phrase_start"
-77826 = E "lyric Kou-"
-77888 = E "lyric 垂 れて 乞い"
-77889 = E "phrase_start"
-77890 = E "lyric Koube "
-77952 = E "lyric れて 乞い"
-77953 = E "phrase_start"
-77954 = E "lyric Koube ta-"
-78016 = E "lyric reて 乞い"
-78017 = E "phrase_start"
-78018 = E "lyric Koube tare-"
-78080 = E "lyric て 乞い"
-78081 = E "phrase_start"
-78082 = E "lyric Koube tarete "
-78144 = E "lyric 乞い"
-78145 = E "phrase_start"
-78146 = E "lyric Koube tarete ko-"
-78208 = E "lyric い"
-78209 = E "phrase_start"
-78210 = E "lyric Koube tarete koi"
-78288 = E "phrase_start"
-78312 = E "lyric _"
-78336 = E "lyric 介錯 も 無く ただ 永劫 の"
-78337 = E "phrase_start"
-78338 = E "lyric Ka-"
-78384 = E "lyric i錯 も 無く ただ 永劫 の"
-78385 = E "phrase_start"
-78386 = E "lyric Kai-"
-78432 = E "lyric 錯 も 無く ただ 永劫 の"
-78433 = E "phrase_start"
-78434 = E "lyric Kaisha-"
-78480 = E "lyric ku も 無く ただ 永劫 の"
-78481 = E "phrase_start"
-78482 = E "lyric Kaishaku "
-78528 = E "lyric も 無く ただ 永劫 の"
-78529 = E "phrase_start"
-78530 = E "lyric Kaishaku mo "
-78576 = E "lyric 無く ただ 永劫 の"
-78577 = E "phrase_start"
-78578 = E "lyric Kaishaku mo na-"
-78624 = E "lyric く ただ 永劫 の"
-78625 = E "phrase_start"
-78626 = E "lyric Kaishaku mo naku "
-78672 = E "lyric ただ 永劫 の"
-78673 = E "phrase_start"
-78674 = E "lyric Kaishaku mo naku ta-"
-78720 = E "lyric だ 永劫 の"
-78721 = E "phrase_start"
-78722 = E "lyric Kaishaku mo naku tada "
-78768 = E "lyric 永劫 の"
-78769 = E "phrase_start"
-78770 = E "lyric Kaishaku mo naku tada e-"
-78816 = E "lyric i劫 の"
-78817 = E "phrase_start"
-78818 = E "lyric Kaishaku mo naku tada ei-"
-78864 = E "lyric 劫 の"
-78865 = E "phrase_start"
-78866 = E "lyric Kaishaku mo naku tada eigo-"
-78912 = E "lyric u の"
-78913 = E "phrase_start"
-78914 = E "lyric Kaishaku mo naku tada eigou "
-78960 = E "lyric の"
-78961 = E "phrase_start"
-78962 = E "lyric Kaishaku mo naku tada eigou no"
-78984 = E "phrase_start"
-78996 = E "lyric _"
-79008 = E "lyric 呵責 と 寄り添う 中 ついに 見 たり"
-79009 = E "phrase_start"
-79010 = E "lyric Ka-"
-79056 = E "lyric 責 と 寄り添う 中 ついに 見 たり"
-79057 = E "phrase_start"
-79058 = E "lyric Kasha-"
-79104 = E "lyric ku と 寄り添う 中 ついに 見 たり"
-79105 = E "phrase_start"
-79106 = E "lyric Kashaku "
-79152 = E "lyric と 寄り添う 中 ついに 見 たり"
-79153 = E "phrase_start"
-79154 = E "lyric Kashaku to "
-79200 = E "lyric 寄り添う 中 ついに 見 たり"
-79201 = E "phrase_start"
-79202 = E "lyric Kashaku to yo-"
-79248 = E "lyric り添う 中 ついに 見 たり"
-79249 = E "phrase_start"
-79250 = E "lyric Kashaku to yori-"
-79296 = E "lyric 添う 中 ついに 見 たり"
-79297 = E "phrase_start"
-79298 = E "lyric Kashaku to yoriso-"
-79344 = E "lyric う 中 ついに 見 たり"
-79345 = E "phrase_start"
-79346 = E "lyric Kashaku to yorisou "
-79392 = E "lyric 中 ついに 見 たり"
-79393 = E "phrase_start"
-79394 = E "lyric Kashaku to yorisou na-"
-79440 = E "lyric ka ついに 見 たり"
-79441 = E "phrase_start"
-79442 = E "lyric Kashaku to yorisou naka "
-79488 = E "lyric ついに 見 たり"
-79489 = E "phrase_start"
-79490 = E "lyric Kashaku to yorisou naka tsu-"
-79536 = E "lyric いに 見 たり"
-79537 = E "phrase_start"
-79538 = E "lyric Kashaku to yorisou naka tsui-"
-79584 = E "lyric に 見 たり"
-79585 = E "phrase_start"
-79586 = E "lyric Kashaku to yorisou naka tsuini "
-79632 = E "lyric 見 たり"
-79633 = E "phrase_start"
-79634 = E "lyric Kashaku to yorisou naka tsuini mi "
-79680 = E "lyric たり"
-79681 = E "phrase_start"
-79682 = E "lyric Kashaku to yorisou naka tsuini mi ta-"
-79728 = E "lyric り"
-79729 = E "phrase_start"
-79730 = E "lyric Kashaku to yorisou naka tsuini mi tari"
-79968 = E "phrase_start"
-80016 = E "lyric _"
-80064 = E "lyric 街 は 焼けた 海"
-80065 = E "phrase_start"
-80066 = E "lyric Ma-"
-80128 = E "lyric chi は 焼けた 海"
-80129 = E "phrase_start"
-80130 = E "lyric Machi "
-80192 = E "lyric は 焼けた 海"
-80193 = E "phrase_start"
-80194 = E "lyric Machi wa "
-80256 = E "lyric 焼けた 海"
-80257 = E "phrase_start"
-80258 = E "lyric Machi wa ya-"
-80320 = E "lyric けた 海"
-80321 = E "phrase_start"
-80322 = E "lyric Machi wa yake-"
-80384 = E "lyric た 海"
-80385 = E "phrase_start"
-80386 = E "lyric Machi wa yaketa "
-80448 = E "lyric 海"
-80449 = E "phrase_start"
-80450 = E "lyric Machi wa yaketa u-"
-80512 = E "lyric mi"
-80513 = E "phrase_start"
-80514 = E "lyric Machi wa yaketa umi"
-80736 = E "phrase_start"
-80784 = E "lyric _"
-80832 = E "lyric 穿たれた 福音"
-80833 = E "phrase_start"
-80834 = E "lyric U-"
-80896 = E "lyric gaたれた 福音"
-80897 = E "phrase_start"
-80898 = E "lyric Uga-"
-80960 = E "lyric たれた 福音"
-80961 = E "phrase_start"
-80962 = E "lyric Ugata-"
-81024 = E "lyric れた 福音"
-81025 = E "phrase_start"
-81026 = E "lyric Ugatare-"
-81088 = E "lyric た 福音"
-81089 = E "phrase_start"
-81090 = E "lyric Ugatareta "
-81152 = E "lyric 福音"
-81153 = E "phrase_start"
-81154 = E "lyric Ugatareta fu-"
-81216 = E "lyric ku音"
-81217 = E "phrase_start"
-81218 = E "lyric Ugatareta fuku-"
-81280 = E "lyric in"
-81281 = E "phrase_start"
-81282 = E "lyric Ugatareta fukuin"
-81360 = E "phrase_start"
-81384 = E "lyric _"
-81408 = E "lyric 汚れた 地上 の 災禍 など 気 に も"
-81409 = E "phrase_start"
-81410 = E "lyric Ke-"
-81456 = E "lyric gaれた 地上 の 災禍 など 気 に も"
-81457 = E "phrase_start"
-81458 = E "lyric Kega-"
-81504 = E "lyric れた 地上 の 災禍 など 気 に も"
-81505 = E "phrase_start"
-81506 = E "lyric Kegare-"
-81552 = E "lyric た 地上 の 災禍 など 気 に も"
-81553 = E "phrase_start"
-81554 = E "lyric Kegareta "
-81600 = E "lyric 地上 の 災禍 など 気 に も"
-81601 = E "phrase_start"
-81602 = E "lyric Kegareta chi-"
-81648 = E "lyric 上 の 災禍 など 気 に も"
-81649 = E "phrase_start"
-81650 = E "lyric Kegareta chijo-"
-81696 = E "lyric u の 災禍 など 気 に も"
-81697 = E "phrase_start"
-81698 = E "lyric Kegareta chijou "
-81744 = E "lyric の 災禍 など 気 に も"
-81745 = E "phrase_start"
-81746 = E "lyric Kegareta chijou no "
-81792 = E "lyric 災禍 など 気 に も"
-81793 = E "phrase_start"
-81794 = E "lyric Kegareta chijou no sa-"
-81840 = E "lyric i禍 など 気 に も"
-81841 = E "phrase_start"
-81842 = E "lyric Kegareta chijou no sai-"
-81888 = E "lyric 禍 など 気 に も"
-81889 = E "phrase_start"
-81890 = E "lyric Kegareta chijou no saika "
-81936 = E "lyric など 気 に も"
-81937 = E "phrase_start"
-81938 = E "lyric Kegareta chijou no saika na-"
-81984 = E "lyric ど 気 に も"
-81985 = E "phrase_start"
-81986 = E "lyric Kegareta chijou no saika nado "
-82032 = E "lyric 気 に も"
-82033 = E "phrase_start"
-82034 = E "lyric Kegareta chijou no saika nado ki "
-82080 = E "lyric に も"
-82081 = E "phrase_start"
-82082 = E "lyric Kegareta chijou no saika nado ki ni "
-82128 = E "lyric も"
-82129 = E "phrase_start"
-82130 = E "lyric Kegareta chijou no saika nado ki ni mo"
-82152 = E "phrase_start"
-82164 = E "lyric _"
-82176 = E "lyric 留めず 明日 も 星 は 輝く 煌々"
-82177 = E "phrase_start"
-82178 = E "lyric To-"
-82200 = E "lyric doめず 明日 も 星 は 輝く 煌々"
-82201 = E "phrase_start"
-82202 = E "lyric Todo-"
-82224 = E "lyric めず 明日 も 星 は 輝く 煌々"
-82225 = E "phrase_start"
-82226 = E "lyric Todome-"
-82272 = E "lyric ず 明日 も 星 は 輝く 煌々"
-82273 = E "phrase_start"
-82274 = E "lyric Todomezu "
-82320 = E "lyric 明日 も 星 は 輝く 煌々"
-82321 = E "phrase_start"
-82322 = E "lyric Todomezu a-"
-82368 = E "lyric shi日 も 星 は 輝く 煌々"
-82369 = E "phrase_start"
-82370 = E "lyric Todomezu ashi-"
-82416 = E "lyric 日 も 星 は 輝く 煌々"
-82417 = E "phrase_start"
-82418 = E "lyric Todomezu ashita "
-82464 = E "lyric も 星 は 輝く 煌々"
-82465 = E "phrase_start"
-82466 = E "lyric Todomezu ashita mo "
-82512 = E "lyric 星 は 輝く 煌々"
-82513 = E "phrase_start"
-82514 = E "lyric Todomezu ashita mo ho-"
-82560 = E "lyric shi は 輝く 煌々"
-82561 = E "phrase_start"
-82562 = E "lyric Todomezu ashita mo hoshi "
-82608 = E "lyric は 輝く 煌々"
-82609 = E "phrase_start"
-82610 = E "lyric Todomezu ashita mo hoshi wa "
-82656 = E "lyric 輝く 煌々"
-82657 = E "phrase_start"
-82658 = E "lyric Todomezu ashita mo hoshi wa ka-"
-82704 = E "lyric gayaく 煌々"
-82705 = E "phrase_start"
-82706 = E "lyric Todomezu ashita mo hoshi wa kaga-"
-82752 = E "lyric yaく 煌々"
-82753 = E "phrase_start"
-82754 = E "lyric Todomezu ashita mo hoshi wa kagaya-"
-82800 = E "lyric く 煌々"
-82801 = E "phrase_start"
-82802 = E "lyric Todomezu ashita mo hoshi wa kagayaku "
-82848 = E "lyric 煌々"
-82849 = E "phrase_start"
-82850 = E "lyric Todomezu ashita mo hoshi wa kagayaku kou-"
-82944 = E "lyric 々"
-82945 = E "phrase_start"
-82946 = E "lyric Todomezu ashita mo hoshi wa kagayaku koukou"
-83328 = E "phrase_end"
+[SyncTrack]
+{
+  0 = TS 4
+  0 = B 150000
+}
+[Song]
+{
+  Name = "snooze (feat. SHIKI)"
+  Artist = "wotaku"
+  Charter = "MasterThe8"
+  Album = "snooze (feat. SHIKI)"
+  Year = ", 2021"
+  Offset = 0
+  Resolution = 192
+  Player2 = bass
+  Difficulty = 0
+  PreviewStart = 0
+  PreviewEnd = 0
+  Genre = "rock"
+  MediaType = "cd"
+}
+[Events]
+{
+  1344 = E "phrase_start"
+  1536 = E "lyric Ha-"
+  1536 = E "section Intro"
+  1632 = E "lyric i-"
+  1728 = E "lyric ki"
+  1824 = E "lyric ni"
+  1920 = E "lyric yo-"
+  2064 = E "lyric tta"
+  2208 = E "lyric ke-"
+  2400 = E "lyric e-"
+  2496 = E "lyric den-"
+  2640 = E "lyric su"
+  2736 = E "phrase_start"
+  2784 = E "lyric Mo-"
+  2880 = E "lyric u"
+  2976 = E "lyric i-"
+  3072 = E "lyric ya"
+  3168 = E "lyric na"
+  3264 = E "lyric ko-"
+  3360 = E "lyric to"
+  3456 = E "lyric zen-"
+  3648 = E "lyric bu"
+  3744 = E "lyric na-"
+  3936 = E "lyric ge-"
+  4032 = E "lyric da-"
+  4128 = E "lyric shi-"
+  4224 = E "lyric te"
+  4512 = E "phrase_start"
+  4608 = E "lyric Ka-"
+  4800 = E "lyric ku"
+  4896 = E "lyric ni-"
+  4992 = E "lyric go-"
+  5136 = E "lyric tta"
+  5280 = E "lyric se-"
+  5376 = E "lyric i-"
+  5472 = E "lyric gi"
+  5568 = E "lyric e"
+  5808 = E "phrase_start"
+  5856 = E "lyric To-"
+  5952 = E "lyric u"
+  6048 = E "lyric a-"
+  6144 = E "lyric na-"
+  6240 = E "lyric ta"
+  6336 = E "lyric no"
+  6432 = E "lyric ha-"
+  6624 = E "lyric na-"
+  6720 = E "lyric shi"
+  6816 = E "lyric wa"
+  7104 = E "phrase_start"
+  7200 = E "lyric Tsu-"
+  7296 = E "lyric ma-"
+  7392 = E "lyric n-"
+  7488 = E "lyric na-"
+  7584 = E "lyric i"
+  7678 = E "lyric yo"
+  7679 = E "phrase_start"
+  7680 = E "lyric <i></i>"
+  7680 = E "section Main Theme A"
+  7681 = E "phrase_start"
+  7682 = E "lyric <color=#f50000>Tsumannai yo</color>"
+  7824 = E "lyric _"
+  7825 = E "phrase_start"
+  7826 = E "lyric <color=#edf500>Tsumannai yo</color>"
+  7968 = E "lyric _"
+  7969 = E "phrase_start"
+  7970 = E "lyric <color=#00f500>Tsumannai yo</color>"
+  8064 = E "lyric _"
+  8065 = E "phrase_start"
+  8066 = E "lyric <color=#0000f5>Tsumannai yo</color>"
+  8160 = E "lyric _"
+  8161 = E "phrase_start"
+  8162 = E "lyric <color=#f500bc>Tsumannai yo</color>"
+  8256 = E "lyric _"
+  8257 = E "phrase_start"
+  8258 = E "lyric <color=#f57b00>Tsumannai yo</color>"
+  8352 = E "lyric _"
+  8353 = E "phrase_start"
+  8354 = E "lyric <color=#ac00f5>Tsumannai yo</color>"
+  8448 = E "lyric _"
+  8449 = E "phrase_start"
+  8450 = E "lyric <color=#f50000>T_s_u_m_a_n_n_a_i_y_o</color>"
+  8640 = E "lyric _"
+  8641 = E "phrase_start"
+  8642 = E "lyric <color=#f57b00>T__s__u__m__a__n__n__a__i__y__o</color>"
+  8832 = E "lyric _"
+  8833 = E "phrase_start"
+  8834 = E "lyric <color=#edf500>T___s___u___m___a___n___n___a___i___y___o</color>"
+  9024 = E "lyric _"
+  9025 = E "phrase_start"
+  9026 = E "lyric <color=#00f500>T____s____u____m____a____n____n____a____i____y____o</color>"
+  9216 = E "lyric _"
+  9217 = E "phrase_start"
+  9218 = E "lyric <color=#00f5f0>♬____s____u____m____a____n____n____a____i____y____o</color>"
+  9408 = E "lyric _"
+  9409 = E "phrase_start"
+  9410 = E "lyric <color=#0000f5>≠____♬____u____m____a____n____n____a____i____y____o</color>"
+  9600 = E "lyric _"
+  9601 = E "phrase_start"
+  9602 = E "lyric <color=#ac00f5>ø____≠____♬____m____a____n____n____a____i____y____o</color>"
+  9792 = E "lyric _"
+  9793 = E "phrase_start"
+  9794 = E "lyric <color=#f500bc>♫____ø____≠____♬____a____n____n____a____i____y____o</color>"
+  9984 = E "lyric _"
+  9985 = E "phrase_start"
+  9986 = E "lyric <color=#f50000>♯____♫____ø____≠____♬____n____n____a____i____y____o</color>"
+  10176 = E "lyric _"
+  10177 = E "phrase_start"
+  10178 = E "lyric <color=#f57b00>♮____♯____♫____ø____≠____♬____n____a____i____y____o</color>"
+  10368 = E "lyric _"
+  10369 = E "phrase_start"
+  10370 = E "lyric <color=#edf500>♪____♮____♯____♫____ø____≠____♬____a____i____y____o</color>"
+  10560 = E "lyric _"
+  10561 = E "phrase_start"
+  10562 = E "lyric <color=#f50000>♭____♪____♮____♯____♫____ø____≠____♬____i____y____o</color>"
+  10752 = E "lyric _"
+  10753 = E "phrase_start"
+  10754 = E "lyric <color=#00f500>♬____♭____♪____♮____♯____♫____ø____≠____♬____y____o</color>"
+  10944 = E "lyric _"
+  10945 = E "phrase_start"
+  10946 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____o</color>"
+  11136 = E "lyric _"
+  11137 = E "phrase_start"
+  11138 = E "lyric <color=#ac00f5>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
+  11328 = E "lyric _"
+  11329 = E "phrase_start"
+  11330 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  11376 = E "lyric _"
+  11377 = E "phrase_start"
+  11378 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
+  11424 = E "lyric _"
+  11425 = E "phrase_start"
+  11426 = E "lyric <color=#edf500>♬____ø____♮____♯____♪____♬____≠____♭____♫____ø____♪</color>"
+  11472 = E "lyric _"
+  11473 = E "phrase_start"
+  11474 = E "lyric <color=#00f500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  11520 = E "lyric _"
+  11521 = E "phrase_start"
+  11522 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
+  11712 = E "lyric _"
+  11713 = E "phrase_start"
+  11714 = E "lyric <color=#f57b00>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  11904 = E "lyric _"
+  11905 = E "phrase_start"
+  11906 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  12096 = E "lyric _"
+  12097 = E "phrase_start"
+  12098 = E "lyric <color=#00f500>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  12288 = E "lyric _"
+  12289 = E "phrase_start"
+  12290 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____♭</color>"
+  12480 = E "lyric _"
+  12481 = E "phrase_start"
+  12482 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  12672 = E "lyric _"
+  12673 = E "phrase_start"
+  12674 = E "lyric <color=#ac00f5>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
+  12864 = E "lyric _"
+  12865 = E "phrase_start"
+  12866 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  13056 = E "lyric _"
+  13057 = E "phrase_start"
+  13058 = E "lyric <color=#f50000>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  13248 = E "lyric _"
+  13249 = E "phrase_start"
+  13250 = E "lyric <color=#f57b00>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
+  13440 = E "lyric _"
+  13441 = E "phrase_start"
+  13442 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  13632 = E "lyric _"
+  13633 = E "phrase_start"
+  13634 = E "lyric <color=#00f500>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
+  13824 = E "lyric _"
+  13825 = E "phrase_start"
+  13826 = E "lyric <color=#00f5f0>♬____ø____♮____♯____♪____♬____≠____♭____♫____ø____♪</color>"
+  14016 = E "lyric _"
+  14017 = E "phrase_start"
+  14018 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  14208 = E "lyric _"
+  14209 = E "phrase_start"
+  14210 = E "lyric <color=#ffffff><color=#00ff0c>♯</color>____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  14256 = E "lyric _"
+  14257 = E "phrase_start"
+  14258 = E "lyric <color=#ffffff>♯____<color=#ff0000>♫</color>____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  14304 = E "lyric _"
+  14305 = E "phrase_start"
+  14306 = E "lyric <color=#ffffff>♯____♫____<color=#eaff00>ø</color>____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  14352 = E "lyric _"
+  14353 = E "phrase_start"
+  14354 = E "lyric <color=#ffffff>♯____♫____ø____<color=#008aff>≠</color>____♬____♮____♪____♬____♭____♪____ø</color>"
+  14400 = E "lyric _"
+  14401 = E "phrase_start"
+  14402 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____<color=#ff0000>♬</color>____♭____♪____ø</color>"
+  14448 = E "lyric _"
+  14449 = E "phrase_start"
+  14450 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____♬____<color=#eaff00>♭</color>____♪____ø</color>"
+  14496 = E "lyric _"
+  14497 = E "phrase_start"
+  14498 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____♬____♭____<color=#008aff>♪</color>____ø</color>"
+  14544 = E "lyric _"
+  14545 = E "phrase_start"
+  14546 = E "lyric <color=#ffffff>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____<color=#ffa200>ø</color></color>"
+  14592 = E "lyric _"
+  14592 = E "section Main Theme B"
+  14593 = E "phrase_start"
+  14594 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
+  14784 = E "lyric _"
+  14785 = E "phrase_start"
+  14786 = E "lyric <color=#f57b00>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  14976 = E "lyric _"
+  14977 = E "phrase_start"
+  14978 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  15168 = E "lyric _"
+  15169 = E "phrase_start"
+  15170 = E "lyric <color=#00f500>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  15360 = E "lyric _"
+  15361 = E "phrase_start"
+  15362 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____♭</color>"
+  15552 = E "lyric _"
+  15553 = E "phrase_start"
+  15554 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  15744 = E "lyric _"
+  15745 = E "phrase_start"
+  15746 = E "lyric <color=#ac00f5>♪____♫____♪____♬____♭____ø____≠____♬____♮____♯____♫</color>"
+  15936 = E "lyric _"
+  15937 = E "phrase_start"
+  15938 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  16128 = E "lyric _"
+  16129 = E "phrase_start"
+  16130 = E "lyric <color=#f50000>♬____ø____♬____♮____♫____ø____♯____♪____≠____♭____♪</color>"
+  16320 = E "lyric _"
+  16321 = E "phrase_start"
+  16322 = E "lyric <color=#f57b00>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  16512 = E "lyric _"
+  16513 = E "phrase_start"
+  16514 = E "lyric <color=#edf500>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  16704 = E "lyric _"
+  16705 = E "phrase_start"
+  16706 = E "lyric <color=#00f500>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  16896 = E "lyric _"
+  16897 = E "phrase_start"
+  16898 = E "lyric <color=#00f5f0>♪____♬____♭____♪____♮____♯____♫____ø____≠____♬____♭</color>"
+  17040 = E "lyric _"
+  17041 = E "phrase_start"
+  17042 = E "lyric <color=#0000f5>♫____♪____♬____♭____♪____♮____♯____♫____ø____≠____♬</color>"
+  17184 = E "lyric _"
+  17185 = E "phrase_start"
+  17186 = E "lyric <color=#f500bc>♯____♫____ø____≠____♬____♮____♪____♬____♭____♪____ø</color>"
+  17280 = E "lyric <i></i>"
+  17281 = E "phrase_start"
+  17282 = E "lyric <i></i>"
+  17283 = E "phrase_start"
+  17284 = E "lyric ︻╦╤─"
+  17328 = E "lyric <i></i>"
+  17329 = E "phrase_start"
+  17330 = E "lyric <i></i>"
+  17331 = E "phrase_start"
+  17332 = E "lyric ︻╦╤──"
+  17472 = E "lyric <i></i>"
+  17473 = E "phrase_start"
+  17474 = E "lyric <i></i>"
+  17475 = E "phrase_start"
+  17476 = E "lyric ︻╦╤──◀</color>"
+  17664 = E "lyric <i></i>"
+  17665 = E "phrase_start"
+  17666 = E "lyric <i></i>"
+  17667 = E "phrase_start"
+  17668 = E "lyric <color=#ffffff><i>☆Snooze☆</i></color>"
+  17760 = E "lyric <i></i>"
+  17761 = E "phrase_start"
+  17762 = E "lyric <i></i>"
+  17763 = E "phrase_start"
+  17764 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
+  17806 = E "lyric <i></i>"
+  17807 = E "phrase_start"
+  17808 = E "lyric <i></i>"
+  17809 = E "phrase_start"
+  17810 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
+  17854 = E "lyric <i></i>"
+  17855 = E "phrase_start"
+  17856 = E "lyric <i></i>"
+  17857 = E "phrase_start"
+  17858 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
+  17902 = E "lyric <i></i>"
+  17903 = E "phrase_start"
+  17904 = E "lyric <i></i>"
+  17905 = E "phrase_start"
+  17906 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
+  17950 = E "lyric <i></i>"
+  17951 = E "phrase_start"
+  17952 = E "lyric <i></i>"
+  17953 = E "phrase_start"
+  17954 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
+  17996 = E "lyric <i></i>"
+  17997 = E "phrase_start"
+  17998 = E "lyric <i></i>"
+  17999 = E "phrase_start"
+  18000 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
+  18044 = E "lyric <i></i>"
+  18045 = E "phrase_start"
+  18046 = E "lyric <i></i>"
+  18047 = E "phrase_start"
+  18048 = E "lyric <color=#ac00f5><i>☆Snooze☆</i></color>"
+  18092 = E "lyric <i></i>"
+  18093 = E "phrase_start"
+  18094 = E "lyric <i></i>"
+  18095 = E "phrase_start"
+  18096 = E "lyric <color=#f500bc><i>☆Snooze☆</i></color>"
+  18142 = E "lyric <i></i>"
+  18143 = E "phrase_start"
+  18144 = E "lyric <i></i>"
+  18145 = E "phrase_start"
+  18146 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
+  18188 = E "lyric <i></i>"
+  18189 = E "phrase_start"
+  18190 = E "lyric <i></i>"
+  18191 = E "phrase_start"
+  18192 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
+  18236 = E "lyric <i></i>"
+  18237 = E "phrase_start"
+  18238 = E "lyric <i></i>"
+  18239 = E "phrase_start"
+  18240 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
+  18284 = E "lyric <i></i>"
+  18285 = E "phrase_start"
+  18286 = E "lyric <i></i>"
+  18287 = E "phrase_start"
+  18288 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
+  18332 = E "lyric <i></i>"
+  18333 = E "phrase_start"
+  18334 = E "lyric <i></i>"
+  18335 = E "phrase_start"
+  18336 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
+  18378 = E "lyric <i></i>"
+  18379 = E "phrase_start"
+  18380 = E "lyric <i></i>"
+  18381 = E "phrase_start"
+  18382 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
+  18430 = E "lyric <i></i>"
+  18431 = E "phrase_start"
+  18432 = E "lyric <i></i>"
+  18433 = E "phrase_start"
+  18434 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
+  18454 = E "lyric <i></i>"
+  18455 = E "phrase_start"
+  18456 = E "lyric <i></i>"
+  18457 = E "phrase_start"
+  18458 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
+  18478 = E "lyric <i></i>"
+  18479 = E "phrase_start"
+  18480 = E "lyric <i></i>"
+  18481 = E "phrase_start"
+  18482 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
+  18502 = E "lyric <i></i>"
+  18503 = E "phrase_start"
+  18504 = E "lyric <i></i>"
+  18505 = E "phrase_start"
+  18506 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
+  18526 = E "lyric <i></i>"
+  18527 = E "phrase_start"
+  18528 = E "lyric <i></i>"
+  18529 = E "phrase_start"
+  18530 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
+  18572 = E "lyric <i></i>"
+  18573 = E "phrase_start"
+  18574 = E "lyric <i></i>"
+  18575 = E "phrase_start"
+  18576 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
+  18598 = E "lyric <i></i>"
+  18599 = E "phrase_start"
+  18600 = E "lyric <i></i>"
+  18601 = E "phrase_start"
+  18602 = E "lyric <color=#ac00f5><i>☆Snooze☆</i></color>"
+  18622 = E "lyric <i></i>"
+  18623 = E "phrase_start"
+  18624 = E "lyric <i></i>"
+  18625 = E "phrase_start"
+  18626 = E "lyric <color=#f500bc><i>☆Snooze☆</i></color>"
+  18646 = E "lyric <i></i>"
+  18647 = E "phrase_start"
+  18648 = E "lyric <i></i>"
+  18649 = E "phrase_start"
+  18650 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
+  18670 = E "lyric <i></i>"
+  18671 = E "phrase_start"
+  18672 = E "lyric <i></i>"
+  18673 = E "phrase_start"
+  18674 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
+  18718 = E "lyric <i></i>"
+  18719 = E "phrase_start"
+  18720 = E "lyric <i></i>"
+  18721 = E "phrase_start"
+  18722 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
+  18766 = E "lyric <i></i>"
+  18767 = E "phrase_start"
+  18768 = E "lyric <i></i>"
+  18769 = E "phrase_start"
+  18770 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
+  18814 = E "lyric <i></i>"
+  18815 = E "phrase_start"
+  18816 = E "lyric <i></i>"
+  18817 = E "phrase_start"
+  18818 = E "lyric <color=#f50000><i>☆Snooze☆</i></color>"
+  18838 = E "lyric <i></i>"
+  18839 = E "phrase_start"
+  18840 = E "lyric <i></i>"
+  18841 = E "phrase_start"
+  18842 = E "lyric <color=#f57b00><i>☆Snooze☆</i></color>"
+  18862 = E "lyric <i></i>"
+  18863 = E "phrase_start"
+  18864 = E "lyric <i></i>"
+  18865 = E "phrase_start"
+  18866 = E "lyric <color=#edf500><i>☆Snooze☆</i></color>"
+  18886 = E "lyric <i></i>"
+  18887 = E "phrase_start"
+  18888 = E "lyric <i></i>"
+  18889 = E "phrase_start"
+  18890 = E "lyric <color=#00f500><i>☆Snooze☆</i></color>"
+  18910 = E "lyric <i></i>"
+  18911 = E "phrase_start"
+  18912 = E "lyric <i></i>"
+  18913 = E "phrase_start"
+  18914 = E "lyric <color=#00f5f0><i>☆Snooze☆</i></color>"
+  18958 = E "lyric <i></i>"
+  18959 = E "phrase_start"
+  18960 = E "lyric <i></i>"
+  18961 = E "phrase_start"
+  18962 = E "lyric <color=#0000f5><i>☆Snooze☆</i></color>"
+  19200 = E "lyric _"
+  19201 = E "phrase_start"
+  19202 = E "lyric <color=#ac00f5><i>☆Snooze</i></color>"
+  19392 = E "lyric _"
+  19393 = E "phrase_start"
+  19394 = E "lyric <color=#0000f5><i>☆Snooz</i></color>"
+  19584 = E "lyric _"
+  19585 = E "phrase_start"
+  19586 = E "lyric <color=#00f5f0><i>☆Snoo</i></color>"
+  19776 = E "lyric _"
+  19777 = E "phrase_start"
+  19778 = E "lyric <color=#00f500><i>☆Sno</i></color>"
+  19968 = E "lyric _"
+  19969 = E "phrase_start"
+  19970 = E "lyric <color=#edf500><i>☆Sn</i></color>"
+  20160 = E "lyric _"
+  20161 = E "phrase_start"
+  20162 = E "lyric <color=#f57b00><i>☆S</i></color>"
+  20352 = E "lyric <i></i>"
+  20353 = E "phrase_start"
+  20354 = E "lyric _"
+  20355 = E "phrase_start"
+  20356 = E "lyric <color=#f50000><i>☆</i></color>"
+  20448 = E "lyric <i></i>"
+  20449 = E "phrase_start"
+  20450 = E "lyric _"
+  20451 = E "phrase_start"
+  20452 = E "lyric -"
+  20736 = E "lyric Da-"
+  20736 = E "section Chorus 1A"
+  20832 = E "lyric a-"
+  20928 = E "lyric ku-"
+  21024 = E "lyric ma-"
+  21120 = E "lyric taa"
+  21264 = E "lyric no"
+  21408 = E "lyric se-"
+  21600 = E "lyric i"
+  21696 = E "lyric de"
+  21936 = E "phrase_start"
+  21984 = E "lyric U-"
+  22080 = E "lyric ma-"
+  22176 = E "lyric re-"
+  22272 = E "lyric ta"
+  22368 = E "lyric ji-"
+  22464 = E "lyric da-"
+  22560 = E "lyric i"
+  22656 = E "lyric ga"
+  22752 = E "lyric wa-"
+  22848 = E "lyric ru-"
+  22944 = E "lyric ka-"
+  23136 = E "lyric tta"
+  23232 = E "lyric se-"
+  23328 = E "lyric i"
+  23424 = E "lyric de"
+  23712 = E "phrase_start"
+  23808 = E "lyric Zen-"
+  24000 = E "lyric bu"
+  24096 = E "lyric a-"
+  24192 = E "lyric na-"
+  24288 = E "lyric ta"
+  24384 = E "lyric no"
+  24480 = E "lyric se-"
+  24672 = E "lyric i"
+  24768 = E "lyric de"
+  24960 = E "phrase_start"
+  25056 = E "lyric Kyo"
+  25248 = E "lyric ka-"
+  25344 = E "lyric sa"
+  25440 = E "lyric o"
+  25536 = E "lyric mo-"
+  25728 = E "lyric tte"
+  25824 = E "lyric ku-"
+  25920 = E "lyric ru"
+  26016 = E "lyric no"
+  26208 = E "lyric o"
+  26304 = E "lyric wa-"
+  26400 = E "lyric su-"
+  26496 = E "lyric re-"
+  26592 = E "lyric ta"
+  26880 = E "phrase_start"
+  26880 = E "section Chorus 1B"
+  26976 = E "lyric Kyou-"
+  27168 = E "lyric mi"
+  27264 = E "lyric na-"
+  27360 = E "lyric i"
+  27456 = E "lyric son-"
+  27648 = E "lyric na"
+  27936 = E "lyric to-"
+  28032 = E "lyric pi-"
+  28224 = E "lyric kku"
+  28288 = E "phrase_start"
+  28320 = E "lyric Ma-"
+  28368 = E "lyric chi-"
+  28416 = E "lyric ga-"
+  28512 = E "lyric tta"
+  28560 = E "lyric gu-"
+  28656 = E "lyric ze"
+  28752 = E "lyric ni"
+  28800 = E "lyric za-"
+  28848 = E "lyric i"
+  28896 = E "lyric o"
+  29040 = E "phrase_start"
+  29088 = E "lyric A-"
+  29136 = E "lyric ra-"
+  29184 = E "lyric ga-"
+  29280 = E "lyric tta"
+  29328 = E "lyric gun-"
+  29424 = E "lyric shu"
+  29520 = E "lyric ni"
+  29568 = E "lyric ga-"
+  29616 = E "lyric i"
+  29664 = E "lyric o"
+  29952 = E "phrase_start"
+  30048 = E "lyric He-"
+  30096 = E "lyric ru-"
+  30144 = E "lyric me-"
+  30240 = E "lyric tto"
+  30288 = E "lyric zu-"
+  30336 = E "lyric ga-"
+  30432 = E "lyric i"
+  30480 = E "lyric o"
+  30528 = E "lyric wa-"
+  30576 = E "lyric tta"
+  30624 = E "lyric you"
+  30720 = E "lyric na"
+  30912 = E "phrase_start"
+  31008 = E "lyric Sa-"
+  31104 = E "lyric un-"
+  31296 = E "lyric do"
+  31392 = E "lyric ga-"
+  31440 = E "lyric so-"
+  31488 = E "lyric rin"
+  31584 = E "lyric ka-"
+  31632 = E "lyric o-"
+  31728 = E "lyric tta"
+  31776 = E "lyric ni-"
+  31824 = E "lyric chi-"
+  31872 = E "lyric jou"
+  31968 = E "lyric no"
+  32112 = E "phrase_start"
+  32160 = E "lyric Re-"
+  32208 = E "lyric i-"
+  32256 = E "lyric me-"
+  32304 = E "lyric i"
+  32352 = E "lyric no"
+  32400 = E "lyric chou-"
+  32496 = E "lyric kou"
+  32592 = E "lyric ma-"
+  32640 = E "lyric da"
+  32736 = E "lyric mi-"
+  32832 = E "lyric e-"
+  32928 = E "lyric na-"
+  33024 = E "section Break"
+  33696 = E "lyric i"
+  34080 = E "phrase_end"
+  39168 = E "section Build Up"
+  45024 = E "phrase_start"
+  45072 = E "lyric _"
+  45120 = E "lyric _"
+  45121 = E "phrase_start"
+  45122 = E "lyric _"
+  45123 = E "phrase_start"
+  45124 = E "lyric -"
+  45312 = E "lyric 排"
+  45312 = E "section Drop snooze A"
+  45313 = E "phrase_start"
+  45314 = E "lyric _"
+  45315 = E "phrase_start"
+  45316 = E "lyric <color=#ff0000>排</color>"
+  45600 = E "lyric _"
+  45601 = E "phrase_start"
+  45602 = E "lyric <i>hai</i>"
+  45603 = E "phrase_start"
+  45604 = E "lyric <color=#1800ff>排</color>"
+  45648 = E "lyric _"
+  45649 = E "phrase_start"
+  45650 = E "lyric <i>i</i>"
+  45651 = E "phrase_start"
+  45652 = E "lyric <color=#00ff0c>排</color>"
+  45696 = E "lyric _"
+  45697 = E "phrase_start"
+  45698 = E "lyric <i>i</i>"
+  45699 = E "phrase_start"
+  45700 = E "lyric <color=#8e15bb>排</color>"
+  45840 = E "lyric _"
+  45841 = E "phrase_start"
+  45842 = E "lyric <i>hai</i>"
+  45843 = E "phrase_start"
+  45844 = E "lyric <color=#eaff00>排</color>"
+  45984 = E "lyric _"
+  45985 = E "phrase_start"
+  45986 = E "lyric <i>hai</i>"
+  45987 = E "phrase_start"
+  45988 = E "lyric <color=#00f0ff>排</color>"
+  46176 = E "lyric _"
+  46177 = E "phrase_start"
+  46178 = E "lyric <i>hai</i>"
+  46179 = E "phrase_start"
+  46180 = E "lyric ケ-"
+  46272 = E "lyric ー-"
+  46368 = E "lyric デンス"
+  46464 = E "lyric _"
+  46465 = E "phrase_start"
+  46466 = E "lyric <i>keedensu</i>"
+  46467 = E "phrase_start"
+  46468 = E "lyric <color=#ff00a2>ケーデンス</color>"
+  46496 = E "lyric _"
+  46497 = E "phrase_start"
+  46498 = E "lyric <i>keedensu</i>"
+  46499 = E "phrase_start"
+  46500 = E "lyric <color=#8e15bb>ケーデンス</color>"
+  46608 = E "lyric _"
+  46609 = E "phrase_start"
+  46610 = E "lyric <i>keedensu</i>"
+  46611 = E "phrase_start"
+  46612 = E "lyric <color=#1800ff>ケーデンス</color>"
+  46656 = E "lyric _"
+  46657 = E "phrase_start"
+  46658 = E "lyric <i>keedensu</i>"
+  46659 = E "phrase_start"
+  46660 = E "lyric な-"
+  46752 = E "lyric い-"
+  46848 = E "lyric よ"
+  47232 = E "lyric _"
+  47233 = E "phrase_start"
+  47234 = E "lyric <i>nai yo</i>"
+  47235 = E "phrase_start"
+  47236 = E "lyric 嫌-"
+  47328 = E "lyric な"
+  47329 = E "phrase_start"
+  47330 = E "lyric <i>iya na</i>"
+  47331 = E "phrase_start"
+  47332 = E "lyric 嫌な"
+  47424 = E "lyric _"
+  47425 = E "phrase_start"
+  47426 = E "lyric <i>iya na</i>"
+  47427 = E "phrase_start"
+  47428 = E "lyric 嫌-"
+  47520 = E "lyric な"
+  47521 = E "phrase_start"
+  47522 = E "lyric <i>iya na</i>"
+  47523 = E "phrase_start"
+  47524 = E "lyric 嫌な"
+  47616 = E "lyric _"
+  47617 = E "phrase_start"
+  47618 = E "lyric <i>iya na</i>"
+  47619 = E "phrase_start"
+  47620 = E "lyric 全-"
+  47808 = E "lyric 部"
+  47809 = E "phrase_start"
+  47810 = E "lyric <i>zenbu</i>"
+  47811 = E "phrase_start"
+  47812 = E "lyric 全部"
+  47904 = E "lyric _"
+  47905 = E "phrase_start"
+  47906 = E "lyric <i>zenbu</i>"
+  47907 = E "phrase_start"
+  47908 = E "lyric つ-"
+  48000 = E "lyric まんないよ"
+  48001 = E "phrase_start"
+  48002 = E "lyric <i>Tsumannai yo</i>"
+  48003 = E "phrase_start"
+  48004 = E "lyric つまん"
+  48096 = E "lyric ないよ"
+  48097 = E "phrase_start"
+  48098 = E "lyric <i>Tsumannai yo</i>"
+  48099 = E "phrase_start"
+  48100 = E "lyric <color=#eaff00>つまん</color>"
+  48192 = E "lyric ないよ"
+  48193 = E "phrase_start"
+  48194 = E "lyric <i>Tsumannai yo</i>"
+  48195 = E "phrase_start"
+  48196 = E "lyric つまんない"
+  48288 = E "lyric よ"
+  48289 = E "phrase_start"
+  48290 = E "lyric <i>Tsumannai yo</i>"
+  48291 = E "phrase_start"
+  48292 = E "lyric <color=#00ff0c>つまんない</color>"
+  48384 = E "lyric よ"
+  48385 = E "phrase_start"
+  48386 = E "lyric <i>Tsumannai yo</i>"
+  48387 = E "phrase_start"
+  48388 = E "lyric つまんないよ"
+  48576 = E "lyric <i></i>"
+  48577 = E "phrase_start"
+  48578 = E "lyric <i>Tsumannai yo</i>"
+  48579 = E "phrase_start"
+  48580 = E "lyric <sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup>"
+  49056 = E "lyric <i></i>"
+  49057 = E "phrase_start"
+  49058 = E "lyric _"
+  49059 = E "phrase_start"
+  49060 = E "lyric <color=#eaff00><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
+  49248 = E "lyric <i></i>"
+  49249 = E "phrase_start"
+  49250 = E "lyric _"
+  49251 = E "phrase_start"
+  49252 = E "lyric <color=#1800ff><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
+  49296 = E "lyric <i></i>"
+  49297 = E "phrase_start"
+  49298 = E "lyric _"
+  49299 = E "phrase_start"
+  49300 = E "lyric <color=#ff00a2><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
+  49392 = E "lyric <i></i>"
+  49393 = E "phrase_start"
+  49394 = E "lyric _"
+  49395 = E "phrase_start"
+  49396 = E "lyric <color=#00f0ff><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
+  49488 = E "lyric <i></i>"
+  49489 = E "phrase_start"
+  49490 = E "lyric _"
+  49491 = E "phrase_start"
+  49492 = E "lyric <color=#ff0000><sup>▼</sup> <sub>▲</sub> ☯ <sub>▲</sub> <sup>▼</sup></color>"
+  49512 = E "lyric _"
+  49513 = E "phrase_start"
+  49514 = E "lyric _"
+  49515 = E "phrase_start"
+  49516 = E "lyric つ-"
+  49536 = E "lyric まんないよ"
+  49537 = E "phrase_start"
+  49538 = E "lyric <i>Tsumannai yo</i>"
+  49539 = E "phrase_start"
+  49540 = E "lyric つまん"
+  49728 = E "lyric ないよ"
+  49729 = E "phrase_start"
+  49730 = E "lyric <i>Tsumannai yo</i>"
+  49731 = E "phrase_start"
+  49732 = E "lyric つまんない"
+  49920 = E "lyric よ"
+  49921 = E "phrase_start"
+  49922 = E "lyric <i>Tsumannai yo</i>"
+  49923 = E "phrase_start"
+  49924 = E "lyric つまんないよ"
+  50976 = E "lyric _"
+  50977 = E "phrase_start"
+  50978 = E "lyric <i>Tsumannai yo</i>"
+  50979 = E "phrase_start"
+  50980 = E "lyric つ-"
+  51072 = E "lyric まんないよ"
+  51073 = E "phrase_start"
+  51074 = E "lyric <i>Tsumannai yo</i>"
+  51075 = E "phrase_start"
+  51076 = E "lyric つまん"
+  51264 = E "lyric ないよ"
+  51265 = E "phrase_start"
+  51266 = E "lyric <i>Tsumannai yo</i>"
+  51267 = E "phrase_start"
+  51268 = E "lyric つまんない"
+  51456 = E "lyric よ"
+  51456 = E "section Drop snooze B"
+  51457 = E "phrase_start"
+  51458 = E "lyric <i>Tsumannai yo</i>"
+  51459 = E "phrase_start"
+  51460 = E "lyric つまんないよ"
+  51552 = E "lyric _"
+  51553 = E "phrase_start"
+  51554 = E "lyric _"
+  51555 = E "phrase_start"
+  51556 = E "lyric <color=#ff0000>排</color>"
+  51600 = E "lyric 排"
+  51601 = E "phrase_start"
+  51602 = E "lyric <i>hai</i>"
+  51603 = E "phrase_start"
+  51604 = E "lyric <color=#eaff00>排</color>"
+  51744 = E "lyric _"
+  51745 = E "phrase_start"
+  51746 = E "lyric <i>hai</i>"
+  51747 = E "phrase_start"
+  51748 = E "lyric <color=#1800ff>排</color>"
+  51792 = E "lyric _"
+  51793 = E "phrase_start"
+  51794 = E "lyric <i>i</i>"
+  51795 = E "phrase_start"
+  51796 = E "lyric <color=#00ff0c>排</color>"
+  51840 = E "lyric _"
+  51841 = E "phrase_start"
+  51842 = E "lyric <i>i</i>"
+  51843 = E "phrase_start"
+  51844 = E "lyric <color=#8e15bb>排</color>"
+  51984 = E "lyric _"
+  51985 = E "phrase_start"
+  51986 = E "lyric <i>hai</i>"
+  51987 = E "phrase_start"
+  51988 = E "lyric <color=#eaff00>排</color>"
+  52128 = E "lyric _"
+  52129 = E "phrase_start"
+  52130 = E "lyric <i>hai</i>"
+  52131 = E "phrase_start"
+  52132 = E "lyric <color=#00f0ff>排</color>"
+  52320 = E "lyric _"
+  52321 = E "phrase_start"
+  52322 = E "lyric <i>hai</i>"
+  52323 = E "phrase_start"
+  52324 = E "lyric ケ-"
+  52416 = E "lyric ー-"
+  52512 = E "lyric デンス"
+  52608 = E "lyric _"
+  52609 = E "phrase_start"
+  52610 = E "lyric <i>keedensu</i>"
+  52611 = E "phrase_start"
+  52612 = E "lyric <color=#ff00a2>ケーデンス</color>"
+  52640 = E "lyric _"
+  52641 = E "phrase_start"
+  52642 = E "lyric <i>keedensu</i>"
+  52643 = E "phrase_start"
+  52644 = E "lyric <color=#8e15bb>ケーデンス</color>"
+  52752 = E "lyric _"
+  52753 = E "phrase_start"
+  52754 = E "lyric <i>keedensu</i>"
+  52755 = E "phrase_start"
+  52756 = E "lyric <color=#1800ff>ケーデンス</color>"
+  52848 = E "lyric _"
+  52849 = E "phrase_start"
+  52850 = E "lyric <i>keedensu</i>"
+  52851 = E "phrase_start"
+  52852 = E "lyric も-"
+  52896 = E "lyric う"
+  52897 = E "phrase_start"
+  52898 = E "lyric <i>Mou</i>"
+  52899 = E "phrase_start"
+  52900 = E "lyric もう"
+  52992 = E "lyric _"
+  52993 = E "phrase_start"
+  52994 = E "lyric <i>Mou</i>"
+  52995 = E "phrase_start"
+  52996 = E "lyric 嫌-"
+  53088 = E "lyric な"
+  53089 = E "phrase_start"
+  53090 = E "lyric <i>iya na</i>"
+  53091 = E "phrase_start"
+  53092 = E "lyric 嫌な"
+  53184 = E "lyric _"
+  53185 = E "phrase_start"
+  53186 = E "lyric <i>iya na</i>"
+  53187 = E "phrase_start"
+  53188 = E "lyric 嫌-"
+  53280 = E "lyric な"
+  53281 = E "phrase_start"
+  53282 = E "lyric <i>iya na</i>"
+  53283 = E "phrase_start"
+  53284 = E "lyric 嫌な"
+  53376 = E "lyric _"
+  53377 = E "phrase_start"
+  53378 = E "lyric <i>iya na</i>"
+  53379 = E "phrase_start"
+  53380 = E "lyric 全-"
+  53472 = E "lyric 部"
+  53473 = E "phrase_start"
+  53474 = E "lyric <i>zenbu</i>"
+  53475 = E "phrase_start"
+  53476 = E "lyric <color=#ff0000>全-</color>"
+  53496 = E "lyric 部"
+  53497 = E "phrase_start"
+  53498 = E "lyric <i>zenbu</i>"
+  53499 = E "phrase_start"
+  53500 = E "lyric <color=#8e15bb>全-</color>"
+  53520 = E "lyric 部"
+  53521 = E "phrase_start"
+  53522 = E "lyric <i>zenbu</i>"
+  53523 = E "phrase_start"
+  53524 = E "lyric <color=#ff00a2>全-</color>"
+  53568 = E "lyric 部"
+  53569 = E "phrase_start"
+  53570 = E "lyric <i>zenbu</i>"
+  53571 = E "phrase_start"
+  53572 = E "lyric 全部"
+  53664 = E "lyric 部"
+  53665 = E "phrase_start"
+  53666 = E "lyric <i>zenbu</i>"
+  53667 = E "phrase_start"
+  53668 = E "lyric 投-"
+  53808 = E "lyric げ出して"
+  53809 = E "phrase_start"
+  53810 = E "lyric <i>nagedashite</i>"
+  53811 = E "phrase_start"
+  53812 = E "lyric 投-"
+  53904 = E "lyric げ出して"
+  53905 = E "phrase_start"
+  53906 = E "lyric <i>nagedashite</i>"
+  53907 = E "phrase_start"
+  53908 = E "lyric 投-"
+  53952 = E "lyric げ出して"
+  53953 = E "phrase_start"
+  53954 = E "lyric <i>nagedashite</i>"
+  53955 = E "phrase_start"
+  53956 = E "lyric 投げ-"
+  54048 = E "lyric 出して"
+  54049 = E "phrase_start"
+  54050 = E "lyric <i>nagedashite</i>"
+  54051 = E "phrase_start"
+  54052 = E "lyric 投げ出-"
+  54144 = E "lyric して"
+  54145 = E "phrase_start"
+  54146 = E "lyric <i>nagedashite</i>"
+  54147 = E "phrase_start"
+  54148 = E "lyric 投げ出して"
+  54336 = E "lyric _"
+  54337 = E "phrase_start"
+  54338 = E "lyric <i>nagedashite</i>"
+  54339 = E "phrase_start"
+  54340 = E "lyric <color=#00f0ff>投げ出して</color>"
+  54408 = E "lyric _"
+  54409 = E "phrase_start"
+  54410 = E "lyric <i>nagedashite</i>"
+  54411 = E "phrase_start"
+  54412 = E "lyric <color=#eaff00>投げ出して</color>"
+  54432 = E "lyric _"
+  54433 = E "phrase_start"
+  54434 = E "lyric <i>nagedashite</i>"
+  54435 = E "phrase_start"
+  54436 = E "lyric <color=#8e15bb>投げ出して</color>"
+  54456 = E "lyric _"
+  54457 = E "phrase_start"
+  54458 = E "lyric <i>nagedashite</i>"
+  54459 = E "phrase_start"
+  54460 = E "lyric <color=#00ff0c>投げ出して</color>"
+  54480 = E "lyric _"
+  54481 = E "phrase_start"
+  54482 = E "lyric <i>nagedashite</i>"
+  54483 = E "phrase_start"
+  54484 = E "lyric <color=#1800ff>投げ出して</color>"
+  54504 = E "lyric _"
+  54505 = E "phrase_start"
+  54506 = E "lyric <i>nagedashite</i>"
+  54507 = E "phrase_start"
+  54508 = E "lyric <color=#ff0000>投げ出して</color>"
+  54624 = E "lyric _"
+  54625 = E "phrase_start"
+  54626 = E "lyric <i>nagedashite</i>"
+  54627 = E "phrase_start"
+  54628 = E "lyric 斯"
+  54672 = E "lyric _"
+  54673 = E "phrase_start"
+  54674 = E "lyric <i>Ka</i>"
+  54675 = E "phrase_start"
+  54676 = E "lyric <color=#00ff0c>斯</color>"
+  54720 = E "lyric _"
+  54721 = E "phrase_start"
+  54722 = E "lyric <i>Ka</i>"
+  54723 = E "phrase_start"
+  54724 = E "lyric <color=#1800ff>斯く</color>"
+  54768 = E "lyric _"
+  54769 = E "phrase_start"
+  54770 = E "lyric <i>Ku</i>"
+  54771 = E "phrase_start"
+  54772 = E "lyric <color=#8e15bb>濁</color>"
+  54816 = E "lyric _"
+  54817 = E "phrase_start"
+  54818 = E "lyric <i>Ni</i>"
+  54819 = E "phrase_start"
+  54820 = E "lyric <color=#eaff00>斯く</color>"
+  54864 = E "lyric _"
+  54865 = E "phrase_start"
+  54866 = E "lyric <i>Ku</i>"
+  54867 = E "phrase_start"
+  54868 = E "lyric <color=#ff00a2>濁</color>"
+  54912 = E "lyric _"
+  54913 = E "phrase_start"
+  54914 = E "lyric <i>Ni</i>"
+  54915 = E "phrase_start"
+  54916 = E "lyric -"
+  55056 = E "lyric った"
+  55057 = E "phrase_start"
+  55058 = E "lyric <i>gotta</i>"
+  55059 = E "phrase_start"
+  55060 = E "lyric った"
+  55200 = E "lyric _"
+  55201 = E "phrase_start"
+  55202 = E "lyric <i>gotta</i>"
+  55203 = E "phrase_start"
+  55204 = E "lyric -"
+  55344 = E "lyric った"
+  55345 = E "phrase_start"
+  55346 = E "lyric <i>gotta</i>"
+  55347 = E "phrase_start"
+  55348 = E "lyric った"
+  55488 = E "lyric _"
+  55489 = E "phrase_start"
+  55490 = E "lyric <i>gotta</i>"
+  55491 = E "phrase_start"
+  55492 = E "lyric -"
+  55632 = E "lyric った"
+  55633 = E "phrase_start"
+  55634 = E "lyric <i>gotta</i>"
+  55635 = E "phrase_start"
+  55636 = E "lyric った"
+  55776 = E "lyric _"
+  55777 = E "phrase_start"
+  55778 = E "lyric <i>gotta</i>"
+  55779 = E "phrase_start"
+  55780 = E "lyric -"
+  55920 = E "lyric った"
+  55921 = E "phrase_start"
+  55922 = E "lyric <i>gotta</i>"
+  55923 = E "phrase_start"
+  55924 = E "lyric った"
+  56064 = E "lyric _"
+  56065 = E "phrase_start"
+  56066 = E "lyric <i>gotta</i>"
+  56067 = E "phrase_start"
+  56068 = E "lyric あ"
+  56160 = E "lyric なたの話"
+  56161 = E "phrase_start"
+  56162 = E "lyric <i>anata no hanashi</i>"
+  56163 = E "phrase_start"
+  56164 = E "lyric あな"
+  56256 = E "lyric たの話"
+  56257 = E "phrase_start"
+  56258 = E "lyric <i>anata no hanashi</i>"
+  56259 = E "phrase_start"
+  56260 = E "lyric あなた"
+  56352 = E "lyric の話"
+  56353 = E "phrase_start"
+  56354 = E "lyric <i>anata no hanashi</i>"
+  56355 = E "phrase_start"
+  56356 = E "lyric あなたの話"
+  56496 = E "lyric _"
+  56497 = E "phrase_start"
+  56498 = E "lyric <i>anata no hanashi</i>"
+  56499 = E "phrase_start"
+  56500 = E "lyric <color=#ff00a2>あな</color>"
+  56592 = E "lyric _"
+  56593 = E "phrase_start"
+  56594 = E "lyric <i>anata no</i>"
+  56595 = E "phrase_start"
+  56596 = E "lyric <color=#00f0ff>た</color>"
+  56640 = E "lyric _"
+  56641 = E "phrase_start"
+  56642 = E "lyric <i>anata</i>"
+  56643 = E "phrase_start"
+  56644 = E "lyric <color=#eaff00>あなたの</color>"
+  56688 = E "lyric _"
+  56689 = E "phrase_start"
+  56690 = E "lyric <i>anata no hanashi</i>"
+  56691 = E "phrase_start"
+  56692 = E "lyric <color=#8e15bb>は</color>"
+  56736 = E "lyric _"
+  56737 = E "phrase_start"
+  56738 = E "lyric <i>Wa</i>"
+  56739 = E "phrase_start"
+  56740 = E "lyric <color=#00ff0c>あな</color>"
+  56784 = E "lyric _"
+  56785 = E "phrase_start"
+  56786 = E "lyric <i>no</i>"
+  56787 = E "phrase_start"
+  56788 = E "lyric <color=#1800ff>た</color>"
+  56832 = E "lyric _"
+  56833 = E "phrase_start"
+  56834 = E "lyric <i>hanashi</i>"
+  56835 = E "phrase_start"
+  56836 = E "lyric <color=#00f0ff>は</color>"
+  56880 = E "lyric _"
+  56881 = E "phrase_start"
+  56882 = E "lyric <i>Wa</i>"
+  56883 = E "phrase_start"
+  56884 = E "lyric <color=#8e15bb>の話</color>"
+  56928 = E "lyric _"
+  56929 = E "phrase_start"
+  56930 = E "lyric <i>hanashi</i>"
+  56931 = E "phrase_start"
+  56932 = E "lyric <color=#ff0000>は</color>"
+  57120 = E "lyric _"
+  57121 = E "phrase_start"
+  57122 = E "lyric <i>Wa</i>"
+  57123 = E "phrase_start"
+  57124 = E "lyric つ-"
+  57216 = E "lyric まんないよ"
+  57217 = E "phrase_start"
+  57218 = E "lyric <i>Tsumannai yo</i>"
+  57219 = E "phrase_start"
+  57220 = E "lyric つまん"
+  57408 = E "lyric ないよ"
+  57409 = E "phrase_start"
+  57410 = E "lyric <i>Tsumannai yo</i>"
+  57411 = E "phrase_start"
+  57412 = E "lyric つまんない"
+  57600 = E "lyric よ"
+  57600 = E "section Chorus 2A"
+  57601 = E "phrase_start"
+  57602 = E "lyric <i>Tsumannai yo</i>"
+  57603 = E "phrase_start"
+  57604 = E "lyric Han-"
+  57792 = E "lyric ki"
+  57888 = E "lyric o"
+  57984 = E "lyric mo-"
+  58128 = E "lyric tta"
+  58272 = E "lyric me-"
+  58464 = E "lyric e-"
+  58560 = E "lyric dee"
+  58800 = E "phrase_start"
+  58848 = E "lyric Mo-"
+  58944 = E "lyric u"
+  59040 = E "lyric i-"
+  59136 = E "lyric ya"
+  59232 = E "lyric na"
+  59328 = E "lyric ko-"
+  59424 = E "lyric to"
+  59520 = E "lyric zen-"
+  59712 = E "lyric bu"
+  59808 = E "lyric na-"
+  60000 = E "lyric ge-"
+  60096 = E "lyric da-"
+  60192 = E "lyric shi-"
+  60288 = E "lyric ta-"
+  60336 = E "lyric i"
+  60384 = E "lyric ne"
+  60576 = E "phrase_start"
+  60672 = E "lyric A-"
+  60768 = E "lyric i-"
+  60864 = E "lyric su"
+  60960 = E "lyric o-"
+  61056 = E "lyric go-"
+  61248 = E "lyric tte"
+  61344 = E "lyric ku-"
+  61392 = E "lyric r-"
+  61536 = E "lyric e-"
+  61632 = E "lyric e"
+  61824 = E "phrase_start"
+  61920 = E "lyric Kyo-"
+  62016 = E "lyric u"
+  62112 = E "lyric sa-"
+  62208 = E "lyric i-"
+  62304 = E "lyric fu"
+  62400 = E "lyric mo-"
+  62592 = E "lyric tte"
+  62688 = E "lyric ku-"
+  62784 = E "lyric ru"
+  62880 = E "lyric no"
+  63072 = E "lyric o"
+  63168 = E "lyric wa-"
+  63264 = E "lyric su-"
+  63360 = E "lyric re-"
+  63456 = E "lyric ta"
+  63744 = E "phrase_start"
+  63744 = E "section Chorus 2B"
+  63840 = E "lyric Ka-"
+  63936 = E "lyric ke"
+  64032 = E "lyric no"
+  64128 = E "lyric na-"
+  64224 = E "lyric i"
+  64320 = E "lyric poo-"
+  64512 = E "lyric kaa"
+  64800 = E "lyric mi-"
+  64896 = E "lyric ta-"
+  64992 = E "lyric i"
+  65088 = E "lyric na"
+  65136 = E "phrase_start"
+  65184 = E "lyric Tsu-"
+  65232 = E "lyric ma-"
+  65280 = E "lyric ra-"
+  65376 = E "lyric na-"
+  65424 = E "lyric ku"
+  65520 = E "lyric na-"
+  65616 = E "lyric tta"
+  65664 = E "lyric sen-"
+  65760 = E "lyric sou"
+  65904 = E "phrase_start"
+  65952 = E "lyric Kek-"
+  66048 = E "lyric kyo-"
+  66096 = E "lyric ku"
+  66144 = E "lyric ta-"
+  66192 = E "lyric nin"
+  66288 = E "lyric ga"
+  66384 = E "lyric ko-"
+  66432 = E "lyric wa-"
+  66480 = E "lyric i"
+  66528 = E "lyric no"
+  66816 = E "phrase_start"
+  66912 = E "lyric E-"
+  66960 = E "lyric ki-"
+  67008 = E "lyric shou"
+  67104 = E "lyric ni"
+  67152 = E "lyric u-"
+  67200 = E "lyric tsu-"
+  67296 = E "lyric tta"
+  67344 = E "lyric ryo-"
+  67440 = E "lyric shi-"
+  67488 = E "lyric ron"
+  67584 = E "lyric ga"
+  67872 = E "phrase_start"
+  67968 = E "lyric Don-"
+  68160 = E "lyric na"
+  68256 = E "lyric mi-"
+  68352 = E "lyric ra-"
+  68400 = E "lyric i"
+  68448 = E "lyric o"
+  68496 = E "lyric shou-"
+  68592 = E "lyric sha"
+  68640 = E "lyric ni"
+  68688 = E "lyric e-"
+  68736 = E "lyric ra-"
+  68832 = E "lyric nde"
+  68976 = E "phrase_start"
+  69024 = E "lyric Da-"
+  69072 = E "lyric re"
+  69120 = E "lyric ga"
+  69168 = E "lyric i-"
+  69264 = E "lyric ke-"
+  69360 = E "lyric nie"
+  69456 = E "lyric ni"
+  69504 = E "lyric na-"
+  69600 = E "lyric ru"
+  69696 = E "lyric ka"
+  69792 = E "lyric na"
+  70464 = E "lyric _"
+  70465 = E "phrase_start"
+  70466 = E "lyric _"
+  70654 = E "lyric _"
+  70655 = E "phrase_start"
+  70656 = E "lyric <i></i>"
+  70656 = E "section Outro A"
+  70657 = E "phrase_start"
+  70658 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  70848 = E "lyric <i></i>"
+  70849 = E "phrase_start"
+  70850 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  70944 = E "lyric <i></i>"
+  70945 = E "phrase_start"
+  70946 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  70992 = E "lyric <i></i>"
+  70993 = E "phrase_start"
+  70994 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  71040 = E "lyric <i></i>"
+  71041 = E "phrase_start"
+  71042 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  71136 = E "lyric <i></i>"
+  71137 = E "phrase_start"
+  71138 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  71232 = E "lyric <i></i>"
+  71233 = E "phrase_start"
+  71234 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  71616 = E "lyric <i></i>"
+  71617 = E "phrase_start"
+  71618 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  71712 = E "lyric <i></i>"
+  71713 = E "phrase_start"
+  71714 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  71808 = E "lyric <i></i>"
+  71809 = E "phrase_start"
+  71810 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  71904 = E "lyric <i></i>"
+  71905 = E "phrase_start"
+  71906 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  71936 = E "lyric <i></i>"
+  71937 = E "phrase_start"
+  71938 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  71968 = E "lyric <i></i>"
+  71969 = E "phrase_start"
+  71970 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  72000 = E "lyric <i></i>"
+  72001 = E "phrase_start"
+  72002 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  72096 = E "lyric <i></i>"
+  72097 = E "phrase_start"
+  72098 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  72192 = E "lyric <i></i>"
+  72193 = E "phrase_start"
+  72194 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  72384 = E "lyric <i></i>"
+  72385 = E "phrase_start"
+  72386 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  72480 = E "lyric <i></i>"
+  72481 = E "phrase_start"
+  72482 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  72528 = E "lyric <i></i>"
+  72529 = E "phrase_start"
+  72530 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  72576 = E "lyric <i></i>"
+  72577 = E "phrase_start"
+  72578 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  72672 = E "lyric <i></i>"
+  72673 = E "phrase_start"
+  72674 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  72768 = E "lyric <i></i>"
+  72769 = E "phrase_start"
+  72770 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  73152 = E "lyric <i></i>"
+  73153 = E "phrase_start"
+  73154 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  73248 = E "lyric <i></i>"
+  73249 = E "phrase_start"
+  73250 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  73344 = E "lyric <i></i>"
+  73345 = E "phrase_start"
+  73346 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  73440 = E "lyric <i></i>"
+  73441 = E "phrase_start"
+  73442 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  73472 = E "lyric <i></i>"
+  73473 = E "phrase_start"
+  73474 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  73504 = E "lyric <i></i>"
+  73505 = E "phrase_start"
+  73506 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  73536 = E "lyric <i></i>"
+  73537 = E "phrase_start"
+  73538 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  73632 = E "lyric <i></i>"
+  73633 = E "phrase_start"
+  73634 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  73728 = E "lyric <i></i>"
+  73729 = E "phrase_start"
+  73730 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  73920 = E "lyric <i></i>"
+  73921 = E "phrase_start"
+  73922 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  74016 = E "lyric <i></i>"
+  74017 = E "phrase_start"
+  74018 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  74064 = E "lyric <i></i>"
+  74065 = E "phrase_start"
+  74066 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  74112 = E "lyric <i></i>"
+  74113 = E "phrase_start"
+  74114 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  74208 = E "lyric <i></i>"
+  74209 = E "phrase_start"
+  74210 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  74304 = E "lyric <i></i>"
+  74305 = E "phrase_start"
+  74306 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  74688 = E "lyric <i></i>"
+  74689 = E "phrase_start"
+  74690 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  74784 = E "lyric <i></i>"
+  74785 = E "phrase_start"
+  74786 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  74880 = E "lyric <i></i>"
+  74881 = E "phrase_start"
+  74882 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  74976 = E "lyric <i></i>"
+  74977 = E "phrase_start"
+  74978 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  75008 = E "lyric <i></i>"
+  75009 = E "phrase_start"
+  75010 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  75040 = E "lyric <i></i>"
+  75041 = E "phrase_start"
+  75042 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  75072 = E "lyric <i></i>"
+  75073 = E "phrase_start"
+  75074 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  75168 = E "lyric <i></i>"
+  75169 = E "phrase_start"
+  75170 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  75264 = E "lyric <i></i>"
+  75265 = E "phrase_start"
+  75266 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  75456 = E "lyric <i></i>"
+  75457 = E "phrase_start"
+  75458 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  75552 = E "lyric <i></i>"
+  75553 = E "phrase_start"
+  75554 = E "lyric <color=#ffffff>▲ ▲ ▲ ▲ <color=#ffa200>▲</color></color>"
+  75600 = E "lyric <i></i>"
+  75601 = E "phrase_start"
+  75602 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  75648 = E "lyric <i></i>"
+  75649 = E "phrase_start"
+  75650 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  75744 = E "lyric <i></i>"
+  75745 = E "phrase_start"
+  75746 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  75840 = E "lyric <i></i>"
+  75841 = E "phrase_start"
+  75842 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  76224 = E "lyric <i></i>"
+  76225 = E "phrase_start"
+  76226 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  76320 = E "lyric <i></i>"
+  76321 = E "phrase_start"
+  76322 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  76416 = E "lyric <i></i>"
+  76417 = E "phrase_start"
+  76418 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  76512 = E "lyric <i></i>"
+  76513 = E "phrase_start"
+  76514 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  76544 = E "lyric <i></i>"
+  76545 = E "phrase_start"
+  76546 = E "lyric <color=#ffffff>▲ ▲ ▲ <color=#008aff>▲</color> ▲</color>"
+  76576 = E "lyric <i></i>"
+  76577 = E "phrase_start"
+  76578 = E "lyric <color=#ffffff>▲ ▲ <color=#eaff00>▲</color> ▲ ▲</color>"
+  76608 = E "lyric <i></i>"
+  76609 = E "phrase_start"
+  76610 = E "lyric <color=#ffffff>▲ <color=#ff0000>▲</color> ▲ ▲ ▲</color>"
+  76704 = E "lyric <i></i>"
+  76705 = E "phrase_start"
+  76706 = E "lyric <color=#00ff0c>▲</color><color=#ffffff> ▲ ▲ ▲ ▲</color>"
+  76799 = E "lyric _"
+  76800 = E "phrase_start"
+  76800 = E "section Outro B"
+  76801 = E "lyric _"
+  76992 = E "lyric 驕る 鳥 は 墜ち"
+  76993 = E "phrase_start"
+  76994 = E "lyric O-"
+  77088 = E "lyric goる 鳥 は 墜ち"
+  77089 = E "phrase_start"
+  77090 = E "lyric Ogo-"
+  77136 = E "lyric る 鳥 は 墜ち"
+  77137 = E "phrase_start"
+  77138 = E "lyric Ogoru "
+  77184 = E "lyric 鳥 は 墜ち"
+  77185 = E "phrase_start"
+  77186 = E "lyric Ogoru to-"
+  77232 = E "lyric ri は 墜ち"
+  77233 = E "phrase_start"
+  77234 = E "lyric Ogoru tori "
+  77328 = E "lyric は 墜ち"
+  77329 = E "phrase_start"
+  77330 = E "lyric Ogoru tori wa "
+  77376 = E "lyric 墜ち"
+  77377 = E "phrase_start"
+  77378 = E "lyric Ogoru tori wa o-"
+  77472 = E "lyric ち"
+  77473 = E "phrase_start"
+  77474 = E "lyric Ogoru tori wa ochi"
+  77712 = E "phrase_start"
+  77736 = E "lyric _"
+  77760 = E "lyric 頭垂 れて 乞い"
+  77761 = E "phrase_start"
+  77762 = E "lyric Ko-"
+  77824 = E "lyric u垂 れて 乞い"
+  77825 = E "phrase_start"
+  77826 = E "lyric Kou-"
+  77888 = E "lyric 垂 れて 乞い"
+  77889 = E "phrase_start"
+  77890 = E "lyric Koube "
+  77952 = E "lyric れて 乞い"
+  77953 = E "phrase_start"
+  77954 = E "lyric Koube ta-"
+  78016 = E "lyric reて 乞い"
+  78017 = E "phrase_start"
+  78018 = E "lyric Koube tare-"
+  78080 = E "lyric て 乞い"
+  78081 = E "phrase_start"
+  78082 = E "lyric Koube tarete "
+  78144 = E "lyric 乞い"
+  78145 = E "phrase_start"
+  78146 = E "lyric Koube tarete ko-"
+  78208 = E "lyric い"
+  78209 = E "phrase_start"
+  78210 = E "lyric Koube tarete koi"
+  78288 = E "phrase_start"
+  78312 = E "lyric _"
+  78336 = E "lyric 介錯 も 無く ただ 永劫 の"
+  78337 = E "phrase_start"
+  78338 = E "lyric Ka-"
+  78384 = E "lyric i錯 も 無く ただ 永劫 の"
+  78385 = E "phrase_start"
+  78386 = E "lyric Kai-"
+  78432 = E "lyric 錯 も 無く ただ 永劫 の"
+  78433 = E "phrase_start"
+  78434 = E "lyric Kaisha-"
+  78480 = E "lyric ku も 無く ただ 永劫 の"
+  78481 = E "phrase_start"
+  78482 = E "lyric Kaishaku "
+  78528 = E "lyric も 無く ただ 永劫 の"
+  78529 = E "phrase_start"
+  78530 = E "lyric Kaishaku mo "
+  78576 = E "lyric 無く ただ 永劫 の"
+  78577 = E "phrase_start"
+  78578 = E "lyric Kaishaku mo na-"
+  78624 = E "lyric く ただ 永劫 の"
+  78625 = E "phrase_start"
+  78626 = E "lyric Kaishaku mo naku "
+  78672 = E "lyric ただ 永劫 の"
+  78673 = E "phrase_start"
+  78674 = E "lyric Kaishaku mo naku ta-"
+  78720 = E "lyric だ 永劫 の"
+  78721 = E "phrase_start"
+  78722 = E "lyric Kaishaku mo naku tada "
+  78768 = E "lyric 永劫 の"
+  78769 = E "phrase_start"
+  78770 = E "lyric Kaishaku mo naku tada e-"
+  78816 = E "lyric i劫 の"
+  78817 = E "phrase_start"
+  78818 = E "lyric Kaishaku mo naku tada ei-"
+  78864 = E "lyric 劫 の"
+  78865 = E "phrase_start"
+  78866 = E "lyric Kaishaku mo naku tada eigo-"
+  78912 = E "lyric u の"
+  78913 = E "phrase_start"
+  78914 = E "lyric Kaishaku mo naku tada eigou "
+  78960 = E "lyric の"
+  78961 = E "phrase_start"
+  78962 = E "lyric Kaishaku mo naku tada eigou no"
+  78984 = E "phrase_start"
+  78996 = E "lyric _"
+  79008 = E "lyric 呵責 と 寄り添う 中 ついに 見 たり"
+  79009 = E "phrase_start"
+  79010 = E "lyric Ka-"
+  79056 = E "lyric 責 と 寄り添う 中 ついに 見 たり"
+  79057 = E "phrase_start"
+  79058 = E "lyric Kasha-"
+  79104 = E "lyric ku と 寄り添う 中 ついに 見 たり"
+  79105 = E "phrase_start"
+  79106 = E "lyric Kashaku "
+  79152 = E "lyric と 寄り添う 中 ついに 見 たり"
+  79153 = E "phrase_start"
+  79154 = E "lyric Kashaku to "
+  79200 = E "lyric 寄り添う 中 ついに 見 たり"
+  79201 = E "phrase_start"
+  79202 = E "lyric Kashaku to yo-"
+  79248 = E "lyric り添う 中 ついに 見 たり"
+  79249 = E "phrase_start"
+  79250 = E "lyric Kashaku to yori-"
+  79296 = E "lyric 添う 中 ついに 見 たり"
+  79297 = E "phrase_start"
+  79298 = E "lyric Kashaku to yoriso-"
+  79344 = E "lyric う 中 ついに 見 たり"
+  79345 = E "phrase_start"
+  79346 = E "lyric Kashaku to yorisou "
+  79392 = E "lyric 中 ついに 見 たり"
+  79393 = E "phrase_start"
+  79394 = E "lyric Kashaku to yorisou na-"
+  79440 = E "lyric ka ついに 見 たり"
+  79441 = E "phrase_start"
+  79442 = E "lyric Kashaku to yorisou naka "
+  79488 = E "lyric ついに 見 たり"
+  79489 = E "phrase_start"
+  79490 = E "lyric Kashaku to yorisou naka tsu-"
+  79536 = E "lyric いに 見 たり"
+  79537 = E "phrase_start"
+  79538 = E "lyric Kashaku to yorisou naka tsui-"
+  79584 = E "lyric に 見 たり"
+  79585 = E "phrase_start"
+  79586 = E "lyric Kashaku to yorisou naka tsuini "
+  79632 = E "lyric 見 たり"
+  79633 = E "phrase_start"
+  79634 = E "lyric Kashaku to yorisou naka tsuini mi "
+  79680 = E "lyric たり"
+  79681 = E "phrase_start"
+  79682 = E "lyric Kashaku to yorisou naka tsuini mi ta-"
+  79728 = E "lyric り"
+  79729 = E "phrase_start"
+  79730 = E "lyric Kashaku to yorisou naka tsuini mi tari"
+  79968 = E "phrase_start"
+  80016 = E "lyric _"
+  80064 = E "lyric 街 は 焼けた 海"
+  80065 = E "phrase_start"
+  80066 = E "lyric Ma-"
+  80128 = E "lyric chi は 焼けた 海"
+  80129 = E "phrase_start"
+  80130 = E "lyric Machi "
+  80192 = E "lyric は 焼けた 海"
+  80193 = E "phrase_start"
+  80194 = E "lyric Machi wa "
+  80256 = E "lyric 焼けた 海"
+  80257 = E "phrase_start"
+  80258 = E "lyric Machi wa ya-"
+  80320 = E "lyric けた 海"
+  80321 = E "phrase_start"
+  80322 = E "lyric Machi wa yake-"
+  80384 = E "lyric た 海"
+  80385 = E "phrase_start"
+  80386 = E "lyric Machi wa yaketa "
+  80448 = E "lyric 海"
+  80449 = E "phrase_start"
+  80450 = E "lyric Machi wa yaketa u-"
+  80512 = E "lyric mi"
+  80513 = E "phrase_start"
+  80514 = E "lyric Machi wa yaketa umi"
+  80736 = E "phrase_start"
+  80784 = E "lyric _"
+  80832 = E "lyric 穿たれた 福音"
+  80833 = E "phrase_start"
+  80834 = E "lyric U-"
+  80896 = E "lyric gaたれた 福音"
+  80897 = E "phrase_start"
+  80898 = E "lyric Uga-"
+  80960 = E "lyric たれた 福音"
+  80961 = E "phrase_start"
+  80962 = E "lyric Ugata-"
+  81024 = E "lyric れた 福音"
+  81025 = E "phrase_start"
+  81026 = E "lyric Ugatare-"
+  81088 = E "lyric た 福音"
+  81089 = E "phrase_start"
+  81090 = E "lyric Ugatareta "
+  81152 = E "lyric 福音"
+  81153 = E "phrase_start"
+  81154 = E "lyric Ugatareta fu-"
+  81216 = E "lyric ku音"
+  81217 = E "phrase_start"
+  81218 = E "lyric Ugatareta fuku-"
+  81280 = E "lyric in"
+  81281 = E "phrase_start"
+  81282 = E "lyric Ugatareta fukuin"
+  81360 = E "phrase_start"
+  81384 = E "lyric _"
+  81408 = E "lyric 汚れた 地上 の 災禍 など 気 に も"
+  81409 = E "phrase_start"
+  81410 = E "lyric Ke-"
+  81456 = E "lyric gaれた 地上 の 災禍 など 気 に も"
+  81457 = E "phrase_start"
+  81458 = E "lyric Kega-"
+  81504 = E "lyric れた 地上 の 災禍 など 気 に も"
+  81505 = E "phrase_start"
+  81506 = E "lyric Kegare-"
+  81552 = E "lyric た 地上 の 災禍 など 気 に も"
+  81553 = E "phrase_start"
+  81554 = E "lyric Kegareta "
+  81600 = E "lyric 地上 の 災禍 など 気 に も"
+  81601 = E "phrase_start"
+  81602 = E "lyric Kegareta chi-"
+  81648 = E "lyric 上 の 災禍 など 気 に も"
+  81649 = E "phrase_start"
+  81650 = E "lyric Kegareta chijo-"
+  81696 = E "lyric u の 災禍 など 気 に も"
+  81697 = E "phrase_start"
+  81698 = E "lyric Kegareta chijou "
+  81744 = E "lyric の 災禍 など 気 に も"
+  81745 = E "phrase_start"
+  81746 = E "lyric Kegareta chijou no "
+  81792 = E "lyric 災禍 など 気 に も"
+  81793 = E "phrase_start"
+  81794 = E "lyric Kegareta chijou no sa-"
+  81840 = E "lyric i禍 など 気 に も"
+  81841 = E "phrase_start"
+  81842 = E "lyric Kegareta chijou no sai-"
+  81888 = E "lyric 禍 など 気 に も"
+  81889 = E "phrase_start"
+  81890 = E "lyric Kegareta chijou no saika "
+  81936 = E "lyric など 気 に も"
+  81937 = E "phrase_start"
+  81938 = E "lyric Kegareta chijou no saika na-"
+  81984 = E "lyric ど 気 に も"
+  81985 = E "phrase_start"
+  81986 = E "lyric Kegareta chijou no saika nado "
+  82032 = E "lyric 気 に も"
+  82033 = E "phrase_start"
+  82034 = E "lyric Kegareta chijou no saika nado ki "
+  82080 = E "lyric に も"
+  82081 = E "phrase_start"
+  82082 = E "lyric Kegareta chijou no saika nado ki ni "
+  82128 = E "lyric も"
+  82129 = E "phrase_start"
+  82130 = E "lyric Kegareta chijou no saika nado ki ni mo"
+  82152 = E "phrase_start"
+  82164 = E "lyric _"
+  82176 = E "lyric 留めず 明日 も 星 は 輝く 煌々"
+  82177 = E "phrase_start"
+  82178 = E "lyric To-"
+  82200 = E "lyric doめず 明日 も 星 は 輝く 煌々"
+  82201 = E "phrase_start"
+  82202 = E "lyric Todo-"
+  82224 = E "lyric めず 明日 も 星 は 輝く 煌々"
+  82225 = E "phrase_start"
+  82226 = E "lyric Todome-"
+  82272 = E "lyric ず 明日 も 星 は 輝く 煌々"
+  82273 = E "phrase_start"
+  82274 = E "lyric Todomezu "
+  82320 = E "lyric 明日 も 星 は 輝く 煌々"
+  82321 = E "phrase_start"
+  82322 = E "lyric Todomezu a-"
+  82368 = E "lyric shi日 も 星 は 輝く 煌々"
+  82369 = E "phrase_start"
+  82370 = E "lyric Todomezu ashi-"
+  82416 = E "lyric 日 も 星 は 輝く 煌々"
+  82417 = E "phrase_start"
+  82418 = E "lyric Todomezu ashita "
+  82464 = E "lyric も 星 は 輝く 煌々"
+  82465 = E "phrase_start"
+  82466 = E "lyric Todomezu ashita mo "
+  82512 = E "lyric 星 は 輝く 煌々"
+  82513 = E "phrase_start"
+  82514 = E "lyric Todomezu ashita mo ho-"
+  82560 = E "lyric shi は 輝く 煌々"
+  82561 = E "phrase_start"
+  82562 = E "lyric Todomezu ashita mo hoshi "
+  82608 = E "lyric は 輝く 煌々"
+  82609 = E "phrase_start"
+  82610 = E "lyric Todomezu ashita mo hoshi wa "
+  82656 = E "lyric 輝く 煌々"
+  82657 = E "phrase_start"
+  82658 = E "lyric Todomezu ashita mo hoshi wa ka-"
+  82704 = E "lyric gayaく 煌々"
+  82705 = E "phrase_start"
+  82706 = E "lyric Todomezu ashita mo hoshi wa kaga-"
+  82752 = E "lyric yaく 煌々"
+  82753 = E "phrase_start"
+  82754 = E "lyric Todomezu ashita mo hoshi wa kagaya-"
+  82800 = E "lyric く 煌々"
+  82801 = E "phrase_start"
+  82802 = E "lyric Todomezu ashita mo hoshi wa kagayaku "
+  82848 = E "lyric 煌々"
+  82849 = E "phrase_start"
+  82850 = E "lyric Todomezu ashita mo hoshi wa kagayaku kou-"
+  82944 = E "lyric 々"
+  82945 = E "phrase_start"
+  82946 = E "lyric Todomezu ashita mo hoshi wa kagayaku koukou"
+  83328 = E "phrase_end"
+}
+
+[ExpertSingle]
+{
+  1536 = N 0 240
+  1536 = N 6 0
+  1824 = N 1 0
+  1824 = N 6 0
+  1848 = N 2 408
+  1848 = N 6 0
+  2304 = N 0 144
+  2304 = N 6 0
+  2496 = N 3 0
+  2496 = N 6 0
+  2520 = N 4 120
+  2520 = N 6 0
+  2688 = N 3 144
+  2688 = N 6 0
+  2880 = N 2 144
+  2880 = N 6 0
+  3072 = N 1 528
+  3072 = N 6 0
+  3648 = N 4 0
+  3648 = N 6 0
+  3696 = N 3 0
+  3696 = N 6 0
+  3744 = N 2 0
+  3744 = N 6 0
+  3792 = N 1 0
+  3792 = N 6 0
+  3840 = N 0 240
+  3840 = N 6 0
+  4128 = N 2 0
+  4128 = N 6 0
+  4224 = N 4 0
+  4224 = N 6 0
+  4320 = N 2 0
+  4320 = N 6 0
+  4416 = N 4 0
+  4416 = N 6 0
+  4512 = N 2 0
+  4512 = N 6 0
+  4608 = N 0 336
+  4608 = N 6 0
+  4992 = N 1 0
+  4992 = N 6 0
+  5016 = N 2 312
+  5016 = N 6 0
+  5376 = N 0 144
+  5376 = N 6 0
+  5568 = N 1 0
+  5568 = N 6 0
+  5592 = N 2 120
+  5592 = N 6 0
+  5760 = N 3 144
+  5760 = N 6 0
+  5952 = N 2 144
+  5952 = N 6 0
+  6144 = N 3 720
+  6144 = N 6 0
+  6912 = N 7 384
+  7680 = N 0 0
+  7680 = N 1 0
+  7680 = N 2 0
+  7680 = S 2 2304
+  7824 = N 0 0
+  7824 = N 1 0
+  7824 = N 2 0
+  7968 = N 0 0
+  7968 = N 1 0
+  7968 = N 2 0
+  8064 = N 0 0
+  8064 = N 1 0
+  8064 = N 2 0
+  8160 = N 3 0
+  8160 = N 4 0
+  8256 = N 2 0
+  8256 = N 3 0
+  8352 = N 3 0
+  8352 = N 4 0
+  8448 = N 0 0
+  8448 = N 1 0
+  8448 = N 2 0
+  8592 = N 0 0
+  8592 = N 1 0
+  8592 = N 2 0
+  8736 = N 0 0
+  8736 = N 1 0
+  8736 = N 2 0
+  8832 = N 0 0
+  8832 = N 1 0
+  8832 = N 2 0
+  8928 = N 3 0
+  8928 = N 4 0
+  9024 = N 2 0
+  9024 = N 3 0
+  9120 = N 3 0
+  9120 = N 4 0
+  9216 = N 0 0
+  9216 = N 1 0
+  9216 = N 2 0
+  9360 = N 0 0
+  9360 = N 1 0
+  9360 = N 2 0
+  9504 = N 0 0
+  9504 = N 1 0
+  9504 = N 2 0
+  9600 = N 0 0
+  9600 = N 1 0
+  9600 = N 2 0
+  9696 = N 3 0
+  9696 = N 4 0
+  9792 = N 2 0
+  9792 = N 3 0
+  9888 = N 3 0
+  9888 = N 4 0
+  9984 = N 0 0
+  9984 = N 1 0
+  9984 = N 2 0
+  10128 = N 0 0
+  10128 = N 1 0
+  10128 = N 2 0
+  10272 = N 0 0
+  10272 = N 1 0
+  10272 = N 2 0
+  10368 = N 0 0
+  10368 = N 1 0
+  10368 = N 2 0
+  10464 = N 3 0
+  10464 = N 4 0
+  10560 = N 2 0
+  10560 = N 3 0
+  10656 = N 3 0
+  10656 = N 4 0
+  10752 = N 0 0
+  10752 = N 1 0
+  10752 = N 2 0
+  10896 = N 0 0
+  10896 = N 1 0
+  10896 = N 2 0
+  11040 = N 0 0
+  11040 = N 1 0
+  11040 = N 2 0
+  11136 = N 0 0
+  11136 = N 1 0
+  11136 = N 2 0
+  11232 = N 3 0
+  11232 = N 4 0
+  11328 = N 3 0
+  11328 = N 4 0
+  11376 = N 2 0
+  11376 = N 3 0
+  11376 = N 5 0
+  11424 = N 1 0
+  11424 = N 2 0
+  11424 = N 5 0
+  11472 = N 0 0
+  11472 = N 1 0
+  11472 = N 5 0
+  11520 = N 0 0
+  11520 = N 1 0
+  11520 = N 2 0
+  11664 = N 0 0
+  11664 = N 1 0
+  11664 = N 2 0
+  11808 = N 0 0
+  11808 = N 1 0
+  11808 = N 2 0
+  11904 = N 0 0
+  11904 = N 1 0
+  11904 = N 2 0
+  12000 = N 3 0
+  12000 = N 4 0
+  12096 = N 2 0
+  12096 = N 3 0
+  12192 = N 3 0
+  12192 = N 4 0
+  12288 = N 0 0
+  12288 = N 1 0
+  12288 = N 2 0
+  12432 = N 0 0
+  12432 = N 1 0
+  12432 = N 2 0
+  12576 = N 0 0
+  12576 = N 1 0
+  12576 = N 2 0
+  12672 = N 0 0
+  12672 = N 1 0
+  12672 = N 2 0
+  12768 = N 3 0
+  12768 = N 4 0
+  12864 = N 2 0
+  12864 = N 3 0
+  12960 = N 3 0
+  12960 = N 4 0
+  13056 = N 0 0
+  13056 = N 1 0
+  13056 = N 2 0
+  13200 = N 0 0
+  13200 = N 1 0
+  13200 = N 2 0
+  13344 = N 0 0
+  13344 = N 1 0
+  13344 = N 2 0
+  13440 = N 0 0
+  13440 = N 1 0
+  13440 = N 2 0
+  13536 = N 3 0
+  13536 = N 4 0
+  13632 = N 2 0
+  13632 = N 3 0
+  13728 = N 3 0
+  13728 = N 4 0
+  13824 = N 0 0
+  13824 = N 1 0
+  13824 = N 2 0
+  13968 = N 0 0
+  13968 = N 1 0
+  13968 = N 2 0
+  14112 = N 0 0
+  14112 = N 1 0
+  14112 = N 2 0
+  14208 = N 0 0
+  14208 = N 6 0
+  14256 = N 1 0
+  14256 = N 6 0
+  14304 = N 2 0
+  14304 = N 6 0
+  14352 = N 3 0
+  14352 = N 6 0
+  14400 = N 1 0
+  14400 = N 6 0
+  14448 = N 2 0
+  14448 = N 6 0
+  14496 = N 3 0
+  14496 = N 6 0
+  14544 = N 4 0
+  14544 = N 6 0
+  14592 = N 0 0
+  14592 = N 1 0
+  14592 = N 2 0
+  14592 = S 2 2688
+  14736 = N 0 0
+  14736 = N 1 0
+  14736 = N 2 0
+  14880 = N 0 0
+  14880 = N 1 0
+  14880 = N 2 0
+  14976 = N 0 0
+  14976 = N 1 0
+  14976 = N 2 0
+  15072 = N 3 0
+  15072 = N 4 0
+  15168 = N 2 0
+  15168 = N 3 0
+  15264 = N 3 0
+  15264 = N 4 0
+  15360 = N 0 0
+  15360 = N 1 0
+  15360 = N 2 0
+  15504 = N 0 0
+  15504 = N 1 0
+  15504 = N 2 0
+  15648 = N 0 0
+  15648 = N 1 0
+  15648 = N 2 0
+  15744 = N 0 0
+  15744 = N 1 0
+  15744 = N 2 0
+  15840 = N 3 0
+  15840 = N 4 0
+  15936 = N 2 0
+  15936 = N 3 0
+  16032 = N 3 0
+  16032 = N 4 0
+  16128 = N 0 0
+  16128 = N 1 0
+  16128 = N 2 0
+  16272 = N 0 0
+  16272 = N 1 0
+  16272 = N 2 0
+  16416 = N 0 0
+  16416 = N 1 0
+  16416 = N 2 0
+  16512 = N 0 0
+  16512 = N 1 0
+  16512 = N 2 0
+  16608 = N 3 0
+  16608 = N 4 0
+  16704 = N 2 0
+  16704 = N 3 0
+  16800 = N 3 0
+  16800 = N 4 0
+  16896 = N 0 0
+  16896 = N 1 0
+  16896 = N 2 0
+  17040 = N 0 0
+  17040 = N 1 0
+  17040 = N 2 0
+  17184 = N 0 0
+  17184 = N 1 0
+  17184 = N 2 0
+  17664 = N 2 0
+  17664 = N 4 0
+  17760 = N 2 0
+  17760 = N 4 0
+  17808 = N 2 0
+  17808 = N 4 0
+  17856 = N 2 0
+  17856 = N 4 0
+  17904 = N 2 0
+  17904 = N 4 0
+  17952 = N 2 0
+  17952 = N 4 0
+  18000 = N 2 0
+  18000 = N 4 0
+  18048 = N 2 0
+  18048 = N 4 0
+  18096 = N 2 0
+  18096 = N 4 0
+  18144 = N 2 0
+  18144 = N 4 0
+  18192 = N 2 0
+  18192 = N 4 0
+  18240 = N 2 0
+  18240 = N 4 0
+  18288 = N 2 0
+  18288 = N 4 0
+  18336 = N 2 0
+  18336 = N 4 0
+  18384 = N 2 0
+  18384 = N 4 0
+  18432 = N 2 0
+  18432 = N 4 0
+  18456 = N 2 0
+  18456 = N 4 0
+  18480 = N 2 0
+  18480 = N 4 0
+  18504 = N 2 0
+  18504 = N 4 0
+  18528 = N 2 0
+  18528 = N 4 0
+  18576 = N 2 0
+  18576 = N 4 0
+  18600 = N 2 0
+  18600 = N 4 0
+  18624 = N 2 0
+  18624 = N 4 0
+  18648 = N 2 0
+  18648 = N 4 0
+  18672 = N 2 0
+  18672 = N 4 0
+  18720 = N 2 0
+  18720 = N 4 0
+  18768 = N 2 0
+  18768 = N 4 0
+  18816 = N 2 0
+  18816 = N 4 0
+  18840 = N 2 0
+  18840 = N 4 0
+  18864 = N 2 0
+  18864 = N 4 0
+  18888 = N 2 0
+  18888 = N 4 0
+  18912 = N 2 0
+  18912 = N 4 0
+  18960 = N 2 0
+  18960 = N 4 0
+  19200 = N 0 0
+  19200 = N 1 0
+  19200 = N 2 0
+  19344 = N 0 0
+  19344 = N 1 0
+  19344 = N 2 0
+  19488 = N 0 0
+  19488 = N 1 0
+  19488 = N 2 0
+  19584 = N 0 0
+  19584 = N 1 0
+  19584 = N 2 0
+  19680 = N 3 0
+  19680 = N 4 0
+  19776 = N 2 0
+  19776 = N 3 0
+  19872 = N 3 0
+  19872 = N 4 0
+  19968 = N 0 0
+  19968 = N 1 0
+  19968 = N 2 0
+  20112 = N 0 0
+  20112 = N 1 0
+  20112 = N 2 0
+  20256 = N 0 0
+  20256 = N 1 0
+  20256 = N 2 0
+  20352 = N 0 0
+  20352 = N 1 0
+  20352 = N 2 0
+  20448 = N 3 0
+  20448 = N 4 0
+  21504 = N 0 0
+  21696 = N 1 0
+  21792 = N 0 0
+  21936 = N 0 0
+  22080 = N 1 0
+  22176 = N 0 0
+  22368 = N 1 0
+  22464 = N 2 0
+  22560 = N 1 0
+  22704 = N 1 0
+  22848 = N 2 0
+  22944 = N 1 0
+  23136 = N 2 0
+  23232 = N 3 0
+  23328 = N 2 0
+  23472 = N 3 0
+  23616 = N 4 0
+  23712 = N 3 0
+  23808 = N 0 0
+  23808 = N 4 0
+  23808 = S 2 768
+  23856 = N 0 0
+  23856 = N 4 0
+  23904 = N 0 0
+  23904 = N 4 0
+  23952 = N 0 0
+  23952 = N 4 0
+  24000 = N 0 0
+  24000 = N 4 0
+  24048 = N 0 0
+  24048 = N 4 0
+  24096 = N 0 0
+  24096 = N 4 0
+  24144 = N 0 0
+  24144 = N 4 0
+  24192 = N 0 0
+  24192 = N 4 0
+  24240 = N 0 0
+  24240 = N 4 0
+  24288 = N 0 0
+  24288 = N 4 0
+  24336 = N 0 0
+  24336 = N 4 0
+  24384 = N 0 0
+  24384 = N 4 0
+  24432 = N 0 0
+  24432 = N 4 0
+  24480 = N 0 0
+  24480 = N 4 0
+  24528 = N 0 0
+  24528 = N 4 0
+  24672 = N 0 0
+  24768 = N 1 0
+  24864 = N 0 0
+  25008 = N 0 0
+  25152 = N 1 0
+  25248 = N 0 0
+  25440 = N 1 0
+  25536 = N 2 0
+  25632 = N 1 0
+  25776 = N 1 0
+  25920 = N 2 0
+  26016 = N 1 0
+  26208 = N 2 0
+  26304 = N 3 0
+  26400 = N 2 0
+  26544 = N 3 0
+  26688 = N 4 0
+  26784 = N 3 0
+  26880 = N 0 0
+  26976 = N 1 0
+  26976 = N 6 0
+  27072 = N 2 0
+  27072 = N 6 0
+  27168 = N 3 0
+  27168 = N 6 0
+  27264 = N 4 0
+  27264 = N 6 0
+  27288 = N 4 0
+  27288 = N 6 0
+  27312 = N 4 0
+  27312 = N 6 0
+  27360 = N 4 0
+  27360 = N 6 0
+  27408 = N 4 0
+  27408 = N 6 0
+  27456 = N 2 0
+  27456 = N 6 0
+  27552 = N 2 0
+  27552 = N 6 0
+  27744 = N 0 0
+  27840 = N 1 0
+  27936 = N 0 0
+  28080 = N 0 0
+  28224 = N 1 0
+  28320 = N 0 0
+  28512 = N 1 0
+  28608 = N 2 0
+  28704 = N 1 0
+  28848 = N 1 0
+  28992 = N 2 0
+  29088 = N 1 0
+  29280 = N 2 0
+  29376 = N 3 0
+  29472 = N 2 0
+  29616 = N 3 0
+  29760 = N 4 0
+  29856 = N 3 0
+  30048 = N 0 0
+  30048 = N 3 0
+  30048 = S 2 672
+  30096 = N 0 0
+  30096 = N 3 0
+  30144 = N 0 0
+  30144 = N 3 0
+  30240 = N 0 0
+  30240 = N 3 0
+  30288 = N 0 0
+  30288 = N 3 0
+  30336 = N 0 0
+  30336 = N 3 0
+  30432 = N 0 0
+  30432 = N 3 0
+  30480 = N 0 0
+  30480 = N 3 0
+  30576 = N 0 0
+  30576 = N 3 0
+  30624 = N 0 0
+  30624 = N 3 0
+  30816 = N 0 0
+  30912 = N 1 0
+  31008 = N 0 0
+  31152 = N 0 0
+  31296 = N 1 0
+  31392 = N 0 0
+  31584 = N 1 0
+  31680 = N 2 0
+  31776 = N 1 0
+  31920 = N 1 0
+  32064 = N 2 0
+  32160 = N 1 0
+  32352 = N 2 0
+  32448 = N 3 0
+  32544 = N 2 0
+  32688 = N 3 0
+  32832 = N 4 0
+  32928 = N 3 0
+  33600 = N 3 0
+  33600 = N 6 0
+  33624 = N 4 120
+  33624 = N 6 0
+  33792 = N 2 0
+  33792 = N 6 0
+  33816 = N 3 216
+  33816 = N 6 0
+  34080 = N 1 0
+  34080 = N 6 0
+  34104 = N 2 216
+  34104 = N 6 0
+  34368 = N 1 0
+  34368 = N 6 0
+  34392 = N 0 120
+  34392 = N 6 0
+  34560 = N 2 0
+  34560 = N 6 0
+  34592 = N 3 176
+  34592 = N 6 0
+  34848 = N 1 0
+  34848 = N 6 0
+  34880 = N 0 208
+  34880 = N 6 0
+  35136 = N 4 0
+  35136 = N 6 0
+  35168 = N 3 112
+  35168 = N 6 0
+  35328 = N 2 0
+  35328 = N 6 0
+  35352 = N 1 600
+  35352 = N 6 0
+  36000 = N 0 96
+  36000 = N 6 0
+  36672 = N 3 144
+  36672 = N 4 144
+  36672 = N 6 0
+  36864 = N 1 240
+  36864 = N 2 240
+  36864 = N 6 0
+  37152 = N 2 240
+  37152 = N 3 240
+  37152 = N 6 0
+  37440 = N 1 144
+  37440 = N 4 144
+  37440 = N 6 0
+  37632 = N 2 240
+  37632 = N 3 720
+  37632 = N 6 0
+  37920 = N 0 240
+  37920 = N 6 0
+  38208 = N 1 144
+  38208 = N 6 0
+  38400 = N 1 336
+  38400 = N 4 336
+  38400 = N 6 0
+  38784 = N 2 336
+  38784 = N 3 336
+  38784 = N 6 0
+  39168 = N 7 0
+  39168 = S 2 1536
+  39216 = N 7 0
+  39264 = N 0 0
+  39264 = N 5 0
+  39312 = N 1 0
+  39360 = N 7 0
+  39360 = N 5 0
+  39408 = N 2 0
+  39408 = N 5 0
+  39456 = N 7 0
+  39456 = N 5 0
+  39504 = N 7 0
+  39552 = N 0 0
+  39552 = N 5 0
+  39600 = N 1 0
+  39648 = N 7 0
+  39648 = N 5 0
+  39696 = N 2 0
+  39696 = N 5 0
+  39744 = N 7 0
+  39744 = N 5 0
+  39792 = N 7 0
+  39840 = N 2 0
+  39840 = N 5 0
+  39888 = N 3 0
+  39936 = N 7 0
+  39936 = N 5 0
+  39984 = N 7 0
+  40032 = N 0 0
+  40032 = N 5 0
+  40080 = N 1 0
+  40128 = N 7 0
+  40128 = N 5 0
+  40176 = N 2 0
+  40176 = N 5 0
+  40224 = N 7 0
+  40224 = N 5 0
+  40272 = N 7 0
+  40320 = N 0 0
+  40320 = N 5 0
+  40368 = N 1 0
+  40416 = N 7 0
+  40416 = N 5 0
+  40464 = N 2 0
+  40464 = N 5 0
+  40512 = N 7 0
+  40512 = N 5 0
+  40560 = N 7 0
+  40608 = N 2 0
+  40608 = N 5 0
+  40656 = N 3 0
+  40704 = N 7 0
+  40704 = N 5 0
+  40752 = N 7 0
+  40800 = N 0 0
+  40800 = N 5 0
+  40848 = N 1 0
+  40896 = N 7 0
+  40896 = N 5 0
+  40944 = N 2 0
+  40944 = N 5 0
+  40992 = N 7 0
+  40992 = N 5 0
+  41040 = N 7 0
+  41088 = N 0 0
+  41088 = N 5 0
+  41136 = N 1 0
+  41184 = N 7 0
+  41184 = N 5 0
+  41232 = N 2 0
+  41232 = N 5 0
+  41280 = N 7 0
+  41280 = N 5 0
+  41328 = N 7 0
+  41376 = N 2 0
+  41376 = N 5 0
+  41424 = N 3 0
+  41472 = N 7 0
+  41472 = N 5 0
+  41520 = N 7 0
+  41568 = N 3 0
+  41568 = N 5 0
+  41616 = N 4 0
+  41664 = N 7 0
+  41664 = N 5 0
+  41712 = N 2 0
+  41712 = N 5 0
+  41760 = N 3 0
+  41808 = N 7 0
+  41808 = N 5 0
+  41856 = N 1 0
+  41856 = N 5 0
+  41904 = N 2 0
+  41952 = N 7 0
+  41952 = N 5 0
+  42000 = N 7 0
+  42048 = N 0 144
+  42048 = N 5 0
+  42240 = N 7 0
+  42288 = N 7 0
+  42336 = N 0 0
+  42336 = N 5 0
+  42384 = N 1 0
+  42432 = N 7 0
+  42432 = N 5 0
+  42480 = N 2 0
+  42480 = N 5 0
+  42528 = N 7 0
+  42528 = N 5 0
+  42576 = N 7 0
+  42624 = N 0 0
+  42624 = N 5 0
+  42672 = N 1 0
+  42720 = N 7 0
+  42720 = N 5 0
+  42768 = N 2 0
+  42768 = N 5 0
+  42816 = N 7 0
+  42816 = N 5 0
+  42864 = N 7 0
+  42912 = N 2 0
+  42912 = N 5 0
+  42960 = N 3 0
+  43008 = N 7 0
+  43008 = N 5 0
+  43056 = N 7 0
+  43104 = N 0 0
+  43104 = N 5 0
+  43152 = N 1 0
+  43200 = N 7 0
+  43200 = N 5 0
+  43248 = N 2 0
+  43248 = N 5 0
+  43296 = N 7 0
+  43296 = N 5 0
+  43344 = N 7 0
+  43392 = N 0 0
+  43392 = N 5 0
+  43440 = N 1 0
+  43488 = N 7 0
+  43488 = N 5 0
+  43536 = N 2 0
+  43536 = N 5 0
+  43584 = N 7 0
+  43584 = N 5 0
+  43632 = N 7 0
+  43680 = N 2 0
+  43680 = N 5 0
+  43728 = N 3 0
+  43776 = N 7 0
+  43776 = N 5 0
+  43824 = N 7 0
+  43872 = N 0 0
+  43872 = N 5 0
+  43920 = N 1 0
+  43968 = N 7 0
+  43968 = N 5 0
+  44016 = N 2 0
+  44016 = N 5 0
+  44064 = N 7 0
+  44064 = N 5 0
+  44112 = N 7 0
+  44160 = N 0 0
+  44160 = N 5 0
+  44208 = N 1 0
+  44256 = N 7 0
+  44256 = N 5 0
+  44304 = N 2 0
+  44304 = N 5 0
+  44352 = N 7 0
+  44352 = N 5 0
+  44400 = N 7 0
+  44448 = N 2 0
+  44448 = N 5 0
+  44496 = N 3 0
+  45120 = N 0 0
+  45120 = N 6 0
+  45120 = S 2 960
+  45168 = N 7 0
+  45312 = N 3 160
+  45696 = N 0 0
+  45840 = N 1 0
+  45984 = N 2 0
+  46032 = N 3 0
+  46176 = N 1 0
+  46272 = N 2 0
+  46368 = N 1 0
+  46464 = N 0 0
+  46512 = N 0 0
+  46608 = N 1 144
+  46848 = N 0 0
+  46848 = N 6 0
+  46896 = N 1 0
+  46896 = N 6 0
+  46944 = N 2 0
+  46944 = N 6 0
+  46992 = N 3 0
+  46992 = N 6 0
+  47040 = N 7 144
+  47040 = N 5 0
+  47232 = N 0 0
+  47376 = N 1 0
+  47520 = N 3 0
+  47552 = N 4 128
+  47712 = N 3 0
+  47904 = N 3 0
+  47936 = N 2 0
+  47968 = N 3 0
+  48000 = N 3 0
+  48096 = N 2 0
+  48192 = N 1 0
+  48384 = N 1 0
+  48384 = N 3 0
+  48576 = N 7 0
+  48768 = N 4 0
+  48768 = N 6 0
+  48816 = N 3 0
+  48816 = N 6 0
+  48864 = N 2 0
+  48864 = N 6 0
+  48912 = N 3 0
+  48912 = N 6 0
+  48960 = N 2 0
+  48960 = N 6 0
+  49008 = N 1 0
+  49008 = N 6 0
+  49056 = N 3 0
+  49056 = N 5 0
+  49104 = N 2 0
+  49152 = N 3 0
+  49248 = N 3 0
+  49296 = N 3 0
+  49392 = N 2 0
+  49488 = N 1 0
+  49536 = N 0 0
+  49536 = N 5 0
+  49680 = N 1 0
+  49824 = N 1 0
+  49920 = N 3 0
+  49968 = N 2 0
+  50016 = N 3 0
+  50064 = N 3 0
+  50208 = N 2 0
+  50208 = N 6 0
+  50304 = N 1 144
+  50304 = N 6 0
+  50320 = N 4 128
+  50320 = N 6 0
+  50496 = N 2 0
+  50592 = N 7 0
+  50688 = N 4 72
+  50784 = N 3 0
+  50976 = N 3 0
+  51008 = N 2 0
+  51040 = N 3 0
+  51120 = N 3 0
+  51216 = N 3 0
+  51264 = N 2 0
+  51264 = N 5 0
+  51360 = N 1 0
+  51456 = N 0 0
+  51552 = N 3 0
+  51600 = N 3 0
+  51648 = N 2 0
+  51648 = N 5 0
+  51744 = N 1 0
+  51840 = N 0 0
+  51984 = N 1 0
+  52128 = N 2 0
+  52176 = N 3 108
+  52320 = N 3 0
+  52416 = N 2 0
+  52512 = N 1 0
+  52608 = N 0 0
+  52656 = N 0 0
+  52752 = N 1 0
+  52992 = N 2 0
+  53024 = N 3 0
+  53088 = N 3 0
+  53184 = N 2 0
+  53280 = N 1 0
+  53376 = N 0 0
+  53520 = N 1 0
+  53664 = N 3 0
+  53696 = N 4 128
+  53856 = N 3 0
+  54048 = N 3 0
+  54080 = N 2 0
+  54112 = N 3 0
+  54144 = N 3 0
+  54240 = N 2 0
+  54336 = N 1 0
+  54528 = N 4 0
+  54528 = N 6 0
+  54624 = N 3 0
+  54624 = N 6 0
+  54720 = N 2 0
+  54720 = N 6 0
+  54816 = N 1 0
+  54816 = N 6 0
+  54912 = N 1 0
+  54912 = N 3 0
+  55056 = N 1 0
+  55056 = N 3 0
+  55200 = N 3 0
+  55200 = S 2 1344
+  55248 = N 2 0
+  55296 = N 3 0
+  55392 = N 3 0
+  55488 = N 2 0
+  55584 = N 1 0
+  55680 = N 0 0
+  55824 = N 1 0
+  56064 = N 3 0
+  56160 = N 3 0
+  56256 = N 2 0
+  56352 = N 1 0
+  56448 = N 0 0
+  56592 = N 1 0
+  56736 = N 0 0
+  56832 = N 0 0
+  56880 = N 0 0
+  56928 = N 1 0
+  56928 = N 5 0
+  56976 = N 1 0
+  57024 = N 2 0
+  57024 = N 5 0
+  57072 = N 2 0
+  57120 = N 3 0
+  57120 = N 5 0
+  57168 = N 3 0
+  57216 = N 1 0
+  57216 = N 5 0
+  57240 = N 1 0
+  57264 = N 1 0
+  57288 = N 1 0
+  57312 = N 2 0
+  57312 = N 5 0
+  57336 = N 2 0
+  57360 = N 2 0
+  57384 = N 2 0
+  57408 = N 3 0
+  57408 = N 5 0
+  57432 = N 3 0
+  57456 = N 3 0
+  57480 = N 3 0
+  57504 = N 4 0
+  57504 = N 5 0
+  57528 = N 4 0
+  57552 = N 4 0
+  57576 = N 4 0
+  57792 = N 1 0
+  57792 = N 3 0
+  57984 = N 1 0
+  57984 = N 3 0
+  58128 = N 1 0
+  58128 = N 3 0
+  58272 = N 1 0
+  58272 = N 3 0
+  58464 = N 1 0
+  58464 = N 2 0
+  58560 = N 1 0
+  58560 = N 2 0
+  58752 = N 1 0
+  58752 = N 2 0
+  58896 = N 1 0
+  58896 = N 2 0
+  59040 = N 1 0
+  59040 = N 2 0
+  59136 = N 2 0
+  59136 = N 4 0
+  59328 = N 2 0
+  59328 = N 4 0
+  59520 = N 2 0
+  59520 = N 4 0
+  59664 = N 2 0
+  59664 = N 4 0
+  59808 = N 2 0
+  59808 = N 4 0
+  60000 = N 2 0
+  60000 = N 3 0
+  60096 = N 2 0
+  60096 = N 3 0
+  60288 = N 0 0
+  60288 = N 1 0
+  60432 = N 0 0
+  60432 = N 1 0
+  60576 = N 0 0
+  60576 = N 1 0
+  60672 = N 1 0
+  60672 = N 3 0
+  60672 = S 2 1632
+  60864 = N 1 0
+  60864 = N 3 0
+  61056 = N 1 0
+  61056 = N 3 0
+  61200 = N 1 0
+  61200 = N 3 0
+  61344 = N 1 0
+  61344 = N 3 0
+  61536 = N 1 0
+  61536 = N 2 0
+  61632 = N 1 0
+  61632 = N 2 0
+  61824 = N 1 0
+  61824 = N 2 0
+  61968 = N 1 0
+  61968 = N 2 0
+  62112 = N 1 0
+  62112 = N 2 0
+  62208 = N 2 0
+  62208 = N 4 0
+  62400 = N 2 0
+  62400 = N 4 0
+  62592 = N 2 0
+  62592 = N 4 0
+  62736 = N 2 0
+  62736 = N 4 0
+  62880 = N 2 0
+  62880 = N 4 0
+  63072 = N 2 0
+  63072 = N 3 0
+  63168 = N 2 0
+  63168 = N 3 0
+  63360 = N 0 0
+  63360 = N 1 0
+  63504 = N 0 0
+  63504 = N 1 0
+  63648 = N 0 0
+  63648 = N 1 0
+  63840 = N 2 0
+  63864 = N 7 0
+  63936 = N 2 0
+  63960 = N 7 0
+  64032 = N 2 0
+  64056 = N 7 0
+  64128 = N 2 0
+  64152 = N 7 120
+  64320 = N 2 0
+  64344 = N 7 120
+  64512 = N 1 0
+  64512 = N 2 0
+  64704 = N 1 0
+  64704 = N 2 0
+  64896 = N 1 0
+  64896 = N 2 0
+  65040 = N 1 0
+  65040 = N 2 0
+  65184 = N 1 0
+  65184 = N 2 0
+  65280 = N 2 0
+  65280 = N 4 0
+  65472 = N 2 0
+  65472 = N 4 0
+  65664 = N 2 0
+  65664 = N 4 0
+  65808 = N 2 0
+  65808 = N 4 0
+  65952 = N 2 0
+  65952 = N 4 0
+  66144 = N 2 0
+  66144 = N 3 0
+  66240 = N 2 0
+  66240 = N 3 0
+  66432 = N 0 0
+  66432 = N 1 0
+  66576 = N 0 0
+  66576 = N 1 0
+  66720 = N 0 0
+  66720 = N 1 0
+  66912 = N 7 0
+  66960 = N 7 0
+  67008 = N 7 0
+  67104 = N 7 0
+  67152 = N 7 0
+  67200 = N 7 0
+  67296 = N 7 0
+  67344 = N 7 0
+  67440 = N 7 0
+  67488 = N 7 0
+  67584 = N 1 0
+  67584 = N 2 0
+  67776 = N 1 0
+  67776 = N 2 0
+  67968 = N 1 0
+  67968 = N 2 0
+  68112 = N 1 0
+  68112 = N 2 0
+  68256 = N 1 0
+  68256 = N 2 0
+  68352 = N 2 0
+  68352 = N 4 0
+  68544 = N 2 0
+  68544 = N 4 0
+  68736 = N 2 0
+  68736 = N 4 0
+  68880 = N 2 0
+  68880 = N 4 0
+  69024 = N 2 0
+  69024 = N 4 0
+  69216 = N 2 0
+  69216 = N 3 0
+  69312 = N 2 0
+  69312 = N 3 0
+  69504 = N 0 0
+  69504 = N 1 0
+  69648 = N 0 0
+  69648 = N 1 0
+  69792 = N 0 0
+  69792 = N 1 0
+  70656 = N 4 144
+  70656 = S 2 864
+  70848 = N 3 0
+  70944 = N 4 0
+  70992 = N 3 0
+  71040 = N 2 0
+  71136 = N 1 0
+  71232 = N 0 336
+  71616 = N 1 0
+  71712 = N 2 0
+  71808 = N 3 0
+  71904 = N 2 0
+  71936 = N 3 0
+  71968 = N 2 0
+  72000 = N 1 0
+  72096 = N 0 0
+  72192 = N 4 144
+  72384 = N 3 0
+  72480 = N 4 0
+  72528 = N 3 0
+  72576 = N 2 0
+  72672 = N 1 0
+  72768 = N 0 336
+  73152 = N 1 0
+  73248 = N 2 0
+  73344 = N 3 0
+  73440 = N 2 0
+  73472 = N 3 0
+  73504 = N 2 0
+  73536 = N 1 0
+  73632 = N 0 0
+  73728 = N 4 144
+  73920 = N 3 0
+  74016 = N 4 0
+  74064 = N 3 0
+  74112 = N 2 0
+  74208 = N 1 0
+  74304 = N 0 336
+  74688 = N 1 0
+  74784 = N 2 0
+  74880 = N 3 0
+  74976 = N 2 0
+  75008 = N 3 0
+  75040 = N 2 0
+  75072 = N 1 0
+  75168 = N 0 0
+  75264 = N 4 144
+  75264 = S 2 1536
+  75456 = N 3 0
+  75552 = N 4 0
+  75600 = N 3 0
+  75648 = N 2 0
+  75744 = N 1 0
+  75840 = N 0 336
+  76224 = N 1 0
+  76320 = N 2 0
+  76416 = N 3 0
+  76512 = N 2 0
+  76544 = N 3 0
+  76576 = N 2 0
+  76608 = N 1 0
+  76704 = N 0 0
+  76800 = N 4 144
+  76992 = N 3 0
+  77088 = N 4 0
+  77136 = N 3 0
+  77184 = N 2 0
+  77280 = N 1 0
+  77376 = N 0 336
+  77760 = N 1 0
+  77856 = N 2 0
+  77952 = N 3 0
+  78048 = N 2 0
+  78080 = N 3 0
+  78112 = N 2 0
+  78144 = N 1 0
+  78240 = N 0 0
+  78336 = N 4 144
+  78528 = N 3 0
+  78624 = N 4 0
+  78672 = N 3 0
+  78720 = N 2 0
+  78816 = N 1 0
+  78912 = N 0 336
+  79296 = N 1 0
+  79392 = N 2 0
+  79488 = N 3 0
+  79584 = N 2 0
+  79616 = N 3 0
+  79648 = N 2 0
+  79680 = N 1 0
+  79776 = N 0 0
+  79872 = N 4 144
+  80064 = N 3 0
+  80160 = N 4 0
+  80208 = N 3 0
+  80256 = N 2 0
+  80352 = N 1 0
+  80448 = N 0 336
+  80832 = N 1 0
+  80928 = N 2 0
+  81024 = N 3 0
+  81120 = N 2 0
+  81152 = N 3 0
+  81184 = N 2 0
+  81216 = N 1 0
+  81312 = N 0 0
+  81408 = N 4 144
+  81600 = N 3 0
+  81696 = N 4 0
+  81744 = N 3 0
+  81792 = N 2 0
+  81888 = N 1 0
+  81984 = N 0 336
+  82368 = N 1 0
+  82464 = N 2 0
+  82560 = N 3 0
+  82656 = N 2 0
+  82688 = N 3 0
+  82720 = N 2 0
+  82752 = N 1 0
+  82848 = N 0 0
+  82944 = N 0 0
+  82944 = N 1 0
+  82944 = N 2 0
+}
+[HardSingle]
+{
+  48 = N 0 0
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+}
+[MediumSingle]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[EasySingle]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[ExpertDoubleGuitar]
+{
+  48 = N 1 0
+  48 = N 2 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 2 0
+  144 = N 4 0
+  192 = N 2 0
+  192 = N 4 0
+  240 = N 2 0
+}
+[HardDoubleGuitar]
+{
+  48 = N 0 0
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+}
+[MediumDoubleGuitar]
+{
+  48 = N 0 0
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+}
+[EasyDoubleGuitar]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[ExpertDoubleBass]
+{
+  48 = N 2 0
+  48 = N 3 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  144 = N 0 0
+  144 = N 3 0
+  144 = N 4 0
+  240 = N 3 0
+  240 = N 4 0
+  288 = N 4 0
+}
+[HardDoubleBass]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[MediumDoubleBass]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[EasyDoubleBass]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[ExpertDoubleRhythm]
+{
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  96 = N 1 0
+  96 = N 4 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 2 0
+  240 = N 0 0
+  240 = N 2 0
+  240 = N 4 0
+  288 = N 0 0
+  288 = N 2 0
+  288 = N 4 0
+  336 = N 3 0
+  336 = N 4 0
+  384 = N 3 0
+  384 = N 4 0
+  432 = N 3 0
+  432 = N 4 0
+  480 = N 4 0
+}
+[HardDoubleRhythm]
+{
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+  240 = N 0 0
+  240 = N 1 0
+  240 = N 2 0
+  240 = N 3 0
+  240 = N 4 0
+}
+[MediumDoubleRhythm]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[EasyDoubleRhythm]
+{
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+}
+[ExpertKeyboard]
+{
+  96 = N 1 0
+  96 = N 2 0
+  144 = N 1 0
+  144 = N 2 0
+  192 = N 1 0
+  192 = N 2 0
+  240 = N 1 0
+  240 = N 2 0
+}
+[HardKeyboard]
+{
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+  192 = N 3 0
+  192 = N 4 0
+  240 = N 0 0
+  240 = N 1 0
+  240 = N 2 0
+  240 = N 3 0
+  240 = N 4 0
+}
+[MediumKeyboard]
+{
+  48 = N 0 0
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+}
+[EasyKeyboard]
+{
+  48 = N 0 0
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  96 = N 0 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+}
+[ExpertDrums]
+{
+  48 = N 2 0
+  48 = N 3 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 4 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 4 0
+  192 = N 2 0
+  192 = N 4 0
+  240 = N 4 0
+  288 = N 4 0
+}
+[HardDrums]
+{
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 5 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 5 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 5 0
+}
+[MediumDrums]
+{
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 5 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 5 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 5 0
+}
+[EasyDrums]
+{
+  48 = N 1 0
+  48 = N 2 0
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 5 0
+  96 = N 1 0
+  96 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 5 0
+  144 = N 1 0
+  144 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 5 0
+}
+[ExpertGHLGuitar]
+{
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  192 = N 3 0
+  192 = N 2 0
+  240 = N 4 0
+  240 = N 1 0
+  240 = N 2 0
+}
+[HardGHLGuitar]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[MediumGHLGuitar]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[EasyGHLGuitar]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[ExpertGHLBass]
+{
+  48 = N 4 0
+  48 = N 8 0
+  48 = N 0 0
+  48 = N 2 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 2 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+}
+[HardGHLBass]
+{
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 8 0
+  48 = N 0 0
+  48 = N 1 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+}
+[MediumGHLBass]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[EasyGHLBass]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[ExpertGHLRhythm]
+{
+  48 = N 4 0
+  48 = N 8 0
+  96 = N 4 0
+  96 = N 1 0
+  96 = N 2 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  144 = N 2 0
+  192 = N 0 0
+  192 = N 1 0
+  192 = N 2 0
+}
+[HardGHLRhythm]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[MediumGHLRhythm]
+{
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 8 0
+  48 = N 0 0
+  48 = N 1 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+}
+[EasyGHLRhythm]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[ExpertGHLCoop]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+  288 = N 2 0
+}
+[HardGHLCoop]
+{
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+  192 = N 3 0
+  192 = N 4 0
+  192 = N 8 0
+  192 = N 0 0
+  192 = N 1 0
+}
+[MediumGHLCoop]
+{
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 8 0
+  48 = N 0 0
+  48 = N 1 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+}
+[EasyGHLCoop]
+{
+  48 = N 3 0
+  48 = N 4 0
+  48 = N 8 0
+  48 = N 0 0
+  48 = N 1 0
+  96 = N 3 0
+  96 = N 4 0
+  96 = N 8 0
+  96 = N 0 0
+  96 = N 1 0
+  144 = N 3 0
+  144 = N 4 0
+  144 = N 8 0
+  144 = N 0 0
+  144 = N 1 0
+}
