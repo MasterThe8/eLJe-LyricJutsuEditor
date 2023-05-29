@@ -18,7 +18,9 @@ def process_lyrics(events):
                     current_line += ' '
                 current_line += value
             else:
-                current_line += ' ' + value
+                if current_line and not current_line.endswith('-'):
+                    current_line += ' '
+                current_line += '' + value
             current_line_positions.append(pos)
     
     if current_line:
@@ -26,21 +28,26 @@ def process_lyrics(events):
     
     return lines
 
-
-# Contoh penggunaan
 events = [
     '120 = E "phrase_start"',
     '123 = E "lyric Satu"',
     '125 = E "phrase_start"',
     '128 = E "lyric Du-"',
-    '130 = E "lyric a"',
+    '130 = E "lyric a-"',
     '132 = E "lyric Ti-"',
     '134 = E "lyric ga"',
+    '136 = E "lyric e-"',
+    '137 = E "lyric m"',
+    '138 = E "lyric p-"',
+    '139 = E "lyric a-"',
+    '140 = E "lyric t"',
     '145 = E "phrase_start"',
-    '150 = E "lyric Empat"',
-    '154 = E "lyric Lima"',
+    '150 = E "lyric Lima"',
+    '154 = E "lyric Enam"',
 ]
 
-lyrics = process_lyrics(events)
-for line, count in lyrics:
-    print(f"{line} ({count})")
+# lyrics = process_lyrics(events)
+# for line, count in lyrics:
+#     print(f"{line} ({count})")
+
+print(process_lyrics(events))

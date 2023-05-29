@@ -134,13 +134,13 @@ class MainWindow(QMainWindow):
         plainText = plainTextEdit.toPlainText()
         
         html_text = plainText.replace('\n', '<br>')
-        # richText = self.convertHTMLToRichText(html_text)
-        plainText_line = plainText.split('\n')
-        array_teks = [line for line in plainText_line if line.strip()]
-        richText = self.toRichText(array_teks)
-        # print(richText)
-        display = '<br>'.join(''.join(line) for line in richText)
-        plainText_display = self.convertHTMLToRichText(display)
+        
+        # plainText_line = plainText.split('\n')
+        # array_teks = [line for line in plainText_line if line.strip()]
+        # richText = self.toRichText(array_teks)
+        # display = '<br>'.join(''.join(line) for line in richText)
+        
+        plainText_display = self.convertHTMLToRichText(html_text)
         richTextEdit.setHtml(plainText_display)
         
     def toRichText(self, plainText):
@@ -161,7 +161,9 @@ class MainWindow(QMainWindow):
                         current_line += ' '
                     current_line += value
                 else:
-                    current_line += ' ' + value
+                    if current_line and not current_line.endswith('-'):
+                        current_line += ' '
+                    current_line += '' + value
         
         if current_line:
             lines.append(current_line.strip())
