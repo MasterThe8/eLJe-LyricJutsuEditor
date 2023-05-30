@@ -8,14 +8,5 @@ Software untuk mempermudah Charter Clone Hero dalam membuat Lyric Jutsu (sebutan
 
 ⚠️ **Software ini masih dalam tahap pengembangan!** ⚠️
 
-## Feature & Bugs v0.0.1
-Fitur yang ada pada Software :
-- `Highlight Color Text` : Tampilan warna/Highlight pada Teks, sehingga memudahkan penglihatan ketika mengedit teks.
-- `Find` : Fitur yang wajib ada pada aplikasi Text Editor.
-- `Add Jutsu` : Berfungsi untuk menambahkan **Script** Lyric Jutsu.
-
-Bugs yang belum diperbaiki :
-- Fitur `Replace` tidak berfungsi.
-
 ## Release
 eLJe | LyricJutsu Chart Editor [v0.0.1](https://github.com/MasterThe8/eLJe-LyricJutsuChartEditor/releases)
