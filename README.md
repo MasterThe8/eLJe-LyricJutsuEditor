@@ -18,4 +18,4 @@ Bugs yang belum diperbaiki :
 - Fitur `Replace` tidak berfungsi.
 
 ## Release
-eLJe | LyricJutsu Chart Editor v0.0.1 [https://github.com/MasterThe8/eLJe-LyricJutsuChartEditor/releases]
+eLJe | LyricJutsu Chart Editor [v0.0.1](https://github.com/MasterThe8/eLJe-LyricJutsuChartEditor/releases)
