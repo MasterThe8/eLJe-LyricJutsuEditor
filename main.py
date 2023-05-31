@@ -4,6 +4,7 @@ import chardet
 import codecs
 import re
 from data import *
+from PyQt5 import QtGui
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -26,10 +27,69 @@ class GlobalText:
     ghl_bass = ''
     ghl_rhythm = ''
     ghl_coop = ''
-    
+
+class LandingPageWindow(QMainWindow):
+    def __init__(self, main_window):
+        super().__init__()
+        
+        self.main_window = main_window
+        self.setWindowTitle("Landing Page")
+        self.center_window(800,400)
+        
+        self.setWindowFlags(Qt.Window | Qt.FramelessWindowHint | Qt.WindowTitleHint | Qt.WindowStaysOnTopHint)
+        central_widget = QWidget()
+        self.setCentralWidget(central_widget)
+        layout = QVBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setAlignment(Qt.AlignCenter)
+        central_widget.setLayout(layout)
+        
+        label1 = QLabel("eLJe | LyricJutsu Chart Editor")
+        label1.setObjectName("label1")
+        label1.setFont(QFont("Arial", 32))
+        layout.addWidget(label1)
+
+        label2 = QLabel("MasterThe8")
+        label2.setObjectName("label2")
+        label2.setFont(QFont("Arial", 18))
+        layout.addWidget(label2)
+        
+        layout.addSpacing(40)
+
+        button = QPushButton("Open Chart File")
+        button.setCursor(Qt.PointingHandCursor)
+        button.clicked.connect(self.open_main_window)
+        layout.addWidget(button)
+
+        with open('style/landing.css', 'r') as f:
+            style_sheet = f.read()
+        
+        self.setStyleSheet(style_sheet)
+
+    def center_window(self, width, height):
+        screen = QDesktopWidget().screenGeometry()
+        x = (screen.width() - width) // 2
+        y = (screen.height() - height) // 2
+        self.setGeometry(x, y, width, height)
+
+    def open_main_window(self):
+        self.close()
+        main_window.open_file()
+        main_window.setEnabled(True)
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        
+        self.tabWidget = QTabWidget(self)
+        self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Lyrics')
+        self.tabWidget.addTab(self.tabRichTextEdit(), 'Display Lyrics')
+        self.setCentralWidget(self.tabWidget)
+        self.setWindowTitle("eLJe | LyricJutsu Chart Editor v0.0.40")
+        self.setGeometry(150,80, 300,300)
+        self.resize(1000,600)
+        self.showMaximized()
+        self.setEnabled(False)
         
         # Menu Bar
         menu_bar = self.menuBar()
@@ -83,20 +143,13 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(save_action)
         self.toolbar = self.addToolBar("Find")
         self.toolbar.addAction(find_action)
-        self.toolbar = self.addToolBar("Replace")
-        self.toolbar.addAction(replace_action)
+        # self.toolbar = self.addToolBar("Replace")
+        # self.toolbar.addAction(replace_action)
         self.toolbar = self.addToolBar("Add Jutsu")
         self.toolbar.addAction(addjutsu_action)
         self.toolbar = self.addToolBar("Color Picker")
         self.toolbar.addAction(colorpick_action)
         
-        self.tabWidget = QTabWidget(self)
-        self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Lyrics')
-        self.tabWidget.addTab(self.tabRichTextEdit(), 'Display Lyrics')
-        self.setCentralWidget(self.tabWidget)
-        self.setWindowTitle("Chart File Editor")
-        self.setGeometry(150,80, 300,300)
-        self.resize(1000,600)
         self.show()
         
     def tabPlainTextEdit(self):
@@ -107,24 +160,28 @@ class MainWindow(QMainWindow):
         # Styling QPlainTextEdit
         self.highlighter = Highlighter(self.plainTextEdit.document())
         self.plainTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
-        
+
         font = QFont()
         font.setPointSize(12)
         font.setFamily("Consolas, 'Courier New', monospace")
+        font.setStyleStrategy(QtGui.QFont.PreferAntialias)
         self.plainTextEdit.setFont(font)
         
         return self.plainTextEdit
         
     def tabRichTextEdit(self):
-        richTextEdit = QTextEdit(self)
+        self.richTextEdit = QTextEdit(self)
         # richTextEdit.textChanged.connect(self.onRichTextChanged)
+        self.richTextEdit.setReadOnly(True)
+        
         font = QFont()
         font.setPointSize(12)
-        richTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
+        self.richTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
         font.setFamily("Consolas, 'Courier New', monospace")
-        richTextEdit.setFont(font)
+        font.setStyleStrategy(QtGui.QFont.PreferAntialias)
+        self.richTextEdit.setFont(font)
         
-        return richTextEdit
+        return self.richTextEdit
     
     def onPlainTextChanged(self):
         plainTextEdit = self.tabWidget.currentWidget()
@@ -133,16 +190,19 @@ class MainWindow(QMainWindow):
         plainTextEdit = self.sender()
         plainText = plainTextEdit.toPlainText()
         
-        html_text = plainText.replace('\n', '<br>')
-        
-        # plainText_line = plainText.split('\n')
-        # array_teks = [line for line in plainText_line if line.strip()]
-        # richText = self.toRichText(array_teks)
-        # display = '<br>'.join(''.join(line) for line in richText)
-        
-        plainText_display = self.convertHTMLToRichText(html_text)
-        richTextEdit.setHtml(plainText_display)
-        
+        # html_text = plainText.replace('\n', '<br>')
+        try:
+            plainText_line = plainText.split('\n')
+            array_teks = [line for line in plainText_line if line.strip()]
+            richText = self.toRichText(array_teks)
+            display = '<br>'.join(''.join(line) for line in richText)
+            
+            plainText_display = self.convertHTMLToRichText(display)
+            richTextEdit.setHtml(plainText_display)
+        except Exception:
+            QMessageBox.critical(self, "Error", f"PLEASE OPEN YOUR (.chart) FILE!")
+            self.show()
+                    
     def toRichText(self, plainText):
         lines = []
         current_line = ''
@@ -231,10 +291,8 @@ class MainWindow(QMainWindow):
     
 # Fungsi Open File
     def open_file(self):
-        # Dialog Open File
         file_name, _ = QFileDialog.getOpenFileName(self, 'Open file', '.', 'Chart files (*.chart)')
         
-        # Membaca dan menampilkan textnya pada jendela
         if file_name:
             try:
                 with open(file_name, 'rb') as f:
@@ -243,13 +301,11 @@ class MainWindow(QMainWindow):
                     # display_text = file_contents.decode().split('{')[1].split('}')[0]
                     
                     sync_track_text = file_contents.decode()[file_contents.decode().find('[SyncTrack]'):file_contents.decode().find('}', file_contents.decode().find('[SyncTrack]'))+1]
-                    
                     song_text = file_contents.decode()[file_contents.decode().find('[Song]'):file_contents.decode().find('}', file_contents.decode().find('[Song]'))+1]
                     
                     events_text = file_contents.decode()[file_contents.decode().find('[Events]'):file_contents.decode().find('}', file_contents.decode().find('[Events]'))+1]
                     events_split = events_text.split('{')
                     songrex = 'songrex'
-                    
                     events_display = events_split[1].replace('}','')
                     events_temp = events_split[0] + '{\n' + songrex +'\n}\n'
                     
@@ -361,7 +417,6 @@ class MainWindow(QMainWindow):
                 
                 f.write(temp3.encode())
                 
-                
     def font_setting(self):
         font2, ok = QFontDialog.getFont()
         
@@ -398,11 +453,13 @@ class MainWindow(QMainWindow):
             if not cursor.isNull():
                 plainTextEdit.setTextCursor(cursor)
                 plainTextEdit.ensureCursorVisible()
-
+            if not plainTextEdit.find(text):
+                QMessageBox.warning(dialog, "Not Found", "The text '{}' was not found.".format(text))
+       
     # Fungsi Replace Text
     def replace_text(plainTextEdit):
         dialog = ReplaceTextDialog(plainTextEdit.window())
-        plainTextEdit = main_window.text_edit
+        plainTextEdit = main_window.tabWidget.currentWidget()
         
         while dialog.exec_() == QDialog.Accepted:
             find_text = dialog.find_text()
@@ -429,7 +486,8 @@ class MainWindow(QMainWindow):
     # Fungsi Add Jutsu
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())
-        plainTextEdit = main_window.text_edit
+        plainTextEdit = main_window.tabWidget.currentWidget()
+        dialog.setWindowFlags(dialog.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
         
         if dialog.exec_() == QDialog.Accepted:
             text = ""
@@ -437,5 +495,7 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     main_window = MainWindow()
-    main_window.show()
+    # main_window.show()
+    landing_page = LandingPageWindow(main_window)
+    landing_page.show()
     sys.exit(app.exec_())

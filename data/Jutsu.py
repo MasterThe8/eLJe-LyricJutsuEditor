@@ -44,7 +44,12 @@ class AddJutsu(QDialog):
     # cursor = plaintext.textCursor()
     # cursor.insertText(text)
     # plaintext.setTextCursor(cursor)
-    
+    def focusOutEvent(self, event):
+        self.activateWindow()
+        self.setWindowFlags(self.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
+        self.show()
+        super().focusOutEvent(event)
+        
     def accept(self):
         # index = self.comboBox.currentIndex()
         # jutsuSelected = self.comboBox.itemText(index)
@@ -56,22 +61,22 @@ class AddJutsu(QDialog):
         jutsuInput = ""
         
         if jutsuSelected == 'No SlideUp Transition':
-            line1 = "  " + str(position) + " = E \"lyric _\""
-            line2 = "  " + str(position+1) + " = E \"phrase_start\""
-            line3 = "  " + str(position+2) + " = E \"lyric "+lyricInput+"\""
+            line1 = str(position) + " = E \"lyric _\""
+            line2 = str(position+1) + " = E \"phrase_start\""
+            line3 = str(position+2) + " = E \"lyric "+lyricInput+"\""
             jutsuInput = line1 + '\n' + line2 + '\n' + line3
             
         elif jutsuSelected == 'Hide Next Phrase':
-            line1 = "  " + str(position) + " = E \"lyric _\""
-            line2 = "  " + str(position+1) + " = E \"phrase_start\""
-            line3 = "  " + str(position+2) + " = E \"lyric _\""
-            line4 = "  " + str(position+3) + " = E \"phrase_start\""
-            line5 = "  " + str(position+4) + " = E \"lyric "+lyricInput+"\""
+            line1 = str(position) + " = E \"lyric _\""
+            line2 = str(position+1) + " = E \"phrase_start\""
+            line3 = str(position+2) + " = E \"lyric _\""
+            line4 = str(position+3) + " = E \"phrase_start\""
+            line5 = str(position+4) + " = E \"lyric "+lyricInput+"\""
             jutsuInput = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
         
-        cursor = self.parent().text_edit.textCursor()
+        cursor = self.parent().plainTextEdit.textCursor()
         cursor.insertText(str(jutsuInput))
-        self.parent().text_edit.setTextCursor(cursor)
+        self.parent().plainTextEdit.setTextCursor(cursor)
         
         super(AddJutsu, self).accept()
     
