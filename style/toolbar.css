@@ -1,0 +1,16 @@
+QToolBar {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 4px;
+}
+
+QToolButton {
+    background-color: #A0A0A0;
+    border: none;
+    padding: 4px;
+    color: white;
+}
+
+QToolButton:hover {
+    background-color: #C0C0C0;
+}

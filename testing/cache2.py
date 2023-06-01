@@ -1,60 +1,29 @@
-    def convertPlainTextToRichText(self, plainText):
-        textEdit = self.tabRichTextEdit()
-        cursor = textEdit.textCursor()
-        cursor.beginEditBlock()
+# lines = ['12 = E "lyric Ka-"', '18 = E "lyric li-"', '30 = E "lyric mat"', '32 = E "lyric Li-"', '35 = E "lyric rik"']
+# lines = ['12 = E "lyric <i></i>"',
+# '13 = E "phrase_start"',
+# '14 = E "lyric <color=#FF0000>Ka</color>"',
+# '18 = E "lyric <i></i>"',
+# '19 = E "phrase_start"',
+# '20 = E "lyric <color=#FF0000>Kali</color>"',
+# '30 = E "lyric <i></i>"',
+# '31 = E "phrase_start"',
+# '32 = E "lyric <color=#FF0000>Kalimat</color>"']
 
-        # Mengatur format awal teks
-        defaultFormat = cursor.charFormat()
-        
-        boldStartTag = "<b>"
-        boldEndTag = "</b>"
-        italicStartTag = "<i>"
-        italicEndTag = "</i>"
+lines = ['14 = E "lyric <color=#FF0000>Ka</color>"', '20 = E "lyric <color=#FF0000>Kali</color>"', '32 = E "lyric <color=#FF0000>Kalimat</color>"']
 
-        currentIndex = 0
-        
-        # Melakukan iterasi untuk mencari tag dan menerapkan format ke teks
-        while currentIndex < len(plainText):
-            # Mencari tag <b>
-            if plainText.find(boldStartTag, currentIndex) == currentIndex:
-                boldEndIndex = plainText.find(boldEndTag, currentIndex)
-                if boldEndIndex != -1:
-                    # Menerapkan format teks tebal
-                    cursor.setPosition(currentIndex + len(boldStartTag), QTextCursor.MoveAnchor)
-                    cursor.setPosition(boldEndIndex, QTextCursor.KeepAnchor)
-                    boldFormat = QTextCharFormat()
-                    boldFormat.setFontWeight(QFont.Bold)
-                    cursor.mergeCharFormat(boldFormat)
-                    currentIndex = boldEndIndex + len(boldEndTag)
+result = []
 
-            # Mencari tag <i>
-            elif plainText.find(italicStartTag, currentIndex) == currentIndex:
-                italicEndIndex = plainText.find(italicEndTag, currentIndex)
-                if italicEndIndex != -1:
-                    currentIndex = italicEndIndex + len(italicEndTag)
+# Get lyric in line
+for line in lines[1:]:
+    pos, event_data = line.split(' = ')
+    event_name, *value = event_data.strip('E "').split(' ')
+    value = ' '.join(value)
+    result.append(value)
+    # if value.endswith('-'):
+    #     lyric_temp += value
+    # else:
+    #     lyric = lyric_temp + value
+    #     result.append(lyric)
+    #     lyric_temp = ''
 
-                    # Mengatur format teks miring
-                    italicFormat = QTextCharFormat()
-                    italicFormat.setFontItalic(True)
-                    cursor.mergeCharFormat(italicFormat)
-
-            # Teks biasa
-            else:
-                # Menemukan teks berikutnya yang mengandung tag
-                nextTagIndex = min(
-                    plainText.find(boldStartTag, currentIndex),
-                    plainText.find(italicStartTag, currentIndex)
-                )
-
-                if nextTagIndex == -1:
-                    nextTagIndex = len(plainText)
-
-                # Menambahkan teks biasa
-                text = plainText[currentIndex:nextTagIndex]
-                cursor.insertText(text, defaultFormat)
-                currentIndex = nextTagIndex
-
-        cursor.endEditBlock()
-        richText = textEdit.toHtml()
-
-        return richText
+print(result)

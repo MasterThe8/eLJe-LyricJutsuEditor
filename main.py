@@ -86,10 +86,11 @@ class MainWindow(QMainWindow):
         self.tabWidget.addTab(self.tabRichTextEdit(), 'Display Lyrics')
         self.setCentralWidget(self.tabWidget)
         self.setWindowTitle("eLJe | LyricJutsu Chart Editor v0.0.40")
-        self.setGeometry(150,80, 300,300)
-        self.resize(1000,600)
-        self.showMaximized()
+        self.center_window(1000,600)
+        # self.showMaximized()
         self.setEnabled(False)
+        
+        self.ccJutsu = CCJutsu(self)
         
         # Menu Bar
         menu_bar = self.menuBar()
@@ -97,19 +98,19 @@ class MainWindow(QMainWindow):
         option_menu = menu_bar.addMenu("Option")
 
         # File Menu & Action
-        open_action = QAction('Open', self)
+        open_action = QAction(QIcon("img/open_file.png"),'Open', self)
         open_action.setShortcut('Ctrl+O')
         open_action.triggered.connect(self.open_file)
         file_menu.addAction(open_action)
 
         # Save Menu & Action
-        save_action = QAction("Save", self)
+        save_action = QAction(QIcon("img/save_file.png"),"Save", self)
         save_action.setShortcut("Ctrl+S")
         save_action.triggered.connect(self.save_file)
         file_menu.addAction(save_action)
         
         # Find Action
-        find_action = QAction("Find", self)
+        find_action = QAction(QIcon("img/find.png"),"Find", self)
         find_action.setShortcut("Ctrl+F")
         find_action.triggered.connect(self.find_text)
         
@@ -123,8 +124,12 @@ class MainWindow(QMainWindow):
         addjutsu_action.triggered.connect(self.add_jutsu)
         
         # Color Picker Action
-        colorpick_action = QAction("Color Picker", self)
+        colorpick_action = QAction(QIcon("img/color_picker.png"),"Color Picker", self)
         colorpick_action.triggered.connect(self.color_picker)
+        
+        # Color no Jutsu Action
+        colorjutsu_action = QAction("Custom Color no Jutsu", self)
+        colorjutsu_action.triggered.connect(self.custom_color_no_jutsu)
         
         # Exit Menu & Action
         exit_action = QAction("Exit", self)
@@ -137,6 +142,15 @@ class MainWindow(QMainWindow):
         option_menu.addAction(font_setting_action)
 
         # Toolbar
+        self.toolbar = QToolBar()
+        self.addToolBar(self.toolbar)
+        css_file = QFile("style/toolbar.css")
+        if css_file.open(QFile.ReadOnly | QFile.Text):
+            stream = QTextStream(css_file)
+            stylesheet = stream.readAll()
+            css_file.close()
+            self.toolbar.setStyleSheet(stylesheet)
+            
         self.toolbar = self.addToolBar("Open")
         self.toolbar.addAction(open_action)
         self.toolbar = self.addToolBar("Save")
@@ -145,21 +159,83 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(find_action)
         # self.toolbar = self.addToolBar("Replace")
         # self.toolbar.addAction(replace_action)
-        self.toolbar = self.addToolBar("Add Jutsu")
-        self.toolbar.addAction(addjutsu_action)
         self.toolbar = self.addToolBar("Color Picker")
         self.toolbar.addAction(colorpick_action)
+        self.toolbar = self.addToolBar("Custom Color no Jutsu")
+        self.toolbar.addAction(colorjutsu_action)
+        self.toolbar = self.addToolBar("Add Jutsu")
+        self.toolbar.addAction(addjutsu_action)
         
         self.show()
+
+    def center_window(self, width, height):
+        screen = QDesktopWidget().screenGeometry()
+        x = (screen.width() - width) // 2
+        y = (screen.height() - height) // 2
+        self.setGeometry(x, y, width, height)
+
+    # def eventFilter(self, obj, event):
+    #     if obj is self.plainTextEdit and event.type() == event.Wheel:
+    #         if event.modifiers() == Qt.ControlModifier:
+    #             delta = event.angleDelta().y() / 120
+    #             if delta > 0:
+    #                 self.zoom_in()
+    #             else:
+    #                 self.zoom_out()
+    #             return True
+    #     return super().eventFilter(obj, event)
+
+    # def zoom_in(self):
+    #     self.zoom_factor += 1
+    #     self.update_font()
+
+    # def zoom_out(self):
+    #     if self.zoom_factor > -5:
+    #         self.zoom_factor -= 1
+    #         self.update_font()
+
+    # def update_font(self):
+    #     # Simpan posisi scroll saat ini
+    #     scroll_position = self.plainTextEdit.verticalScrollBar().value()
+
+    #     font = self.plainTextEdit.font()
+    #     font.setPointSize(font.pointSize() + self.zoom_factor)
+    #     self.plainTextEdit.setFont(font)
+
+    #     # Atur kembali posisi scroll
+    #     self.plainTextEdit.verticalScrollBar().setValue(scroll_position)
+
         
     def tabPlainTextEdit(self):
         self.plainTextEdit = QPlainTextEdit(self)
+        self.plainTextEdit.setObjectName("plainTextEdit")
         self.plainTextEdit.textChanged.connect(self.onPlainTextChanged)
         self.plainTextEdit.setLineWrapMode(QPlainTextEdit.NoWrap)
         
+        # self.plainTextEdit.installEventFilter(self)
+        # self.zoom_factor = 0
+        
+        self.plainTextEdit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.plainTextEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        scrollbarv = self.plainTextEdit.verticalScrollBar()
+        scrollbarh = self.plainTextEdit.horizontalScrollBar()
+        
+        # css_file = QFile("style/textedit.css")
+        # if css_file.open(QFile.ReadOnly | QFile.Text):
+        #     stream = QTextStream(css_file)
+        #     stylesheet = stream.readAll()
+        #     css_file.close()
+            
+        #     scrollbarv.setStyleSheet(stylesheet)
+        #     scrollbarh.setStyleSheet(stylesheet)
+        
         # Styling QPlainTextEdit
+        with open('style/textedit.css','r') as f:
+            text_edit_style = f.read()
+        
+        self.plainTextEdit.setStyleSheet(text_edit_style)
         self.highlighter = Highlighter(self.plainTextEdit.document())
-        self.plainTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
+        # self.plainTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
 
         font = QFont()
         font.setPointSize(12)
@@ -173,7 +249,20 @@ class MainWindow(QMainWindow):
         self.richTextEdit = QTextEdit(self)
         # richTextEdit.textChanged.connect(self.onRichTextChanged)
         self.richTextEdit.setReadOnly(True)
-        
+        self.richTextEdit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.richTextEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        scrollbarv = self.richTextEdit.verticalScrollBar()
+        scrollbarh = self.richTextEdit.horizontalScrollBar()
+
+        css_file = QFile("style/textedit.css")
+        if css_file.open(QFile.ReadOnly | QFile.Text):
+            stream = QTextStream(css_file)
+            stylesheet = stream.readAll()
+            css_file.close()
+            
+            scrollbarv.setStyleSheet(stylesheet)
+            scrollbarh.setStyleSheet(stylesheet)
+            
         font = QFont()
         font.setPointSize(12)
         self.richTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
@@ -196,11 +285,12 @@ class MainWindow(QMainWindow):
             array_teks = [line for line in plainText_line if line.strip()]
             richText = self.toRichText(array_teks)
             display = '<br>'.join(''.join(line) for line in richText)
-            
             plainText_display = self.convertHTMLToRichText(display)
+            plainText_display = self.convert_and_set_text(plainText_display)
             richTextEdit.setHtml(plainText_display)
+
         except Exception:
-            QMessageBox.critical(self, "Error", f"PLEASE OPEN YOUR (.chart) FILE!")
+            QMessageBox.critical(self, "Wrong event format detected!", f"You can't commit or create newline events manually.\nBut you can copy&paste events directly or edit them in Moonscraper!!")
             self.show()
                     
     def toRichText(self, plainText):
@@ -229,7 +319,35 @@ class MainWindow(QMainWindow):
             lines.append(current_line.strip())
         
         return lines
-    
+
+    def convert_and_set_text(self, plain_text):
+        color_start_tag = "<color="
+        color_end_tag = "</color>"
+
+        converted_text = plain_text
+        start_index = converted_text.find(color_start_tag)
+
+        while start_index != -1:
+            end_index = converted_text.find(">", start_index)
+            hex_start_index = start_index + len(color_start_tag)
+            hex_end_index = converted_text.find(">", hex_start_index)
+            text_start_index = end_index + 1
+            text_end_index = converted_text.find(color_end_tag, text_start_index)
+
+            if end_index != -1 and hex_end_index != -1 and text_end_index != -1:
+                hex_value = converted_text[hex_start_index:hex_end_index]
+                text = converted_text[text_start_index:text_end_index]
+
+                span = "<span style='color: {};'>{}</span>".format(hex_value, text)
+                converted_text = converted_text[:start_index] + span + converted_text[text_end_index + len(color_end_tag):]
+            else:
+                break
+
+            start_index = converted_text.find(color_start_tag)
+
+        # self.text_edit.setHtml(converted_text)
+        return converted_text
+
     def convertHTMLToRichText(self, plainText):
         rich_text = ""
         bold_format = QTextCharFormat()
@@ -421,7 +539,8 @@ class MainWindow(QMainWindow):
         font2, ok = QFontDialog.getFont()
         
         if ok:
-            self.text_edit.setFont(font2)
+            self.plainTextEdit.setFont(font2)
+            self.richTextEdit.setFont(font2)
 
     def closeEvent(self, event):
         # Membuat dialog konfirmasi untuk keluar
@@ -481,7 +600,6 @@ class MainWindow(QMainWindow):
 
             # Pindahkan cursor ke akhir dokumen
             plainTextEdit.moveCursor(QTextCursor.End)
-
     
     # Fungsi Add Jutsu
     def add_jutsu(plainTextEdit):
@@ -491,6 +609,16 @@ class MainWindow(QMainWindow):
         
         if dialog.exec_() == QDialog.Accepted:
             text = ""
+            
+    def custom_color_no_jutsu(self):
+        dialog = CCJutsu(self)
+        dialog.exec_()
+    
+    def getScript(self):
+        plainTextEdit = self.tabWidget.currentWidget()
+        plainText = plainTextEdit.toPlainText()
+        
+        return plainText
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

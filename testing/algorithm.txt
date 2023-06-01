@@ -51,3 +51,155 @@ Mungkin Algoritma pada program seperti ini:
 - Jika nama event adalah "phrase_start", maka ambil baris selanjutnya sampai dengan event "phrase_start" selanjutnya.
 - Jika nama event adalah "lyric", maka ambil "value" dan masukkan ke dalam variable sementara.
 - 
+
+
+
+
+
+
+
+
+
+
+
+Script PyQt5, fungsi konversi plaintext yang memiliki tag HTML <color> dengan custom color HEX kemudian terapkan pada QTextEdit. Lakukan perulangan agar menerapkan konversi ke semua teks
+
+Contoh Script Input :
+<color=#FF0000>Merah</color>
+<color=#0000FF>Biru</color>
+<color=#00FF00>Hijau</color>
+
+Maka, outputnya berupa teks dengan font warna merah pada RichText. 
+<span style='color: {#FF0000};'>{Merah}</span>
+<span style='color: {#0000FF};'>{Biru}</span>
+<span style='color: {#00FF00};'>{Hijau}</span>
+
+- Lakukan looping untuk mencari semua tag "<color="
+- Ambil nilai HEX dan teks yang berada diantara tag "color", kemudian masukkan ke variable sementara.
+- Siapkan variable sebagai template yang menyimpan script html "<span style='color: {};'>{}</span>"
+- Masukkan nilai HEX dan teks pada variable yang telah disiapkan sebagai template.
+- ulangi, dan lakukan ke semua plainText
+
+
+
+
+
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+
+Script PyQt5, cara membuat file font custom dan menerapkan font custom kepada teks yang diinputkan.
+Font custom yang dibuat terdapat huruf dengan style tertentu.
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+MainWindow mengimplementasikan QPlainTextEdit dan terdapat fungsi untuk mengubah font name dengan font custom.
+Terdapat button untuk memunculkan InputDialog. Teks yang dimasukkan akan diterapkan dengan font custom dan ditampilkan pada QPlainTextEdit
+
+
+
+
+events = [
+    '1 = E "phrase_start"',
+    '2 = E "lyric Sa-"',
+    '6 = E "lyric tu"',
+    '10 = E "phrase_start"',
+    '12 = E "lyric Ka-"',
+    '18 = E "lyric li-"',
+    '30 = E "lyric mat"',
+    '41 = E "phrase_start"',
+    '44 = E "lyric Li-"',
+    '46 = E "lyric rik"',
+]
+
+
+
+
+
+
+
+
+
+
+
+Jika terdapat dua array yang berisikan seperti berikut:
+array1 = ['limat Lirik', 'mat Lirik', 'Lirik', 'rik']
+array2 = ['1</color>"', '2</color>"', '3</color>"', '4</color>"', '5</color>"']
+
+Bagaimana cara memasukkan nilai array1 ke setelah tag "</color>" pada array2 kecuali nilai akhir array2?
+- Hitung jumlah elemen pada array1 dan array2
+    array1 = 4
+    array2 = 5
+- Jika jumlah array2 lebih satu dari jumlah array1, jika ita maka masukkan nilai array1 ke setelah tag "</color>" kecuali nilai terakhir array2.
+- Hasil output yang diinginkan:
+    1</color>limat Lirik"
+    2</color>mat Lirik"
+    3</color> Lirik"
+    4</color>rik"
+    5</color>"
+
+
+result:
+12 = E "lyric <i></i>"
+13 = E "phrase_start"
+14 = E "lyric <color=#FF0000>Ka</color>"
+18 = E "lyric <i></i>"
+19 = E "phrase_start"
+20 = E "lyric <color=#FF0000>Kali</color>"   
+30 = E "lyric <i></i>"
+31 = E "phrase_start"
+32 = E "lyric <color=#FF0000>Kalimat</color>"
+
+events = ['1 = E "phrase_start"',
+    '2 = E "lyric Sa-"',
+    '6 = E "lyric tu"',
+    '10 = E "phrase_start"',
+    '12 = E "lyric Ka-"',
+    '18 = E "lyric li-"',
+    '30 = E "lyric mat"',
+    '41 = E "phrase_start"',
+    '44 = E "lyric Li-"',
+    '48 = E "lyric rik"',]
+
+Code:
+index = next((i for i, event in enumerate(events) if event.startswith(position + ' = ')), None)
+if index is not None:
+    del events[index]
+    events[index:index] = result
+
+Modifikasi code tersebut dengan menambahkan pengecekan nilai pada events. Jika pada baris ada nilai nomor yang sama atau ganda, maka hapus baris yang memiliki nilai nomor sama dan sisakan nilai nomor pada baris yang pertama
+Output:
+1 = E "phrase_start"
+2 = E "lyric Sa-"
+6 = E "lyric tu"
+10 = E "phrase_start"
+12 = E "lyric <i></i>"
+13 = E "phrase_start"
+14 = E "lyric <color=#FF0000>Ka</color>"     
+18 = E "lyric <i></i>"
+19 = E "phrase_start"
+20 = E "lyric <color=#FF0000>Kali</color>"
+30 = E "lyric <i></i>"
+31 = E "phrase_start"
+32 = E "lyric <color=#FF0000>Kalimat</color>"
+18 = E "lyric li-" # '18' sudah ada sebelumnya, jadi hapus baris ini
+30 = E "lyric mat" # '30' sudah ada sebelumnya, jadi hapus baris ini
+41 = E "phrase_start"
+44 = E "lyric Li-"
+48 = E "lyric rik"
+
+
+cara mengubah nilai berikut
+['12 = E "lyric <i></i>"\n13 = E "phrase_start"\n14 = E "lyric <color=#FF0000>Ka</color>"', '18 = E "lyric <i></i>"\n19 = E "phrase_start"\n20 = E "lyric <color=#FF0000>Kali</color>"', '30 = E "lyric <i></i>"\n31 = E "phrase_start"\n32 = E "lyric <color=#FF0000>Kalimat</color>"']
+
+ke dalam bentuk array list seperti berikut
+lines = ['12 = E "lyric <i></i>"',
+'13 = E "phrase_start"',
+'14 = E "lyric <color=#FF0000>Ka</color>"',
+'18 = E "lyric <i></i>"',
+'19 = E "phrase_start"',
+'20 = E "lyric <color=#FF0000>Kali</color>"',
+'30 = E "lyric <i></i>"',
+'31 = E "phrase_start"',
+'32 = E "lyric <color=#FF0000>Kalimat</color>"']
+
