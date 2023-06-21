@@ -3,11 +3,11 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
-class CCJutsu(QDialog):
+class CnvrtJutsu(QDialog):
     def __init__(self, main_window):
         super().__init__()
 
-        self.setWindowTitle("Custom Color Jutsu")
+        self.setWindowTitle("Dialog Window")
         
         self.main_window = main_window
 
@@ -17,7 +17,9 @@ class CCJutsu(QDialog):
         # Membuat label dan input box
         self.label = QLabel("Input Lyric Position:")
         self.input_box = QLineEdit()
-
+        self.label2 = QLabel("Input Lyric Target:")
+        self.input_box2 = QLineEdit()
+        
         # Membuat layout untuk input hex dan color picker
         input_hex_layout = QHBoxLayout()
         self.input_hex = QLineEdit()
@@ -28,6 +30,8 @@ class CCJutsu(QDialog):
         # Menambahkan komponen ke layout
         layout.addWidget(self.label)
         layout.addWidget(self.input_box)
+        layout.addWidget(self.label2)
+        layout.addWidget(self.input_box2)
 
         # Menambahkan input hex dan color picker ke layout
         # input_hex_layout.addWidget(self.input_hex)
@@ -57,7 +61,7 @@ class CCJutsu(QDialog):
         
         # Membuat tombol OK dan Cancel
         self.okButton = QPushButton('OK')
-        self.okButton.clicked.connect(self.mainCCjutsu)
+        self.okButton.clicked.connect(self.mainCnvrtJutsu)
         self.cancelButton = QPushButton('Cancel')
         self.cancelButton.clicked.connect(self.reject)
 
@@ -126,7 +130,7 @@ class CCJutsu(QDialog):
         result = []
         previous_lyric = ''
         temp = lines[:]
-        
+
         if self.selected_color is None:
             hex_value = "#fca101"
         else:
@@ -286,15 +290,28 @@ class CCJutsu(QDialog):
         result = self.sort_script_by_position(result)
         return result
 
-    def get_lyric_item(self, events):
-        lines_temp = []
-        for line in events[1:]:
-            pos, event_data = line.split(' = ')
-            event_name, *value = event_data.strip('E "').split(' ')
-            value = ' '.join(value)
-            if event_name != 'section':
-                lines_temp.append(value)
-        return lines_temp
+    def get_lyric_item(self, lyric):
+        text_string = lyric.strip()
+
+        converted_list = []
+        word = ""
+
+        for char in text_string:
+            if char == '-':
+                if word != "":
+                    converted_list.append(word + '-')
+                    word = ""
+            elif char == ' ':
+                if word != "":
+                    converted_list.append(word + ' ')
+                    word = ""
+            else:
+                word += char
+
+        if word != "":
+            converted_list.append(word)
+
+        return converted_list
 
     def add_next_lyric(self, lines, script):
         script_temp = {int(item.split(' = ')[0]): item.split(' = ')[1] for item in script}
@@ -346,8 +363,9 @@ class CCJutsu(QDialog):
             self.textfakeLabel.setVisible(False)
             self.fakelyric.setVisible(False)
     
-    def mainCCjutsu(self):
+    def mainCnvrtJutsu(self):
         positionInput = self.input_box.text()
+        lyric_target = self.input_box2.text()
         position = None
         if positionInput.isdigit():
             position = int(positionInput)
@@ -368,7 +386,7 @@ class CCJutsu(QDialog):
                 result = self.cc_addnext(lines)
             
             result_split = [line for i in result for line in i.split('\n')]
-            lyric_items = self.get_lyric_item(lines)
+            lyric_items = self.get_lyric_item(lyric_target)
             print(lyric_items)
             last_result = self.add_next_lyric(lyric_items, result_split)
             
@@ -410,10 +428,10 @@ class CCJutsu(QDialog):
             shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
             shortcut_redo.activated.connect(self.redo_text)
             
-            super(CCJutsu, self).accept()
+            super(CnvrtJutsu, self).accept()
         
     def reject(self):
-        super(CCJutsu, self).reject()
+        super(CnvrtJutsu, self).reject()
         
     def undo_text(self):
         self.main_window.plainTextEdit.undo()  

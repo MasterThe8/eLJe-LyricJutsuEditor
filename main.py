@@ -1,14 +1,14 @@
+import re
 import sys
+import codecs
 import typing
 import chardet
-import codecs
-import re
 from data import *
 from PyQt5 import QtGui
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
         
         
 class GlobalText:
@@ -118,6 +118,19 @@ class MainWindow(QMainWindow):
         replace_action = QAction("Replace", self)
         replace_action.setShortcut("Ctrl+H")
         replace_action.triggered.connect(self.replace_text)
+
+        # Zoom In & Zoom Out
+        self.zoom_in_action = QAction('Zoom In', self)
+        self.zoom_in_action.setShortcut(QKeySequence.ZoomIn)
+        self.zoom_in_action.triggered.connect(self.zoom_in)
+        self.zoom_out_action = QAction('Zoom Out', self)
+        self.zoom_out_action.setShortcut(QKeySequence.ZoomOut)
+        self.zoom_out_action.triggered.connect(self.zoom_out)
+        self.toolbar = self.addToolBar('Zoom')
+        self.zoom_in_shortcut = QShortcut(QKeySequence("Ctrl+Shift++"), self)
+        self.zoom_in_shortcut.activated.connect(self.zoom_in)
+        self.zoom_out_shortcut = QShortcut(QKeySequence("Ctrl+Shift+-"), self)
+        self.zoom_out_shortcut.activated.connect(self.zoom_out)
         
         # Add Jutsu Action
         addjutsu_action = QAction("Add Jutsu", self)
@@ -131,6 +144,10 @@ class MainWindow(QMainWindow):
         colorjutsu_action = QAction("Custom Color no Jutsu", self)
         colorjutsu_action.triggered.connect(self.custom_color_no_jutsu)
         
+        # ConvertPhrase no Jutsu Action
+        convertjutsu_action = QAction("ConvertPhrase no Jutsu", self)
+        convertjutsu_action.triggered.connect(self.convert_phrase_no_jutsu)
+        
         # Exit Menu & Action
         exit_action = QAction("Exit", self)
         exit_action.triggered.connect(self.close)
@@ -143,14 +160,16 @@ class MainWindow(QMainWindow):
 
         # Toolbar
         self.toolbar = QToolBar()
+        self.toolbar.setOrientation(Qt.Horizontal)
         self.addToolBar(self.toolbar)
+        self.toolbar.setMovable(False)
         css_file = QFile("style/toolbar.css")
         if css_file.open(QFile.ReadOnly | QFile.Text):
             stream = QTextStream(css_file)
             stylesheet = stream.readAll()
             css_file.close()
             self.toolbar.setStyleSheet(stylesheet)
-            
+        
         self.toolbar = self.addToolBar("Open")
         self.toolbar.addAction(open_action)
         self.toolbar = self.addToolBar("Save")
@@ -159,14 +178,41 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(find_action)
         # self.toolbar = self.addToolBar("Replace")
         # self.toolbar.addAction(replace_action)
+        self.toolbar.addAction(self.zoom_in_action)
+        self.toolbar.addAction(self.zoom_out_action)
         self.toolbar = self.addToolBar("Color Picker")
         self.toolbar.addAction(colorpick_action)
-        self.toolbar = self.addToolBar("Custom Color no Jutsu")
-        self.toolbar.addAction(colorjutsu_action)
+        self.toolbar.addSeparator()
         self.toolbar = self.addToolBar("Add Jutsu")
+        self.toolbar = self.addToolBar("CustomColor no Jutsu")
+        self.toolbar = self.addToolBar("ConvertPhrase no Jutsu")
         self.toolbar.addAction(addjutsu_action)
+        self.toolbar.addAction(colorjutsu_action)
+        self.toolbar.addAction(convertjutsu_action)
+
+        # Membuat QAction untuk membuka/tutup QDockWidget
+        self.toggleDockAction = QAction("Toggle Dock", self)
+        self.toggleDockAction.setCheckable(True)
+        self.toggleDockAction.setChecked(True)
+        self.toggleDockAction.triggered.connect(self.toggleDockWidget)
+        self.tool_button = QToolButton()
+        self.tool_button.setDefaultAction(self.toggleDockAction)
+        self.toolbar.addWidget(self.tool_button)
+        # Membuat QDockWidget
+        self.dock = QDockWidget("Editor", self)
+        self.dock.setFeatures(QDockWidget.AllDockWidgetFeatures)
+        # Membuat QTextEdit sebagai widget editor teks
+        self.textEdit = QTextEdit()
+        self.dock.setWidget(self.textEdit)
+        self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
         
         self.show()
+
+    def toggleDockWidget(self):
+        if self.toggleDockAction.isChecked():
+            self.dock.show()
+        else:
+            self.dock.hide()
 
     def center_window(self, width, height):
         screen = QDesktopWidget().screenGeometry()
@@ -174,38 +220,23 @@ class MainWindow(QMainWindow):
         y = (screen.height() - height) // 2
         self.setGeometry(x, y, width, height)
 
-    # def eventFilter(self, obj, event):
-    #     if obj is self.plainTextEdit and event.type() == event.Wheel:
-    #         if event.modifiers() == Qt.ControlModifier:
-    #             delta = event.angleDelta().y() / 120
-    #             if delta > 0:
-    #                 self.zoom_in()
-    #             else:
-    #                 self.zoom_out()
-    #             return True
-    #     return super().eventFilter(obj, event)
+    def zoom_in(self):
+        font = self.plainTextEdit.font()
+        font_size = font.pointSize()
+        font.setPointSize(font_size + 1)
+        self.plainTextEdit.setFont(font)
 
-    # def zoom_in(self):
-    #     self.zoom_factor += 1
-    #     self.update_font()
-
-    # def zoom_out(self):
-    #     if self.zoom_factor > -5:
-    #         self.zoom_factor -= 1
-    #         self.update_font()
-
-    # def update_font(self):
-    #     # Simpan posisi scroll saat ini
-    #     scroll_position = self.plainTextEdit.verticalScrollBar().value()
-
-    #     font = self.plainTextEdit.font()
-    #     font.setPointSize(font.pointSize() + self.zoom_factor)
-    #     self.plainTextEdit.setFont(font)
-
-    #     # Atur kembali posisi scroll
-    #     self.plainTextEdit.verticalScrollBar().setValue(scroll_position)
-
+    def zoom_out(self):
+        font = self.plainTextEdit.font()
+        font_size = font.pointSize()
+        font.setPointSize(font_size - 1)
+        self.plainTextEdit.setFont(font)
         
+    def undo_text(self):
+        self.plainTextEdit.undo()  
+    def redo_text(self):
+        self.plainTextEdit.redo() 
+          
     def tabPlainTextEdit(self):
         self.plainTextEdit = QPlainTextEdit(self)
         self.plainTextEdit.setObjectName("plainTextEdit")
@@ -219,6 +250,11 @@ class MainWindow(QMainWindow):
         self.plainTextEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         scrollbarv = self.plainTextEdit.verticalScrollBar()
         scrollbarh = self.plainTextEdit.horizontalScrollBar()
+        
+        shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
+        shortcut_undo.activated.connect(self.undo_text)
+        shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
+        shortcut_redo.activated.connect(self.redo_text)
         
         # css_file = QFile("style/textedit.css")
         # if css_file.open(QFile.ReadOnly | QFile.Text):
@@ -278,7 +314,6 @@ class MainWindow(QMainWindow):
         
         plainTextEdit = self.sender()
         plainText = plainTextEdit.toPlainText()
-        
         # html_text = plainText.replace('\n', '<br>')
         try:
             plainText_line = plainText.split('\n')
@@ -572,14 +607,13 @@ class MainWindow(QMainWindow):
             if not cursor.isNull():
                 plainTextEdit.setTextCursor(cursor)
                 plainTextEdit.ensureCursorVisible()
-            if not plainTextEdit.find(text):
-                QMessageBox.warning(dialog, "Not Found", "The text '{}' was not found.".format(text))
+
        
     # Fungsi Replace Text
     def replace_text(plainTextEdit):
         dialog = ReplaceTextDialog(plainTextEdit.window())
         plainTextEdit = main_window.tabWidget.currentWidget()
-        
+
         while dialog.exec_() == QDialog.Accepted:
             find_text = dialog.find_text()
             replace_text = dialog.replace_text()
@@ -587,8 +621,8 @@ class MainWindow(QMainWindow):
             if cursor.isNull():
                 break
 
-            # Menggunakan for loop dengan memanfaatkan iterator dari find
-            for cursor in iter(cursor, QPlainTextEdit.DocumentEnd):
+            # Menggunakan loop while untuk melintasi dokumen teks
+            while not cursor.isNull():
                 plainTextEdit.setTextCursor(cursor)
                 plainTextEdit.ensureCursorVisible()
 
@@ -598,26 +632,32 @@ class MainWindow(QMainWindow):
                 elif dialog.sender() == dialog.replace_all_button:
                     plainTextEdit.textCursor().insertText(replace_text)
 
+                cursor = plainTextEdit.document().find(find_text, cursor)
+
             # Pindahkan cursor ke akhir dokumen
             plainTextEdit.moveCursor(QTextCursor.End)
-    
+        
     # Fungsi Add Jutsu
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())
         plainTextEdit = main_window.tabWidget.currentWidget()
         dialog.setWindowFlags(dialog.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
-        
-        if dialog.exec_() == QDialog.Accepted:
-            text = ""
+        dialog.exec_()       
+        # if dialog.exec_() == QDialog.Accepted:
+        #     text = ""
             
     def custom_color_no_jutsu(self):
         dialog = CCJutsu(self)
+        dialog.exec_()
+        
+    def convert_phrase_no_jutsu(self):
+        dialog = CnvrtJutsu(self)
         dialog.exec_()
     
     def getScript(self):
         plainTextEdit = self.tabWidget.currentWidget()
         plainText = plainTextEdit.toPlainText()
-        
+
         return plainText
 
 if __name__ == "__main__":

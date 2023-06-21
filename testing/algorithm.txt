@@ -203,3 +203,145 @@ lines = ['12 = E "lyric <i></i>"',
 '31 = E "phrase_start"',
 '32 = E "lyric <color=#FF0000>Kalimat</color>"']
 
+
+
+
+
+
+Script:
+12 = E "phrase_start"
+15 = E "lyric Ka-"
+25 = E "lyric li-"
+34 = E "lyric mat"
+52 = E "lyric Li-"
+61 = E "lyric rik"
+83 = E "lyric La-"
+88 = E "lyric gu"
+
+section_lines:
+10 = E "section Chorus 1B"
+46 = E "section Main Theme 1"
+78 = E "section Verse 1A"
+91 = E "section Pre-Chorus 1A"
+
+Buat fungsi untuk memasukkan kembali "section_lines" ke dalam script kemudian lakukan pengurutan baris berdasarkan 'position'
+- Memasukkan kembali "section_lines" ke dalam script:
+12 = E "phrase_start"
+15 = E "lyric Ka-"
+25 = E "lyric li-"
+34 = E "lyric mat"
+52 = E "lyric Li-"
+61 = E "lyric rik"
+83 = E "lyric La-"
+88 = E "lyric gu"
+10 = E "section Chorus 1B"
+46 = E "section Main Theme 1"
+78 = E "section Verse 1A"
+91 = E "section Pre-Chorus 1A"
+
+Lakukan pengurutan berdasarkan 'position', sehingga hasil akhir Output:
+10 = E "section Chorus 1B"
+12 = E "phrase_start"
+15 = E "lyric Ka-"
+25 = E "lyric li-"
+34 = E "lyric mat"
+46 = E "section Main Theme 1"
+52 = E "lyric Li-"
+61 = E "lyric rik"
+78 = E "section Verse 1A"
+83 = E "lyric La-"
+88 = E "lyric gu"
+91 = E "section Pre-Chorus 1A"
+
+
+Fungsi tersebut tidak bekerja dengan baik.
+Script:
+34 = E "lyric mat"
+46 = E "lyric waw1"
+46 = E "section Main Theme 1"
+52 = E "lyric Li-"
+
+section_lines:
+    '10 = E "section Chorus 1B"',
+    '46 = E "section Main Theme 1"',
+    '78 = E "section Verse 1A"',
+    '91 = E "section Pre-Chorus 1A"',
+
+Modifikasi fungsi merge_and_sort dengan melakukan pengecekan position & event_name 'section' yang sama pada script dan section_lines.
+Jika terdapat position dan event_name section yang sama, maka jangan masukkan ke sciript.
+
+Pada script dan section_lines, terdapat baris dengan 'position' dan event_name 'section' yang sama, yaitu '46 = E "section Main Theme 1"'. Maka jangan masukkan section_lines '46 = E "section Main Theme 1' ke dalam script.
+
+Hasil Output yang diharapkan:
+10 = E "section Chorus 1B
+34 = E "lyric mat"
+46 = E "lyric waw1"
+46 = E "section Main Theme 1"
+52 = E "lyric Li-"
+78 = E "section Verse 1A
+91 = E "section Pre-Chorus 1A
+
+
+
+
+
+
+
+
+
+
+Script:
+46 = E "section Main Theme 1" 
+46 = E "section Main Theme 1" 
+52 = E "lyric Li-"
+61 = E "lyric rik"
+78 = E "section Verse 1A"     
+83 = E "lyric La-"
+88 = E "lyric gu"
+91 = E "section Pre-Chorus 1A"
+91 = E "lyric waw2"
+91 = E "section Pre-Chorus 1A"
+
+Buat fungsi untuk menghapus baris yang memiliki nilai yang sama atau dobel pada script. Pada script tersebut terdapat baris yang sama yaitu '46 = E "section Main Theme 1"', dan '91 = E "section Pre-Chorus 1A'.
+Maka hapus salah satu baris tersebut, sehingga hasil output sebagai berikut:
+46 = E "section Main Theme 1" 
+52 = E "lyric Li-"
+61 = E "lyric rik"
+78 = E "section Verse 1A"     
+83 = E "lyric La-"
+88 = E "lyric gu"
+91 = E "lyric waw2"
+91 = E "section Pre-Chorus 1A"
+
+
+10 = E "section Chorus 1B"    
+12 = E "phrase_start"
+15 = E "lyric Ka-"
+25 = E "lyric li-"
+34 = E "lyric mat"
+46 = E "lyric waw1"
+46 = E "section Main Theme 1" 
+46 = E "section Main Theme 1" 
+52 = E "lyric Li-"
+61 = E "lyric rik"
+78 = E "section Verse 1A"     
+83 = E "lyric La-"
+88 = E "lyric gu"
+91 = E "section Pre-Chorus 1A"
+91 = E "lyric waw2"
+91 = E "section Pre-Chorus 1A"
+
+10 = E "section Chorus 1B"
+12 = E "phrase_start"
+15 = E "lyric Ka-"
+25 = E "lyric li-"
+34 = E "lyric mat"
+46 = E "lyric waw1"
+46 = E "section Main Theme 1"
+52 = E "lyric Li-"
+61 = E "lyric rik"
+78 = E "section Verse 1A"
+83 = E "lyric La-"
+88 = E "lyric gu"
+91 = E "section Pre-Chorus 1A"
+91 = E "lyric waw2"

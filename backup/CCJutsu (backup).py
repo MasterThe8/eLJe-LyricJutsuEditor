@@ -1,13 +1,13 @@
 import sys
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt5.QtWidgets import QApplication, QDialog, QColorDialog, QVBoxLayout, QLabel, QLineEdit, QCheckBox, QDialogButtonBox, QPushButton, QHBoxLayout, QMessageBox, QShortcut, QKeySequenceEdit
+from PyQt5.QtCore import QObject, pyqtSignal
+from PyQt5.QtGui import QColor, QPalette, QKeySequence
 
 class CCJutsu(QDialog):
     def __init__(self, main_window):
         super().__init__()
 
-        self.setWindowTitle("Custom Color Jutsu")
+        self.setWindowTitle("Dialog Window")
         
         self.main_window = main_window
 
@@ -35,29 +35,14 @@ class CCJutsu(QDialog):
         input_hex_layout.addWidget(self.color_label)
 
         layout.addLayout(input_hex_layout)
-        
-        # Membuat Radio Button untuk Opsi Jutsu
-        self.radio_button1 = QRadioButton("Default")
-        self.radio_button2 = QRadioButton("Hide Next Phrase")
-        self.radio_button3 = QRadioButton("Add Next Lyric")
-        self.radio_button1.setChecked(True)
-        layout.addWidget(self.radio_button1)
-        layout.addWidget(self.radio_button2)
-        layout.addWidget(self.radio_button3)
-        self.radio_button1.clicked.connect(self.handle_radio_button)
-        self.radio_button2.clicked.connect(self.handle_radio_button)
-        self.radio_button3.clicked.connect(self.handle_radio_button)
-        
-        self.textfakeLabel = QLabel('Input Fake Lyric :')
-        layout.addWidget(self.textfakeLabel)
-        self.fakelyric = QLineEdit()
-        layout.addWidget(self.fakelyric)
-        self.textfakeLabel.setVisible(False)
-        self.fakelyric.setVisible(False)
+
+        # Membuat checkbox
+        self.checkbox = QCheckBox("Hide Next Phrase")
+        layout.addWidget(self.checkbox)
         
         # Membuat tombol OK dan Cancel
         self.okButton = QPushButton('OK')
-        self.okButton.clicked.connect(self.mainCCjutsu)
+        self.okButton.clicked.connect(self.ccjutsu)
         self.cancelButton = QPushButton('Cancel')
         self.cancelButton.clicked.connect(self.reject)
 
@@ -77,22 +62,39 @@ class CCJutsu(QDialog):
             self.selected_color = color.name(QColor.HexRgb)
             self.color_label.setStyleSheet("background-color: {}".format(color.name()))
             self.color_label.setText(color.name())
+    
+    def get_section_lines(self, script):
+        section_lines = []
+        lines = script.split('\n')
+        for line in lines:
+            parts = line.split(' = ')
+            if len(parts) == 2:
+                pos, event_data = parts
+                event_name = event_data.strip('E "').split(' ')[0]
+                if event_name == 'section':
+                    section_lines.append(line)
+        return section_lines
 
-    def sort_script_by_position(self, script):
-        sorted_script = sorted(script, key=lambda line: int(line.split(' = ')[0]))
-        return sorted_script
+    def merge_and_sort(self, script, section_lines):
+        lines = script.split('\n')
+        merged_lines = lines + section_lines
+        merged_lines.sort(key=lambda x: int(x.split(' = ')[0]) if x else float('inf'))
+        merged_script = '\n'.join(merged_lines)
+        return merged_script
 
     def remove_duplicates(self, script):
+        lines = script.split('\n')
         existing_lines = set()
-        deduplicated_lines = []
 
-        for line in script:
+        deduplicated_lines = []
+        for line in lines:
             if line not in existing_lines:
                 deduplicated_lines.append(line)
                 existing_lines.add(line)
 
-        return deduplicated_lines
-
+        deduplicated_script = '\n'.join(deduplicated_lines)
+        return deduplicated_script
+    
     def get_lines(self, events, position):
         lines = []
         current_line = ''
@@ -126,15 +128,10 @@ class CCJutsu(QDialog):
         result = []
         previous_lyric = ''
         temp = lines[:]
-        
-        if self.selected_color is None:
-            hex_value = "#fca101"
-        else:
-            hex_value = str(self.selected_color)
+        hex_value = str(self.selected_color)
 
         section_lines = []
         processed_lines = []
-
         for line in lines:
             pos, event_data = line.split(' = ')
             event_name, *value = event_data.strip('E "').split(' ')
@@ -169,20 +166,15 @@ class CCJutsu(QDialog):
                 previous_lyric += lyric + ' '
 
             result.append(line)
-            
-        result.extend(section_lines)
-        result = self.sort_script_by_position(result)
+        
+        # result.extend(section_lines)
         return result
 
     def cc_hide(self, lines):
         result = []
         previous_lyric = ''
         temp = lines[:]
-
-        if self.selected_color is None:
-            hex_value = "#fca101"
-        else:
-            hex_value = str(self.selected_color)
+        hex_value = str(self.selected_color)
         
         section_lines = []
         processed_lines = []
@@ -228,63 +220,7 @@ class CCJutsu(QDialog):
         
         result.extend(section_lines)
         return result
-    
-    def cc_addnext(self, lines):
-        result = []
-        previous_lyric = ''
-        temp = lines[:]
 
-        if self.selected_color is None:
-            hex_value = "#fca101"
-        else:
-            hex_value = str(self.selected_color)
-
-        fakeLyric = self.fakelyric.text()
-        section_lines = []
-        processed_lines = []
-
-        for line in lines:
-            pos, event_data = line.split(' = ')
-            event_name, *value = event_data.strip('E "').split(' ')
-            value = ' '.join(value)
-            
-            if event_name == 'section':
-                section_lines.append(line)
-            else:
-                processed_lines.append(line)
-                
-                if event_name == 'section':
-                    line = line.split(' = ')[0] + ' = E "' + event_name + '"'
-                    section_lines.append(line)
-                    
-        for line in processed_lines:
-            pos, event_data = line.split(' = ')
-            event_name, *value = event_data.strip('E "').split(' ')
-            value = ' '.join(value)
-            lyric = ''.join([str(element) for element in value if element != '-'])
-            
-            if '-' in value:
-                line1 = str(int(pos)) + " = E \"lyric <i></i>\""
-                line2 = str(int(pos) + 1) + " = E \"phrase_start\""
-                line3 = str(int(pos) + 2) + " = E \"lyric " + fakeLyric + "\""
-                line4 = str(int(pos) + 3) + " = E \"phrase_start\""
-                line5 = str(int(pos) + 4) + " = E \"lyric <color=" + hex_value + ">" + previous_lyric + lyric + "</color>\""
-                line = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
-                previous_lyric += lyric
-            else:
-                line1 = str(int(pos)) + " = E \"lyric <i></i>\""
-                line2 = str(int(pos) + 1) + " = E \"phrase_start\""
-                line3 = str(int(pos) + 2) + " = E \"lyric " + fakeLyric + "\""
-                line4 = str(int(pos) + 3) + " = E \"phrase_start\""
-                line5 = str(int(pos) + 4) + " = E \"lyric <color=" + hex_value + ">" + previous_lyric + lyric + ' ' + "</color>\""
-                line = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
-                previous_lyric += lyric + ' '
-
-            result.append(line)
-            
-        result.extend(section_lines)
-        result = self.sort_script_by_position(result)
-        return result
 
     def get_lyric_item(self, events):
         lines_temp = []
@@ -337,80 +273,66 @@ class CCJutsu(QDialog):
         script_result = [f"{key} = {value}" for key, value in script_temp.items()]
 
         return script_result
-    
-    def handle_radio_button(self):
-        if self.radio_button3.isChecked():
-            self.textfakeLabel.setVisible(True)
-            self.fakelyric.setVisible(True)
-        else:
-            self.textfakeLabel.setVisible(False)
-            self.fakelyric.setVisible(False)
-    
-    def mainCCjutsu(self):
-        positionInput = self.input_box.text()
-        position = None
-        if positionInput.isdigit():
-            position = int(positionInput)
-        else:
-            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
-            self.show()
-        
-        if position is not None:
-            value = self.main_window.getScript()
-            value = value.splitlines()
-            lines = self.get_lines(value, position)
 
-            if self.radio_button1.isChecked():
-                result = self.cc_nohide(lines)
-            elif self.radio_button2.isChecked():
-                result = self.cc_hide(lines)
-            elif self.radio_button3.isChecked():
-                result = self.cc_addnext(lines)
-            
-            result_split = [line for i in result for line in i.split('\n')]
-            lyric_items = self.get_lyric_item(lines)
-            print(lyric_items)
-            last_result = self.add_next_lyric(lyric_items, result_split)
-            
-            index = next((i for i, event in enumerate(value) if event.startswith(str(position) + ' = ')), None)
-            if index is not None:
-                event_parts = value[index].split(' = ')
+    def ccjutsu(self):
+        positionInput = self.input_box.text()
+        position = int(positionInput)
+        value = self.main_window.getScript()        
+        value = value.splitlines()
+        # section_lines = self.get_section_lines(value)
+        lines = self.get_lines(value, position)
+        
+        if self.checkbox.isChecked():
+            result = self.cc_hide(lines)
+        else:
+            result = self.cc_nohide(lines)
+        # temp_lines = lines.copy()
+        
+        result_split = [line for i in result for line in i.split('\n')]
+        lyric_items = self.get_lyric_item(lines)
+        last_result = self.add_next_lyric(lyric_items, result_split)
+        index = next((i for i, event in enumerate(value) if event.startswith(str(position) + ' = ')), None)
+
+        if index is not None:
+            event_parts = value[index].split(' = ')
+            event_number = event_parts[0]
+            event_name = event_parts[1].strip('\'')
+            if event_number != position or event_name != 'section':
+                del value[index]
+                value[index:index] = last_result
+                
+        # Pengecekan dan penghapusan baris dengan nomor yang sama
+        existing_numbers = set()
+        i = 0
+        while i < len(value):
+            event_parts = value[i].split(' = ')
+            if len(event_parts) >= 2:
                 event_number = event_parts[0]
                 event_name = event_parts[1].strip('\'')
-                if event_number != position or event_name != 'section' and event_name != 'lyric':
-                    del value[index]
-                    value[index:index] = last_result
-                    
-            # Pengecekan dan penghapusan baris dengan nomor yang sama
-            existing_numbers = set()
-            i = 0
-            while i < len(value):
-                event_parts = value[i].split(' = ')
-                if len(event_parts) >= 2:
-                    event_number = event_parts[0]
-                    event_name = event_parts[1].strip('\'')
-                    if event_number in existing_numbers or (event_number == position and event_name != 'section' and event_name != 'lyric'):
-                        del value[i]
-                        continue
-                    else:
-                        existing_numbers.add(event_number)
-                i += 1
+                if event_number in existing_numbers or (event_number == position and event_name != 'section'):
+                    del value[i]
+                    continue
+                else:
+                    existing_numbers.add(event_number)
+            i += 1
 
-            # value = self.remove_duplicates(value)
-            
-            lines_text = '\n'.join(value)
-            
-            scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
-            scroll_pos = scroll_bar.value()  # Simpan posisi scroll sebelum setPlainText
-            self.main_window.plainTextEdit.setPlainText(lines_text)
-            scroll_bar.setValue(scroll_pos)
+        
+        lines_text = '\n'.join(value)
+        
+        # merged_script = self.merge_and_sort(value, section_lines)
+        # lines_text = self.remove_duplicates(merged_script)
+        
+        scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
+        scroll_pos = scroll_bar.value()  # Simpan posisi scroll sebelum setPlainText
+        self.main_window.plainTextEdit.setPlainText(lines_text)
+        scroll_bar.setValue(scroll_pos)
 
-            shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
-            shortcut_undo.activated.connect(self.undo_text)
-            shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
-            shortcut_redo.activated.connect(self.redo_text)
-            
-            super(CCJutsu, self).accept()
+        shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
+        shortcut_undo.activated.connect(self.undo_text)
+        shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
+        shortcut_redo.activated.connect(self.redo_text)
+        
+        super(CCJutsu, self).accept()
         
     def reject(self):
         super(CCJutsu, self).reject()
