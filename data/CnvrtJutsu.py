@@ -17,7 +17,7 @@ class CnvrtJutsu(QDialog):
         # Membuat label dan input box
         self.label = QLabel("Input Lyric Position:")
         self.input_box = QLineEdit()
-        self.label2 = QLabel("Input Lyric Target:")
+        self.label2 = QLabel("Input Lyric:")
         self.input_box2 = QLineEdit()
         
         # Membuat layout untuk input hex dan color picker
@@ -387,7 +387,6 @@ class CnvrtJutsu(QDialog):
             
             result_split = [line for i in result for line in i.split('\n')]
             lyric_items = self.get_lyric_item(lyric_target)
-            print(lyric_items)
             last_result = self.add_next_lyric(lyric_items, result_split)
             
             index = next((i for i, event in enumerate(value) if event.startswith(str(position) + ' = ')), None)

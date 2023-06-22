@@ -608,7 +608,6 @@ class MainWindow(QMainWindow):
                 plainTextEdit.setTextCursor(cursor)
                 plainTextEdit.ensureCursorVisible()
 
-       
     # Fungsi Replace Text
     def replace_text(plainTextEdit):
         dialog = ReplaceTextDialog(plainTextEdit.window())
