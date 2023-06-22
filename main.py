@@ -199,8 +199,10 @@ class MainWindow(QMainWindow):
         self.tool_button.setDefaultAction(self.toggleDockAction)
         self.toolbar.addWidget(self.tool_button)
         # Membuat QDockWidget
-        self.dock = QDockWidget("Editor", self)
+        self.dock = QDockWidget("Temp Text", self)
         self.dock.setFeatures(QDockWidget.AllDockWidgetFeatures)
+        self.dock.setStyleSheet("background-color: #282a36; color: #FFF; font-size: 16px;")
+        
         # Membuat QTextEdit sebagai widget editor teks
         self.textEdit = QTextEdit()
         self.dock.setWidget(self.textEdit)
@@ -636,14 +638,11 @@ class MainWindow(QMainWindow):
             # Pindahkan cursor ke akhir dokumen
             plainTextEdit.moveCursor(QTextCursor.End)
         
-    # Fungsi Add Jutsu
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())
         plainTextEdit = main_window.tabWidget.currentWidget()
         dialog.setWindowFlags(dialog.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)
-        dialog.exec_()       
-        # if dialog.exec_() == QDialog.Accepted:
-        #     text = ""
+        dialog.exec_()
             
     def custom_color_no_jutsu(self):
         dialog = CCJutsu(self)

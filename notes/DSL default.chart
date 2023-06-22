@@ -1,0 +1,1737 @@
+[SyncTrack]
+{
+  0 = TS 4
+  0 = B 80490
+  768 = B 181000
+}
+[Song]
+{
+  Name = "Don't say ''lazy''"
+  Artist = "Hoshimi Amabassador"
+  Charter = "MasterThe8"
+  Offset = 0
+  Resolution = 192
+  Player2 = bass
+  Difficulty = 0
+  PreviewStart = 0
+  PreviewEnd = 0
+  Genre = "rock"
+  MediaType = "cd"
+  MusicStream = "song.ogg"
+}
+[Events]
+{
+  768 = E "section Intro - Chorus 1A"
+  1536 = E "phrase_start"
+  1696 = E "lyric Please"
+  1920 = E "lyric don’t"
+  2112 = E "lyric say"
+  2304 = E "lyric “You"
+  2496 = E "lyric are"
+  2688 = E "lyric la-"
+  2880 = E "lyric zy”"
+  3072 = E "phrase_start"
+  3264 = E "lyric Da-"
+  3456 = E "lyric tte"
+  3648 = E "lyric hon-"
+  3840 = E "lyric tou"
+  4032 = E "lyric wa"
+  4224 = E "lyric Cra-"
+  4416 = E "lyric zy"
+  4608 = E "phrase_start"
+  4800 = E "lyric Ha-"
+  4944 = E "lyric ku-"
+  4992 = E "lyric chou"
+  5184 = E "lyric ta-"
+  5376 = E "lyric chi"
+  5568 = E "lyric wa"
+  5760 = E "lyric sou"
+  5953 = E "phrase_start"
+  5954 = E "lyric <color=#fba2b3> </color><color=#FFFFFF>Mienai toko de bataashi surun desu</color>"
+  6048 = E "lyric <i></i>"
+  6049 = E "phrase_start"
+  6050 = E "lyric <color=#fba2b3> Mi</color><color=#FFFFFF>enai toko de bataashi surun desu</color>"
+  6144 = E "lyric <i></i>"
+  6145 = E "phrase_start"
+  6146 = E "lyric <color=#fba2b3> Mie</color><color=#FFFFFF>nai toko de bataashi surun desu</color>"
+  6240 = E "lyric <i></i>"
+  6241 = E "phrase_start"
+  6242 = E "lyric <color=#fba2b3> Miena</color><color=#FFFFFF>i toko de bataashi surun desu</color>"
+  6336 = E "lyric <i></i>"
+  6337 = E "phrase_start"
+  6338 = E "lyric <color=#fba2b3> Mienai </color><color=#FFFFFF>toko de bataashi surun desu</color>"
+  6432 = E "lyric <i></i>"
+  6433 = E "phrase_start"
+  6434 = E "lyric <color=#fba2b3> Mienai to</color><color=#FFFFFF>ko de bataashi surun desu</color>"
+  6528 = E "lyric <i></i>"
+  6529 = E "phrase_start"
+  6530 = E "lyric <color=#fba2b3> Mienai toko </color><color=#FFFFFF>de bataashi surun desu</color>"
+  6720 = E "lyric <i></i>"
+  6721 = E "phrase_start"
+  6722 = E "lyric <color=#fba2b3> Mienai toko de </color><color=#FFFFFF>bataashi surun desu</color>"
+  6816 = E "lyric <i></i>"
+  6817 = E "phrase_start"
+  6818 = E "lyric <color=#fba2b3> Mienai toko de ba</color><color=#FFFFFF>taashi surun desu</color>"
+  6912 = E "lyric <i></i>"
+  6913 = E "phrase_start"
+  6914 = E "lyric <color=#fba2b3> Mienai toko de bata</color><color=#FFFFFF>ashi surun desu</color>"
+  7008 = E "lyric <i></i>"
+  7009 = E "phrase_start"
+  7010 = E "lyric <color=#fba2b3> Mienai toko de bataa</color><color=#FFFFFF>shi surun desu</color>"
+  7104 = E "lyric <i></i>"
+  7105 = E "phrase_start"
+  7106 = E "lyric <color=#fba2b3> Mienai toko de bataashi </color><color=#FFFFFF>surun desu</color>"
+  7200 = E "lyric <i></i>"
+  7201 = E "phrase_start"
+  7202 = E "lyric <color=#fba2b3> Mienai toko de bataashi su</color><color=#FFFFFF>run desu</color>"
+  7296 = E "lyric <i></i>"
+  7297 = E "phrase_start"
+  7298 = E "lyric <color=#fba2b3> Mienai toko de bataashi surun </color><color=#FFFFFF>desu</color>"
+  7488 = E "lyric <i></i>"
+  7489 = E "phrase_start"
+  7490 = E "lyric <color=#fba2b3> Mienai toko de bataashi surun de</color><color=#FFFFFF>su</color>"
+  7512 = E "lyric <i></i>"
+  7513 = E "phrase_start"
+  7514 = E "lyric <color=#fba2b3> Mienai toko de bataashi surun desu </color>"
+  7680 = E "phrase_start"
+  7872 = E "lyric Hon-"
+  8064 = E "lyric nou"
+  8256 = E "lyric ni"
+  8448 = E "lyric juu-"
+  8640 = E "lyric jun"
+  8832 = E "lyric chuu-"
+  9024 = E "lyric ji-"
+  9048 = E "lyric tsu"
+  9216 = E "phrase_start"
+  9408 = E "lyric Hon-"
+  9600 = E "lyric rou"
+  9792 = E "lyric mo"
+  9984 = E "lyric juu-"
+  10176 = E "lyric juu"
+  10368 = E "lyric shou-"
+  10560 = E "lyric chi"
+  10752 = E "phrase_start"
+  10944 = E "lyric Zen-"
+  11136 = E "lyric to"
+  11328 = E "lyric you-"
+  11520 = E "lyric you"
+  11712 = E "lyric da"
+  11904 = E "lyric shi"
+  12097 = E "phrase_start"
+  12098 = E "lyric <color=#63ac88> </color><color=#FFFFFF>Dakara tama ni kyuukei shichaun desu</color>"
+  12192 = E "lyric <i></i>"
+  12193 = E "phrase_start"
+  12194 = E "lyric <color=#63ac88> Da</color><color=#FFFFFF>kara tama ni kyuukei shichaun desu</color>"
+  12288 = E "lyric <i></i>"
+  12289 = E "phrase_start"
+  12290 = E "lyric <color=#63ac88> Daka</color><color=#FFFFFF>ra tama ni kyuukei shichaun desu</color>"
+  12384 = E "lyric <i></i>"
+  12385 = E "phrase_start"
+  12386 = E "lyric <color=#63ac88> Dakara </color><color=#FFFFFF>tama ni kyuukei shichaun desu</color>"
+  12480 = E "lyric <i></i>"
+  12481 = E "phrase_start"
+  12482 = E "lyric <color=#63ac88> Dakara ta</color><color=#FFFFFF>ma ni kyuukei shichaun desu</color>"
+  12576 = E "lyric <i></i>"
+  12577 = E "phrase_start"
+  12578 = E "lyric <color=#63ac88> Dakara tama </color><color=#FFFFFF>ni kyuukei shichaun desu</color>"
+  12672 = E "lyric <i></i>"
+  12673 = E "phrase_start"
+  12674 = E "lyric <color=#63ac88> Dakara tama ni </color><color=#FFFFFF>kyuukei shichaun desu</color>"
+  12864 = E "lyric <i></i>"
+  12865 = E "phrase_start"
+  12866 = E "lyric <color=#63ac88> Dakara tama ni kyu</color><color=#FFFFFF>ukei shichaun desu</color>"
+  12960 = E "lyric <i></i>"
+  12961 = E "phrase_start"
+  12962 = E "lyric <color=#63ac88> Dakara tama ni kyuu</color><color=#FFFFFF>kei shichaun desu</color>"
+  13056 = E "lyric <i></i>"
+  13057 = E "phrase_start"
+  13058 = E "lyric <color=#63ac88> Dakara tama ni kyuuke</color><color=#FFFFFF>i shichaun desu</color>"
+  13152 = E "lyric <i></i>"
+  13153 = E "phrase_start"
+  13154 = E "lyric <color=#63ac88> Dakara tama ni kyuukei </color><color=#FFFFFF>shichaun desu</color>"
+  13248 = E "lyric <i></i>"
+  13249 = E "phrase_start"
+  13250 = E "lyric <color=#63ac88> Dakara tama ni kyuukei shi</color><color=#FFFFFF>chaun desu</color>"
+  13344 = E "lyric <i></i>"
+  13345 = E "phrase_start"
+  13346 = E "lyric <color=#63ac88> Dakara tama ni kyuukei shicha</color><color=#FFFFFF>un desu</color>"
+  13440 = E "lyric <i></i>"
+  13441 = E "phrase_start"
+  13442 = E "lyric <color=#63ac88> Dakara tama ni kyuukei shichaun </color><color=#FFFFFF>desu</color>"
+  13632 = E "lyric <i></i>"
+  13633 = E "phrase_start"
+  13634 = E "lyric <color=#63ac88> Dakara tama ni kyuukei shichaun de</color><color=#FFFFFF>su</color>"
+  13656 = E "lyric <i></i>"
+  13657 = E "phrase_start"
+  13658 = E "lyric <color=#63ac88> Dakara tama ni kyuukei shichaun desu </color>"
+  13824 = E "section Main Theme 1"
+  13920 = E "phrase_end"
+  19777 = E "phrase_start"
+  19778 = E "lyric <color=#d6b592> </color><color=#FFFFFF>Kono me de shikkari misademete</color>"
+  19872 = E "lyric <i></i>"
+  19873 = E "phrase_start"
+  19874 = E "lyric <color=#d6b592> Ko</color><color=#FFFFFF>no me de shikkari misademete</color>"
+  19968 = E "lyric <i></i>"
+  19969 = E "phrase_start"
+  19970 = E "lyric <color=#d6b592> Kono </color><color=#FFFFFF>me de shikkari misademete</color>"
+  20064 = E "lyric <i></i>"
+  20065 = E "phrase_start"
+  20066 = E "lyric <color=#d6b592> Kono me </color><color=#FFFFFF>de shikkari misademete</color>"
+  20160 = E "lyric <i></i>"
+  20161 = E "phrase_start"
+  20162 = E "lyric <color=#d6b592> Kono me de </color><color=#FFFFFF>shikkari misademete</color>"
+  20448 = E "lyric <i></i>"
+  20449 = E "phrase_start"
+  20450 = E "lyric <color=#d6b592> Kono me de shi</color><color=#FFFFFF>kkari misademete</color>"
+  20544 = E "lyric <i></i>"
+  20545 = E "phrase_start"
+  20546 = E "lyric <color=#d6b592> Kono me de shik</color><color=#FFFFFF>kari misademete</color>"
+  20640 = E "lyric <i></i>"
+  20641 = E "phrase_start"
+  20642 = E "lyric <color=#d6b592> Kono me de shikka</color><color=#FFFFFF>ri misademete</color>"
+  20736 = E "lyric <i></i>"
+  20737 = E "phrase_start"
+  20738 = E "lyric <color=#d6b592> Kono me de shikkari </color><color=#FFFFFF>misademete</color>"
+  20832 = E "lyric <i></i>"
+  20833 = E "phrase_start"
+  20834 = E "lyric <color=#d6b592> Kono me de shikkari mi</color><color=#FFFFFF>sademete</color>"
+  20928 = E "lyric <i></i>"
+  20929 = E "phrase_start"
+  20930 = E "lyric <color=#d6b592> Kono me de shikkari misa</color><color=#FFFFFF>demete</color>"
+  21024 = E "lyric <i></i>"
+  21025 = E "phrase_start"
+  21026 = E "lyric <color=#d6b592> Kono me de shikkari misade</color><color=#FFFFFF>mete</color>"
+  21120 = E "lyric <i></i>"
+  21121 = E "phrase_start"
+  21122 = E "lyric <color=#d6b592> Kono me de shikkari misademe</color><color=#FFFFFF>te</color>"
+  21312 = E "lyric <i></i>"
+  21313 = E "phrase_start"
+  21314 = E "lyric <color=#d6b592> Kono me de shikkari misademete </color>"
+  21360 = E "lyric <i></i>"
+  21361 = E "phrase_start"
+  21362 = E "lyric <color=#d6b592> </color><color=#FFFFFF>Yukisaki chizu jou maaku shite</color>"
+  21408 = E "lyric <i></i>"
+  21409 = E "phrase_start"
+  21410 = E "lyric <color=#d6b592> Yu</color><color=#FFFFFF>kisaki chizu jou maaku shite</color>"
+  21504 = E "lyric <i></i>"
+  21505 = E "phrase_start"
+  21506 = E "lyric <color=#d6b592> Yuki</color><color=#FFFFFF>saki chizu jou maaku shite</color>"
+  21600 = E "lyric <i></i>"
+  21601 = E "phrase_start"
+  21602 = E "lyric <color=#d6b592> Yukisa</color><color=#FFFFFF>ki chizu jou maaku shite</color>"
+  21696 = E "lyric <i></i>"
+  21697 = E "phrase_start"
+  21698 = E "lyric <color=#d6b592> Yukisaki </color><color=#FFFFFF>chizu jou maaku shite</color>"
+  21984 = E "lyric <i></i>"
+  21985 = E "phrase_start"
+  21986 = E "lyric <color=#d6b592> Yukisaki chi</color><color=#FFFFFF>zu jou maaku shite</color>"
+  22080 = E "lyric <i></i>"
+  22081 = E "phrase_start"
+  22082 = E "lyric <color=#d6b592> Yukisaki chizu </color><color=#FFFFFF>jou maaku shite</color>"
+  22176 = E "lyric <i></i>"
+  22177 = E "phrase_start"
+  22178 = E "lyric <color=#d6b592> Yukisaki chizu jo</color><color=#FFFFFF>u maaku shite</color>"
+  22272 = E "lyric <i></i>"
+  22273 = E "phrase_start"
+  22274 = E "lyric <color=#d6b592> Yukisaki chizu jou </color><color=#FFFFFF>maaku shite</color>"
+  22368 = E "lyric <i></i>"
+  22369 = E "phrase_start"
+  22370 = E "lyric <color=#d6b592> Yukisaki chizu jou ma</color><color=#FFFFFF>aku shite</color>"
+  22464 = E "lyric <i></i>"
+  22465 = E "phrase_start"
+  22466 = E "lyric <color=#d6b592> Yukisaki chizu jou maa</color><color=#FFFFFF>ku shite</color>"
+  22560 = E "lyric <i></i>"
+  22561 = E "phrase_start"
+  22562 = E "lyric <color=#d6b592> Yukisaki chizu jou maaku </color><color=#FFFFFF>shite</color>"
+  22656 = E "lyric <i></i>"
+  22657 = E "phrase_start"
+  22658 = E "lyric <color=#d6b592> Yukisaki chizu jou maaku shi</color><color=#FFFFFF>te</color>"
+  22848 = E "lyric <i></i>"
+  22849 = E "phrase_start"
+  22850 = E "lyric <color=#d6b592> Yukisaki chizu jou maaku shite </color>"
+  23040 = E "phrase_end"
+  25921 = E "phrase_start"
+  25922 = E "lyric <color=#63ac88> </color><color=#FFFFFF>Chikamichi areba sore ga oudou</color>"
+  26016 = E "lyric <i></i>"
+  26017 = E "phrase_start"
+  26018 = E "lyric <color=#63ac88> Chi</color><color=#FFFFFF>kamichi areba sore ga oudou</color>"
+  26112 = E "lyric <i></i>"
+  26113 = E "phrase_start"
+  26114 = E "lyric <color=#63ac88> Chika</color><color=#FFFFFF>michi areba sore ga oudou</color>"
+  26208 = E "lyric <i></i>"
+  26209 = E "phrase_start"
+  26210 = E "lyric <color=#63ac88> Chikami</color><color=#FFFFFF>chi areba sore ga oudou</color>"
+  26304 = E "lyric <i></i>"
+  26305 = E "phrase_start"
+  26306 = E "lyric <color=#63ac88> Chikamichi </color><color=#FFFFFF>areba sore ga oudou</color>"
+  26592 = E "lyric <i></i>"
+  26593 = E "phrase_start"
+  26594 = E "lyric <color=#63ac88> Chikamichi a</color><color=#FFFFFF>reba sore ga oudou</color>"
+  26688 = E "lyric <i></i>"
+  26689 = E "phrase_start"
+  26690 = E "lyric <color=#63ac88> Chikamichi are</color><color=#FFFFFF>ba sore ga oudou</color>"
+  26784 = E "lyric <i></i>"
+  26785 = E "phrase_start"
+  26786 = E "lyric <color=#63ac88> Chikamichi areba </color><color=#FFFFFF>sore ga oudou</color>"
+  26880 = E "lyric <i></i>"
+  26881 = E "phrase_start"
+  26882 = E "lyric <color=#63ac88> Chikamichi areba so</color><color=#FFFFFF>re ga oudou</color>"
+  26976 = E "lyric <i></i>"
+  26977 = E "phrase_start"
+  26978 = E "lyric <color=#63ac88> Chikamichi areba sore </color><color=#FFFFFF>ga oudou</color>"
+  27072 = E "lyric <i></i>"
+  27073 = E "phrase_start"
+  27074 = E "lyric <color=#63ac88> Chikamichi areba sore ga </color><color=#FFFFFF>oudou</color>"
+  27168 = E "lyric <i></i>"
+  27169 = E "phrase_start"
+  27170 = E "lyric <color=#63ac88> Chikamichi areba sore ga o</color><color=#FFFFFF>udou</color>"
+  27264 = E "lyric <i></i>"
+  27265 = E "phrase_start"
+  27266 = E "lyric <color=#63ac88> Chikamichi areba sore ga ou</color><color=#FFFFFF>dou</color>"
+  27456 = E "lyric <i></i>"
+  27457 = E "phrase_start"
+  27458 = E "lyric <color=#63ac88> Chikamichi areba sore ga oudou </color>"
+  27504 = E "lyric <i></i>"
+  27505 = E "phrase_start"
+  27506 = E "lyric <color=#63ac88> </color><color=#FFFFFF>Hashoreru tsubasa mo areba joutou</color>"
+  27552 = E "lyric <i></i>"
+  27553 = E "phrase_start"
+  27554 = E "lyric <color=#63ac88> Ha</color><color=#FFFFFF>shoreru tsubasa mo areba joutou</color>"
+  27648 = E "lyric <i></i>"
+  27649 = E "phrase_start"
+  27650 = E "lyric <color=#63ac88> Hasho</color><color=#FFFFFF>reru tsubasa mo areba joutou</color>"
+  27744 = E "lyric <i></i>"
+  27745 = E "phrase_start"
+  27746 = E "lyric <color=#63ac88> Hashore</color><color=#FFFFFF>ru tsubasa mo areba joutou</color>"
+  27840 = E "lyric <i></i>"
+  27841 = E "phrase_start"
+  27842 = E "lyric <color=#63ac88> Hashoreru </color><color=#FFFFFF>tsubasa mo areba joutou</color>"
+  28128 = E "lyric <i></i>"
+  28129 = E "phrase_start"
+  28130 = E "lyric <color=#63ac88> Hashoreru tsu</color><color=#FFFFFF>basa mo areba joutou</color>"
+  28224 = E "lyric <i></i>"
+  28225 = E "phrase_start"
+  28226 = E "lyric <color=#63ac88> Hashoreru tsuba</color><color=#FFFFFF>sa mo areba joutou</color>"
+  28320 = E "lyric <i></i>"
+  28321 = E "phrase_start"
+  28322 = E "lyric <color=#63ac88> Hashoreru tsubasa </color><color=#FFFFFF>mo areba joutou</color>"
+  28416 = E "lyric <i></i>"
+  28417 = E "phrase_start"
+  28418 = E "lyric <color=#63ac88> Hashoreru tsubasa mo </color><color=#FFFFFF>areba joutou</color>"
+  28512 = E "lyric <i></i>"
+  28513 = E "phrase_start"
+  28514 = E "lyric <color=#63ac88> Hashoreru tsubasa mo a</color><color=#FFFFFF>reba joutou</color>"
+  28608 = E "lyric <i></i>"
+  28609 = E "phrase_start"
+  28610 = E "lyric <color=#63ac88> Hashoreru tsubasa mo are</color><color=#FFFFFF>ba joutou</color>"
+  28704 = E "lyric <i></i>"
+  28705 = E "phrase_start"
+  28706 = E "lyric <color=#63ac88> Hashoreru tsubasa mo areba </color><color=#FFFFFF>joutou</color>"
+  28800 = E "lyric <i></i>"
+  28801 = E "phrase_start"
+  28802 = E "lyric <color=#63ac88> Hashoreru tsubasa mo areba jo</color><color=#FFFFFF>utou</color>"
+  28824 = E "lyric <i></i>"
+  28825 = E "phrase_start"
+  28826 = E "lyric <color=#63ac88> Hashoreru tsubasa mo areba jou</color><color=#FFFFFF>tou</color>"
+  28992 = E "lyric <i></i>"
+  28993 = E "phrase_start"
+  28994 = E "lyric <color=#63ac88> Hashoreru tsubasa mo areba jouto</color><color=#FFFFFF>u</color>"
+  29016 = E "lyric <i></i>"
+  29017 = E "phrase_start"
+  29018 = E "lyric <color=#63ac88> Hashoreru tsubasa mo areba joutou </color>"
+  29184 = E "phrase_end"
+  31968 = E "phrase_start"
+  32064 = E "lyric Ya-"
+  32256 = E "lyric ba"
+  32448 = E "lyric tsu-"
+  32544 = E "lyric me-"
+  32736 = E "lyric wa-"
+  32928 = E "lyric re-"
+  33120 = E "lyric ta"
+  33408 = E "phrase_start"
+  33600 = E "lyric Gu-"
+  33792 = E "lyric ruu"
+  33984 = E "lyric de"
+  34080 = E "lyric ho-"
+  34272 = E "lyric shuu"
+  34464 = E "lyric shi-"
+  34656 = E "lyric ta"
+  34945 = E "phrase_start"
+  34946 = E "lyric <color=#63ac88> </color><color=#FFFFFF>Sore dake de nanka tasseikan</color>"
+  35136 = E "lyric <i></i>"
+  35137 = E "phrase_start"
+  35138 = E "lyric <color=#63ac88> So</color><color=#FFFFFF>re dake de nanka tasseikan</color>"
+  35328 = E "lyric <i></i>"
+  35329 = E "phrase_start"
+  35330 = E "lyric <color=#63ac88> Sore </color><color=#FFFFFF>dake de nanka tasseikan</color>"
+  35520 = E "lyric <i></i>"
+  35521 = E "phrase_start"
+  35522 = E "lyric <color=#63ac88> Sore da</color><color=#FFFFFF>ke de nanka tasseikan</color>"
+  35616 = E "lyric <i></i>"
+  35617 = E "phrase_start"
+  35618 = E "lyric <color=#63ac88> Sore dake </color><color=#FFFFFF>de nanka tasseikan</color>"
+  36000 = E "lyric <i></i>"
+  36001 = E "phrase_start"
+  36002 = E "lyric <color=#63ac88> Sore dake de </color><color=#FFFFFF>nanka tasseikan</color>"
+  36096 = E "lyric <i></i>"
+  36097 = E "phrase_start"
+  36098 = E "lyric <color=#63ac88> Sore dake de na</color><color=#FFFFFF>nka tasseikan</color>"
+  36288 = E "lyric <i></i>"
+  36289 = E "phrase_start"
+  36290 = E "lyric <color=#63ac88> Sore dake de nan</color><color=#FFFFFF>ka tasseikan</color>"
+  36480 = E "lyric <i></i>"
+  36481 = E "phrase_start"
+  36482 = E "lyric <color=#63ac88> Sore dake de nanka </color><color=#FFFFFF>tasseikan</color>"
+  36672 = E "lyric <i></i>"
+  36673 = E "phrase_start"
+  36674 = E "lyric <color=#63ac88> Sore dake de nanka ta</color><color=#FFFFFF>sseikan</color>"
+  36864 = E "lyric <i></i>"
+  36865 = E "phrase_start"
+  36866 = E "lyric <color=#63ac88> Sore dake de nanka tasse</color><color=#FFFFFF>ikan</color>"
+  36912 = E "lyric <i></i>"
+  36913 = E "phrase_start"
+  36914 = E "lyric <color=#63ac88> Sore dake de nanka tassei</color><color=#FFFFFF>kan</color>"
+  37056 = E "lyric <i></i>"
+  37057 = E "phrase_start"
+  37058 = E "lyric <color=#63ac88> Sore dake de nanka tasseika</color><color=#FFFFFF>n</color>"
+  37152 = E "lyric <i></i>"
+  37153 = E "phrase_start"
+  37154 = E "lyric <color=#63ac88> Sore dake de nanka tasseikan </color>"
+  38016 = E "phrase_start"
+  38112 = E "lyric Da-"
+  38208 = E "lyric i-"
+  38304 = E "lyric ji"
+  38400 = E "lyric na"
+  38592 = E "lyric no"
+  38688 = E "lyric wa"
+  38880 = E "lyric ji-"
+  39072 = E "lyric bu-"
+  39264 = E "lyric n"
+  39552 = E "phrase_start"
+  39744 = E "lyric Ka-"
+  39936 = E "lyric wa-"
+  40128 = E "lyric i-"
+  40224 = E "lyric ga-"
+  40416 = E "lyric ru"
+  40608 = E "lyric ko-"
+  40800 = E "lyric to"
+  41089 = E "phrase_start"
+  41090 = E "lyric <color=#fba2b3> </color><color=#FFFFFF>Jibun wo aisanakya hito mo aisenai</color>"
+  41280 = E "lyric <i></i>"
+  41281 = E "phrase_start"
+  41282 = E "lyric <color=#fba2b3> Ji</color><color=#FFFFFF>bun wo aisanakya hito mo aisenai</color>"
+  41472 = E "lyric <i></i>"
+  41473 = E "phrase_start"
+  41474 = E "lyric <color=#fba2b3> Jibu</color><color=#FFFFFF>n wo aisanakya hito mo aisenai</color>"
+  41664 = E "lyric <i></i>"
+  41665 = E "phrase_start"
+  41666 = E "lyric <color=#fba2b3> Jibun </color><color=#FFFFFF>wo aisanakya hito mo aisenai</color>"
+  41760 = E "lyric <i></i>"
+  41761 = E "phrase_start"
+  41762 = E "lyric <color=#fba2b3> Jibun wo </color><color=#FFFFFF>aisanakya hito mo aisenai</color>"
+  42144 = E "lyric <i></i>"
+  42145 = E "phrase_start"
+  42146 = E "lyric <color=#fba2b3> Jibun wo a</color><color=#FFFFFF>isanakya hito mo aisenai</color>"
+  42240 = E "lyric <i></i>"
+  42241 = E "phrase_start"
+  42242 = E "lyric <color=#fba2b3> Jibun wo ai</color><color=#FFFFFF>sanakya hito mo aisenai</color>"
+  42432 = E "lyric <i></i>"
+  42433 = E "phrase_start"
+  42434 = E "lyric <color=#fba2b3> Jibun wo aisa</color><color=#FFFFFF>nakya hito mo aisenai</color>"
+  42624 = E "lyric <i></i>"
+  42625 = E "phrase_start"
+  42626 = E "lyric <color=#fba2b3> Jibun wo aisana</color><color=#FFFFFF>kya hito mo aisenai</color>"
+  42816 = E "lyric <i></i>"
+  42817 = E "phrase_start"
+  42818 = E "lyric <color=#fba2b3> Jibun wo aisanakya </color><color=#FFFFFF>hito mo aisenai</color>"
+  42912 = E "lyric <i></i>"
+  42913 = E "phrase_start"
+  42914 = E "lyric <color=#fba2b3> Jibun wo aisanakya hi</color><color=#FFFFFF>to mo aisenai</color>"
+  43008 = E "lyric <i></i>"
+  43009 = E "phrase_start"
+  43010 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito </color><color=#FFFFFF>mo aisenai</color>"
+  43200 = E "lyric <i></i>"
+  43201 = E "phrase_start"
+  43202 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito mo </color><color=#FFFFFF>aisenai</color>"
+  43392 = E "lyric <i></i>"
+  43393 = E "phrase_start"
+  43394 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito mo a</color><color=#FFFFFF>isenai</color>"
+  43584 = E "lyric <i></i>"
+  43585 = E "phrase_start"
+  43586 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito mo ai</color><color=#FFFFFF>senai</color>"
+  43776 = E "lyric <i></i>"
+  43777 = E "phrase_start"
+  43778 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito mo aise</color><color=#FFFFFF>nai</color>"
+  44160 = E "lyric <i></i>"
+  44161 = E "phrase_start"
+  44162 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito mo aisena</color><color=#FFFFFF>i</color>"
+  44352 = E "lyric <i></i>"
+  44353 = E "phrase_start"
+  44354 = E "lyric <color=#fba2b3> Jibun wo aisanakya hito mo aisenai </color>"
+  44544 = E "phrase_start"
+  44736 = E "lyric Please"
+  44928 = E "lyric don’t"
+  45120 = E "lyric say"
+  45312 = E "lyric “You"
+  45504 = E "lyric are"
+  45696 = E "lyric la-"
+  45888 = E "lyric zy”"
+  46080 = E "phrase_start"
+  46272 = E "lyric Da-"
+  46464 = E "lyric tte"
+  46656 = E "lyric hon-"
+  46848 = E "lyric tou"
+  47040 = E "lyric wa"
+  47232 = E "lyric Cra-"
+  47424 = E "lyric zy"
+  47616 = E "phrase_start"
+  47808 = E "lyric Nou"
+  48000 = E "lyric a-"
+  48096 = E "lyric ru"
+  48192 = E "lyric ta-"
+  48384 = E "lyric ka"
+  48576 = E "lyric wa"
+  48768 = E "lyric sou"
+  48961 = E "phrase_start"
+  48962 = E "lyric <color=#d6b592> </color><color=#FFFFFF>Mienai toko ni pikku kakusun desu</color>"
+  49056 = E "lyric <i></i>"
+  49057 = E "phrase_start"
+  49058 = E "lyric <color=#d6b592> Mi</color><color=#FFFFFF>enai toko ni pikku kakusun desu</color>"
+  49152 = E "lyric <i></i>"
+  49153 = E "phrase_start"
+  49154 = E "lyric <color=#d6b592> Mie</color><color=#FFFFFF>nai toko ni pikku kakusun desu</color>"
+  49248 = E "lyric <i></i>"
+  49249 = E "phrase_start"
+  49250 = E "lyric <color=#d6b592> Miena</color><color=#FFFFFF>i toko ni pikku kakusun desu</color>"
+  49344 = E "lyric <i></i>"
+  49345 = E "phrase_start"
+  49346 = E "lyric <color=#d6b592> Mienai </color><color=#FFFFFF>toko ni pikku kakusun desu</color>"
+  49440 = E "lyric <i></i>"
+  49441 = E "phrase_start"
+  49442 = E "lyric <color=#d6b592> Mienai to</color><color=#FFFFFF>ko ni pikku kakusun desu</color>"
+  49536 = E "lyric <i></i>"
+  49537 = E "phrase_start"
+  49538 = E "lyric <color=#d6b592> Mienai toko </color><color=#FFFFFF>ni pikku kakusun desu</color>"
+  49728 = E "lyric <i></i>"
+  49729 = E "phrase_start"
+  49730 = E "lyric <color=#d6b592> Mienai toko ni </color><color=#FFFFFF>pikku kakusun desu</color>"
+  49824 = E "lyric <i></i>"
+  49825 = E "phrase_start"
+  49826 = E "lyric <color=#d6b592> Mienai toko ni pi</color><color=#FFFFFF>kku kakusun desu</color>"
+  49920 = E "lyric <i></i>"
+  49921 = E "phrase_start"
+  49922 = E "lyric <color=#d6b592> Mienai toko ni pik</color><color=#FFFFFF>ku kakusun desu</color>"
+  50016 = E "lyric <i></i>"
+  50017 = E "phrase_start"
+  50018 = E "lyric <color=#d6b592> Mienai toko ni pikku </color><color=#FFFFFF>kakusun desu</color>"
+  50112 = E "lyric <i></i>"
+  50113 = E "phrase_start"
+  50114 = E "lyric <color=#d6b592> Mienai toko ni pikku ka</color><color=#FFFFFF>kusun desu</color>"
+  50208 = E "lyric <i></i>"
+  50209 = E "phrase_start"
+  50210 = E "lyric <color=#d6b592> Mienai toko ni pikku kaku</color><color=#FFFFFF>sun desu</color>"
+  50304 = E "lyric <i></i>"
+  50305 = E "phrase_start"
+  50306 = E "lyric <color=#d6b592> Mienai toko ni pikku kakusun </color><color=#FFFFFF>desu</color>"
+  50496 = E "lyric <i></i>"
+  50497 = E "phrase_start"
+  50498 = E "lyric <color=#d6b592> Mienai toko ni pikku kakusun de</color><color=#FFFFFF>su</color>"
+  50520 = E "lyric <i></i>"
+  50521 = E "phrase_start"
+  50522 = E "lyric <color=#d6b592> Mienai toko ni pikku kakusun desu </color>"
+  50688 = E "phrase_start"
+  50880 = E "lyric Sou-"
+  51072 = E "lyric zou"
+  51264 = E "lyric ni"
+  51456 = E "lyric i-"
+  51648 = E "lyric sshou"
+  51840 = E "lyric gen-"
+  52032 = E "lyric mei"
+  52224 = E "phrase_start"
+  52416 = E "lyric Gen-"
+  52608 = E "lyric ji-"
+  52752 = E "lyric tsu"
+  52816 = E "lyric wa"
+  52992 = E "lyric ze-"
+  53184 = E "lyric tta-"
+  53232 = E "lyric i"
+  53376 = E "lyric ze-"
+  53520 = E "lyric tsu-"
+  53568 = E "lyric mei"
+  53760 = E "phrase_start"
+  53952 = E "lyric Ha-"
+  54144 = E "lyric tten"
+  54336 = E "lyric to-"
+  54528 = E "lyric chuu"
+  54720 = E "lyric da"
+  54912 = E "lyric shi"
+  55105 = E "phrase_start"
+  55106 = E "lyric <color=#fba2b3> </color><color=#FFFFFF>Dakara fui ni picchi hazurerun desu</color>"
+  55200 = E "lyric <i></i>"
+  55201 = E "phrase_start"
+  55202 = E "lyric <color=#fba2b3> Da</color><color=#FFFFFF>kara fui ni picchi hazurerun desu</color>"
+  55296 = E "lyric <i></i>"
+  55297 = E "phrase_start"
+  55298 = E "lyric <color=#fba2b3> Daka</color><color=#FFFFFF>ra fui ni picchi hazurerun desu</color>"
+  55392 = E "lyric <i></i>"
+  55393 = E "phrase_start"
+  55394 = E "lyric <color=#fba2b3> Dakara </color><color=#FFFFFF>fui ni picchi hazurerun desu</color>"
+  55488 = E "lyric <i></i>"
+  55489 = E "phrase_start"
+  55490 = E "lyric <color=#fba2b3> Dakara fu</color><color=#FFFFFF>i ni picchi hazurerun desu</color>"
+  55584 = E "lyric <i></i>"
+  55585 = E "phrase_start"
+  55586 = E "lyric <color=#fba2b3> Dakara fui </color><color=#FFFFFF>ni picchi hazurerun desu</color>"
+  55680 = E "lyric <i></i>"
+  55681 = E "phrase_start"
+  55682 = E "lyric <color=#fba2b3> Dakara fui ni </color><color=#FFFFFF>picchi hazurerun desu</color>"
+  55872 = E "lyric <i></i>"
+  55873 = E "phrase_start"
+  55874 = E "lyric <color=#fba2b3> Dakara fui ni pi</color><color=#FFFFFF>cchi hazurerun desu</color>"
+  55968 = E "lyric <i></i>"
+  55969 = E "phrase_start"
+  55970 = E "lyric <color=#fba2b3> Dakara fui ni pic</color><color=#FFFFFF>chi hazurerun desu</color>"
+  56064 = E "lyric <i></i>"
+  56065 = E "phrase_start"
+  56066 = E "lyric <color=#fba2b3> Dakara fui ni picchi </color><color=#FFFFFF>hazurerun desu</color>"
+  56160 = E "lyric <i></i>"
+  56161 = E "phrase_start"
+  56162 = E "lyric <color=#fba2b3> Dakara fui ni picchi ha</color><color=#FFFFFF>zurerun desu</color>"
+  56256 = E "lyric <i></i>"
+  56257 = E "phrase_start"
+  56258 = E "lyric <color=#fba2b3> Dakara fui ni picchi hazu</color><color=#FFFFFF>rerun desu</color>"
+  56352 = E "lyric <i></i>"
+  56353 = E "phrase_start"
+  56354 = E "lyric <color=#fba2b3> Dakara fui ni picchi hazure</color><color=#FFFFFF>run desu</color>"
+  56448 = E "lyric <i></i>"
+  56449 = E "phrase_start"
+  56450 = E "lyric <color=#fba2b3> Dakara fui ni picchi hazurerun </color><color=#FFFFFF>desu</color>"
+  56640 = E "lyric <i></i>"
+  56641 = E "phrase_start"
+  56642 = E "lyric <color=#fba2b3> Dakara fui ni picchi hazurerun de</color><color=#FFFFFF>su</color>"
+  56664 = E "lyric <i></i>"
+  56665 = E "phrase_start"
+  56666 = E "lyric <color=#fba2b3> Dakara fui ni picchi hazurerun desu </color>"
+  56832 = E "section Main Theme 2 - Outro"
+  56928 = E "phrase_end"
+}
+
+[ExpertSingle]
+{
+  1536 = N 0 0
+  1536 = N 1 0
+  1536 = N 2 0
+  1632 = N 0 0
+  1632 = N 1 0
+  1632 = N 2 0
+  1728 = N 0 0
+  1728 = N 1 0
+  1728 = N 2 0
+  1824 = N 0 0
+  1824 = N 1 0
+  1824 = N 2 0
+  1920 = N 0 0
+  1920 = N 1 0
+  1920 = N 2 0
+  2016 = N 0 0
+  2016 = N 1 0
+  2016 = N 2 0
+  2112 = N 0 0
+  2112 = N 1 0
+  2112 = N 2 0
+  2208 = N 0 0
+  2208 = N 1 0
+  2208 = N 2 0
+  2304 = N 0 0
+  2304 = N 2 0
+  2304 = N 3 0
+  2400 = N 0 0
+  2400 = N 2 0
+  2400 = N 3 0
+  2496 = N 0 0
+  2496 = N 2 0
+  2496 = N 3 0
+  2592 = N 0 0
+  2592 = N 2 0
+  2592 = N 3 0
+  2688 = N 0 0
+  2688 = N 2 0
+  2688 = N 3 0
+  2784 = N 0 0
+  2784 = N 2 0
+  2784 = N 3 0
+  2880 = N 0 0
+  2880 = N 2 0
+  2880 = N 3 0
+  2976 = N 0 0
+  2976 = N 2 0
+  2976 = N 3 0
+  3072 = N 0 0
+  3072 = N 2 0
+  3072 = N 3 0
+  3168 = N 0 0
+  3168 = N 2 0
+  3168 = N 3 0
+  3264 = N 0 0
+  3264 = N 2 0
+  3264 = N 3 0
+  3360 = N 0 0
+  3360 = N 2 0
+  3360 = N 3 0
+  3456 = N 0 0
+  3456 = N 2 0
+  3456 = N 3 0
+  3552 = N 0 0
+  3552 = N 2 0
+  3552 = N 3 0
+  3648 = N 0 0
+  3648 = N 2 0
+  3648 = N 3 0
+  3744 = N 0 0
+  3744 = N 2 0
+  3744 = N 3 0
+  3840 = N 1 0
+  3840 = N 2 0
+  3840 = N 3 0
+  3936 = N 1 0
+  3936 = N 2 0
+  3936 = N 3 0
+  4032 = N 1 0
+  4032 = N 2 0
+  4032 = N 3 0
+  4128 = N 1 0
+  4128 = N 2 0
+  4128 = N 3 0
+  4224 = N 2 0
+  4224 = N 3 0
+  4224 = N 4 0
+  4320 = N 2 0
+  4320 = N 3 0
+  4320 = N 4 0
+  4416 = N 2 0
+  4416 = N 3 0
+  4416 = N 4 0
+  4512 = N 2 0
+  4512 = N 3 0
+  4512 = N 4 0
+  4608 = N 1 0
+  4608 = N 2 0
+  4608 = N 4 0
+  4704 = N 1 0
+  4704 = N 2 0
+  4704 = N 4 0
+  4800 = N 1 0
+  4800 = N 2 0
+  4800 = N 4 0
+  4896 = N 1 0
+  4896 = N 2 0
+  4896 = N 4 0
+  4992 = N 1 0
+  4992 = N 2 0
+  4992 = N 4 0
+  5088 = N 1 0
+  5088 = N 2 0
+  5088 = N 4 0
+  5184 = N 1 0
+  5184 = N 2 0
+  5184 = N 4 0
+  5280 = N 1 0
+  5280 = N 2 0
+  5280 = N 4 0
+  5376 = N 0 0
+  5376 = N 2 0
+  5376 = N 3 0
+  5472 = N 0 0
+  5472 = N 2 0
+  5472 = N 3 0
+  5568 = N 0 0
+  5568 = N 2 0
+  5568 = N 3 0
+  5664 = N 0 0
+  5664 = N 2 0
+  5664 = N 3 0
+  5760 = N 0 0
+  5760 = N 2 0
+  5760 = N 3 0
+  5856 = N 0 0
+  5856 = N 2 0
+  5856 = N 3 0
+  5952 = N 0 0
+  5952 = N 2 0
+  5952 = N 3 0
+  6048 = N 0 0
+  6048 = N 2 0
+  6048 = N 3 0
+  6144 = N 0 0
+  6240 = N 0 0
+  6336 = N 0 0
+  6432 = N 0 0
+  6528 = N 1 144
+  6720 = N 0 0
+  6816 = N 0 0
+  6912 = N 0 0
+  7008 = N 0 0
+  7104 = N 0 0
+  7200 = N 0 0
+  7296 = N 1 0
+  7328 = N 2 0
+  7488 = N 3 0
+  7536 = N 4 0
+  7584 = N 3 0
+  7632 = N 4 0
+  7680 = N 0 0
+  7680 = N 1 0
+  7680 = N 2 0
+  7776 = N 0 0
+  7776 = N 1 0
+  7776 = N 2 0
+  7872 = N 0 0
+  7872 = N 1 0
+  7872 = N 2 0
+  7968 = N 0 0
+  7968 = N 1 0
+  7968 = N 2 0
+  8064 = N 0 0
+  8064 = N 1 0
+  8064 = N 2 0
+  8160 = N 0 0
+  8160 = N 1 0
+  8160 = N 2 0
+  8256 = N 0 0
+  8256 = N 1 0
+  8256 = N 2 0
+  8352 = N 0 0
+  8352 = N 1 0
+  8352 = N 2 0
+  8448 = N 0 0
+  8448 = N 2 0
+  8448 = N 3 0
+  8544 = N 0 0
+  8544 = N 2 0
+  8544 = N 3 0
+  8640 = N 0 0
+  8640 = N 2 0
+  8640 = N 3 0
+  8736 = N 0 0
+  8736 = N 2 0
+  8736 = N 3 0
+  8832 = N 0 0
+  8832 = N 2 0
+  8832 = N 3 0
+  8928 = N 0 0
+  8928 = N 2 0
+  8928 = N 3 0
+  9024 = N 0 0
+  9024 = N 2 0
+  9024 = N 3 0
+  9120 = N 0 0
+  9120 = N 2 0
+  9120 = N 3 0
+  9216 = N 2 0
+  9216 = N 3 0
+  9216 = N 4 0
+  9312 = N 2 0
+  9312 = N 3 0
+  9312 = N 4 0
+  9408 = N 2 0
+  9408 = N 3 0
+  9408 = N 4 0
+  9504 = N 1 0
+  9504 = N 3 0
+  9504 = N 4 0
+  9600 = N 1 0
+  9600 = N 3 0
+  9600 = N 4 0
+  9696 = N 1 0
+  9696 = N 2 0
+  9696 = N 3 0
+  9792 = N 1 0
+  9792 = N 2 0
+  9792 = N 3 0
+  9888 = N 1 0
+  9984 = N 1 0
+  9984 = N 2 0
+  9984 = N 4 0
+  10080 = N 1 0
+  10080 = N 2 0
+  10080 = N 4 0
+  10176 = N 1 0
+  10176 = N 2 0
+  10176 = N 4 0
+  10272 = N 1 0
+  10368 = N 1 0
+  10368 = N 3 0
+  10368 = N 4 0
+  10464 = N 2 0
+  10464 = N 3 0
+  10464 = N 4 0
+  10560 = N 2 0
+  10560 = N 3 0
+  10560 = N 4 0
+  10752 = N 0 0
+  10752 = N 1 0
+  10752 = N 2 0
+  10848 = N 0 0
+  10848 = N 1 0
+  10848 = N 2 0
+  10944 = N 0 0
+  10944 = N 1 0
+  10944 = N 2 0
+  11040 = N 0 0
+  11040 = N 1 0
+  11040 = N 2 0
+  11136 = N 0 0
+  11136 = N 1 0
+  11136 = N 2 0
+  11232 = N 0 0
+  11232 = N 1 0
+  11232 = N 2 0
+  11328 = N 0 0
+  11328 = N 1 0
+  11328 = N 2 0
+  11424 = N 0 0
+  11424 = N 1 0
+  11424 = N 2 0
+  11520 = N 0 0
+  11520 = N 2 0
+  11520 = N 3 0
+  11616 = N 0 0
+  11616 = N 2 0
+  11616 = N 3 0
+  11712 = N 0 0
+  11712 = N 2 0
+  11712 = N 3 0
+  11808 = N 0 0
+  11808 = N 2 0
+  11808 = N 3 0
+  11904 = N 0 0
+  11904 = N 2 0
+  11904 = N 3 0
+  12000 = N 0 0
+  12000 = N 2 0
+  12000 = N 3 0
+  12096 = N 3 0
+  12128 = N 4 112
+  12288 = N 3 0
+  12288 = S 2 1344
+  12336 = N 2 0
+  12384 = N 1 0
+  12432 = N 0 0
+  12480 = N 3 0
+  12528 = N 2 0
+  12576 = N 1 0
+  12624 = N 0 0
+  12672 = N 3 0
+  12720 = N 2 0
+  12768 = N 1 0
+  12816 = N 0 0
+  12864 = N 3 0
+  12912 = N 2 0
+  12960 = N 1 0
+  13008 = N 0 0
+  13056 = N 4 0
+  13104 = N 2 0
+  13152 = N 1 0
+  13200 = N 0 0
+  13248 = N 4 0
+  13296 = N 3 0
+  13344 = N 1 0
+  13392 = N 0 0
+  13440 = N 4 0
+  13488 = N 3 0
+  13536 = N 2 0
+  13584 = N 0 0
+  13632 = N 1 0
+  13632 = N 5 0
+  13680 = N 2 0
+  13728 = N 1 0
+  13776 = N 2 0
+  13824 = N 2 0
+  13824 = N 3 0
+  13920 = N 2 0
+  13920 = N 3 0
+  14016 = N 2 0
+  14112 = N 2 0
+  14208 = N 2 0
+  14208 = N 3 0
+  14304 = N 2 0
+  14304 = N 3 0
+  14400 = N 2 0
+  14496 = N 2 0
+  14592 = N 2 0
+  14592 = N 3 0
+  14688 = N 2 0
+  14688 = N 3 0
+  14784 = N 2 0
+  14880 = N 2 0
+  14976 = N 2 0
+  14976 = N 3 0
+  15072 = N 2 0
+  15072 = N 3 0
+  15168 = N 3 0
+  15200 = N 4 112
+  15360 = N 2 0
+  15360 = N 3 0
+  15456 = N 2 0
+  15456 = N 3 0
+  15552 = N 2 0
+  15648 = N 2 0
+  15744 = N 2 0
+  15744 = N 3 0
+  15840 = N 2 0
+  15840 = N 3 0
+  15936 = N 2 0
+  16032 = N 2 0
+  16128 = N 2 0
+  16128 = N 3 0
+  16224 = N 2 0
+  16224 = N 3 0
+  16320 = N 2 0
+  16416 = N 2 0
+  16512 = N 2 0
+  16512 = N 3 0
+  16608 = N 2 0
+  16608 = N 3 0
+  16704 = N 3 0
+  16736 = N 4 112
+  16896 = N 2 0
+  16896 = N 3 0
+  16992 = N 2 0
+  16992 = N 3 0
+  17088 = N 2 0
+  17184 = N 2 0
+  17280 = N 2 0
+  17280 = N 3 0
+  17376 = N 2 0
+  17376 = N 3 0
+  17472 = N 2 0
+  17568 = N 2 0
+  17664 = N 2 0
+  17664 = N 3 0
+  17760 = N 2 0
+  17760 = N 3 0
+  17856 = N 2 0
+  17952 = N 2 0
+  18048 = N 2 0
+  18048 = N 3 0
+  18144 = N 2 0
+  18144 = N 3 0
+  18240 = N 3 0
+  18272 = N 4 112
+  18432 = N 2 0
+  18432 = N 3 0
+  18432 = S 2 960
+  18528 = N 2 0
+  18528 = N 3 0
+  18624 = N 2 0
+  18720 = N 2 0
+  18816 = N 2 0
+  18816 = N 3 0
+  18912 = N 2 0
+  18912 = N 3 0
+  19008 = N 2 0
+  19104 = N 2 0
+  19200 = N 2 0
+  19200 = N 3 0
+  19296 = N 2 0
+  19296 = N 3 0
+  19392 = N 2 0
+  19488 = N 2 0
+  19584 = N 2 0
+  19584 = N 3 0
+  19680 = N 2 0
+  19680 = N 3 0
+  19776 = N 3 0
+  19808 = N 4 112
+  19968 = N 2 0
+  19968 = N 3 0
+  20064 = N 2 0
+  20064 = N 3 0
+  20160 = N 2 0
+  20256 = N 2 0
+  20352 = N 2 0
+  20448 = N 2 0
+  20544 = N 2 0
+  20544 = N 3 0
+  20640 = N 2 0
+  20640 = N 3 0
+  20736 = N 2 0
+  20832 = N 2 0
+  20928 = N 2 0
+  21024 = N 2 0
+  21120 = N 2 0
+  21120 = N 3 0
+  21216 = N 2 0
+  21216 = N 3 0
+  21312 = N 2 0
+  21408 = N 2 0
+  21504 = N 2 0
+  21504 = N 3 0
+  21600 = N 2 0
+  21600 = N 3 0
+  21696 = N 2 0
+  21792 = N 2 0
+  21888 = N 2 0
+  21984 = N 2 0
+  22080 = N 2 0
+  22080 = N 3 0
+  22176 = N 2 0
+  22176 = N 3 0
+  22272 = N 2 0
+  22368 = N 2 0
+  22464 = N 2 0
+  22560 = N 2 0
+  22656 = N 2 0
+  22656 = N 3 0
+  22752 = N 2 0
+  22752 = N 3 0
+  22848 = N 3 0
+  22896 = N 4 0
+  22944 = N 3 0
+  22992 = N 4 0
+  23040 = N 0 0
+  23040 = N 5 0
+  23088 = N 0 0
+  23136 = N 0 0
+  23184 = N 0 0
+  23232 = N 0 0
+  23424 = N 0 0
+  23472 = N 0 0
+  23520 = N 0 0
+  23568 = N 0 0
+  23616 = N 0 0
+  23808 = N 0 0
+  23856 = N 0 0
+  23904 = N 0 0
+  23952 = N 0 0
+  24000 = N 0 0
+  24096 = N 0 0
+  24192 = N 0 0
+  24288 = N 0 0
+  24384 = N 1 0
+  24416 = N 2 112
+  24576 = N 0 0
+  24624 = N 0 0
+  24672 = N 0 0
+  24720 = N 0 0
+  24768 = N 0 0
+  24960 = N 0 0
+  25008 = N 0 0
+  25056 = N 0 0
+  25104 = N 0 0
+  25152 = N 0 0
+  25344 = N 0 0
+  25392 = N 0 0
+  25440 = N 0 0
+  25488 = N 0 0
+  25536 = N 0 0
+  25632 = N 0 0
+  25728 = N 0 0
+  25824 = N 0 0
+  25920 = N 1 0
+  25952 = N 2 112
+  26112 = N 2 0
+  26112 = N 3 0
+  26208 = N 2 0
+  26208 = N 3 0
+  26304 = N 2 0
+  26400 = N 2 0
+  26496 = N 2 0
+  26592 = N 2 0
+  26688 = N 2 0
+  26688 = N 3 0
+  26784 = N 2 0
+  26784 = N 3 0
+  26880 = N 2 0
+  26976 = N 2 0
+  27072 = N 2 0
+  27168 = N 2 0
+  27264 = N 2 0
+  27264 = N 3 0
+  27360 = N 2 0
+  27360 = N 3 0
+  27456 = N 2 0
+  27552 = N 2 0
+  27648 = N 2 0
+  27648 = N 3 0
+  27744 = N 2 0
+  27744 = N 3 0
+  27840 = N 2 0
+  27936 = N 2 0
+  28032 = N 2 0
+  28128 = N 2 0
+  28224 = N 2 0
+  28224 = N 3 0
+  28320 = N 2 0
+  28320 = N 3 0
+  28416 = N 2 0
+  28512 = N 2 0
+  28608 = N 2 0
+  28704 = N 2 0
+  28800 = N 2 0
+  28800 = N 3 0
+  28896 = N 2 0
+  28896 = N 3 0
+  28992 = N 3 0
+  29040 = N 4 0
+  29088 = N 3 0
+  29136 = N 4 0
+  29184 = N 1 0
+  29184 = N 5 0
+  29232 = N 1 0
+  29280 = N 1 0
+  29328 = N 1 0
+  29376 = N 1 0
+  29568 = N 1 0
+  29616 = N 1 0
+  29664 = N 1 0
+  29712 = N 1 0
+  29760 = N 1 0
+  29952 = N 1 0
+  29952 = S 2 768
+  30000 = N 1 0
+  30048 = N 1 0
+  30096 = N 1 0
+  30144 = N 1 0
+  30240 = N 1 0
+  30336 = N 1 0
+  30432 = N 1 0
+  30528 = N 2 0
+  30560 = N 3 112
+  30720 = N 1 0
+  30768 = N 1 0
+  30816 = N 1 0
+  30864 = N 1 0
+  30912 = N 1 0
+  31104 = N 1 0
+  31152 = N 1 0
+  31200 = N 1 0
+  31248 = N 1 0
+  31296 = N 1 0
+  31488 = N 1 0
+  31536 = N 1 0
+  31584 = N 1 0
+  31632 = N 1 0
+  31680 = N 1 0
+  31776 = N 1 0
+  31872 = N 1 0
+  31968 = N 1 0
+  32064 = N 2 0
+  32096 = N 3 112
+  32256 = N 3 0
+  32304 = N 4 1056
+  33408 = N 1 0
+  33456 = N 2 96
+  33600 = N 3 144
+  33792 = N 1 1104
+  34944 = N 2 144
+  35136 = N 3 144
+  35328 = N 0 720
+  36096 = N 0 0
+  36144 = N 1 672
+  36864 = N 2 0
+  36864 = S 2 1536
+  36960 = N 1 0
+  37056 = N 3 0
+  37248 = N 1 0
+  37440 = N 0 0
+  37632 = N 4 0
+  37728 = N 3 0
+  37728 = N 5 0
+  37776 = N 2 0
+  37824 = N 1 0
+  37920 = N 0 0
+  38016 = N 3 0
+  38112 = N 2 0
+  38208 = N 0 0
+  38400 = N 3 0
+  38448 = N 4 1056
+  39552 = N 3 0
+  39648 = N 3 0
+  39744 = N 4 144
+  39936 = N 2 1104
+  41088 = N 1 0
+  41184 = N 1 0
+  41280 = N 2 144
+  41472 = N 0 720
+  42240 = N 2 720
+  43008 = N 2 0
+  43056 = N 3 480
+  43584 = N 0 0
+  43680 = N 1 0
+  43776 = N 0 0
+  43872 = N 4 0
+  43968 = N 0 0
+  44064 = N 3 0
+  44160 = N 0 0
+  44256 = N 2 0
+  44352 = N 1 144
+  44544 = N 0 0
+  44544 = N 1 0
+  44544 = N 2 0
+  44544 = S 2 864
+  44640 = N 0 0
+  44640 = N 1 0
+  44640 = N 2 0
+  44736 = N 0 0
+  44736 = N 1 0
+  44736 = N 2 0
+  44832 = N 0 0
+  44832 = N 1 0
+  44832 = N 2 0
+  44928 = N 0 0
+  44928 = N 1 0
+  44928 = N 2 0
+  45024 = N 0 0
+  45024 = N 1 0
+  45024 = N 2 0
+  45120 = N 0 0
+  45120 = N 1 0
+  45120 = N 2 0
+  45216 = N 0 0
+  45216 = N 1 0
+  45216 = N 2 0
+  45312 = N 0 0
+  45312 = N 2 0
+  45312 = N 3 0
+  45408 = N 0 0
+  45408 = N 2 0
+  45408 = N 3 0
+  45504 = N 0 0
+  45504 = N 2 0
+  45504 = N 3 0
+  45600 = N 0 0
+  45600 = N 2 0
+  45600 = N 3 0
+  45696 = N 0 0
+  45696 = N 2 0
+  45696 = N 3 0
+  45792 = N 0 0
+  45792 = N 2 0
+  45792 = N 3 0
+  45888 = N 0 0
+  45888 = N 2 0
+  45888 = N 3 0
+  45984 = N 0 0
+  45984 = N 2 0
+  45984 = N 3 0
+  46080 = N 0 0
+  46080 = N 2 0
+  46080 = N 3 0
+  46176 = N 0 0
+  46176 = N 2 0
+  46176 = N 3 0
+  46272 = N 0 0
+  46272 = N 2 0
+  46272 = N 3 0
+  46368 = N 0 0
+  46368 = N 2 0
+  46368 = N 3 0
+  46464 = N 0 0
+  46464 = N 2 0
+  46464 = N 3 0
+  46560 = N 0 0
+  46560 = N 2 0
+  46560 = N 3 0
+  46656 = N 0 0
+  46656 = N 2 0
+  46656 = N 3 0
+  46752 = N 0 0
+  46752 = N 2 0
+  46752 = N 3 0
+  46848 = N 1 0
+  46848 = N 2 0
+  46848 = N 3 0
+  46944 = N 1 0
+  46944 = N 2 0
+  46944 = N 3 0
+  47040 = N 1 0
+  47040 = N 2 0
+  47040 = N 3 0
+  47136 = N 1 0
+  47136 = N 2 0
+  47136 = N 3 0
+  47232 = N 2 0
+  47232 = N 3 0
+  47232 = N 4 0
+  47328 = N 2 0
+  47328 = N 3 0
+  47328 = N 4 0
+  47424 = N 2 0
+  47424 = N 3 0
+  47424 = N 4 0
+  47520 = N 2 0
+  47520 = N 3 0
+  47520 = N 4 0
+  47616 = N 1 0
+  47616 = N 2 0
+  47616 = N 4 0
+  47712 = N 1 0
+  47712 = N 2 0
+  47712 = N 4 0
+  47808 = N 1 0
+  47808 = N 2 0
+  47808 = N 4 0
+  47904 = N 1 0
+  47904 = N 2 0
+  47904 = N 4 0
+  48000 = N 1 0
+  48000 = N 2 0
+  48000 = N 4 0
+  48096 = N 1 0
+  48096 = N 2 0
+  48096 = N 4 0
+  48192 = N 1 0
+  48192 = N 2 0
+  48192 = N 4 0
+  48288 = N 1 0
+  48288 = N 2 0
+  48288 = N 4 0
+  48384 = N 0 0
+  48384 = N 2 0
+  48384 = N 3 0
+  48480 = N 0 0
+  48480 = N 2 0
+  48480 = N 3 0
+  48576 = N 0 0
+  48576 = N 2 0
+  48576 = N 3 0
+  48672 = N 0 0
+  48672 = N 2 0
+  48672 = N 3 0
+  48768 = N 0 0
+  48768 = N 2 0
+  48768 = N 3 0
+  48864 = N 0 0
+  48864 = N 2 0
+  48864 = N 3 0
+  48960 = N 0 0
+  48960 = N 2 0
+  48960 = N 3 0
+  49056 = N 0 0
+  49056 = N 2 0
+  49056 = N 3 0
+  49152 = N 0 0
+  49248 = N 0 0
+  49344 = N 0 0
+  49440 = N 0 0
+  49536 = N 1 144
+  49728 = N 0 0
+  49728 = S 2 960
+  49824 = N 0 0
+  49920 = N 0 0
+  50016 = N 0 0
+  50112 = N 0 0
+  50208 = N 0 0
+  50304 = N 1 0
+  50336 = N 2 0
+  50496 = N 3 0
+  50544 = N 4 0
+  50592 = N 3 0
+  50640 = N 4 0
+  50688 = N 0 0
+  50688 = N 1 0
+  50688 = N 2 0
+  50784 = N 0 0
+  50784 = N 1 0
+  50784 = N 2 0
+  50880 = N 0 0
+  50880 = N 1 0
+  50880 = N 2 0
+  50976 = N 0 0
+  50976 = N 1 0
+  50976 = N 2 0
+  51072 = N 0 0
+  51072 = N 1 0
+  51072 = N 2 0
+  51168 = N 0 0
+  51168 = N 1 0
+  51168 = N 2 0
+  51264 = N 0 0
+  51264 = N 1 0
+  51264 = N 2 0
+  51360 = N 0 0
+  51360 = N 1 0
+  51360 = N 2 0
+  51456 = N 0 0
+  51456 = N 2 0
+  51456 = N 3 0
+  51552 = N 0 0
+  51552 = N 2 0
+  51552 = N 3 0
+  51648 = N 0 0
+  51648 = N 2 0
+  51648 = N 3 0
+  51744 = N 0 0
+  51744 = N 2 0
+  51744 = N 3 0
+  51840 = N 0 0
+  51840 = N 2 0
+  51840 = N 3 0
+  51936 = N 0 0
+  51936 = N 2 0
+  51936 = N 3 0
+  52032 = N 0 0
+  52032 = N 2 0
+  52032 = N 3 0
+  52128 = N 0 0
+  52128 = N 2 0
+  52128 = N 3 0
+  52224 = N 2 0
+  52224 = N 3 0
+  52224 = N 4 0
+  52320 = N 2 0
+  52320 = N 3 0
+  52320 = N 4 0
+  52416 = N 2 0
+  52416 = N 3 0
+  52416 = N 4 0
+  52512 = N 1 0
+  52512 = N 3 0
+  52512 = N 4 0
+  52608 = N 1 0
+  52608 = N 3 0
+  52608 = N 4 0
+  52704 = N 1 0
+  52704 = N 2 0
+  52704 = N 3 0
+  52800 = N 1 0
+  52800 = N 2 0
+  52800 = N 3 0
+  52896 = N 1 0
+  52992 = N 1 0
+  52992 = N 2 0
+  52992 = N 4 0
+  53088 = N 1 0
+  53088 = N 2 0
+  53088 = N 4 0
+  53184 = N 1 0
+  53184 = N 2 0
+  53184 = N 4 0
+  53280 = N 1 0
+  53376 = N 1 0
+  53376 = N 3 0
+  53376 = N 4 0
+  53472 = N 2 0
+  53472 = N 3 0
+  53472 = N 4 0
+  53568 = N 2 0
+  53568 = N 3 0
+  53568 = N 4 0
+  53760 = N 0 0
+  53760 = N 1 0
+  53760 = N 2 0
+  53856 = N 0 0
+  53856 = N 1 0
+  53856 = N 2 0
+  53952 = N 0 0
+  53952 = N 1 0
+  53952 = N 2 0
+  54048 = N 0 0
+  54048 = N 1 0
+  54048 = N 2 0
+  54144 = N 0 0
+  54144 = N 1 0
+  54144 = N 2 0
+  54240 = N 0 0
+  54240 = N 1 0
+  54240 = N 2 0
+  54336 = N 0 0
+  54336 = N 1 0
+  54336 = N 2 0
+  54432 = N 0 0
+  54432 = N 1 0
+  54432 = N 2 0
+  54528 = N 0 0
+  54528 = N 2 0
+  54528 = N 3 0
+  54624 = N 0 0
+  54624 = N 2 0
+  54624 = N 3 0
+  54720 = N 0 0
+  54720 = N 2 0
+  54720 = N 3 0
+  54816 = N 0 0
+  54816 = N 2 0
+  54816 = N 3 0
+  54912 = N 0 0
+  54912 = N 2 0
+  54912 = N 3 0
+  55008 = N 0 0
+  55008 = N 2 0
+  55008 = N 3 0
+  55104 = N 3 0
+  55136 = N 4 112
+  55296 = N 3 0
+  55344 = N 2 0
+  55392 = N 1 0
+  55440 = N 0 0
+  55488 = N 3 0
+  55536 = N 2 0
+  55584 = N 1 0
+  55632 = N 0 0
+  55680 = N 3 0
+  55728 = N 2 0
+  55776 = N 1 0
+  55824 = N 0 0
+  55872 = N 3 0
+  55920 = N 2 0
+  55968 = N 1 0
+  56016 = N 0 0
+  56064 = N 4 0
+  56112 = N 2 0
+  56160 = N 1 0
+  56208 = N 0 0
+  56256 = N 4 0
+  56304 = N 3 0
+  56352 = N 1 0
+  56400 = N 0 0
+  56448 = N 4 0
+  56496 = N 3 0
+  56544 = N 2 0
+  56592 = N 0 0
+  56640 = N 1 0
+  56640 = N 5 0
+  56688 = N 2 0
+  56736 = N 1 0
+  56784 = N 2 0
+  56832 = N 2 0
+  56832 = N 3 0
+  56928 = N 2 0
+  56928 = N 3 0
+  57024 = N 2 0
+  57120 = N 2 0
+  57216 = N 2 0
+  57216 = N 3 0
+  57312 = N 2 0
+  57312 = N 3 0
+  57408 = N 2 0
+  57504 = N 2 0
+  57600 = N 2 0
+  57600 = N 3 0
+  57696 = N 2 0
+  57696 = N 3 0
+  57792 = N 2 0
+  57888 = N 2 0
+  57984 = N 2 0
+  57984 = N 3 0
+  58080 = N 2 0
+  58080 = N 3 0
+  58176 = N 3 0
+  58208 = N 4 112
+  58368 = N 2 0
+  58368 = N 3 0
+  58464 = N 2 0
+  58464 = N 3 0
+  58560 = N 2 0
+  58656 = N 2 0
+  58752 = N 2 0
+  58752 = N 3 0
+  58848 = N 2 0
+  58848 = N 3 0
+  58944 = N 2 0
+  59040 = N 2 0
+  59136 = N 2 0
+  59136 = N 3 0
+  59232 = N 2 0
+  59232 = N 3 0
+  59328 = N 2 0
+  59424 = N 2 0
+  59520 = N 2 0
+  59520 = N 3 0
+  59616 = N 2 0
+  59616 = N 3 0
+  59712 = N 3 0
+  59744 = N 4 112
+  59904 = N 2 0
+  59904 = N 3 0
+  60000 = N 2 0
+  60000 = N 3 0
+  60096 = N 2 0
+  60192 = N 2 0
+  60288 = N 2 0
+  60288 = N 3 0
+  60384 = N 2 0
+  60384 = N 3 0
+  60480 = N 2 0
+  60576 = N 2 0
+  60672 = N 2 0
+  60672 = N 3 0
+  60768 = N 2 0
+  60768 = N 3 0
+  60864 = N 2 0
+  60960 = N 2 0
+  61056 = N 2 0
+  61056 = N 3 0
+  61152 = N 2 0
+  61152 = N 3 0
+  61248 = N 3 0
+  61280 = N 4 112
+  61440 = N 2 0
+  61440 = N 3 0
+  61536 = N 2 0
+  61536 = N 3 0
+  61632 = N 2 0
+  61728 = N 2 0
+  61824 = N 2 0
+  61824 = N 3 0
+  61920 = N 2 0
+  61920 = N 3 0
+  62016 = N 2 0
+  62112 = N 2 0
+  62208 = N 2 0
+  62208 = N 3 0
+  62304 = N 2 0
+  62304 = N 3 0
+  62400 = N 2 0
+  62496 = N 2 0
+  62592 = N 2 0
+  62592 = N 3 0
+  62688 = N 2 0
+  62688 = N 3 0
+  62784 = N 3 0
+  62816 = N 4 112
+  62976 = N 2 0
+  62976 = N 4 0
+  63072 = N 2 0
+  63072 = N 4 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
