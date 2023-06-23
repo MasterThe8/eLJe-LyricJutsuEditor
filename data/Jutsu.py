@@ -47,10 +47,7 @@ class AddJutsu(QDialog):
         
         self.textfakeLabel.setVisible(False)
         self.fakelyric.setVisible(False)
-    # def insertTextAtCursor(plaintext, text):
-    # cursor = plaintext.textCursor()
-    # cursor.insertText(text)
-    # plaintext.setTextCursor(cursor)
+    
     def focusOutEvent(self, event):
         self.activateWindow()
         self.setWindowFlags(self.windowFlags() | QtCore.Qt.WindowStaysOnTopHint)

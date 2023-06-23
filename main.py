@@ -1,4 +1,5 @@
 import re
+import os
 import sys
 import codecs
 import typing
@@ -27,7 +28,6 @@ class GlobalText:
     ghl_bass = ''
     ghl_rhythm = ''
     ghl_coop = ''
-
 class LandingPageWindow(QMainWindow):
     def __init__(self, main_window):
         super().__init__()
@@ -60,10 +60,8 @@ class LandingPageWindow(QMainWindow):
         button.setCursor(Qt.PointingHandCursor)
         button.clicked.connect(self.open_main_window)
         layout.addWidget(button)
-
         with open('style/landing.css', 'r') as f:
             style_sheet = f.read()
-        
         self.setStyleSheet(style_sheet)
 
     def center_window(self, width, height):
@@ -81,11 +79,13 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         
+        self.last_opened_directory = ''
+        
         self.tabWidget = QTabWidget(self)
         self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Lyrics')
         self.tabWidget.addTab(self.tabRichTextEdit(), 'Display Lyrics')
-        self.setCentralWidget(self.tabWidget)
-        self.setWindowTitle("eLJe | LyricJutsu Chart Editor v0.0.40")
+        
+        self.setWindowTitle("eLJe | LyricJutsu Chart Editor v0.0.48 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
         self.setEnabled(False)
@@ -145,8 +145,11 @@ class MainWindow(QMainWindow):
         colorjutsu_action.triggered.connect(self.custom_color_no_jutsu)
         
         # ConvertPhrase no Jutsu Action
-        convertjutsu_action = QAction("ConvertPhrase no Jutsu", self)
+        convertjutsu_action = QAction("Kan2Rom no Jutsu", self)
         convertjutsu_action.triggered.connect(self.convert_phrase_no_jutsu)
+        
+        lyricolorjutsu_action = QAction("LyriColor no Jutsu", self)
+        lyricolorjutsu_action.triggered.connect(self.lyric_color_no_jutsu)
         
         # Exit Menu & Action
         exit_action = QAction("Exit", self)
@@ -182,12 +185,14 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(self.zoom_out_action)
         self.toolbar = self.addToolBar("Color Picker")
         self.toolbar.addAction(colorpick_action)
-        self.toolbar.addSeparator()
+        # self.toolbar.addSeparator()
         self.toolbar = self.addToolBar("Add Jutsu")
         self.toolbar = self.addToolBar("CustomColor no Jutsu")
-        self.toolbar = self.addToolBar("ConvertPhrase no Jutsu")
+        self.toolbar = self.addToolBar("LyriColor no Jutsu")
+        self.toolbar = self.addToolBar("Kan2Rom no Jutsu")
         self.toolbar.addAction(addjutsu_action)
         self.toolbar.addAction(colorjutsu_action)
+        self.toolbar.addAction(lyricolorjutsu_action)
         self.toolbar.addAction(convertjutsu_action)
 
         # Membuat QAction untuk membuka/tutup QDockWidget
@@ -207,6 +212,8 @@ class MainWindow(QMainWindow):
         self.textEdit = QTextEdit()
         self.dock.setWidget(self.textEdit)
         self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
+        
+        self.setCentralWidget(self.tabWidget)
         
         self.show()
 
@@ -270,7 +277,6 @@ class MainWindow(QMainWindow):
         # Styling QPlainTextEdit
         with open('style/textedit.css','r') as f:
             text_edit_style = f.read()
-        
         self.plainTextEdit.setStyleSheet(text_edit_style)
         self.highlighter = Highlighter(self.plainTextEdit.document())
         # self.plainTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
@@ -444,11 +450,15 @@ class MainWindow(QMainWindow):
 
     # ===========================================================
     
-# Fungsi Open File
+    # Fungsi Open File
     def open_file(self):
+        file_dialog = QFileDialog(self)
+        file_dialog.setWindowTitle("Open file")
+        file_dialog.setDirectory(self.last_opened_directory)
         file_name, _ = QFileDialog.getOpenFileName(self, 'Open file', '.', 'Chart files (*.chart)')
-        
+
         if file_name:
+            self.last_opened_directory = os.path.dirname(file_name)
             try:
                 with open(file_name, 'rb') as f:
                     file_contents = f.read()
@@ -650,6 +660,10 @@ class MainWindow(QMainWindow):
         
     def convert_phrase_no_jutsu(self):
         dialog = CnvrtJutsu(self)
+        dialog.exec_()
+        
+    def lyric_color_no_jutsu(self):
+        dialog = LCJutsu(self)
         dialog.exec_()
     
     def getScript(self):

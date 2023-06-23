@@ -7,8 +7,9 @@ class CCJutsu(QDialog):
     def __init__(self, main_window):
         super().__init__()
 
-        self.setWindowTitle("Custom Color Jutsu")
-        
+        self.setWindowTitle("Custom Color no Jutsu")
+        self.setGeometry(420, 240, 300, 300)
+        self.resize(400, 200)
         self.main_window = main_window
 
         # Membuat layout utama
@@ -75,7 +76,7 @@ class CCJutsu(QDialog):
         color = QColorDialog.getColor()
         if color.isValid():
             self.selected_color = color.name(QColor.HexRgb)
-            self.color_label.setStyleSheet("background-color: {}".format(color.name()))
+            self.color_label.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(color.name()))
             self.color_label.setText(color.name())
 
     def sort_script_by_position(self, script):
@@ -359,7 +360,11 @@ class CCJutsu(QDialog):
             value = self.main_window.getScript()
             value = value.splitlines()
             lines = self.get_lines(value, position)
-
+            lyric_items = self.get_lyric_item(lines)
+            print(value)
+            print()
+            print(lines)
+            print(lyric_items)
             if self.radio_button1.isChecked():
                 result = self.cc_nohide(lines)
             elif self.radio_button2.isChecked():
@@ -368,8 +373,6 @@ class CCJutsu(QDialog):
                 result = self.cc_addnext(lines)
             
             result_split = [line for i in result for line in i.split('\n')]
-            lyric_items = self.get_lyric_item(lines)
-            print(lyric_items)
             last_result = self.add_next_lyric(lyric_items, result_split)
             
             index = next((i for i, event in enumerate(value) if event.startswith(str(position) + ' = ')), None)

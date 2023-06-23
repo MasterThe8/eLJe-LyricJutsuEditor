@@ -7,8 +7,9 @@ class CnvrtJutsu(QDialog):
     def __init__(self, main_window):
         super().__init__()
 
-        self.setWindowTitle("Dialog Window")
-        
+        self.setWindowTitle("Kan2Rom no Jutsu")
+        self.setGeometry(420, 240, 300, 300)
+        self.resize(400, 200)
         self.main_window = main_window
 
         # Membuat layout utama

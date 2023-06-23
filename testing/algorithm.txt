@@ -345,3 +345,60 @@ Maka hapus salah satu baris tersebut, sehingga hasil output sebagai berikut:
 88 = E "lyric gu"
 91 = E "section Pre-Chorus 1A"
 91 = E "lyric waw2"
+
+
+
+
+
+
+- /Get Lyrics from 'phrase_start' to next 'phrase_start' ot 'phrase_end'
+- /Get Section
+- /Delete Section
+- /Get Lyric
+- /Convert All Lyric Phrase to Lyric
+- Find first Lyric Phrase
+- Add Jutsu
+    >> lyric {Lyric}
+    >> phrase_start
+    >> -
+    >> phrase_start
+    >> <color=#FFFFFF><color={custom_color}>{first_lyric_phrase}
+    >> {next_phrase}  .....
+    >> close tag
+- Add Temp Section to Script
+- Sort the Script by Position
+- Return
+
+
+lyric_items = ['Ma-', 'chi', 'na-', 'ga-', 're-', 'ru', 'Hot', 'na', 'Pop', 'Song']
+
+Buat fungsi untuk mengkonversi list pada 'lyric_items' menjadi string dengan syarat:
+- Setiap elemen digabung dengan menambahkan spasi KECUALI element yang diakhiri dengan tanda '-'. Jadi, lakukan pengecekan terhadap element sebelum dijadikan string.
+- Jika nilai element diakhiri dengan tanda '-', gabung dengan element selanjutnya tanpa menambahkan spasi.
+
+Misalkan:
+- element pertama yaitu 'Ma-', diakhiri dengan tanda '-'. Maka gabung dengan element selanjutnya yaitu 'chi'.
+    Hasil : 'Machi'
+- element 'chi' tidak diakhiri dengan tanda '-'. Maka tambahkan spasi untuk memisahkan element 'chi' dengan element selanjutnya.
+    Hasil : 'Machi na'
+- element 'na-' diakhiri dengan tanda tanda '-'. Maka gabung dengan element selanjutnya yaitu 'ga-'.
+    Hasil : 'Machi naga'
+- dan seterusnya
+
+Sehingga, hasil akhir adalah sebagai berikut:
+lyric_items_result = 'Machi nagareru Hot na Pop Song'
+
+
+lyric_items = ['19200 = E "phrase_start"', '19296 = E "lyric Ku-"', '19344 = E "lyric da-"', '19392 = E "lyric ra-"']
+
+Buat fungsi untuk mencari nilai element dengan event_name 'lyric' pertama dari index-0. Dan masukkan element dengan event_name 'lyric' pertama ke variable baru.
+
+Pada lyric_items, element dengan event_name 'lyric' pertama adalah '19296 = E "lyric Ku-'
+
+========================
+
+first_lyric = '19296 = E "lyric Ku-"'
+
+Buat fungsi untuk memisahkan first_lyric menjadi bagian 'position', 'lyric_value'.
+position = 19296
+lyric_value = Ku-

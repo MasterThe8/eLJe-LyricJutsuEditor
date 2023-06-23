@@ -50,6 +50,11 @@
   100 = E "lyric gu"
   110 = E "lyric Je-"
   120 = E "lyric pun"
+  150 = E "lyric <i></i>"
+  151 = E "phrase_start"
+  152 = E "lyric asekk"
+  153 = E "phrase_start"
+  154 = E "lyric WAW"
 }
 
 [ExpertSingle]
