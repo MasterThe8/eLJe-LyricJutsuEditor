@@ -15,6 +15,8 @@ class AddJutsu(QDialog):
         self.setGeometry(420, 240, 300, 300)
         self.resize(400, 200)
         
+        self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
+        
         layout = QVBoxLayout()
         self.comboBox = QComboBox()
         self.comboBox.addItems(['No SlideUp Transition', 'Hide Next Phrase', 'Fake Next Phrase'])
@@ -45,8 +47,8 @@ class AddJutsu(QDialog):
         layout.addWidget(self.cancelButton)
         self.setLayout(layout)
         
-        self.textfakeLabel.setVisible(False)
-        self.fakelyric.setVisible(False)
+        self.textfakeLabel.setDisabled(True)
+        self.fakelyric.setDisabled(True)
     
     def focusOutEvent(self, event):
         self.activateWindow()
@@ -56,11 +58,11 @@ class AddJutsu(QDialog):
         
     def handle_combobox_changed(self, text):
         if text == 'Fake Next Phrase':
-            self.textfakeLabel.setVisible(True)
-            self.fakelyric.setVisible(True)
+            self.textfakeLabel.setDisabled(False)
+            self.fakelyric.setDisabled(False)
         else:
-            self.textfakeLabel.setVisible(False)
-            self.fakelyric.setVisible(False)
+            self.textfakeLabel.setDisabled(True)
+            self.fakelyric.setDisabled(True)
             
     def accept(self):
         # index = self.comboBox.currentIndex()

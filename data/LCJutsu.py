@@ -8,7 +8,9 @@ class LCJutsu(QDialog):
         super().__init__()
 
         self.setWindowTitle("Custom Color Jutsu")
-        
+        self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
+        self.setGeometry(420, 240, 300, 300)
+        self.resize(400, 200)
         self.main_window = main_window
 
         # Membuat layout utama

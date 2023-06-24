@@ -11,6 +11,8 @@ class CCJutsu(QDialog):
         self.setGeometry(420, 240, 300, 300)
         self.resize(400, 200)
         self.main_window = main_window
+        
+        self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
 
         # Membuat layout utama
         layout = QVBoxLayout()
