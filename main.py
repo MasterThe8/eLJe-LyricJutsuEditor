@@ -12,7 +12,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
         
-        
+
 class GlobalText:
     sync_track_text = ''
     song_text = ''
@@ -754,7 +754,6 @@ class MainWindow(QMainWindow):
             self.richTextEdit.setFont(font2)
 
     def closeEvent(self, event):
-        # Membuat dialog konfirmasi untuk keluar
         confirm_dialog = QMessageBox()
         confirm_dialog.setIcon(QMessageBox.Question)
         confirm_dialog.setText("Apakah Anda yakin ingin keluar?")

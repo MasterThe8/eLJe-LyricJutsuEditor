@@ -56,7 +56,7 @@ class CCJutsu(QDialog):
         self.radio_button2.clicked.connect(self.handle_radio_button)
         self.radio_button3.clicked.connect(self.handle_radio_button)
         
-        self.textfakeLabel = QLabel('Input Fake Lyric :')
+        self.textfakeLabel = QLabel('Input Next Lyric :')
         layout.addWidget(self.textfakeLabel)
         self.fakelyric = QLineEdit()
         layout.addWidget(self.fakelyric)
@@ -75,7 +75,12 @@ class CCJutsu(QDialog):
 
         # Inisialisasi atribut
         self.selected_color = None
-
+        # Tampilkan warna default
+        default_color = QColor("#fca101")
+        self.selected_color = default_color.name(QColor.HexRgb)
+        self.color_label.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(default_color.name()))
+        self.color_label.setText(default_color.name() + " (default)")
+        
         # Mengatur layout utama dialog
         self.setLayout(layout)
 
