@@ -1,0 +1,40 @@
+#treeView{
+    background-color: #282a36;
+    color: #FFF;
+}
+
+QScrollBar:vertical {
+    background-color: #f0f0f0;
+    width: 16px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #919191;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background-color: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background-color: none;
+}
+
+QScrollBar:horizontal {
+    background-color: #f0f0f0;
+    height: 16px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #919191;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background-color: none;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background-color: none;
+}

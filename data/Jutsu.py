@@ -7,17 +7,30 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
+style = """
+    QLabel{
+        font-size: 14px;
+    }
+"""
+
 class AddJutsu(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         
         self.setWindowTitle("Add Lyric Jutsu")
         self.setGeometry(420, 240, 300, 300)
-        self.resize(400, 200)
+        self.resize(300, 250)
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
         
         layout = QVBoxLayout()
+        layout.setAlignment(Qt.AlignCenter)
+        
+        image_label = QLabel()
+        pixmap = QPixmap("img/addjutsu.png")
+        image_label.setPixmap(pixmap.scaled(280,150))
+        layout.addWidget(image_label)
+        
         self.comboBox = QComboBox()
         self.comboBox.addItems(['No SlideUp Transition', 'Hide Next Phrase', 'Fake Next Phrase'])
         self.comboBox.currentTextChanged.connect(self.handle_combobox_changed)
@@ -35,14 +48,31 @@ class AddJutsu(QDialog):
         self.cancelButton = QPushButton('Cancel')
         self.cancelButton.clicked.connect(self.reject)
         
+        self.positionLabel.setStyleSheet(style)
+        self.lineEdit.setStyleSheet(style)
+        
+        # Tambahkan garis pemisah horizontal
+        line = QFrame()
+        line2 = QFrame()
+        line3 = QFrame()
+        line.setFrameShape(QFrame.HLine)
+        line2.setFrameShape(QFrame.HLine)
+        line3.setFrameShape(QFrame.HLine)
+        line.setFrameShadow(QFrame.Sunken)
+        line2.setFrameShadow(QFrame.Sunken)
+        line3.setFrameShadow(QFrame.Sunken)
+        
         layout.addWidget(self.positionLabel)
         layout.addWidget(self.positionEdit)
+        layout.addWidget(line)
         layout.addWidget(self.jutsuLabel)
         layout.addWidget(self.comboBox)
+        layout.addWidget(line2)
         layout.addWidget(self.textLabel)
         layout.addWidget(self.lineEdit)
         layout.addWidget(self.textfakeLabel)
         layout.addWidget(self.fakelyric)
+        layout.addWidget(line3)
         layout.addWidget(self.okButton)
         layout.addWidget(self.cancelButton)
         self.setLayout(layout)
@@ -65,44 +95,48 @@ class AddJutsu(QDialog):
             self.fakelyric.setDisabled(True)
             
     def accept(self):
-        # index = self.comboBox.currentIndex()
-        # jutsuSelected = self.comboBox.itemText(index)
         jutsuSelected = self.comboBox.currentText()
         positionInput = self.positionEdit.text()
-        position = int(positionInput)
-        lyricInput = self.lineEdit.text()
-        fakeLyric = self.fakelyric.text()
-        
-        jutsuInput = ""
-        jutsuName = ['No SlideUp Transition', 'Hide Next Phrase', 'Fake Next Phrase']
-        
-        if jutsuSelected == jutsuName[0]:
-            line1 = str(position) + " = E \"lyric <i></i>\""
-            line2 = str(position+1) + " = E \"phrase_start\""
-            line3 = str(position+2) + " = E \"lyric "+lyricInput+"\""
-            jutsuInput = line1 + '\n' + line2 + '\n' + line3
+        position = None
+        if positionInput.isdigit():
+            position = int(positionInput)
+        else:
+            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
+            self.show()
+        if position is not None:
+            lyricInput = self.lineEdit.text()
+            fakeLyric = self.fakelyric.text()
             
-        elif jutsuSelected == jutsuName[1]:
-            line1 = str(position) + " = E \"lyric <i></i>\""
-            line2 = str(position+1) + " = E \"phrase_start\""
-            line3 = str(position+2) + " = E \"lyric <i>_</i>\""
-            line4 = str(position+3) + " = E \"phrase_start\""
-            line5 = str(position+4) + " = E \"lyric "+lyricInput+"\""
-            jutsuInput = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
+            jutsuInput = ""
+            jutsuName = ['No SlideUp Transition', 'Hide Next Phrase', 'Fake Next Phrase']
+            
+            if jutsuSelected == jutsuName[0]:
+                line1 = str(position) + " = E \"lyric <i></i>\""
+                line2 = str(position+1) + " = E \"phrase_start\""
+                line3 = str(position+2) + " = E \"lyric "+lyricInput+"\""
+                jutsuInput = line1 + '\n' + line2 + '\n' + line3
+                
+            elif jutsuSelected == jutsuName[1]:
+                line1 = str(position) + " = E \"lyric <i></i>\""
+                line2 = str(position+1) + " = E \"phrase_start\""
+                line3 = str(position+2) + " = E \"lyric <i>_</i>\""
+                line4 = str(position+3) + " = E \"phrase_start\""
+                line5 = str(position+4) + " = E \"lyric "+lyricInput+"\""
+                jutsuInput = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
 
-        elif jutsuSelected == jutsuName[2]:
-            line1 = str(position) + " = E \"lyric <i></i>\""
-            line2 = str(position+1) + " = E \"phrase_start\""
-            line3 = str(position+2) + " = E \"lyric " + fakeLyric + "\""
-            line4 = str(position+3) + " = E \"phrase_start\""
-            line5 = str(position+4) + " = E \"lyric "+lyricInput+"\""
-            jutsuInput = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
-        
-        cursor = self.parent().plainTextEdit.textCursor()
-        cursor.insertText(str(jutsuInput))
-        self.parent().plainTextEdit.setTextCursor(cursor)
-        
-        super(AddJutsu, self).accept()
+            elif jutsuSelected == jutsuName[2]:
+                line1 = str(position) + " = E \"lyric <i></i>\""
+                line2 = str(position+1) + " = E \"phrase_start\""
+                line3 = str(position+2) + " = E \"lyric " + fakeLyric + "\""
+                line4 = str(position+3) + " = E \"phrase_start\""
+                line5 = str(position+4) + " = E \"lyric "+lyricInput+"\""
+                jutsuInput = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
+            
+            cursor = self.parent().plainTextEdit.textCursor()
+            cursor.insertText(str(jutsuInput))
+            self.parent().plainTextEdit.setTextCursor(cursor)
+            
+            super(AddJutsu, self).accept()
     
     def reject(self):
         super(AddJutsu, self).reject()

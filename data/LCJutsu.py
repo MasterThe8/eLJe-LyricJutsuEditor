@@ -7,14 +7,19 @@ class LCJutsu(QDialog):
     def __init__(self, main_window):
         super().__init__()
 
-        self.setWindowTitle("Custom Color Jutsu")
+        self.setWindowTitle("Lyric Color no Jutsu (method 2)")
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
         self.setGeometry(420, 240, 300, 300)
-        self.resize(400, 200)
+        self.resize(300, 250)
         self.main_window = main_window
 
         # Membuat layout utama
         layout = QVBoxLayout()
+        
+        image_label = QLabel()
+        pixmap = QPixmap("img/lyricolor2.png")
+        image_label.setPixmap(pixmap.scaled(280,150))
+        layout.addWidget(image_label)
 
         # Membuat label dan input box
         self.label = QLabel("Input Lyric Position:")
@@ -37,14 +42,7 @@ class LCJutsu(QDialog):
         input_hex_layout.addWidget(self.color_label)
 
         layout.addLayout(input_hex_layout)
-        
-        self.textfakeLabel = QLabel('Input Fake Lyric :')
-        layout.addWidget(self.textfakeLabel)
-        self.fakelyric = QLineEdit()
-        layout.addWidget(self.fakelyric)
-        self.textfakeLabel.setVisible(False)
-        self.fakelyric.setVisible(False)
-        
+
         # Membuat tombol OK dan Cancel
         self.okButton = QPushButton('OK')
         self.okButton.clicked.connect(self.mainLCJutsu)
@@ -57,7 +55,12 @@ class LCJutsu(QDialog):
 
         # Inisialisasi atribut
         self.selected_color = None
-
+        # Tampilkan warna default
+        default_color = QColor("#fca101")
+        self.selected_color = default_color.name(QColor.HexRgb)
+        self.color_label.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(default_color.name()))
+        self.color_label.setText(default_color.name() + " (default)")
+        
         # Mengatur layout utama dialog
         self.setLayout(layout)
 
@@ -240,6 +243,12 @@ class LCJutsu(QDialog):
     def remove_elements(self, list1, list2):
         list1 = [x for x in list1 if x not in list2]
         return list1
+    
+    def check_position_in_script(self, script, position):
+        for line in script:
+            if line.startswith(str(position) + ' = '):
+                return True
+        return False
 
     def mainLCJutsu(self):
         positionInput = self.input_box.text()
@@ -254,47 +263,53 @@ class LCJutsu(QDialog):
             value = self.main_window.getScript()
             value = value.splitlines()
             
-            temp_section = self.get_section_lines(value)
-            temp_value = self.remove_section_lines(value)
+            if self.check_position_in_script(value, position):
+                temp_section = self.get_section_lines(value)
             
-            lines = self.get_lines(value, position)    
-            temp_value = self.remove_elements(temp_value, lines)
-            lines = self.remove_section_lines(lines)
-            lyric_items = self.get_lyric_item(lines)
-            lyric_items = self.convert_list_to_string(lyric_items)
-            first_lyric = self.find_first_lyric_element(lines)
-            last_lyric = self.find_last_lyric_element(lines)
-            f_pos, f_value = self.split_lyric(first_lyric)
-            l_pos, l_value = self.split_lyric(last_lyric) 
-            
-            first_phrase = self.apply_lyric_color(lyric_items, f_pos, f_value)
-            last_phrase = self.apply_lyric_close(l_pos, l_value)
-            
-            lines = self.insert_and_sort(lines, first_phrase)
-            lines = self.insert_and_sort(lines, last_phrase)
-            
-            final_result = self.insert_and_sort(temp_value, lines)
-            final_result = self.insert_and_sort(final_result, temp_section)
-            # final_result = self.remove_duplicates(final_result)
-            final_result = '\n'.join(final_result)
-                        
-            scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
-            scroll_pos = scroll_bar.value()
-            self.main_window.plainTextEdit.setPlainText(final_result)
-            scroll_bar.setValue(scroll_pos)
+                temp_section = self.get_section_lines(value)
+                temp_value = self.remove_section_lines(value)
+                
+                lines = self.get_lines(value, position)    
+                temp_value = self.remove_elements(temp_value, lines)
+                lines = self.remove_section_lines(lines)
+                lyric_items = self.get_lyric_item(lines)
+                lyric_items = self.convert_list_to_string(lyric_items)
+                first_lyric = self.find_first_lyric_element(lines)
+                last_lyric = self.find_last_lyric_element(lines)
+                f_pos, f_value = self.split_lyric(first_lyric)
+                l_pos, l_value = self.split_lyric(last_lyric) 
+                
+                first_phrase = self.apply_lyric_color(lyric_items, f_pos, f_value)
+                last_phrase = self.apply_lyric_close(l_pos, l_value)
+                
+                lines = self.insert_and_sort(lines, first_phrase)
+                lines = self.insert_and_sort(lines, last_phrase)
+                
+                final_result = self.insert_and_sort(temp_value, lines)
+                final_result = self.insert_and_sort(final_result, temp_section)
+                # final_result = self.remove_duplicates(final_result)
+                final_result = '\n'.join(final_result)
 
-            shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
-            shortcut_undo.activated.connect(self.undo_text)
-            shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
-            shortcut_redo.activated.connect(self.redo_text)
-            
-            super(LCJutsu, self).accept()
+                scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
+                scroll_pos = scroll_bar.value()
+                self.main_window.plainTextEdit.setPlainText(final_result)
+                scroll_bar.setValue(scroll_pos)
+
+                shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
+                shortcut_undo.activated.connect(self.undo_text)
+                shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
+                shortcut_redo.activated.connect(self.redo_text)
+                
+                super(LCJutsu, self).accept()
+            else:
+                QMessageBox.critical(self, "Error", "Position tidak ditemukan!")
+                self.show()
 
     def reject(self):
         super(LCJutsu, self).reject()
         
     def undo_text(self):
-        self.main_window.plainTextEdit.undo()  
+        self.main_window.plainTextEdit.undo()
     def redo_text(self):
         self.main_window.plainTextEdit.redo() 
         

@@ -48,7 +48,7 @@ class Highlighter(QSyntaxHighlighter):
         self.highlightingRules.append((QRegExp('\'.*\''), quotationFormat))
         
         htmlFormat = QTextCharFormat()
-        htmlFormat.setForeground(QColor('#00FF7F'))
+        htmlFormat.setForeground(QColor('#00FF7F')) 
         self.highlightingRules.append((QRegExp('<[^>]+>'), htmlFormat))
 
         defaultFormat = QTextCharFormat()

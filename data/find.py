@@ -32,6 +32,8 @@ class FindTextDialog(QDialog):
         
         button_layout = QHBoxLayout()
         button_layout.addWidget(self.find_button)
+        # button_layout.addWidget(self.next_button)
+        # button_layout.addWidget(self.previous_button)
         button_layout.addWidget(self.cancel_button)
         
         layout.addLayout(button_layout)

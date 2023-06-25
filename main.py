@@ -4,6 +4,7 @@ import sys
 import codecs
 import typing
 import chardet
+import configparser
 from data import *
 from PyQt5 import QtGui
 from PyQt5 import QtCore
@@ -28,6 +29,7 @@ class GlobalText:
     ghl_bass = ''
     ghl_rhythm = ''
     ghl_coop = ''
+    
 class LandingPageWindow(QMainWindow):
     def __init__(self, main_window):
         super().__init__()
@@ -44,7 +46,7 @@ class LandingPageWindow(QMainWindow):
         layout.setAlignment(Qt.AlignCenter)
         central_widget.setLayout(layout)
         
-        label1 = QLabel("eLJe | LyricJutsu Chart Editor")
+        label1 = QLabel("eLJe | LyricJutsu Editor (BETA)")
         label1.setObjectName("label1")
         label1.setFont(QFont("Arial", 32))
         layout.addWidget(label1)
@@ -53,10 +55,10 @@ class LandingPageWindow(QMainWindow):
         label2.setObjectName("label2")
         label2.setFont(QFont("Arial", 18))
         layout.addWidget(label2)
-        
+
         layout.addSpacing(40)
 
-        button = QPushButton("Open Chart File")
+        button = QPushButton("Link Start!")
         button.setCursor(Qt.PointingHandCursor)
         button.clicked.connect(self.open_main_window)
         layout.addWidget(button)
@@ -72,8 +74,22 @@ class LandingPageWindow(QMainWindow):
 
     def open_main_window(self):
         self.close()
-        main_window.open_file()
+        # main_window.open_file()
         main_window.setEnabled(True)
+
+class FileSystemModel(QFileSystemModel):
+    def headerData(self, section, orientation, role):
+        if role == Qt.DisplayRole and orientation == Qt.Horizontal:
+            return ""
+
+        return super().headerData(section, orientation, role)
+
+    def data(self, index, role):
+        if role == Qt.DisplayRole:
+            if index.column() in [1, 2, 3]:
+                return self.filePath(index)
+
+        return super().data(index, role)
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -85,15 +101,28 @@ class MainWindow(QMainWindow):
         self.tabWidget.addTab(self.tabPlainTextEdit(), 'PlainText Lyrics')
         self.tabWidget.addTab(self.tabRichTextEdit(), 'Display Lyrics')
         
-        self.setWindowTitle("eLJe | LyricJutsu Chart Editor v0.0.50 (BETA)")
+        self.config = configparser.ConfigParser()
+        self.config.read('setting.ini')
+        for section in self.config.sections():
+            for key, value in self.config.items(section):
+                if key == 'path':
+                    path = value
+                    
+        self.setWindowTitle("eLJe | LyricJutsu Editor v0.0.50 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
         self.setEnabled(False)
+        
+        # Mengatur ikon window
+        icon = QIcon("icon.ico")
+        self.setWindowIcon(icon)
         
         # Menu Bar
         menu_bar = self.menuBar()
         file_menu = menu_bar.addMenu("File")
         option_menu = menu_bar.addMenu("Option")
+        about = menu_bar.addMenu("About")
+        # about.triggered.connect(self.about_info)
 
         # File Menu & Action
         open_action = QAction(QIcon("img/open_file.png"),'Open', self)
@@ -112,12 +141,21 @@ class MainWindow(QMainWindow):
         find_action.setShortcut("Ctrl+F")
         find_action.triggered.connect(self.find_text)
 
+        # Replace Action
+        replace_action = QAction(QIcon("img/replace.png"),"Replace", self)
+        replace_action.setShortcut("Ctrl+H")
+        replace_action.triggered.connect(self.replace_text)
+        
+        # Color Picker Action
+        colorpick_action = QAction(QIcon("img/color_picker.png"),"Color Picker", self)
+        colorpick_action.triggered.connect(self.color_picker)
+
         # Zoom In & Zoom Out
-        self.zoom_in_action = QAction('+', self)
+        self.zoom_in_action = QAction(QIcon("img/zoom_in.png"), "Zoom In", self)
         self.zoom_in_action.setShortcut(QKeySequence.ZoomIn)
         self.zoom_in_action.triggered.connect(self.zoom_in)
         self.zoom_in_action.setFont(QFont("Arial", 15))
-        self.zoom_out_action = QAction('-', self)
+        self.zoom_out_action = QAction(QIcon("img/zoom_out.png"), "-", self)
         self.zoom_out_action.setShortcut(QKeySequence.ZoomOut)
         self.zoom_out_action.triggered.connect(self.zoom_out)
         self.zoom_out_action.setFont(QFont("Arial", 15))
@@ -127,22 +165,18 @@ class MainWindow(QMainWindow):
         self.zoom_out_shortcut.activated.connect(self.zoom_out)
         
         # Add Jutsu Action
-        addjutsu_action = QAction("Add Jutsu", self)
+        addjutsu_action = QAction(QIcon("img/addjutsu.png"), "Add Jutsu", self)
         addjutsu_action.triggered.connect(self.add_jutsu)
         
-        # Color Picker Action
-        colorpick_action = QAction(QIcon("img/color_picker.png"),"Color Picker", self)
-        colorpick_action.triggered.connect(self.color_picker)
-        
         # Color no Jutsu Action
-        colorjutsu_action = QAction("Custom Color no Jutsu", self)
+        colorjutsu_action = QAction(QIcon("img/lyricolor.png"), "Custom Color no Jutsu", self)
         colorjutsu_action.triggered.connect(self.custom_color_no_jutsu)
         
         # ConvertPhrase no Jutsu Action
-        convertjutsu_action = QAction("Kan2Rom no Jutsu", self)
+        convertjutsu_action = QAction(QIcon("img/lyricolor2.png"), "Kan2Rom no Jutsu", self)
         convertjutsu_action.triggered.connect(self.convert_phrase_no_jutsu)
         
-        lyricolorjutsu_action = QAction("LyriColor no Jutsu", self)
+        lyricolorjutsu_action = QAction(QIcon("img/kan2rom.png"), "LyriColor no Jutsu", self)
         lyricolorjutsu_action.triggered.connect(self.lyric_color_no_jutsu)
         
         # Exit Menu & Action
@@ -170,7 +204,7 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(open_action)
         self.toolbar.addAction(save_action)
         self.toolbar.addAction(find_action)
-        # self.toolbar.addAction(replace_action)
+        self.toolbar.addAction(replace_action)
         self.toolbar.addAction(colorpick_action)
         self.toolbar.addAction(self.zoom_in_action)
         self.toolbar.addAction(self.zoom_out_action)
@@ -179,35 +213,159 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(colorjutsu_action)
         self.toolbar.addAction(lyricolorjutsu_action)
         self.toolbar.addAction(convertjutsu_action)
-
+        self.toolbar.addSeparator()
+        
+        self.toggleTree = QAction("Toogle TreeView", self)
+        self.toggleTree.setCheckable(True)
+        self.toggleTree.setChecked(True)
+        self.toggleTree.triggered.connect(self.toggle_treeview)
+        self.tool_button = QToolButton()
+        self.tool_button.setDefaultAction(self.toggleTree)
+        self.tool_button.setIcon(QIcon("img/toggle_tree_on.png"))
+        self.toolbar.insertWidget(None, self.tool_button)
+        self.toggleTree.toggled.connect(self.toggle_treeview_icon)
+        
         # Membuat QAction untuk membuka/tutup QDockWidget
-        self.toggleDockAction = QAction("Toggle Dock", self)
+        self.toggleDockAction = QAction("Toogle DockText", self)
         self.toggleDockAction.setCheckable(True)
         self.toggleDockAction.setChecked(True)
         self.toggleDockAction.triggered.connect(self.toggleDockWidget)
-        self.tool_button = QToolButton()
-        self.tool_button.setDefaultAction(self.toggleDockAction)
-        self.toolbar.insertWidget(None, self.tool_button)
+        self.tool_button2 = QToolButton()
+        self.tool_button2.setDefaultAction(self.toggleDockAction)
+        self.tool_button2.setIcon(QIcon("img/toggle_dock_on.png"))
+        self.toolbar.insertWidget(None, self.tool_button2)
+        self.toggleDockAction.toggled.connect(self.toggle_dock_icon)
+
+        # Membuat QDockWidget untuk QTreeView
+        self.treeDock = QDockWidget("Song Chart Directory", self)
+        self.treeDock.setFeatures(QDockWidget.AllDockWidgetFeatures)
+
+        # Membuat tombol sebagai header widget
+        button = QPushButton("Song Chart Directory")
+        button.clicked.connect(self.choose_directory)
+        header_layout = QHBoxLayout()
+        header_layout.addWidget(button)
+        header_layout.setContentsMargins(0, 0, 0, 0)
+        header_widget = QWidget()
+        header_widget.setLayout(header_layout)
+        self.treeDock.setTitleBarWidget(header_widget)
+
+        # Membuat QTreeView sebagai widget
+        self.treeView = QTreeView()
+        self.treeDock.setFeatures(QDockWidget.NoDockWidgetFeatures)
+        self.treeDock.setWidget(self.treeView)
+        self.addDockWidget(Qt.LeftDockWidgetArea, self.treeDock)
+        
+        # Mengatur path direktori dari file .txt
+        self.treemodel = FileSystemModel()
+        self.treemodel.setRootPath(path)
+        self.treeView.setStyleSheet('''
+            QTreeView {
+                background-color: #282a36;
+                color: #FFF;
+            }
+            QTreeView::branch {
+                color: blue;
+            }
+            QTreeView QScrollBar:vertical {
+                background-color: #f0f0f0;
+                width: 16px;
+            }
+            QTreeView QScrollBar::handle:vertical {
+                background-color: #919191;
+                min-height: 20px;
+            }
+            QTreeView QScrollBar::add-line:vertical,
+            QTreeView QScrollBar::sub-line:vertical {
+                background-color: none;
+            }
+            QTreeView QScrollBar::add-page:vertical,
+            QTreeView QScrollBar::sub-page:vertical {
+                background-color: none;
+            }
+        ''')
+        self.treeView.setModel(self.treemodel)
+        self.treeView.setRootIndex(self.treemodel.index(path))
+        self.treeView.clicked.connect(self.handle_item_clicked)
+        
+        # Menyembunyikan kolom-kolom kecuali kolom "name"
+        self.treeView.setHeaderHidden(True)
+        headertree = self.treeView.header()
+        headertree.setSectionResizeMode(0, QHeaderView.Stretch)
+        for column in range(1, self.treemodel.columnCount()):
+            headertree.setSectionHidden(column, True)
+        
+        # Memfilter tampilan file dengan format tertentu
+        filter_formats = ['chart']
+        name_filters = ['*.' + format for format in filter_formats]
+        self.treemodel.setNameFilters(name_filters)
+        self.treemodel.setNameFilterDisables(False)
         
         # Membuat QDockWidget
         self.dock = QDockWidget("Temp Text", self)
         self.dock.setFeatures(QDockWidget.AllDockWidgetFeatures)
-        self.dock.setStyleSheet("background-color: #282a36; color: #FFF; font-size: 16px;")
+        self.dock.setStyleSheet("background-color: #282a36; color: #FFF; font-size: 14px;")
         
         # Membuat QTextEdit sebagai widget editor teks
         self.textEdit = QTextEdit()
+        textOption = self.textEdit.document().defaultTextOption()
+        textOption.setWrapMode(QTextOption.NoWrap)
+        self.textEdit.document().setDefaultTextOption(textOption)
+        with open('style/textedit.css','r') as f:
+            text_edit_style = f.read()
+        self.textEdit.setStyleSheet(text_edit_style)
         self.dock.setWidget(self.textEdit)
         self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
         
         self.setCentralWidget(self.tabWidget)
-        
         self.show()
 
+    def toggle_treeview(self):
+        if self.toggleTree.isChecked():
+            self.treeDock.show()
+        else:
+            self.treeDock.hide()
+            
+    def toggle_treeview_icon(self, check):
+        icon_checked = QIcon("img/toggle_tree_on.png")
+        icon_unchecked = QIcon("img/toggle_tree_off.png")
+        if check:
+            self.tool_button.setIcon(icon_checked)
+        else:
+            self.tool_button.setIcon(icon_unchecked)
+            
     def toggleDockWidget(self):
         if self.toggleDockAction.isChecked():
             self.dock.show()
         else:
             self.dock.hide()
+            
+    def toggle_dock_icon(self, check):
+        icon_checked = QIcon("img/toggle_dock_on.png")
+        icon_unchecked = QIcon("img/toggle_dock_off.png")
+        if check:
+            self.tool_button2.setIcon(icon_checked)
+        else:
+            self.tool_button2.setIcon(icon_unchecked)
+            
+    def handle_item_clicked(self, index):
+        file_info = self.treemodel.fileInfo(index)
+        
+        if file_info.isFile():
+            file_path = file_info.filePath()
+            self.read_chart(file_path)
+            
+        elif file_info.isDir():
+            folder_path = file_info.filePath()
+            
+    def choose_directory(self):
+        directory = QFileDialog.getExistingDirectory(self, "Select Directory")
+        if directory:
+            self.config.set("Setting", "path", directory)
+            with open("setting.ini", "w") as file:
+                self.config.write(file)
+            self.treeView.model().setRootPath(directory)
+            self.treeView.setRootIndex(self.treeView.model().index(directory))
 
     def center_window(self, width, height):
         screen = QDesktopWidget().screenGeometry()
@@ -246,9 +404,6 @@ class MainWindow(QMainWindow):
         self.plainTextEdit.textChanged.connect(self.onPlainTextChanged)
         self.plainTextEdit.setLineWrapMode(QPlainTextEdit.NoWrap)
         
-        # self.plainTextEdit.installEventFilter(self)
-        # self.zoom_factor = 0
-        
         self.plainTextEdit.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         self.plainTextEdit.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
         scrollbarv = self.plainTextEdit.verticalScrollBar()
@@ -264,11 +419,16 @@ class MainWindow(QMainWindow):
             text_edit_style = f.read()
         self.plainTextEdit.setStyleSheet(text_edit_style)
         self.highlighter = Highlighter(self.plainTextEdit.document())
-        # self.plainTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
 
         font = QFont()
         font.setPointSize(12)
-        font.setFamily("Consolas, 'Courier New', monospace")
+        font_config = configparser.ConfigParser()
+        font_config.read('setting.ini')
+        for section in font_config.sections():
+            for key, value in font_config.items(section):
+                if key == 'font':
+                    font_family = value
+        font.setFamily(font_family)
         font.setStyleStrategy(QtGui.QFont.PreferAntialias)
         self.plainTextEdit.setFont(font)
         
@@ -295,7 +455,13 @@ class MainWindow(QMainWindow):
         font = QFont()
         font.setPointSize(12)
         self.richTextEdit.setStyleSheet("background-color: #282a36; color: #FFF;")
-        font.setFamily("Consolas, 'Courier New', monospace")
+        font_config = configparser.ConfigParser()
+        font_config.read('setting.ini')
+        for section in font_config.sections():
+            for key, value in font_config.items(section):
+                if key == 'font':
+                    font_family = value
+        font.setFamily(font_family)
         font.setStyleStrategy(QtGui.QFont.PreferAntialias)
         self.richTextEdit.setFont(font)
         
@@ -437,121 +603,130 @@ class MainWindow(QMainWindow):
     
     # Fungsi Open File
     def open_file(self):
+        config = configparser.ConfigParser()
+        config.read('Setting.ini')
+        path = config.get('Setting', 'path')
+
         file_dialog = QFileDialog(self)
-        file_dialog.setWindowTitle("Open file")
-        file_dialog.setDirectory(self.last_opened_directory)
-        file_name, _ = QFileDialog.getOpenFileName(self, 'Open file', '.', 'Chart files (*.chart)')
+        file_dialog.setWindowTitle("Open File")
+        file_dialog.setDirectory(path)
+        file_name, _ = file_dialog.getOpenFileName(self, 'Open File', '.', 'Chart Files (*.chart)')
 
         if file_name:
-            self.last_opened_directory = os.path.dirname(file_name)
             try:
-                with open(file_name, 'rb') as f:
-                    file_contents = f.read()
-                    encoding = chardet.detect(file_contents)['encoding']
-                    # display_text = file_contents.decode().split('{')[1].split('}')[0]
-                    
-                    sync_track_text = file_contents.decode()[file_contents.decode().find('[SyncTrack]'):file_contents.decode().find('}', file_contents.decode().find('[SyncTrack]'))+1]
-                    song_text = file_contents.decode()[file_contents.decode().find('[Song]'):file_contents.decode().find('}', file_contents.decode().find('[Song]'))+1]
-                    
-                    events_text = file_contents.decode()[file_contents.decode().find('[Events]'):file_contents.decode().find('}', file_contents.decode().find('[Events]'))+1]
-                    events_split = events_text.split('{')
-                    songrex = 'songrex'
-                    events_display = events_split[1].replace('}','')
-                    events_temp = events_split[0] + '{\n' + songrex +'\n}\n'
-                    
-                    expert_single = file_contents.decode()[file_contents.decode().find('[ExpertSingle]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertSingle]'))+1]
-                    hard_single = file_contents.decode()[file_contents.decode().find('[HardSingle]'):file_contents.decode().find('}', file_contents.decode().find('[HardSingle]'))+1]
-                    medium_single = file_contents.decode()[file_contents.decode().find('[MediumSingle]'):file_contents.decode().find('}', file_contents.decode().find('[MediumSingle]'))+1]
-                    easy_single = file_contents.decode()[file_contents.decode().find('[EasySingle]'):file_contents.decode().find('}', file_contents.decode().find('[EasySingle]'))+1]
-                    
-                    # DoubleGuitar
-                    expert_double_guitar = file_contents.decode()[file_contents.decode().find('[ExpertDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleGuitar]'))+1]
-                    hard_double_guitar = file_contents.decode()[file_contents.decode().find('[HardDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleGuitar]'))+1]
-                    medium_double_guitar = file_contents.decode()[file_contents.decode().find('[MediumDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleGuitar]'))+1]
-                    easy_double_guitar = file_contents.decode()[file_contents.decode().find('[EasyDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleGuitar]'))+1]
-                    
-                    # DoubleBass
-                    expert_double_bass = file_contents.decode()[file_contents.decode().find('[ExpertDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleBass]'))+1]
-                    hard_double_bass = file_contents.decode()[file_contents.decode().find('[HardDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleBass]'))+1]
-                    medium_double_bass = file_contents.decode()[file_contents.decode().find('[MediumDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleBass]'))+1]
-                    easy_double_bass = file_contents.decode()[file_contents.decode().find('[EasyDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleBass]'))+1]
-                    
-                    # DoubleRhythm
-                    expert_double_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleRhythm]'))+1]
-                    hard_double_rhythm = file_contents.decode()[file_contents.decode().find('[HardDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleRhythm]'))+1]
-                    medium_double_rhythm = file_contents.decode()[file_contents.decode().find('[MediumDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleRhythm]'))+1]
-                    easy_double_rhythm = file_contents.decode()[file_contents.decode().find('[EasyDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleRhythm]'))+1]
-                    
-                    # Keyboard
-                    expert_keyboard = file_contents.decode()[file_contents.decode().find('[ExpertKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertKeyboard]'))+1]
-                    hard_keyboard = file_contents.decode()[file_contents.decode().find('[HardKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[HardKeyboard]'))+1]
-                    medium_keyboard = file_contents.decode()[file_contents.decode().find('[MediumKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[MediumKeyboard]'))+1]
-                    easy_keyboard = file_contents.decode()[file_contents.decode().find('[EasyKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[EasyKeyboard]'))+1]
-                    
-                    # Drums
-                    expert_drums = file_contents.decode()[file_contents.decode().find('[ExpertDrums]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDrums]'))+1]
-                    hard_drums = file_contents.decode()[file_contents.decode().find('[HardDrums]'):file_contents.decode().find('}', file_contents.decode().find('[HardDrums]'))+1]
-                    medium_drums = file_contents.decode()[file_contents.decode().find('[MediumDrums]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDrums]'))+1]
-                    easy_drums = file_contents.decode()[file_contents.decode().find('[EasyDrums]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDrums]'))+1]
-                    
-                    # GHLGuitar
-                    expert_ghl_guitar = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
-                    hard_ghl_guitar = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
-                    medium_ghl_guitar = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
-                    easy_ghl_guitar = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
-                    
-                    # GHLBass
-                    expert_ghl_bass = file_contents.decode()[file_contents.decode().find('[ExpertGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLBass]'))+1]
-                    hard_ghl_bass = file_contents.decode()[file_contents.decode().find('[HardGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLBass]'))+1]
-                    medium_ghl_bass = file_contents.decode()[file_contents.decode().find('[MediumGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLBass]'))+1]
-                    easy_ghl_bass = file_contents.decode()[file_contents.decode().find('[EasyGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLBass]'))+1]
-                    
-                    # GHLRhythm
-                    expert_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLRhythm]'))+1]
-                    hard_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[HardGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLRhythm]'))+1]
-                    medium_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[MediumGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLRhythm]'))+1]
-                    easy_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[EasyGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLRhythm]'))+1]
-                    
-                    # GHLCoop
-                    expert_ghl_coop = file_contents.decode()[file_contents.decode().find('[ExpertGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLCoop]'))+1]
-                    hard_ghl_coop = file_contents.decode()[file_contents.decode().find('[HardGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLCoop]'))+1]
-                    medium_ghl_coop = file_contents.decode()[file_contents.decode().find('[MediumGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLCoop]'))+1]
-                    easy_ghl_coop = file_contents.decode()[file_contents.decode().find('[EasyGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLCoop]'))+1]
-
-                
-                with open(file_name, 'r', encoding=encoding) as f:
-                    file_contents = f.read()
-                    display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
-                    
-                # self.text_edit.setPlainText(file_contents)
-                GlobalText.sync_track_text = sync_track_text + '\n'
-                GlobalText.song_text = song_text + '\n'
-                GlobalText.events_temp = events_temp + '\n'
-                
-                GlobalText.single = expert_single + '\n' + hard_single + '\n' + medium_single + '\n' + easy_single + '\n'
-                GlobalText.double_guitar = expert_double_guitar + '\n' + hard_double_guitar + '\n' + medium_double_guitar + '\n' + easy_double_guitar + '\n'
-                GlobalText.double_bass = expert_double_bass + '\n' + hard_double_bass + '\n' + medium_double_bass + '\n' + easy_double_bass + '\n'
-                GlobalText.double_rhythm = expert_double_rhythm + '\n' + hard_double_rhythm + '\n' + medium_double_rhythm + '\n' + easy_double_rhythm + '\n'
-                GlobalText.keyboard = expert_keyboard + '\n' + hard_keyboard + '\n' + medium_keyboard + '\n' + easy_keyboard + '\n'
-                GlobalText.drums = expert_drums + '\n' + hard_drums + '\n' + medium_drums + '\n' + easy_drums + '\n'
-                
-                GlobalText.ghl_guitar = expert_ghl_guitar + '\n' + hard_ghl_guitar + '\n' + medium_ghl_guitar + '\n' + easy_ghl_guitar + '\n'
-                GlobalText.ghl_bass = expert_ghl_bass + '\n' + hard_ghl_bass + '\n' + medium_ghl_bass + '\n' + easy_ghl_bass + '\n'
-                GlobalText.ghl_rhythm = expert_ghl_rhythm + '\n' + hard_ghl_rhythm + '\n' + medium_ghl_rhythm + '\n' + easy_ghl_rhythm + '\n'
-                GlobalText.ghl_coop = expert_ghl_coop + '\n' + hard_ghl_coop + '\n' + medium_ghl_coop + '\n' + easy_ghl_coop + '\n'
-                
-                display = events_display.replace('\n  ', '\n')
-                self.plainTextEdit.setPlainText(display.strip())
-            
+                self.read_chart(file_name)
             except Exception as e:
                 error_message = f"Error occurred while opening file:\n{str(e)}"
                 QMessageBox.critical(self, "Error", error_message)
-                
+
+    def read_chart(self, file_chart):
+        with open(file_chart, 'rb') as f:
+            file_contents = f.read()
+            encoding = chardet.detect(file_contents)['encoding']
+            
+            sync_track_text = file_contents.decode()[file_contents.decode().find('[SyncTrack]'):file_contents.decode().find('}', file_contents.decode().find('[SyncTrack]'))+1]
+            song_text = file_contents.decode()[file_contents.decode().find('[Song]'):file_contents.decode().find('}', file_contents.decode().find('[Song]'))+1]
+            
+            events_text = file_contents.decode()[file_contents.decode().find('[Events]'):file_contents.decode().find('}', file_contents.decode().find('[Events]'))+1]
+            events_split = events_text.split('{')
+            songrex = 'songrex'
+            events_display = events_split[1].replace('}','')
+            events_temp = events_split[0] + '{\n' + songrex +'\n}\n'
+            
+            expert_single = file_contents.decode()[file_contents.decode().find('[ExpertSingle]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertSingle]'))+1]
+            hard_single = file_contents.decode()[file_contents.decode().find('[HardSingle]'):file_contents.decode().find('}', file_contents.decode().find('[HardSingle]'))+1]
+            medium_single = file_contents.decode()[file_contents.decode().find('[MediumSingle]'):file_contents.decode().find('}', file_contents.decode().find('[MediumSingle]'))+1]
+            easy_single = file_contents.decode()[file_contents.decode().find('[EasySingle]'):file_contents.decode().find('}', file_contents.decode().find('[EasySingle]'))+1]
+            
+            # DoubleGuitar
+            expert_double_guitar = file_contents.decode()[file_contents.decode().find('[ExpertDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleGuitar]'))+1]
+            hard_double_guitar = file_contents.decode()[file_contents.decode().find('[HardDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleGuitar]'))+1]
+            medium_double_guitar = file_contents.decode()[file_contents.decode().find('[MediumDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleGuitar]'))+1]
+            easy_double_guitar = file_contents.decode()[file_contents.decode().find('[EasyDoubleGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleGuitar]'))+1]
+            
+            # DoubleBass
+            expert_double_bass = file_contents.decode()[file_contents.decode().find('[ExpertDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleBass]'))+1]
+            hard_double_bass = file_contents.decode()[file_contents.decode().find('[HardDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleBass]'))+1]
+            medium_double_bass = file_contents.decode()[file_contents.decode().find('[MediumDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleBass]'))+1]
+            easy_double_bass = file_contents.decode()[file_contents.decode().find('[EasyDoubleBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleBass]'))+1]
+            
+            # DoubleRhythm
+            expert_double_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDoubleRhythm]'))+1]
+            hard_double_rhythm = file_contents.decode()[file_contents.decode().find('[HardDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardDoubleRhythm]'))+1]
+            medium_double_rhythm = file_contents.decode()[file_contents.decode().find('[MediumDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDoubleRhythm]'))+1]
+            easy_double_rhythm = file_contents.decode()[file_contents.decode().find('[EasyDoubleRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDoubleRhythm]'))+1]
+            
+            # Keyboard
+            expert_keyboard = file_contents.decode()[file_contents.decode().find('[ExpertKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertKeyboard]'))+1]
+            hard_keyboard = file_contents.decode()[file_contents.decode().find('[HardKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[HardKeyboard]'))+1]
+            medium_keyboard = file_contents.decode()[file_contents.decode().find('[MediumKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[MediumKeyboard]'))+1]
+            easy_keyboard = file_contents.decode()[file_contents.decode().find('[EasyKeyboard]'):file_contents.decode().find('}', file_contents.decode().find('[EasyKeyboard]'))+1]
+            
+            # Drums
+            expert_drums = file_contents.decode()[file_contents.decode().find('[ExpertDrums]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertDrums]'))+1]
+            hard_drums = file_contents.decode()[file_contents.decode().find('[HardDrums]'):file_contents.decode().find('}', file_contents.decode().find('[HardDrums]'))+1]
+            medium_drums = file_contents.decode()[file_contents.decode().find('[MediumDrums]'):file_contents.decode().find('}', file_contents.decode().find('[MediumDrums]'))+1]
+            easy_drums = file_contents.decode()[file_contents.decode().find('[EasyDrums]'):file_contents.decode().find('}', file_contents.decode().find('[EasyDrums]'))+1]
+            
+            # GHLGuitar
+            expert_ghl_guitar = file_contents.decode()[file_contents.decode().find('[ExpertGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLGuitar]'))+1]
+            hard_ghl_guitar = file_contents.decode()[file_contents.decode().find('[HardGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLGuitar]'))+1]
+            medium_ghl_guitar = file_contents.decode()[file_contents.decode().find('[MediumGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLGuitar]'))+1]
+            easy_ghl_guitar = file_contents.decode()[file_contents.decode().find('[EasyGHLGuitar]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLGuitar]'))+1]
+            
+            # GHLBass
+            expert_ghl_bass = file_contents.decode()[file_contents.decode().find('[ExpertGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLBass]'))+1]
+            hard_ghl_bass = file_contents.decode()[file_contents.decode().find('[HardGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLBass]'))+1]
+            medium_ghl_bass = file_contents.decode()[file_contents.decode().find('[MediumGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLBass]'))+1]
+            easy_ghl_bass = file_contents.decode()[file_contents.decode().find('[EasyGHLBass]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLBass]'))+1]
+            
+            # GHLRhythm
+            expert_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[ExpertGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLRhythm]'))+1]
+            hard_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[HardGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLRhythm]'))+1]
+            medium_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[MediumGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLRhythm]'))+1]
+            easy_ghl_rhythm = file_contents.decode()[file_contents.decode().find('[EasyGHLRhythm]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLRhythm]'))+1]
+            
+            # GHLCoop
+            expert_ghl_coop = file_contents.decode()[file_contents.decode().find('[ExpertGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[ExpertGHLCoop]'))+1]
+            hard_ghl_coop = file_contents.decode()[file_contents.decode().find('[HardGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[HardGHLCoop]'))+1]
+            medium_ghl_coop = file_contents.decode()[file_contents.decode().find('[MediumGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[MediumGHLCoop]'))+1]
+            easy_ghl_coop = file_contents.decode()[file_contents.decode().find('[EasyGHLCoop]'):file_contents.decode().find('}', file_contents.decode().find('[EasyGHLCoop]'))+1]
+        
+        with open(file_chart, 'r', encoding=encoding) as f:
+            file_contents = f.read()
+            display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
+            
+        # self.text_edit.setPlainText(file_contents)
+        GlobalText.sync_track_text = sync_track_text + '\n'
+        GlobalText.song_text = song_text + '\n'
+        GlobalText.events_temp = events_temp + '\n'
+        
+        GlobalText.single = expert_single + '\n' + hard_single + '\n' + medium_single + '\n' + easy_single + '\n'
+        GlobalText.double_guitar = expert_double_guitar + '\n' + hard_double_guitar + '\n' + medium_double_guitar + '\n' + easy_double_guitar + '\n'
+        GlobalText.double_bass = expert_double_bass + '\n' + hard_double_bass + '\n' + medium_double_bass + '\n' + easy_double_bass + '\n'
+        GlobalText.double_rhythm = expert_double_rhythm + '\n' + hard_double_rhythm + '\n' + medium_double_rhythm + '\n' + easy_double_rhythm + '\n'
+        GlobalText.keyboard = expert_keyboard + '\n' + hard_keyboard + '\n' + medium_keyboard + '\n' + easy_keyboard + '\n'
+        GlobalText.drums = expert_drums + '\n' + hard_drums + '\n' + medium_drums + '\n' + easy_drums + '\n'
+        
+        GlobalText.ghl_guitar = expert_ghl_guitar + '\n' + hard_ghl_guitar + '\n' + medium_ghl_guitar + '\n' + easy_ghl_guitar + '\n'
+        GlobalText.ghl_bass = expert_ghl_bass + '\n' + hard_ghl_bass + '\n' + medium_ghl_bass + '\n' + easy_ghl_bass + '\n'
+        GlobalText.ghl_rhythm = expert_ghl_rhythm + '\n' + hard_ghl_rhythm + '\n' + medium_ghl_rhythm + '\n' + easy_ghl_rhythm + '\n'
+        GlobalText.ghl_coop = expert_ghl_coop + '\n' + hard_ghl_coop + '\n' + medium_ghl_coop + '\n' + easy_ghl_coop + '\n'
+        
+        display = events_display.replace('\n  ', '\n')
+        self.plainTextEdit.setPlainText(display.strip())
+
     # Fungsi Save File
     def save_file(self):
-        # Dialog Save File
-        file_name, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Chart Files (*.chart)")
+        config = configparser.ConfigParser()
+        config.read('Setting.ini')
+        path = config.get('Setting', 'path')
 
+        file_dialog = QFileDialog(self)
+        file_dialog.setWindowTitle("Save File")
+        file_dialog.setDirectory(path)
+        file_name, _ = file_dialog.getSaveFileName(self, "Save File", "", "Chart Files (*.chart)")
+        
         if file_name:
             with open(file_name, 'wb') as f:
                 
@@ -569,8 +744,12 @@ class MainWindow(QMainWindow):
                 
     def font_setting(self):
         font2, ok = QFontDialog.getFont()
-        
+
         if ok:
+            font_name = font2.toString()
+            self.config.set("Setting", "font", font_name)
+            with open("setting.ini", "w") as file:
+                self.config.write(file)
             self.plainTextEdit.setFont(font2)
             self.richTextEdit.setFont(font2)
 
@@ -601,6 +780,10 @@ class MainWindow(QMainWindow):
             if not cursor.isNull():
                 plainTextEdit.setTextCursor(cursor)
                 plainTextEdit.ensureCursorVisible()
+                
+    def replace_text(self):
+        dialog = Replace(self)
+        dialog.exec_()
         
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())

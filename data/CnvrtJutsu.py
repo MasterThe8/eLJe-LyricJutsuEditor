@@ -9,13 +9,18 @@ class CnvrtJutsu(QDialog):
 
         self.setWindowTitle("Kan2Rom no Jutsu")
         self.setGeometry(420, 240, 300, 300)
-        self.resize(400, 200)
+        self.resize(300, 250)
         self.main_window = main_window
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
 
         # Membuat layout utama
         layout = QVBoxLayout()
+        
+        image_label = QLabel()
+        pixmap = QPixmap("img/kan2rom.png")
+        image_label.setPixmap(pixmap.scaled(280,150))
+        layout.addWidget(image_label)
 
         # Membuat label dan input box
         self.label = QLabel("Input Lyric Position:")
@@ -59,8 +64,8 @@ class CnvrtJutsu(QDialog):
         layout.addWidget(self.textfakeLabel)
         self.fakelyric = QLineEdit()
         layout.addWidget(self.fakelyric)
-        self.textfakeLabel.setVisible(False)
-        self.fakelyric.setVisible(False)
+        self.textfakeLabel.setDisabled(True)
+        self.fakelyric.setDisabled(True)
         
         # Membuat tombol OK dan Cancel
         self.okButton = QPushButton('OK')
@@ -360,11 +365,11 @@ class CnvrtJutsu(QDialog):
     
     def handle_radio_button(self):
         if self.radio_button3.isChecked():
-            self.textfakeLabel.setVisible(True)
-            self.fakelyric.setVisible(True)
+            self.textfakeLabel.setDisabled(False)
+            self.fakelyric.setDisabled(False)
         else:
-            self.textfakeLabel.setVisible(False)
-            self.fakelyric.setVisible(False)
+            self.textfakeLabel.setDisabled(True)
+            self.fakelyric.setDisabled(True)
     
     def mainCnvrtJutsu(self):
         positionInput = self.input_box.text()
