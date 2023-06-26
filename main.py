@@ -46,17 +46,36 @@ class LandingPageWindow(QMainWindow):
         layout.setAlignment(Qt.AlignCenter)
         central_widget.setLayout(layout)
         
-        label1 = QLabel("eLJe | LyricJutsu Editor (BETA)")
+        logo_label = QLabel()
+        pixmap = QPixmap("img/icon.ico")
+        logo_label.setPixmap(pixmap)
+        logo_label.setAlignment(Qt.AlignCenter)
+        logo_label.setFixedHeight(200)
+        layout.addWidget(logo_label)
+        
+        label1 = QLabel()
+        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.0 (BETA)</b>")
         label1.setObjectName("label1")
-        label1.setFont(QFont("Arial", 32))
+        label1.setAlignment(Qt.AlignCenter)
+        label1.setFont(QFont("Arial", 26))
         layout.addWidget(label1)
 
-        label2 = QLabel("MasterThe8")
+        label2 = QLabel()
+        label2.setText('<b style="color:#FF0000;">M</b>'
+               '<b style="color:#FF003E;">a</b>'
+               '<b style="color:#FF0064;">s</b>'
+               '<b style="color:#FF00A2;">t</b>'
+               '<b style="color:#FF00D8;">e</b>'
+               '<b style="color:#E800FF;">r</b>'
+               '<b style="color:#B900FF;">T</b>'
+               '<b style="color:#8700FF;">h</b>'
+               '<b style="color:#6100FF;">e</b>'
+               '<b style="color:#000FFF;">8</b>')
         label2.setObjectName("label2")
         label2.setFont(QFont("Arial", 18))
         layout.addWidget(label2)
 
-        layout.addSpacing(40)
+        layout.addSpacing(10)
 
         button = QPushButton("Link Start!")
         button.setCursor(Qt.PointingHandCursor)
@@ -81,14 +100,12 @@ class FileSystemModel(QFileSystemModel):
     def headerData(self, section, orientation, role):
         if role == Qt.DisplayRole and orientation == Qt.Horizontal:
             return ""
-
         return super().headerData(section, orientation, role)
 
     def data(self, index, role):
         if role == Qt.DisplayRole:
             if index.column() in [1, 2, 3]:
                 return self.filePath(index)
-
         return super().data(index, role)
 
 class MainWindow(QMainWindow):
@@ -109,7 +126,7 @@ class MainWindow(QMainWindow):
                     path = value
                 elif key == 'font':
                     dock_font = value
-        self.setWindowTitle("eLJe | LyricJutsu Editor v0.0.50 (BETA)")
+        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.0 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
         self.setEnabled(False)

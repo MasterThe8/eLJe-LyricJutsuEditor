@@ -24,7 +24,7 @@ class AboutWindow(QDialog):
         layout.setContentsMargins(0, 0, 0, 0)
 
         # Menambahkan judul
-        title_label = QLabel("eLJe | LyricJutsu Editor v0.0.50 (BETA)")
+        title_label = QLabel("eLJe | LyricJutsu Editor v0.1.0 (BETA)")
         title_label.setAlignment(Qt.AlignCenter)
         title_label.setStyleSheet("font-size: 18px; color: #00FFFF; font-weight: bold;")
         title_label.setFixedHeight(20)
