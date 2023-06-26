@@ -8,3 +8,10 @@ This application has many shortcomings / bugs., and I apologize for these defici
 
 
 ⚠️ **Software ini masih dalam tahap pengembangan!** ⚠️
+
+
+## v0.1.0 (BETA)
+- Add Jutsu
+- Lyric Color (method 1)
+- Lyric Color (method 2)
+- Kan2Rom
