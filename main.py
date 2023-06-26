@@ -11,7 +11,7 @@ from PyQt5 import QtCore
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-        
+
 
 class GlobalText:
     sync_track_text = ''
@@ -246,6 +246,16 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(convertjutsu_action)
         self.toolbar.addSeparator()
         
+        self.toggleDisplay = QAction("Display Lyrics")
+        self.toggleDisplay.setCheckable(True)
+        self.toggleDisplay.setChecked(False)
+        self.toggleDisplay.triggered.connect(self.toggle_display)
+        self.toggleDisplay_button = QToolButton()
+        self.toggleDisplay_button.setDefaultAction(self.toggleDisplay)
+        self.toggleDisplay_button.setIcon(QIcon("img/display.png"))
+        self.toolbar.insertWidget(None, self.toggleDisplay_button)
+        self.toggleDisplay.toggled.connect(self.toggle_display_icon)
+        
         self.toggleTree = QAction("Toogle TreeView", self)
         self.toggleTree.setCheckable(True)
         self.toggleTree.setChecked(True)
@@ -335,6 +345,32 @@ class MainWindow(QMainWindow):
             self.treeDock.show()
         else:
             self.treeDock.hide()
+            
+    def toggle_display(self):
+        if self.toggleDisplay.isChecked():
+            self.toggleDisplay.setChecked(True)
+            self.write_display_status(True)
+        else:
+            self.toggleDisplay.setChecked(False)
+            self.write_display_status(False)
+
+    def write_display_status(self, status):
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
+        for section in config.sections():
+            for key, value in config.items(section):
+                if key == 'display':
+                    config.set(section, key, str(status))
+                    with open('setting.ini', 'w') as configfile:
+                        config.write(configfile)
+                        
+    def toggle_display_icon(self, check):
+        icon_checked = QIcon("img/display.png")
+        icon_unchecked = QIcon("img/display.png")
+        if check:
+            self.toggleDisplay_button.setIcon(icon_checked)
+        else:
+            self.toggleDisplay_button.setIcon(icon_unchecked)
             
     def toggle_treeview_icon(self, check):
         icon_checked = QIcon("img/toggle_tree_on.png")
@@ -482,19 +518,29 @@ class MainWindow(QMainWindow):
         
         plainTextEdit = self.sender()
         plainText = plainTextEdit.toPlainText()
-        # html_text = plainText.replace('\n', '<br>')
-        try:
-            plainText_line = plainText.split('\n')
-            array_teks = [line for line in plainText_line if line.strip()]
-            richText = self.toRichText(array_teks)
-            display = '<br>'.join(''.join(line) for line in richText)
-            plainText_display = self.convertHTMLToRichText(display)
-            plainText_display = self.convert_and_set_text(plainText_display)
-            richTextEdit.setHtml(plainText_display)
+        
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
+        for section in config.sections():
+            for key, value in config.items(section):
+                if key == 'display':
+                    display = value
+        if display == 'True':
+            try:
+                plainText_line = plainText.split('\n')
+                array_teks = [line for line in plainText_line if line.strip()]
+                richText = self.toRichText(array_teks)
+                display = '<br>'.join(''.join(line) for line in richText)
+                plainText_display = self.convertHTMLToRichText(display)
+                plainText_display = self.convert_and_set_text(plainText_display)
+                richTextEdit.setHtml(plainText_display)
 
-        except Exception:
-            QMessageBox.critical(self, "Wrong event format detected!", f"You can't commit or create newline events manually.\nBut you can copy&paste events directly or edit them in Moonscraper!!")
-            self.show()
+            except Exception:
+                QMessageBox.critical(self, "Wrong event format detected!", f"You can't commit or create newline events manually.\nBut you can copy&paste events directly or edit them in Moonscraper!!")
+                self.show()
+                
+        else:
+            pass
                     
     def toRichText(self, plainText):
         lines = []
