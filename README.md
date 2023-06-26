@@ -15,3 +15,5 @@ This application has many shortcomings / bugs., and I apologize for these defici
 - Lyric Color (method 1)
 - Lyric Color (method 2)
 - Kan2Rom
+
+#### waw
