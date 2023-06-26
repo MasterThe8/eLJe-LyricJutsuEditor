@@ -8,6 +8,8 @@ class Replace(QDialog):
         self.main_window = main_window
         self.setWindowTitle("Replace")
         self.setModal(True)
+        
+        self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
 
         layout = QVBoxLayout(self)
         self.label_original = QLabel("Text:")

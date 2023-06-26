@@ -3,11 +3,11 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
-class CnvrtJutsu(QDialog):
+class CCJutsu(QDialog):
     def __init__(self, main_window):
         super().__init__()
 
-        self.setWindowTitle("Kan2Rom no Jutsu")
+        self.setWindowTitle("Lyric Color no Jutsu (method 1)")
         self.center_window(300,500)
         self.resize(300, 250)
         self.main_window = main_window
@@ -18,16 +18,14 @@ class CnvrtJutsu(QDialog):
         layout = QVBoxLayout()
         
         image_label = QLabel()
-        pixmap = QPixmap("img/kan2rom.png")
+        pixmap = QPixmap("img/lyricolor.png")
         image_label.setPixmap(pixmap.scaled(280,150))
         layout.addWidget(image_label)
 
         # Membuat label dan input box
         self.label = QLabel("Input Lyric Position:")
         self.input_box = QLineEdit()
-        self.label2 = QLabel("Input Lyric:")
-        self.input_box2 = QLineEdit()
-        
+
         # Membuat layout untuk input hex dan color picker
         input_hex_layout = QHBoxLayout()
         self.input_hex = QLineEdit()
@@ -38,8 +36,6 @@ class CnvrtJutsu(QDialog):
         # Menambahkan komponen ke layout
         layout.addWidget(self.label)
         layout.addWidget(self.input_box)
-        layout.addWidget(self.label2)
-        layout.addWidget(self.input_box2)
 
         # Menambahkan input hex dan color picker ke layout
         # input_hex_layout.addWidget(self.input_hex)
@@ -69,7 +65,7 @@ class CnvrtJutsu(QDialog):
         
         # Membuat tombol OK dan Cancel
         self.okButton = QPushButton('OK')
-        self.okButton.clicked.connect(self.mainCnvrtJutsu)
+        self.okButton.clicked.connect(self.mainCCjutsu)
         self.cancelButton = QPushButton('Cancel')
         self.cancelButton.clicked.connect(self.reject)
 
@@ -98,7 +94,7 @@ class CnvrtJutsu(QDialog):
         color = QColorDialog.getColor()
         if color.isValid():
             self.selected_color = color.name(QColor.HexRgb)
-            self.color_label.setStyleSheet("background-color: {}".format(color.name()))
+            self.color_label.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(color.name()))
             self.color_label.setText(color.name())
 
     def sort_script_by_position(self, script):
@@ -149,7 +145,7 @@ class CnvrtJutsu(QDialog):
         result = []
         previous_lyric = ''
         temp = lines[:]
-
+        
         if self.selected_color is None:
             hex_value = "#fca101"
         else:
@@ -309,28 +305,15 @@ class CnvrtJutsu(QDialog):
         result = self.sort_script_by_position(result)
         return result
 
-    def get_lyric_item(self, lyric):
-        text_string = lyric.strip()
-
-        converted_list = []
-        word = ""
-
-        for char in text_string:
-            if char == '-':
-                if word != "":
-                    converted_list.append(word + '-')
-                    word = ""
-            elif char == ' ':
-                if word != "":
-                    converted_list.append(word + ' ')
-                    word = ""
-            else:
-                word += char
-
-        if word != "":
-            converted_list.append(word)
-
-        return converted_list
+    def get_lyric_item(self, events):
+        lines_temp = []
+        for line in events[1:]:
+            pos, event_data = line.split(' = ')
+            event_name, *value = event_data.strip('E "').split(' ')
+            value = ' '.join(value)
+            if event_name != 'section':
+                lines_temp.append(value)
+        return lines_temp
 
     def add_next_lyric(self, lines, script):
         script_temp = {int(item.split(' = ')[0]): item.split(' = ')[1] for item in script}
@@ -382,21 +365,24 @@ class CnvrtJutsu(QDialog):
             self.textfakeLabel.setDisabled(True)
             self.fakelyric.setDisabled(True)
     
-    def mainCnvrtJutsu(self):
+    def mainCCjutsu(self):
         positionInput = self.input_box.text()
-        lyric_target = self.input_box2.text()
         position = None
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position must be filled correctly!")
+            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
             self.show()
         
         if position is not None:
             value = self.main_window.getScript()
             value = value.splitlines()
             lines = self.get_lines(value, position)
-
+            lyric_items = self.get_lyric_item(lines)
+            print(value)
+            print()
+            print(lines)
+            print(lyric_items)
             if self.radio_button1.isChecked():
                 result = self.cc_nohide(lines)
             elif self.radio_button2.isChecked():
@@ -405,7 +391,6 @@ class CnvrtJutsu(QDialog):
                 result = self.cc_addnext(lines)
             
             result_split = [line for i in result for line in i.split('\n')]
-            lyric_items = self.get_lyric_item(lyric_target)
             last_result = self.add_next_lyric(lyric_items, result_split)
             
             index = next((i for i, event in enumerate(value) if event.startswith(str(position) + ' = ')), None)
@@ -446,10 +431,10 @@ class CnvrtJutsu(QDialog):
             shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
             shortcut_redo.activated.connect(self.redo_text)
             
-            super(CnvrtJutsu, self).accept()
+            super(CCJutsu, self).accept()
         
     def reject(self):
-        super(CnvrtJutsu, self).reject()
+        super(CCJutsu, self).reject()
         
     def undo_text(self):
         self.main_window.plainTextEdit.undo()  

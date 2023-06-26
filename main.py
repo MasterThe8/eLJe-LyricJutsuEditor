@@ -107,7 +107,8 @@ class MainWindow(QMainWindow):
             for key, value in self.config.items(section):
                 if key == 'path':
                     path = value
-                    
+                elif key == 'font':
+                    dock_font = value
         self.setWindowTitle("eLJe | LyricJutsu Editor v0.0.50 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
@@ -121,8 +122,11 @@ class MainWindow(QMainWindow):
         menu_bar = self.menuBar()
         file_menu = menu_bar.addMenu("File")
         option_menu = menu_bar.addMenu("Option")
+        view_menu = menu_bar.addMenu("View")
         about = menu_bar.addMenu("About")
-        # about.triggered.connect(self.about_info)
+        about_show = QAction("About", self)
+        about_show.triggered.connect(self.show_about)
+        about.addAction(about_show)
 
         # File Menu & Action
         open_action = QAction(QIcon("img/open_file.png"),'Open', self)
@@ -135,6 +139,10 @@ class MainWindow(QMainWindow):
         save_action.setShortcut("Ctrl+S")
         save_action.triggered.connect(self.save_file)
         file_menu.addAction(save_action)
+        
+        select_chart_path = QAction("Select Song Chart Folder", self)
+        select_chart_path.triggered.connect(self.choose_directory)
+        file_menu.addAction(select_chart_path)
         
         # Find Action
         find_action = QAction(QIcon("img/find.png"),"Find", self)
@@ -154,15 +162,20 @@ class MainWindow(QMainWindow):
         self.zoom_in_action = QAction(QIcon("img/zoom_in.png"), "Zoom In", self)
         self.zoom_in_action.setShortcut(QKeySequence.ZoomIn)
         self.zoom_in_action.triggered.connect(self.zoom_in)
-        self.zoom_in_action.setFont(QFont("Arial", 15))
-        self.zoom_out_action = QAction(QIcon("img/zoom_out.png"), "-", self)
+        self.zoom_out_action = QAction(QIcon("img/zoom_out.png"), "Zoom Out", self)
         self.zoom_out_action.setShortcut(QKeySequence.ZoomOut)
         self.zoom_out_action.triggered.connect(self.zoom_out)
-        self.zoom_out_action.setFont(QFont("Arial", 15))
+        self.zoom_in_action.setShortcut("Ctrl+Shift++")
         self.zoom_in_shortcut = QShortcut(QKeySequence("Ctrl+Shift++"), self)
         self.zoom_in_shortcut.activated.connect(self.zoom_in)
+        self.zoom_out_action.setShortcut("Ctrl+Shift+-")
         self.zoom_out_shortcut = QShortcut(QKeySequence("Ctrl+Shift+-"), self)
         self.zoom_out_shortcut.activated.connect(self.zoom_out)
+        view_menu.addAction(self.zoom_in_action)
+        view_menu.addAction(self.zoom_out_action)
+        
+        getsymbol = QAction(QIcon("img/symbol.png"), "Get Symbol", self)
+        getsymbol.triggered.connect(self.get_symbol)
         
         # Add Jutsu Action
         addjutsu_action = QAction(QIcon("img/addjutsu.png"), "Add Jutsu", self)
@@ -205,10 +218,11 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(save_action)
         self.toolbar.addAction(find_action)
         self.toolbar.addAction(replace_action)
-        self.toolbar.addAction(colorpick_action)
         self.toolbar.addAction(self.zoom_in_action)
         self.toolbar.addAction(self.zoom_out_action)
+        self.toolbar.addAction(colorpick_action)
         self.toolbar.addSeparator()
+        self.toolbar.addAction(getsymbol)
         self.toolbar.addAction(addjutsu_action)
         self.toolbar.addAction(colorjutsu_action)
         self.toolbar.addAction(lyricolorjutsu_action)
@@ -259,31 +273,9 @@ class MainWindow(QMainWindow):
         # Mengatur path direktori dari file .txt
         self.treemodel = FileSystemModel()
         self.treemodel.setRootPath(path)
-        self.treeView.setStyleSheet('''
-            QTreeView {
-                background-color: #282a36;
-                color: #FFF;
-            }
-            QTreeView::branch {
-                color: blue;
-            }
-            QTreeView QScrollBar:vertical {
-                background-color: #f0f0f0;
-                width: 16px;
-            }
-            QTreeView QScrollBar::handle:vertical {
-                background-color: #919191;
-                min-height: 20px;
-            }
-            QTreeView QScrollBar::add-line:vertical,
-            QTreeView QScrollBar::sub-line:vertical {
-                background-color: none;
-            }
-            QTreeView QScrollBar::add-page:vertical,
-            QTreeView QScrollBar::sub-page:vertical {
-                background-color: none;
-            }
-        ''')
+        with open('style/treeview.css','r') as f:
+            treestyle = f.read()
+        self.treeView.setStyleSheet(treestyle)
         self.treeView.setModel(self.treemodel)
         self.treeView.setRootIndex(self.treemodel.index(path))
         self.treeView.clicked.connect(self.handle_item_clicked)
@@ -314,6 +306,7 @@ class MainWindow(QMainWindow):
         with open('style/textedit.css','r') as f:
             text_edit_style = f.read()
         self.textEdit.setStyleSheet(text_edit_style)
+        self.textEdit.setFontFamily(dock_font)
         self.dock.setWidget(self.textEdit)
         self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
         
@@ -350,7 +343,6 @@ class MainWindow(QMainWindow):
             
     def handle_item_clicked(self, index):
         file_info = self.treemodel.fileInfo(index)
-        
         if file_info.isFile():
             file_path = file_info.filePath()
             self.read_chart(file_path)
@@ -756,11 +748,11 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         confirm_dialog = QMessageBox()
         confirm_dialog.setIcon(QMessageBox.Question)
-        confirm_dialog.setText("Apakah Anda yakin ingin keluar?")
-        confirm_dialog.setWindowTitle("Konfirmasi Keluar")
+        confirm_dialog.setText("Are you sure you want to exit?")
+        confirm_dialog.setWindowTitle("Exit")
         confirm_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        confirm_dialog.button(QMessageBox.Yes).setText("Ya")
-        confirm_dialog.button(QMessageBox.No).setText("Tidak")
+        confirm_dialog.button(QMessageBox.Yes).setText("Yes")
+        confirm_dialog.button(QMessageBox.No).setText("No")
         confirm_dialog.setDefaultButton(QMessageBox.No)
 
         if confirm_dialog.exec_() == QMessageBox.Yes:
@@ -783,6 +775,10 @@ class MainWindow(QMainWindow):
     def replace_text(self):
         dialog = Replace(self)
         dialog.exec_()
+        
+    def get_symbol(self):
+        self.symbol_window = SymbolTableWindow()
+        self.symbol_window.show()
         
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())
@@ -807,6 +803,10 @@ class MainWindow(QMainWindow):
         plainText = plainTextEdit.toPlainText()
 
         return plainText
+    
+    def show_about(self):
+        about_window = AboutWindow()
+        about_window.exec_()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

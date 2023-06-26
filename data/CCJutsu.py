@@ -8,7 +8,7 @@ class CCJutsu(QDialog):
         super().__init__()
 
         self.setWindowTitle("Lyric Color no Jutsu (method 1)")
-        self.setGeometry(420, 240, 300, 300)
+        self.center_window(300,500)
         self.resize(300, 250)
         self.main_window = main_window
         
@@ -83,6 +83,12 @@ class CCJutsu(QDialog):
         
         # Mengatur layout utama dialog
         self.setLayout(layout)
+        
+    def center_window(self, width, height):
+        screen = QDesktopWidget().screenGeometry()
+        x = (screen.width() - width) // 2
+        y = (screen.height() - height) // 2
+        self.setGeometry(x, y, width, height)
 
     def show_color_picker(self):
         color = QColorDialog.getColor()
@@ -343,9 +349,6 @@ class CCJutsu(QDialog):
         for i, key in enumerate(script_temp):
             if "</color>" in script_temp[key]:
                 script_temp[key] = color_values.pop(0)
-
-        # for i,j in script_temp.items():
-        #     print(f'{i} = {j}')
             
         script_result = [f"{key} = {value}" for key, value in script_temp.items()]
 
@@ -365,7 +368,7 @@ class CCJutsu(QDialog):
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
+            QMessageBox.critical(self, "Error", "Position must be filled correctly!!")
             self.show()
         
         if position is not None:
@@ -373,10 +376,6 @@ class CCJutsu(QDialog):
             value = value.splitlines()
             lines = self.get_lines(value, position)
             lyric_items = self.get_lyric_item(lines)
-            print(value)
-            print()
-            print(lines)
-            print(lyric_items)
             if self.radio_button1.isChecked():
                 result = self.cc_nohide(lines)
             elif self.radio_button2.isChecked():

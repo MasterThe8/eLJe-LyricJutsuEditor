@@ -389,7 +389,7 @@ class CnvrtJutsu(QDialog):
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position must be filled correctly!")
+            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
             self.show()
         
         if position is not None:

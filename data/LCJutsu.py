@@ -9,7 +9,7 @@ class LCJutsu(QDialog):
 
         self.setWindowTitle("Lyric Color no Jutsu (method 2)")
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
-        self.setGeometry(420, 240, 300, 300)
+        self.center_window(300,500)
         self.resize(300, 250)
         self.main_window = main_window
 
@@ -63,6 +63,12 @@ class LCJutsu(QDialog):
         
         # Mengatur layout utama dialog
         self.setLayout(layout)
+        
+    def center_window(self, width, height):
+        screen = QDesktopWidget().screenGeometry()
+        x = (screen.width() - width) // 2
+        y = (screen.height() - height) // 2
+        self.setGeometry(x, y, width, height)
 
     def show_color_picker(self):
         color = QColorDialog.getColor()
@@ -132,18 +138,6 @@ class LCJutsu(QDialog):
                 if event_name == 'section':
                     section_lines.append(line)
         return section_lines
-
-    def remove_section_lines(self, script):
-        filtered_script = []
-        for line in script:
-            parts = line.split(' = ')
-            if len(parts) == 2:
-                event_name = parts[1].strip('E "').split(' ')[0]
-                if event_name != 'section':
-                    filtered_script.append(line)
-            else:
-                filtered_script.append(line)
-        return filtered_script
 
     def remove_section_lines(self, script):
         filtered_script = []
@@ -256,7 +250,7 @@ class LCJutsu(QDialog):
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
+            QMessageBox.critical(self, "Error", "Position must be filled correctly!")
             self.show()
         
         if position is not None:
@@ -264,8 +258,6 @@ class LCJutsu(QDialog):
             value = value.splitlines()
             
             if self.check_position_in_script(value, position):
-                temp_section = self.get_section_lines(value)
-            
                 temp_section = self.get_section_lines(value)
                 temp_value = self.remove_section_lines(value)
                 
@@ -302,7 +294,7 @@ class LCJutsu(QDialog):
                 
                 super(LCJutsu, self).accept()
             else:
-                QMessageBox.critical(self, "Error", "Position tidak ditemukan!")
+                QMessageBox.critical(self, "Error", "Position not found!")
                 self.show()
 
     def reject(self):

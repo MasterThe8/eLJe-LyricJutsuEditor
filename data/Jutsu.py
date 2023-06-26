@@ -7,18 +7,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
-style = """
-    QLabel{
-        font-size: 14px;
-    }
-"""
 
 class AddJutsu(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
         
         self.setWindowTitle("Add Lyric Jutsu")
-        self.setGeometry(420, 240, 300, 300)
+        self.center_window(300,500)
         self.resize(300, 250)
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
@@ -48,9 +43,6 @@ class AddJutsu(QDialog):
         self.cancelButton = QPushButton('Cancel')
         self.cancelButton.clicked.connect(self.reject)
         
-        self.positionLabel.setStyleSheet(style)
-        self.lineEdit.setStyleSheet(style)
-        
         # Tambahkan garis pemisah horizontal
         line = QFrame()
         line2 = QFrame()
@@ -79,6 +71,12 @@ class AddJutsu(QDialog):
         
         self.textfakeLabel.setDisabled(True)
         self.fakelyric.setDisabled(True)
+        
+    def center_window(self, width, height):
+        screen = QDesktopWidget().screenGeometry()
+        x = (screen.width() - width) // 2
+        y = (screen.height() - height) // 2
+        self.setGeometry(x, y, width, height)
     
     def focusOutEvent(self, event):
         self.activateWindow()
@@ -101,7 +99,7 @@ class AddJutsu(QDialog):
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
+            QMessageBox.critical(self, "Error", "Position must be filled correctly!")
             self.show()
         if position is not None:
             lyricInput = self.lineEdit.text()
