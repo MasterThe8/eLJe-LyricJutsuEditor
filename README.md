@@ -29,5 +29,5 @@ Jutsu:
 - `Kan2Rom`
 
 #### Bugs:
-- When you open a .chart file and an error message appears **_"Wrong event format detected!"_**. Disable the 'Display Lyrics' feature by pressing the computer icon on the Toolbar.
-- Events 'Section' may be lost when applying 'Lyric Color (method 1)' and 'Kan2Rom'. So be careful and use 'Temp Text' as temporary text storage.
+- When you open a `.chart` file and an error message appears **_"Wrong event format detected!"_**. Disable the `Display Lyrics` feature by pressing the computer icon on the Toolbar.
+- Events `Section` may be lost when applying `Lyric Color (method 1)` and `Kan2Rom`. So be careful and use `Temp Text` as temporary text storage.
