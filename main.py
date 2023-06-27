@@ -785,7 +785,7 @@ class MainWindow(QMainWindow):
         if file_name:
             with open(file_name, 'wb') as f:
                 
-                temp1 = GlobalText.sync_track_text + GlobalText.song_text + GlobalText.events_temp
+                temp1 = GlobalText.song_text + GlobalText.sync_track_text + GlobalText.events_temp
                 temp2 = GlobalText.single + GlobalText.double_guitar + GlobalText.double_bass + GlobalText.double_rhythm + GlobalText.keyboard + GlobalText.drums + GlobalText.ghl_guitar + GlobalText.ghl_bass + GlobalText.ghl_rhythm + GlobalText.ghl_coop
                 
                 pte = self.plainTextEdit.toPlainText()
