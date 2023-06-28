@@ -3,7 +3,7 @@ import codecs
 from functools import partial
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableView, QAbstractItemView, QMessageBox, QStyledItemDelegate, QStatusBar
 from PyQt5.QtCore import QAbstractTableModel, Qt, QTimer
-from PyQt5.QtGui import QClipboard
+from PyQt5.QtGui import QClipboard, QFont
 
 # Model Tabel Kustom untuk menampilkan simbol
 class SymbolTableModel(QAbstractTableModel):
@@ -51,7 +51,7 @@ class SymbolTableWindow(QMainWindow):
         self.table = QTableView()
         model = SymbolTableModel(symbols)
         self.table.setSelectionBehavior(QAbstractItemView.SelectItems)
-        self.table.setStyleSheet("QTableView::item:selected { background-color: blue; }")
+        self.table.setStyleSheet("QTableView::item:selected { background-color: blue; font-smoothing: antialiased;}")
         self.table.setSelectionMode(QAbstractItemView.SingleSelection)
         self.table.setModel(model)
         self.table.horizontalHeader().setVisible(False)
@@ -99,6 +99,10 @@ class SymbolTableWindow(QMainWindow):
         
         self.statusBar = QStatusBar()
         self.setStatusBar(self.statusBar)
+        
+        font = QFont("Arial", 12)
+        font.setStyleStrategy(QFont.PreferAntialias)
+        self.table.setFont(font)
 
         self.setCentralWidget(self.table)
 
