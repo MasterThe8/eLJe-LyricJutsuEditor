@@ -14,9 +14,9 @@ from PyQt5.QtWidgets import *
 
 
 class GlobalText:
-    sync_track_text = ''
-    song_text = ''
-    events_temp = ''
+    song = ''
+    sync_track = ''
+    events = ''
     
     single = ''
     double_guitar = ''
@@ -752,9 +752,9 @@ class MainWindow(QMainWindow):
             display_text = file_contents[file_contents.find('{')+1:file_contents.find('}')]
             
         # self.text_edit.setPlainText(file_contents)
-        GlobalText.sync_track_text = sync_track_text + '\n'
-        GlobalText.song_text = song_text + '\n'
-        GlobalText.events_temp = events_temp + '\n'
+        GlobalText.song = song_text + '\n'
+        GlobalText.sync_track = sync_track_text + '\n'
+        GlobalText.events = events_temp + '\n'
         
         GlobalText.single = expert_single + '\n' + hard_single + '\n' + medium_single + '\n' + easy_single + '\n'
         GlobalText.double_guitar = expert_double_guitar + '\n' + hard_double_guitar + '\n' + medium_double_guitar + '\n' + easy_double_guitar + '\n'
@@ -785,7 +785,7 @@ class MainWindow(QMainWindow):
         if file_name:
             with open(file_name, 'wb') as f:
                 
-                temp1 = GlobalText.song_text + GlobalText.sync_track_text + GlobalText.events_temp
+                temp1 = GlobalText.song + GlobalText.sync_track + GlobalText.events
                 temp2 = GlobalText.single + GlobalText.double_guitar + GlobalText.double_bass + GlobalText.double_rhythm + GlobalText.keyboard + GlobalText.drums + GlobalText.ghl_guitar + GlobalText.ghl_bass + GlobalText.ghl_rhythm + GlobalText.ghl_coop
                 
                 pte = self.plainTextEdit.toPlainText()
