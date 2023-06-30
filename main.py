@@ -196,18 +196,22 @@ class MainWindow(QMainWindow):
         
         # Add Jutsu Action
         addjutsu_action = QAction(QIcon("img/addjutsu.png"), "Add Jutsu", self)
+        addjutsu_action.setShortcut("Alt+1")
         addjutsu_action.triggered.connect(self.add_jutsu)
         
         # Color no Jutsu Action
         colorjutsu_action = QAction(QIcon("img/lyricolor.png"), "Custom Color no Jutsu", self)
+        colorjutsu_action.setShortcut("Alt+2")
         colorjutsu_action.triggered.connect(self.custom_color_no_jutsu)
+        
+        lyricolorjutsu_action = QAction(QIcon("img/kan2rom.png"), "LyriColor no Jutsu", self)
+        lyricolorjutsu_action.setShortcut("Alt+3")
+        lyricolorjutsu_action.triggered.connect(self.lyric_color_no_jutsu)
         
         # ConvertPhrase no Jutsu Action
         convertjutsu_action = QAction(QIcon("img/lyricolor2.png"), "Kan2Rom no Jutsu", self)
+        convertjutsu_action.setShortcut("Alt+4")
         convertjutsu_action.triggered.connect(self.convert_phrase_no_jutsu)
-        
-        lyricolorjutsu_action = QAction(QIcon("img/kan2rom.png"), "LyriColor no Jutsu", self)
-        lyricolorjutsu_action.triggered.connect(self.lyric_color_no_jutsu)
         
         # Exit Menu & Action
         exit_action = QAction("Exit", self)
