@@ -1,0 +1,27 @@
+eLJe | LyricJutsu Editor License
+
+Version 0.1.0, [28-06-2023]
+
+Preamble:
+
+eLJe | LyricJutsu Editor is an open-source project provided "as is", without warranty of any kind, express or implied. The developers and contributors of the Software shall not be held liable for any claims, damages, or other liabilities arising from the use or distribution of the Software.
+
+License:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this Software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, and/or sell copies of the Software, subject to the following conditions:
+
+1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+2. Any modifications made to the Software must be clearly marked as such, and must not be misrepresented as the original Software.
+
+3. Redistributions of the Software, in whole or in part, must retain the above license notice, this list of conditions, and the disclaimer below.
+
+4. Commercial use of the Software is permitted, provided that it is accompanied by a prominent notice specifying that the Software is Open Source and including a link to the original source code.
+
+5. The Software may not be used in any application that promotes or engages in illegal, harmful, or malicious activities.
+
+6. The Software may not be used to create a competing product or software that directly or indirectly replicates or substitutes the functionality of the Software.
+
+Disclaimer:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE DEVELOPERS OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE.
