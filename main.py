@@ -20,18 +20,6 @@ class GlobalText:
     
     note_inst = ''
     
-    single = ''
-    double_guitar = ''
-    double_bass = ''
-    double_rhythm = ''
-    keyboard = ''
-    drums = ''
-    
-    ghl_guitar = ''
-    ghl_bass = ''
-    ghl_rhythm = ''
-    ghl_coop = ''
-    
 class LandingPageWindow(QMainWindow):
     def __init__(self, main_window):
         super().__init__()
@@ -614,42 +602,25 @@ class MainWindow(QMainWindow):
         end_index = plainText.find("</b>")
         i_start_index = plainText.find("<i>")
         i_end_index = plainText.find("</i>")
-        c_start_index = plainText.find("<color=")
-        c_end_index = plainText.find("</color>")
-        
-        while start_index != -1 and end_index != -1 and i_start_index != -1 and i_end_index != -1 and c_start_index != -1 and c_end_index != -1:
-            index = min(start_index, i_start_index, c_start_index)
-            tag_end = "</b>" if start_index < i_start_index and start_index < c_start_index else "</i>" if i_start_index < c_start_index else "</color>"
-            
+
+        while start_index != -1 and end_index != -1 and i_start_index != -1 and i_end_index != -1:
+            index = min(start_index, i_start_index)
+
             rich_text += plainText[:index]
-            
-            if tag_end == "</b>":
+
+            if index == start_index:
                 text = plainText[index + 3 : end_index]
                 rich_text += "<span style='font-weight: bold;'>{}</span>".format(text)
                 plainText = plainText[end_index + 4:]
-            elif tag_end == "</i>":
+            else:
                 text = plainText[index + 3 : i_end_index]
                 rich_text += "<span style='font-style: italic;'>{}</span>".format(text)
                 plainText = plainText[i_end_index + 4:]
-            elif tag_end == "</color>":
-                color_start_index = c_start_index + 8
-                color_end_index = plainText.find(">", color_start_index)
-                color_tag = plainText[color_start_index:color_end_index]
-                color_value = color_tag.split("=")[1].strip("#>")
-                text_start_index = color_end_index + 1
-                text_end_index = plainText.find("</color>", text_start_index)
-                text = plainText[text_start_index:text_end_index]
-
-                rich_text += "<span style='color: {};'>{}</span>".format(color_value, text)
-                
-                plainText = plainText[c_end_index + 8:]
 
             start_index = plainText.find("<b>")
             end_index = plainText.find("</b>")
             i_start_index = plainText.find("<i>")
             i_end_index = plainText.find("</i>")
-            c_start_index = plainText.find("<color=")
-            c_end_index = plainText.find("</color>")
 
         rich_text += plainText
         return rich_text
@@ -734,7 +705,6 @@ class MainWindow(QMainWindow):
             with open(file_name, 'wb') as f:
                 
                 temp1 = GlobalText.song + GlobalText.sync_track + GlobalText.events
-                # temp2 = GlobalText.single + GlobalText.double_guitar + GlobalText.double_bass + GlobalText.double_rhythm + GlobalText.keyboard + GlobalText.drums + GlobalText.ghl_guitar + GlobalText.ghl_bass + GlobalText.ghl_rhythm + GlobalText.ghl_coop
                 temp2 = GlobalText.note_inst
                 
                 pte = self.plainTextEdit.toPlainText()

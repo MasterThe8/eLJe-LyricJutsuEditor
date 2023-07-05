@@ -77,10 +77,6 @@ class LCJutsu(QDialog):
             self.color_label.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(color.name()))
             self.color_label.setText(color.name())
 
-    def sort_script_by_position(self, script):
-        sorted_script = sorted(script, key=lambda line: int(line.split(' = ')[0]))
-        return sorted_script
-
     def get_lines(self, events, position):
         lines = []
         current_line = ''
@@ -175,24 +171,6 @@ class LCJutsu(QDialog):
         lyric_value = parts[1].strip('"')
         return position, lyric_value
 
-    def get_lyric_item(self, events):
-        lines_temp = []
-        for line in events[1:]:
-            pos, event_data = line.split(' = ')
-            event_name, *value = event_data.strip('E "').split(' ')
-            value = ' '.join(value)
-            if event_name != 'section':
-                lines_temp.append(value)
-        return lines_temp
-
-    def convert_list_to_string(self, lyric_items):
-        result = ''
-        for i, item in enumerate(lyric_items):
-            if i > 0 and not lyric_items[i-1].endswith('-'):
-                result += ' '
-            result += item.rstrip('-')
-        return result
-
     def insert_and_sort(self, script, element):
         if isinstance(element, list):
             script.extend(element)
@@ -279,7 +257,6 @@ class LCJutsu(QDialog):
                 
                 final_result = self.insert_and_sort(temp_value, lines)
                 final_result = self.insert_and_sort(final_result, temp_section)
-                # final_result = self.remove_duplicates(final_result)
                 final_result = '\n'.join(final_result)
 
                 scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
