@@ -729,7 +729,7 @@ class MainWindow(QMainWindow):
     def closeEvent(self, event):
         confirm_dialog = QMessageBox()
         confirm_dialog.setIcon(QMessageBox.Question)
-        confirm_dialog.setText("Are you sure you want to exit?")
+        confirm_dialog.setText("Are you sure want to exit?")
         confirm_dialog.setWindowTitle("Exit")
         confirm_dialog.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         confirm_dialog.button(QMessageBox.Yes).setText("Yes")
