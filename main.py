@@ -532,7 +532,6 @@ class MainWindow(QMainWindow):
             except Exception:
                 QMessageBox.critical(self, "Wrong event format detected!", f"You can't commit or create newline events manually.\nBut you can copy&paste events directly or edit them in Moonscraper!!")
                 self.show()
-                
         else:
             pass
                     
@@ -602,12 +601,12 @@ class MainWindow(QMainWindow):
         end_index = plainText.find("</b>")
         i_start_index = plainText.find("<i>")
         i_end_index = plainText.find("</i>")
-
+        
         while start_index != -1 and end_index != -1 and i_start_index != -1 and i_end_index != -1:
             index = min(start_index, i_start_index)
-
+            
             rich_text += plainText[:index]
-
+            
             if index == start_index:
                 text = plainText[index + 3 : end_index]
                 rich_text += "<span style='font-weight: bold;'>{}</span>".format(text)
@@ -668,6 +667,7 @@ class MainWindow(QMainWindow):
             GlobalText.song = song_text + '\n'
             GlobalText.sync_track = sync_track_text + '\n'
             GlobalText.events = events_temp + '\n'
+            GlobalText.note_inst = ''
             
             difficulty = ['Expert', 'Hard', 'Medium', 'Easy']
             instrumental = ['Single', 'DoubleGuitar', 'DoubleBass', 'DoubleRhythm', 'Keyboard', 'Drums', 'GHLGuitar', 'GHLBass', 'GHLRhythm', 'GHLCoop']
@@ -685,7 +685,6 @@ class MainWindow(QMainWindow):
                     else:
                         section_content = ''
                         GlobalText.note_inst += section_content
-
         
         display = events_display.replace('\n  ', '\n')
         self.plainTextEdit.setPlainText(display.strip())
