@@ -14,7 +14,7 @@ def convertText(path, text):
     else:
         x = char_len // 26
         char_list = [list_text[i:i+x] for i in range(0, len(list_text), x)]
-        
+    print(char_list)
     for char in input:
         if char.isalpha():
             index = ord(char.upper()) - ord('A')
@@ -29,9 +29,13 @@ text_input = "test"
 t = "weird_text/wt"
 path_list = []
 
-for i in range (1, 27):
-    path_file = "{}{}".format(t,i)
-    path_list.append(path_file)
-    for path in path_list:
-        result = convertText(path, text_input)
-        print(result+'\n')
+# for i in range (1, 27):
+#     path_file = "{}{}".format(t,i)
+#     path_list.append(path_file)
+#     for path in path_list:
+#         result = convertText(path, text_input)
+#         print(result+'\n')
+
+pt = "weird_text/wt3"
+lol = convertText(pt, text_input)
+print(lol)
