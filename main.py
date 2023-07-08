@@ -116,6 +116,8 @@ class MainWindow(QMainWindow):
                     path = value
                 elif key == 'font':
                     dock_font = value
+                    
+        self.path = path
         self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.0 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
@@ -634,13 +636,13 @@ class MainWindow(QMainWindow):
     
     # Fungsi Open File
     def open_file(self):
-        config = configparser.ConfigParser()
-        config.read('Setting.ini')
-        path = config.get('Setting', 'path')
+        # config = configparser.ConfigParser()
+        # config.read('Setting.ini')
+        # path = config.get('Setting', 'path')
 
         file_dialog = QFileDialog(self)
         file_dialog.setWindowTitle("Open File")
-        file_dialog.setDirectory(path)
+        file_dialog.setDirectory(self.path)
         file_name, _ = file_dialog.getOpenFileName(self, 'Open File', '.', 'Chart Files (*.chart)')
 
         if file_name:
@@ -691,13 +693,9 @@ class MainWindow(QMainWindow):
 
     # Fungsi Save File
     def save_file(self):
-        config = configparser.ConfigParser()
-        config.read('Setting.ini')
-        path = config.get('Setting', 'path')
-
         file_dialog = QFileDialog(self)
         file_dialog.setWindowTitle("Save File")
-        file_dialog.setDirectory(path)
+        file_dialog.setDirectory(self.path)
         file_name, _ = file_dialog.getSaveFileName(self, "Save File", "", "Chart Files (*.chart)")
         
         if file_name:

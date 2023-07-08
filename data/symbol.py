@@ -44,7 +44,7 @@ class SymbolTableWindow(QMainWindow):
         self.setFixedSize(413, 600)
         
         # Import simbol dari file
-        with codecs.open("sym.txt", "r", "utf-8") as file:
+        with codecs.open("symbol", "r", "utf-8") as file:
             symbols = file.read()
 
         # Buat tabel
