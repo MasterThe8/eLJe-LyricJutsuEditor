@@ -183,8 +183,13 @@ class MainWindow(QMainWindow):
         view_menu.addAction(self.zoom_in_action)
         view_menu.addAction(self.zoom_out_action)
         
+        # Get Symbol
         getsymbol = QAction(QIcon("img/symbol.png"), "Get Symbol", self)
         getsymbol.triggered.connect(self.get_symbol)
+        
+        # Weird Text Generator
+        weirdtext = QAction("WEIRD", self)
+        weirdtext.triggered.connect(self.weird_text_generator)
         
         # Add Jutsu Action
         addjutsu_action = QAction(QIcon("img/addjutsu.png"), "Add Jutsu", self)
@@ -236,6 +241,7 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(colorpick_action)
         self.toolbar.addSeparator()
         self.toolbar.addAction(getsymbol)
+        self.toolbar.addAction(weirdtext)
         self.toolbar.addAction(addjutsu_action)
         self.toolbar.addAction(colorjutsu_action)
         self.toolbar.addAction(lyricolorjutsu_action)
@@ -636,10 +642,6 @@ class MainWindow(QMainWindow):
     
     # Fungsi Open File
     def open_file(self):
-        # config = configparser.ConfigParser()
-        # config.read('Setting.ini')
-        # path = config.get('Setting', 'path')
-
         file_dialog = QFileDialog(self)
         file_dialog.setWindowTitle("Open File")
         file_dialog.setDirectory(self.path)
@@ -758,6 +760,10 @@ class MainWindow(QMainWindow):
     def get_symbol(self):
         self.symbol_window = SymbolTableWindow()
         self.symbol_window.show()
+        
+    def weird_text_generator(self):
+        self.weird_window = WeirdTextWindow()
+        self.weird_window.show()
         
     def add_jutsu(plainTextEdit):
         dialog = AddJutsu(plainTextEdit.window())
