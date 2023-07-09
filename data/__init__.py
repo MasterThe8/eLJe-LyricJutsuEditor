@@ -1,6 +1,7 @@
 # import .data
 from .about import *
 from .Jutsu import *
+from .settingHighlight import *
 from .Highlighter import *
 from .find import *
 from .replace import *

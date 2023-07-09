@@ -188,7 +188,7 @@ class MainWindow(QMainWindow):
         getsymbol.triggered.connect(self.get_symbol)
         
         # Weird Text Generator
-        weirdtext = QAction("WEIRD", self)
+        weirdtext = QAction(QIcon("img/weird.png"), "Weird Text Generator", self)
         weirdtext.triggered.connect(self.weird_text_generator)
         
         # Add Jutsu Action
@@ -219,6 +219,11 @@ class MainWindow(QMainWindow):
         font_setting_action = QAction("Font Setting", self)
         font_setting_action.triggered.connect(self.font_setting)
         option_menu.addAction(font_setting_action)
+        
+        # Highlight Setting
+        highlight_setting_action = QAction("Highlight Setting", self)
+        highlight_setting_action.triggered.connect(self.highlight_setting)
+        option_menu.addAction(highlight_setting_action)
 
         # Toolbar
         self.toolbar = QToolBar()
@@ -444,6 +449,9 @@ class MainWindow(QMainWindow):
         self.plainTextEdit.undo()  
     def redo_text(self):
         self.plainTextEdit.redo() 
+        
+    def update_highlighter(self):
+        self.highlighter = Highlighter(self.plainTextEdit.document())
           
     def tabPlainTextEdit(self):
         self.plainTextEdit = QPlainTextEdit(self)
@@ -714,17 +722,6 @@ class MainWindow(QMainWindow):
                 temp3 = temp+temp2
                 
                 f.write(temp3.encode())
-                
-    def font_setting(self):
-        font2, ok = QFontDialog.getFont()
-
-        if ok:
-            font_name = font2.toString()
-            self.config.set("Setting", "font", font_name)
-            with open("setting.ini", "w") as file:
-                self.config.write(file)
-            self.plainTextEdit.setFont(font2)
-            self.richTextEdit.setFont(font2)
 
     def closeEvent(self, event):
         confirm_dialog = QMessageBox()
@@ -740,6 +737,21 @@ class MainWindow(QMainWindow):
             event.accept()
         else:
             event.ignore()
+            
+    def font_setting(self):
+        font2, ok = QFontDialog.getFont()
+
+        if ok:
+            font_name = font2.toString()
+            self.config.set("Setting", "font", font_name)
+            with open("setting.ini", "w") as file:
+                self.config.write(file)
+            self.plainTextEdit.setFont(font2)
+            self.richTextEdit.setFont(font2)
+            
+    def highlight_setting(self):
+        high_dial = SettingHighlight(self)
+        high_dial.exec_()
 
     # Fungsi Find Text
     def find_text(plainTextEdit):

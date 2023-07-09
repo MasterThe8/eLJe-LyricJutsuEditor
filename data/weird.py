@@ -15,21 +15,26 @@ class WeirdTextWindow(QMainWindow):
         
         layout = QVBoxLayout(central_widget)
         
+        self.input_label = QLabel("Input Text : ")
         self.input_box = QLineEdit()
-        self.convert_btn = QPushButton("Convert")
-        self.convert_btn.clicked.connect(self.main_weird)
+        self.generate_btn = QPushButton("Generate")
+        self.generate_btn.clicked.connect(self.main_weird)
         self.text_result = QTextEdit()
         self.text_result.setFixedHeight(400)
         self.text_result.setFontPointSize(12)
         self.ok_btn = QPushButton("OK")
         self.ok_btn.clicked.connect(self.close)
         
-        layout.addWidget(self.input_box)
-        layout.addWidget(self.convert_btn)
+        sub_layout = QHBoxLayout()
+        sub_layout.addWidget(self.input_label)
+        sub_layout.addWidget(self.input_box)
+        
+        layout.addLayout(sub_layout)
+        layout.addWidget(self.generate_btn)
         layout.addWidget(self.text_result)
         layout.addWidget(self.ok_btn)
         
-        self.setLayout(layout)
+        # self.setLayout(layout)
 
     def main_weird(self):
         text_input = self.input_box.text()
