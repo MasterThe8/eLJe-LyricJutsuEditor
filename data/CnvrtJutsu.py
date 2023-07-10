@@ -479,6 +479,7 @@ class CnvrtJutsu(QDialog):
                         last_result = self.add_next_lyric(lyric_items, result_split)
                         
                         final_result = self.insert_and_sort(last_result, temp_section)
+                        final_result = self.insert_and_sort(final_result, temp_value)
                         final_result = '\n'.join(final_result)
                         
                         scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()

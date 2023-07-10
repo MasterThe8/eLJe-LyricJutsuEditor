@@ -473,6 +473,7 @@ class CCJutsu(QDialog):
                     
                     # final_result = self.insert_and_sort(last_result, temp_ps)
                     final_result = self.insert_and_sort(last_result, temp_section)
+                    final_result = self.insert_and_sort(final_result, temp_value)
                     final_result = '\n'.join(final_result)
                     
                     scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
