@@ -8,7 +8,8 @@ class AboutWindow(QDialog):
         self.setWindowTitle("About")
         self.setFixedSize(600, 540)
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
-        
+        icon = QIcon("img/icon.ico")
+        self.setWindowIcon(icon)
         self.setStyleSheet("background-color:#100a21; color: #fff;")
         
         layout = QVBoxLayout()

@@ -349,9 +349,6 @@ class CCJutsu(QDialog):
         for i, key in enumerate(script_temp):
             if "</color>" in script_temp[key]:
                 script_temp[key] = color_values.pop(0)
-
-        # for i,j in script_temp.items():
-        #     print(f'{i} = {j}')
             
         script_result = [f"{key} = {value}" for key, value in script_temp.items()]
 
@@ -371,7 +368,7 @@ class CCJutsu(QDialog):
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position Harus Diisi!")
+            QMessageBox.critical(self, "Error", "Position must be filled correctly!!")
             self.show()
         
         if position is not None:
@@ -379,10 +376,6 @@ class CCJutsu(QDialog):
             value = value.splitlines()
             lines = self.get_lines(value, position)
             lyric_items = self.get_lyric_item(lines)
-            print(value)
-            print()
-            print(lines)
-            print(lyric_items)
             if self.radio_button1.isChecked():
                 result = self.cc_nohide(lines)
             elif self.radio_button2.isChecked():

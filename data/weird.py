@@ -9,6 +9,8 @@ class WeirdTextWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Weird Text Generator")
         self.setFixedSize(500, 500)
+        icon = QIcon("img/weird.png")
+        self.setWindowIcon(icon)
         
         central_widget = QWidget(self)
         self.setCentralWidget(central_widget)

@@ -123,8 +123,7 @@ class MainWindow(QMainWindow):
         # self.showMaximized()
         self.setEnabled(False)
         
-        # Mengatur ikon window
-        icon = QIcon("icon.ico")
+        icon = QIcon("img/icon.ico")
         self.setWindowIcon(icon)
         
         # Menu Bar
@@ -174,10 +173,10 @@ class MainWindow(QMainWindow):
         self.zoom_out_action = QAction(QIcon("img/zoom_out.png"), "Zoom Out", self)
         self.zoom_out_action.setShortcut(QKeySequence.ZoomOut)
         self.zoom_out_action.triggered.connect(self.zoom_out)
-        self.zoom_in_action.setShortcut("Ctrl+Shift++")
+        self.zoom_in_action.setShortcut("Ctrl+=")
         self.zoom_in_shortcut = QShortcut(QKeySequence("Ctrl+Shift++"), self)
         self.zoom_in_shortcut.activated.connect(self.zoom_in)
-        self.zoom_out_action.setShortcut("Ctrl+Shift+-")
+        self.zoom_out_action.setShortcut("Ctrl+-")
         self.zoom_out_shortcut = QShortcut(QKeySequence("Ctrl+Shift+-"), self)
         self.zoom_out_shortcut.activated.connect(self.zoom_out)
         view_menu.addAction(self.zoom_in_action)
@@ -201,12 +200,12 @@ class MainWindow(QMainWindow):
         colorjutsu_action.setShortcut("Alt+2")
         colorjutsu_action.triggered.connect(self.custom_color_no_jutsu)
         
-        lyricolorjutsu_action = QAction(QIcon("img/kan2rom.png"), "LyriColor no Jutsu", self)
+        lyricolorjutsu_action = QAction(QIcon("img/lyricolor2.png"), "LyriColor no Jutsu", self)
         lyricolorjutsu_action.setShortcut("Alt+3")
         lyricolorjutsu_action.triggered.connect(self.lyric_color_no_jutsu)
         
         # ConvertPhrase no Jutsu Action
-        convertjutsu_action = QAction(QIcon("img/lyricolor2.png"), "Kan2Rom no Jutsu", self)
+        convertjutsu_action = QAction(QIcon("img/kan2rom.png"), "Kan2Rom no Jutsu", self)
         convertjutsu_action.setShortcut("Alt+4")
         convertjutsu_action.triggered.connect(self.convert_phrase_no_jutsu)
         
@@ -224,18 +223,17 @@ class MainWindow(QMainWindow):
         highlight_setting_action = QAction("Highlight Setting", self)
         highlight_setting_action.triggered.connect(self.highlight_setting)
         option_menu.addAction(highlight_setting_action)
-
+        
         # Toolbar
         self.toolbar = QToolBar()
         self.toolbar.setOrientation(Qt.Horizontal)
+        self.toolbar.setFixedHeight(40)
+        self.toolbar.setContextMenuPolicy(Qt.PreventContextMenu)
         self.addToolBar(self.toolbar)
         self.toolbar.setMovable(False)
-        css_file = QFile("style/toolbar.css")
-        if css_file.open(QFile.ReadOnly | QFile.Text):
-            stream = QTextStream(css_file)
-            stylesheet = stream.readAll()
-            css_file.close()
-            self.toolbar.setStyleSheet(stylesheet)
+        with open('style/toolbar.css','r') as f:
+            toolbarstyle = f.read()
+        self.toolbar.setStyleSheet(toolbarstyle)
         
         self.toolbar.addAction(open_action)
         self.toolbar.addAction(save_action)
@@ -350,8 +348,10 @@ class MainWindow(QMainWindow):
     def toggle_treeview(self):
         if self.toggleTree.isChecked():
             self.treeDock.show()
+            self.write_treeview_status(True)
         else:
             self.treeDock.hide()
+            self.write_treeview_status(False)
             
     def toggle_display(self):
         if self.toggleDisplay.isChecked():
@@ -367,6 +367,16 @@ class MainWindow(QMainWindow):
         for section in config.sections():
             for key, value in config.items(section):
                 if key == 'display':
+                    config.set(section, key, str(status))
+                    with open('setting.ini', 'w') as configfile:
+                        config.write(configfile)
+                        
+    def write_treeview_status(self, status):
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
+        for section in config.sections():
+            for key, value in config.items(section):
+                if key == 'treeview':
                     config.set(section, key, str(status))
                     with open('setting.ini', 'w') as configfile:
                         config.write(configfile)
@@ -641,8 +651,10 @@ class MainWindow(QMainWindow):
         return rich_text
 
     def color_picker(self):
-        color = QColorDialog.getColor()
-
+        color_dialog = QColorDialog()
+        color_icon = QIcon("img/color_picker.png")
+        color_dialog.setWindowIcon(color_icon)
+        color = color_dialog.getColor()
         if color.isValid():
             print("Selected color:", color.name())
 

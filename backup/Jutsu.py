@@ -17,8 +17,6 @@ class AddJutsu(QDialog):
         self.resize(300, 250)
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
-        icon = QIcon("img/addjutsu.png")
-        self.setWindowIcon(icon)
         
         layout = QVBoxLayout()
         layout.setAlignment(Qt.AlignCenter)
@@ -95,9 +93,6 @@ class AddJutsu(QDialog):
             self.fakelyric.setDisabled(True)
             
     def accept(self):
-        script_value = self.main_window.getScript()
-        script_value = script_value.splitlines()
-        
         jutsuSelected = self.comboBox.currentText()
         positionInput = self.positionEdit.text()
         position = None
@@ -134,7 +129,7 @@ class AddJutsu(QDialog):
                 line4 = str(position+3) + " = E \"phrase_start\""
                 line5 = str(position+4) + " = E \"lyric "+lyricInput+"\""
                 jutsuInput = line1 + '\n' + line2 + '\n' + line3 + '\n' + line4 + '\n' + line5
-
+            
             cursor = self.parent().plainTextEdit.textCursor()
             cursor.insertText(str(jutsuInput))
             self.parent().plainTextEdit.setTextCursor(cursor)

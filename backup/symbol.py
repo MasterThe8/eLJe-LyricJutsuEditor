@@ -1,9 +1,9 @@
 import sys
 import codecs
 from functools import partial
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableView, QAbstractItemView, QMessageBox, QStyledItemDelegate, QStatusBar
+from PyQt5.QtCore import QAbstractTableModel, Qt, QTimer
+from PyQt5.QtGui import QClipboard, QFont
 
 # Model Tabel Kustom untuk menampilkan simbol
 class SymbolTableModel(QAbstractTableModel):
@@ -13,7 +13,7 @@ class SymbolTableModel(QAbstractTableModel):
         self.num_columns = 10
 
     def rowCount(self, parent):
-        return 74
+        return 84
 
     def columnCount(self, parent):
         return self.num_columns
@@ -41,32 +41,12 @@ class SymbolTableWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Get Symbol")
-        self.setFixedSize(432, 600)
-        icon = QIcon("img/symbol.png")
-        self.setWindowIcon(icon)
-        
-        # desc = QLabel('Daftar simbol yg work di lyric CH, gak tau kalo di YARG :p<br>Uda dites <b style="color:#FF0000;">M</b><b style="color:#FF003E;">a</b><b style="color:#FF0064;">s</b><b style="color:#FF00A2;">t</b><b style="color:#FF00D8;">e</b><b style="color:#E800FF;">r</b><b style="color:#B900FF;">T</b><b style="color:#8700FF;">h</b><b style="color:#6100FF;">e</b><b style="color:#000FFF;">8</b> dan dirapikan <b style="color:#00e9ff;">I</b><b style="color:#0beaee;">s</b><b style="color:#15ecdd;">m</b><b style="color:#20edcc;">a</b><b style="color:#2befbb;">y</b><b style="color:#36f0aa;">a</b> <b style="color:#4bf388;">M</b><b style="color:#56f577;">e</b><b style="color:#61f666;">l</b><b style="color:#6bf855;">a</b><b style="color:#76f944;">s</b><b style="color:#81fb33;">r</b><b style="color:#8cfc22;">a</b><b style="color:#96fe11;">n</b><b style="color:#a1ff00;">a</b>')
-        desc = QLabel('Daftar simbol yg work di lyric CH, gak tau kalo di YARG :p<br>Uda dites <b>MasterThe8</b> dan dirapikan <b>Ismaya Melasrana</b>.<br><br>Click the symbol column and it will be automatically<br>copied to your clipboard.')
-        desc.setStyleSheet("text-align: center; font-size: 14px")
+        self.setFixedSize(413, 600)
         
         # Import simbol dari file
-        letters = ""
-        math = ""
-        emoticon = ""
-        symb = ""
-        shape = ""
-        with codecs.open("symbols/letters", "r", "utf-8") as file:
-            letters = file.read()
-        with codecs.open("symbols/math", "r", "utf-8") as file:
-            math = file.read()
-        with codecs.open("symbols/emoticon", "r", "utf-8") as file:
-            emoticon = file.read()
-        with codecs.open("symbols/sym", "r", "utf-8") as file:
-            symb = file.read()
-        with codecs.open("symbols/shape", "r", "utf-8") as file:
-            shape = file.read()
-        
-        symbols = letters + math + emoticon + symb + shape
+        with codecs.open("symbol", "r", "utf-8") as file:
+            symbols = file.read()
+
         # Buat tabel
         self.table = QTableView()
         model = SymbolTableModel(symbols)
@@ -124,13 +104,7 @@ class SymbolTableWindow(QMainWindow):
         font.setStyleStrategy(QFont.PreferAntialias)
         self.table.setFont(font)
 
-        layout = QVBoxLayout()
-        layout.addWidget(desc)
-        layout.addWidget(self.table)
-
-        widget = QWidget()
-        widget.setLayout(layout)
-        self.setCentralWidget(widget)
+        self.setCentralWidget(self.table)
 
     def copySymbolToClipboard(self, index):
         symbol = self.table.model().data(index, Qt.DisplayRole)

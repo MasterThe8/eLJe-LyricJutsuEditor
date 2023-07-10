@@ -10,7 +10,9 @@ class Replace(QDialog):
         self.setModal(True)
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
-
+        icon = QIcon("img/replace.png")
+        self.setWindowIcon(icon)
+        
         layout = QVBoxLayout(self)
         self.label_original = QLabel("Text:")
         self.line_edit_original = QLineEdit()

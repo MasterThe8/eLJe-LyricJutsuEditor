@@ -13,7 +13,9 @@ class CCJutsu(QDialog):
         self.main_window = main_window
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
-
+        icon = QIcon("img/lyricolor.png")
+        self.setWindowIcon(icon)
+        
         # Membuat layout utama
         layout = QVBoxLayout()
         
@@ -339,7 +341,7 @@ class CCJutsu(QDialog):
 
         length_value_to_insert = len(value_to_insert)
         length_color_values = len(color_values)
-
+        
         # Replace </color> with </color>+lyric
         for i in range(length_color_values - 1):
             if i < length_value_to_insert:
@@ -361,6 +363,76 @@ class CCJutsu(QDialog):
         else:
             self.textfakeLabel.setDisabled(True)
             self.fakelyric.setDisabled(True)
+            
+    def check_position_in_script(self, script, position):
+        for line in script:
+            if line.startswith(str(position) + ' = '):
+                return True
+        return False
+    
+    def get_section_lines(self, script):
+        section_lines = []
+        for line in script:
+            parts = line.split(' = ')
+            if len(parts) == 2:
+                pos, event_data = parts
+                event_name = event_data.strip('E "').split(' ')[0]
+                if event_name == 'section':
+                    section_lines.append(line)
+        return section_lines
+
+    def remove_section_lines(self, script):
+        filtered_script = []
+        for line in script:
+            parts = line.split(' = ')
+            if len(parts) == 2:
+                event_name = parts[1].strip('E "').split(' ')[0]
+                if event_name != 'section':
+                    filtered_script.append(line)
+            else:
+                filtered_script.append(line)
+        return filtered_script
+    
+    def remove_elements(self, list1, list2):
+        list1 = [x for x in list1 if x not in list2]
+        return list1
+    
+    def find_first_lyric_element(self, lyric_items):
+        first_lyric_element = None
+        for item in lyric_items:
+            if 'lyric' in item:
+                first_lyric_element = item
+                lyric_items.remove(item)
+                break
+        return first_lyric_element
+    
+    def split_lyric(self, lyric):
+        parts = lyric.split(' = E "lyric ')
+        position = int(parts[0])
+        lyric_value = parts[1].strip('"')
+        return position, lyric_value
+    
+    def extract_phrase_start(self, lines):
+        phrase_start = None
+        remaining_lines = []
+        
+        if lines:
+            if lines[0].endswith('phrase_start"'):
+                phrase_start = lines[0]
+                remaining_lines = lines[1:]
+            else:
+                return None, lines
+        
+        return phrase_start, remaining_lines
+    
+    def insert_and_sort(self, script, element):
+        if isinstance(element, list):
+            script.extend(element)
+        elif isinstance(element, str):
+            script.append(element)
+
+        sorted_script = sorted(script, key=lambda x: int(x.split(' = ')[0]))
+        return sorted_script
     
     def mainCCjutsu(self):
         positionInput = self.input_box.text()
@@ -368,63 +440,59 @@ class CCJutsu(QDialog):
         if positionInput.isdigit():
             position = int(positionInput)
         else:
-            QMessageBox.critical(self, "Error", "Position must be filled correctly!!")
+            QMessageBox.critical(self, "Error", "Position must be filled correctly!")
             self.show()
         
         if position is not None:
             value = self.main_window.getScript()
             value = value.splitlines()
-            lines = self.get_lines(value, position)
-            lyric_items = self.get_lyric_item(lines)
-            if self.radio_button1.isChecked():
-                result = self.cc_nohide(lines)
-            elif self.radio_button2.isChecked():
-                result = self.cc_hide(lines)
-            elif self.radio_button3.isChecked():
-                result = self.cc_addnext(lines)
             
-            result_split = [line for i in result for line in i.split('\n')]
-            last_result = self.add_next_lyric(lyric_items, result_split)
-            
-            index = next((i for i, event in enumerate(value) if event.startswith(str(position) + ' = ')), None)
-            if index is not None:
-                event_parts = value[index].split(' = ')
-                event_number = event_parts[0]
-                event_name = event_parts[1].strip('\'')
-                if event_number != position or event_name != 'section' and event_name != 'lyric':
-                    del value[index]
-                    value[index:index] = last_result
+            if self.check_position_in_script(value, position):
+                temp_section = self.get_section_lines(value)
+                temp_value = self.remove_section_lines(value)
+                
+                lines = self.get_lines(value, position)    
+                temp_value = self.remove_elements(temp_value, lines)
+                lines = self.remove_section_lines(lines)
+                lyric_items = self.get_lyric_item(lines)
+
+                temp_ps, liness = self.extract_phrase_start(lines)
+                
+                if temp_ps is not None:
+                    if self.radio_button1.isChecked():
+                        result = self.cc_nohide(lines)
+                    elif self.radio_button2.isChecked():
+                        result = self.cc_hide(lines)
+                    elif self.radio_button3.isChecked():
+                        result = self.cc_addnext(lines)
+
+                    result_split = [line for i in result for line in i.split('\n')]
+                    last_result = self.add_next_lyric(lyric_items, result_split)
                     
-            # Pengecekan dan penghapusan baris dengan nomor yang sama
-            existing_numbers = set()
-            i = 0
-            while i < len(value):
-                event_parts = value[i].split(' = ')
-                if len(event_parts) >= 2:
-                    event_number = event_parts[0]
-                    event_name = event_parts[1].strip('\'')
-                    if event_number in existing_numbers or (event_number == position and event_name != 'section' and event_name != 'lyric'):
-                        del value[i]
-                        continue
-                    else:
-                        existing_numbers.add(event_number)
-                i += 1
+                    
+                    
+                    # final_result = self.insert_and_sort(last_result, temp_ps)
+                    final_result = self.insert_and_sort(last_result, temp_section)
+                    final_result = '\n'.join(final_result)
+                    
+                    scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
+                    scroll_pos = scroll_bar.value()
+                    self.main_window.plainTextEdit.setPlainText(final_result)
+                    scroll_bar.setValue(scroll_pos)
 
-            # value = self.remove_duplicates(value)
+                    shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
+                    shortcut_undo.activated.connect(self.undo_text)
+                    shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
+                    shortcut_redo.activated.connect(self.redo_text)
+                    
+                    super(CCJutsu, self).accept()
+                else:
+                    QMessageBox.critical(self, "Error", "Position must be start with 'phrase_start'!")
+                    self.show()
+            else:
+                QMessageBox.critical(self, "Error", "Position not found!")
+                self.show()
             
-            lines_text = '\n'.join(value)
-            
-            scroll_bar = self.main_window.plainTextEdit.verticalScrollBar()
-            scroll_pos = scroll_bar.value()  # Simpan posisi scroll sebelum setPlainText
-            self.main_window.plainTextEdit.setPlainText(lines_text)
-            scroll_bar.setValue(scroll_pos)
-
-            shortcut_undo = QShortcut(QKeySequence("Ctrl+Z"), self)
-            shortcut_undo.activated.connect(self.undo_text)
-            shortcut_redo = QShortcut(QKeySequence("Ctrl+Y"), self)
-            shortcut_redo.activated.connect(self.redo_text)
-            
-            super(CCJutsu, self).accept()
         
     def reject(self):
         super(CCJutsu, self).reject()

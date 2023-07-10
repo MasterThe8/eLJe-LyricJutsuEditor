@@ -12,6 +12,8 @@ class FindTextDialog(QDialog):
         super().__init__(parent)
         
         self.setWindowFlags(self.windowFlags() & ~Qt.WindowContextHelpButtonHint)
+        icon = QIcon("img/find.png")
+        self.setWindowIcon(icon)
         
         self.setWindowTitle("Find Text")
         

@@ -12,7 +12,9 @@ class LCJutsu(QDialog):
         self.center_window(300,500)
         self.resize(300, 250)
         self.main_window = main_window
-
+        icon = QIcon("img/lyricolor2.png")
+        self.setWindowIcon(icon)
+        
         # Membuat layout utama
         layout = QVBoxLayout()
         
