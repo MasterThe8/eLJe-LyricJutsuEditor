@@ -44,7 +44,7 @@ class LandingPageWindow(QMainWindow):
         layout.addWidget(logo_label)
         
         label1 = QLabel()
-        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.19 (BETA)</b>")
+        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.23 (BETA)</b>")
         label1.setObjectName("label1")
         label1.setAlignment(Qt.AlignCenter)
         label1.setFont(QFont("Arial", 26))
@@ -118,7 +118,7 @@ class MainWindow(QMainWindow):
                     dock_font = value
                     
         self.path = path
-        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.19 (BETA)")
+        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.23 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
         self.setEnabled(False)
@@ -184,10 +184,12 @@ class MainWindow(QMainWindow):
         
         # Get Symbol
         getsymbol = QAction(QIcon("img/symbol.png"), "Get Symbol", self)
+        getsymbol.setShortcut("Alt+S")
         getsymbol.triggered.connect(self.get_symbol)
         
         # Weird Text Generator
         weirdtext = QAction(QIcon("img/weird.png"), "Weird Text Generator", self)
+        weirdtext.setShortcut("Alt+W")
         weirdtext.triggered.connect(self.weird_text_generator)
         
         # Add Jutsu Action
@@ -251,8 +253,10 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(convertjutsu_action)
         self.toolbar.addSeparator()
         
+        # Button Display
         self.toggleDisplay = QAction("Display Lyrics")
         self.toggleDisplay.setCheckable(True)
+        self.toggleDisplay.setShortcut("Alt+D")
         self.toggleDisplay.triggered.connect(self.toggle_display)
         self.toggleDisplay_button = QToolButton()
         self.toggleDisplay_button.setDefaultAction(self.toggleDisplay)
@@ -260,8 +264,10 @@ class MainWindow(QMainWindow):
         self.toolbar.insertWidget(None, self.toggleDisplay_button)
         self.toggleDisplay.toggled.connect(self.toggle_display_icon)
         
+        # Button Toggle TreeView
         self.toggleTree = QAction("Toogle TreeView", self)
         self.toggleTree.setCheckable(True)
+        self.toggleTree.setShortcut("Alt+Q")
         self.toggleTree.triggered.connect(self.toggle_treeview)
         self.tool_button = QToolButton()
         self.tool_button.setDefaultAction(self.toggleTree)
@@ -269,9 +275,10 @@ class MainWindow(QMainWindow):
         self.toolbar.insertWidget(None, self.tool_button)
         self.toggleTree.toggled.connect(self.toggle_treeview_icon)
         
-        # Membuat QAction untuk membuka/tutup QDockWidget
-        self.toggleDockAction = QAction("Toogle DockText", self)
+        # Button Toggle DockText / TempText
+        self.toggleDockAction = QAction("Toggle DockText", self)
         self.toggleDockAction.setCheckable(True)
+        self.toggleDockAction.setShortcut("Alt+E")
         self.toggleDockAction.triggered.connect(self.toggleDockWidget)
         self.tool_button2 = QToolButton()
         self.tool_button2.setDefaultAction(self.toggleDockAction)
