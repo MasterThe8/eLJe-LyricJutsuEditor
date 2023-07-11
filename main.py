@@ -44,7 +44,7 @@ class LandingPageWindow(QMainWindow):
         layout.addWidget(logo_label)
         
         label1 = QLabel()
-        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.18 (BETA)</b>")
+        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.19 (BETA)</b>")
         label1.setObjectName("label1")
         label1.setAlignment(Qt.AlignCenter)
         label1.setFont(QFont("Arial", 26))
@@ -118,7 +118,7 @@ class MainWindow(QMainWindow):
                     dock_font = value
                     
         self.path = path
-        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.18 (BETA)")
+        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.19 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
         self.setEnabled(False)
