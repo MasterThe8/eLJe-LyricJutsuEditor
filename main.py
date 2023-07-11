@@ -253,7 +253,6 @@ class MainWindow(QMainWindow):
         
         self.toggleDisplay = QAction("Display Lyrics")
         self.toggleDisplay.setCheckable(True)
-        self.toggleDisplay.setChecked(False)
         self.toggleDisplay.triggered.connect(self.toggle_display)
         self.toggleDisplay_button = QToolButton()
         self.toggleDisplay_button.setDefaultAction(self.toggleDisplay)
@@ -263,7 +262,6 @@ class MainWindow(QMainWindow):
         
         self.toggleTree = QAction("Toogle TreeView", self)
         self.toggleTree.setCheckable(True)
-        self.toggleTree.setChecked(True)
         self.toggleTree.triggered.connect(self.toggle_treeview)
         self.tool_button = QToolButton()
         self.tool_button.setDefaultAction(self.toggleTree)
@@ -274,13 +272,19 @@ class MainWindow(QMainWindow):
         # Membuat QAction untuk membuka/tutup QDockWidget
         self.toggleDockAction = QAction("Toogle DockText", self)
         self.toggleDockAction.setCheckable(True)
-        self.toggleDockAction.setChecked(True)
         self.toggleDockAction.triggered.connect(self.toggleDockWidget)
         self.tool_button2 = QToolButton()
         self.tool_button2.setDefaultAction(self.toggleDockAction)
         self.tool_button2.setIcon(QIcon("img/toggle_dock_on.png"))
         self.toolbar.insertWidget(None, self.tool_button2)
         self.toggleDockAction.toggled.connect(self.toggle_dock_icon)
+        
+        if self.config.getboolean('Setting', 'display'):
+            self.toggleDisplay.setChecked(True)
+            self.toggle_display_icon(True)
+        else:
+            self.toggleDisplay.setChecked(False)
+            self.toggle_display_icon(False)
 
         # Membuat QDockWidget untuk QTreeView
         self.treeDock = QDockWidget("Song Chart Directory", self)
@@ -325,6 +329,15 @@ class MainWindow(QMainWindow):
         self.treemodel.setNameFilters(name_filters)
         self.treemodel.setNameFilterDisables(False)
         
+        if self.config.getboolean('Setting', 'treeview'):
+            self.treeDock.show()
+            self.toggleTree.setChecked(True)
+            self.toggle_treeview_icon(True)
+        else:
+            self.treeDock.hide()
+            self.toggleTree.setChecked(False)
+            self.toggle_treeview_icon(False)
+        
         # Membuat QDockWidget
         self.dock = QDockWidget("Temp Text", self)
         self.dock.setFeatures(QDockWidget.AllDockWidgetFeatures)
@@ -342,6 +355,15 @@ class MainWindow(QMainWindow):
         self.dock.setWidget(self.textEdit)
         self.addDockWidget(Qt.RightDockWidgetArea, self.dock)
         
+        if self.config.getboolean('Setting', 'temptext'):
+            self.dock.show()
+            self.toggleDockAction.setChecked(True)
+            self.toggle_dock_icon(True)
+        else:
+            self.dock.hide()
+            self.toggleDockAction.setChecked(False)
+            self.toggle_dock_icon(False)
+        
         self.setCentralWidget(self.tabWidget)
         self.show()
 
@@ -352,6 +374,14 @@ class MainWindow(QMainWindow):
         else:
             self.treeDock.hide()
             self.write_treeview_status(False)
+            
+    def toggleDockWidget(self):
+        if self.toggleDockAction.isChecked():
+            self.dock.show()
+            self.write_temptext_status(True)
+        else:
+            self.dock.hide()
+            self.write_temptext_status(False)
             
     def toggle_display(self):
         if self.toggleDisplay.isChecked():
@@ -381,31 +411,53 @@ class MainWindow(QMainWindow):
                     with open('setting.ini', 'w') as configfile:
                         config.write(configfile)
                         
+    def write_temptext_status(self, status):
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
+        for section in config.sections():
+            for key, value in config.items(section):
+                if key == 'temptext':
+                    config.set(section, key, str(status))
+                    with open('setting.ini', 'w') as configfile:
+                        config.write(configfile)
+                        
     def toggle_display_icon(self, check):
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
         icon_checked = QIcon("img/display.png")
         icon_unchecked = QIcon("img/display.png")
+        if config.getboolean('Setting', 'treeview'):
+            self.toggleDisplay_button.setIcon(icon_checked)
+        else:
+            self.toggleDisplay_button.setIcon(icon_unchecked)
         if check:
             self.toggleDisplay_button.setIcon(icon_checked)
         else:
             self.toggleDisplay_button.setIcon(icon_unchecked)
             
     def toggle_treeview_icon(self, check):
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
         icon_checked = QIcon("img/toggle_tree_on.png")
         icon_unchecked = QIcon("img/toggle_tree_off.png")
+        if config.getboolean('Setting', 'treeview'):
+            self.tool_button.setIcon(icon_checked)
+        else:
+            self.tool_button.setIcon(icon_unchecked)
         if check:
             self.tool_button.setIcon(icon_checked)
         else:
             self.tool_button.setIcon(icon_unchecked)
             
-    def toggleDockWidget(self):
-        if self.toggleDockAction.isChecked():
-            self.dock.show()
-        else:
-            self.dock.hide()
-            
     def toggle_dock_icon(self, check):
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
         icon_checked = QIcon("img/toggle_dock_on.png")
         icon_unchecked = QIcon("img/toggle_dock_off.png")
+        if config.getboolean('Setting', 'temptext'):
+            self.tool_button2.setIcon(icon_checked)
+        else:
+            self.tool_button2.setIcon(icon_unchecked)
         if check:
             self.tool_button2.setIcon(icon_checked)
         else:
