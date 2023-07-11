@@ -664,7 +664,13 @@ class MainWindow(QMainWindow):
     def open_file(self):
         file_dialog = QFileDialog(self)
         file_dialog.setWindowTitle("Open File")
-        file_dialog.setDirectory(self.path)
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
+        for section in config.sections():
+            for key, value in config.items(section):
+                if key == 'path':
+                    path = value
+        file_dialog.setDirectory(path)
         file_name, _ = file_dialog.getOpenFileName(self, 'Open File', '.', 'Chart Files (*.chart)')
 
         if file_name:
@@ -717,7 +723,13 @@ class MainWindow(QMainWindow):
     def save_file(self):
         file_dialog = QFileDialog(self)
         file_dialog.setWindowTitle("Save File")
-        file_dialog.setDirectory(self.path)
+        config = configparser.ConfigParser()
+        config.read('setting.ini')
+        for section in config.sections():
+            for key, value in config.items(section):
+                if key == 'path':
+                    path = value
+        file_dialog.setDirectory(path)
         file_name, _ = file_dialog.getSaveFileName(self, "Save File", "", "Chart Files (*.chart)")
         
         if file_name:

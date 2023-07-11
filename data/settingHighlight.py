@@ -139,7 +139,12 @@ class SettingHighlight(QDialog):
         defColor2 = '#F5FF5E'
         defColor3 = '#00FF7F'
         defColor4 = '#03FCF4'
-
+        
+        self.setColor1 = defColor1
+        self.setColor2 = defColor2
+        self.setColor3 = defColor3
+        self.setColor4 = defColor4
+        
         self.colorlabel_1.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(defColor1))
         self.colorlabel_1.setText(defColor1)
         self.colorlabel_2.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(defColor2))
