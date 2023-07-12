@@ -95,8 +95,8 @@ class AddJutsu(QDialog):
             self.fakelyric.setDisabled(True)
             
     def accept(self):
-        script_value = self.main_window.getScript()
-        script_value = script_value.splitlines()
+        # script_value = self.main_window.getScript()
+        # script_value = script_value.splitlines()
         
         jutsuSelected = self.comboBox.currentText()
         positionInput = self.positionEdit.text()
