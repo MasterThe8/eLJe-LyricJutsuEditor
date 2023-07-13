@@ -44,7 +44,7 @@ class LandingPageWindow(QMainWindow):
         layout.addWidget(logo_label)
         
         label1 = QLabel()
-        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.23 (BETA)</b>")
+        label1.setText("<b>eLJe | LyricJutsu Editor v0.1.24 (BETA)</b>")
         label1.setObjectName("label1")
         label1.setAlignment(Qt.AlignCenter)
         label1.setFont(QFont("Arial", 26))
@@ -118,7 +118,7 @@ class MainWindow(QMainWindow):
                     dock_font = value
                     
         self.path = path
-        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.23 (BETA)")
+        self.setWindowTitle("eLJe | LyricJutsu Editor v0.1.24 (BETA)")
         self.center_window(1000,600)
         # self.showMaximized()
         self.setEnabled(False)
@@ -713,9 +713,7 @@ class MainWindow(QMainWindow):
         color_dialog = QColorDialog()
         color_icon = QIcon("img/color_picker.png")
         color_dialog.setWindowIcon(color_icon)
-        color = color_dialog.getColor()
-        if color.isValid():
-            print("Selected color:", color.name())
+        color_dialog.getColor()
 
     # ===========================================================
     

@@ -100,7 +100,7 @@ class CnvrtJutsu(QDialog):
         color = QColorDialog.getColor()
         if color.isValid():
             self.selected_color = color.name(QColor.HexRgb)
-            self.color_label.setStyleSheet("background-color: {}".format(color.name()))
+            self.color_label.setStyleSheet("background-color: {}; border: 1px solid #000; text-align: center;".format(color.name()))
             self.color_label.setText(color.name())
 
     def sort_script_by_position(self, script):

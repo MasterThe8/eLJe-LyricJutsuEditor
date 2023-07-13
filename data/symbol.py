@@ -77,26 +77,10 @@ class SymbolTableWindow(QMainWindow):
         self.table.horizontalHeader().setVisible(False)
         
         center_delegate = CenterDelegate()
-        self.table.setColumnWidth(0, 20)
-        self.table.setColumnWidth(1, 20)
-        self.table.setColumnWidth(2, 20)
-        self.table.setColumnWidth(3, 20)
-        self.table.setColumnWidth(4, 20)
-        self.table.setColumnWidth(5, 20)
-        self.table.setColumnWidth(6, 20)
-        self.table.setColumnWidth(7, 20)
-        self.table.setColumnWidth(8, 20)
-        self.table.setColumnWidth(9, 20)
-        self.table.setItemDelegateForColumn(0, center_delegate)
-        self.table.setItemDelegateForColumn(1, center_delegate)
-        self.table.setItemDelegateForColumn(2, center_delegate)
-        self.table.setItemDelegateForColumn(3, center_delegate)
-        self.table.setItemDelegateForColumn(4, center_delegate)
-        self.table.setItemDelegateForColumn(5, center_delegate)
-        self.table.setItemDelegateForColumn(6, center_delegate)
-        self.table.setItemDelegateForColumn(7, center_delegate)
-        self.table.setItemDelegateForColumn(8, center_delegate)
-        self.table.setItemDelegateForColumn(9, center_delegate)
+        col = 10
+        for i in range(col):
+            self.table.setColumnWidth(i, 20)
+            self.table.setItemDelegateForColumn(i, center_delegate)
         
         # Periksa dan hapus kolom-kolom kosong
         empty_columns = []
