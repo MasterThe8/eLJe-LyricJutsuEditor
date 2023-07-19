@@ -1,4 +1,4 @@
-# eLJe | Lyric Jutsu Chart Editor
+# eLJe | Lyric Jutsu Editor
 
 
 ## About
