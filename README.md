@@ -10,7 +10,7 @@ This application has many shortcomings / bugs., and I apologize for these defici
 ⚠️ **Software ini masih dalam tahap pengembangan!** ⚠️
 
 
-## v0.1.0 (BETA)
+## v0.1.82 (BETA)
 
 - Bug fixes on the 'Lyric Color (method 1)' and 'Kan2Rom' features that caused the Section to disappear.
 - Bug fix that occurred in the Script, causing the Display feature unable to show lyrics.
