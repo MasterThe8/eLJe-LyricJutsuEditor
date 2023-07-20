@@ -69,7 +69,7 @@ a {
 .navbar-menu-item{
     background-color: #111;
     height: 50px;
-    width: auto;
+    width: 100px;
     justify-items: center;
     text-align: center;
     padding-top: 12px;
@@ -268,4 +268,24 @@ a {
 
 .jutsu-example{
     text-align: center;
+}
+
+.download-desc{
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.download-link{
+    font-size: 18px;
+    margin-left: 5px;
+    color:#ae00ff;
+    cursor: pointer;
+}
+
+.download-link:hover{
+    color: #0ff;
+}
+
+.infor{
+    height: 100px;
 }
