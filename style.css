@@ -286,6 +286,59 @@ a {
     color: #0ff;
 }
 
-.infor{
-    height: 100px;
+.credit-info{
+    margin-top: 60px;
+    height: auto;
+}
+
+.addspacing{
+    height: 500px;
+}
+
+.line-page::after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ccc; /* Atur warna dan ukuran garis sesuai kebutuhan */
+    margin: 10px 0; /* Atur jarak atas dan bawah garis sesuai kebutuhan */
+}
+
+.contributor-user{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.userc-logo{
+    border-radius: 50%;
+    width: 32px;
+    vertical-align: middle;
+}
+
+.userg-logo{
+    width: 30px;
+    vertical-align: middle;
+}
+
+.userh-logo{
+    border-radius: 50%;
+    width: 28px;
+    vertical-align: middle;
+}
+
+.userw-logo{
+    border-radius: 50%;
+    margin-right: 6px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+.contributor-user p{
+    margin-left: 45px;
+}
+
+.contributor-name{
+    color: #00FFFF;
+    font-size: 24px;
+    vertical-align: middle;
+    margin-left: 10px;
 }
