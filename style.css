@@ -342,3 +342,67 @@ a {
     vertical-align: middle;
     margin-left: 10px;
 }
+
+
+/* GUIDE */
+.jutsu-video{
+    height: 500px;
+    width: 90%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.status-video{
+    color: #666;
+}
+
+.table-shortcut{
+    width: 100%;
+    background-color: #000;
+    color: #FFF;
+    text-align: center;
+}
+
+.table-shortcut table{
+    width: 100%;
+}
+
+.table-shortcut table th{
+    background-color: #2b2372;
+    color: #0ff;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.table-shortcut table td{
+    background-color: #171241;
+    padding: 5px;
+}
+
+.manual-setting h3{
+    font-size: 24px;
+}
+
+@font-face {
+    font-family: 'SFMono';
+    src: url('SFMono-Regular.otf');
+}
+
+.code-preview{
+    font-family: 'SFMono';
+    font-weight: normal;
+    background-color: #0d1117;
+    padding: 10px;
+    margin-left: 30px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.desc-setting{
+    font-weight: normal;
+    margin-left: 32px;
+}

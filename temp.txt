@@ -1,0 +1,15 @@
+- 'path' is the directory folder address in the Treeview widget.
+- 'temp_path' is the temporary directory address used for the Open File, Save File, and File Chart reading features.
+- Several variables will apply font settings to the PlainText Lyrics tab and the Display Lyrics tab.
+- 'background_color' is the background color setting for the PlainText Lyrics tab and the Display Lyrics tab.
+- The following variables apply the status of the Landing Page window and the feature widget toggle.
+
+- 'positionformat' is the color of the Position in the Events syntax.
+- 'valueformat' is the color of values or content in the Events syntax other than Event Names.
+- 'htmltagformat' is the color of tags in the Events syntax.
+- 'eventnameformat' is the color of event names in the Events syntax.
+
+- 'closing_lyric' is the value when applying Closing Lyric in the Jutsu feature.
+- 'hidden_lyric' is the value when applying Hidden Lyric in the Jutsu feature.
+
+- All variables in the Shortcut section are key combinations that you can use for the features available in the application.
