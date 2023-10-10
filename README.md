@@ -10,23 +10,13 @@ This application has many shortcomings / bugs., and I apologize for these defici
 ⚠️ **Software ini masih dalam tahap pengembangan!** ⚠️
 
 
-## v0.2.0
+## v0.2.4
 
 #### FIXES:
-- Bug fixes on the Jutsu features that caused the Section to disappear.
-- Bug fix that occurred in the Script, causing the Display feature unable to show lyrics.
-- Optimized the temporary path when reading chart files.
+- Disabling the drop event window.
+- Resolving the highlight issue.
+- Removing the space after '>' in the jutsu feature.
 
 #### NEW:
-- Adjustment of setting.ini.
-- Addition of Highlight settings, where changes in Highlight are saved in setting.ini.
-- Addition of adjustments for closing lyrics and hidden lyrics in setting.ini.
-- Addition of shortcuts for the widget, Jutsu feature, and insert tag. Shortcut changes can be made in setting.ini.
-- Addition of the 'Weird Text Generator' feature.
-- Added website information to the 'Help' menu.
-
-#### CHANGES:
-- Changes to the 'About' information window.
-- Switching the Lyric Color from method 1 to method 2, and vice versa.
-- Applying styles to all Jutsu feature windows.
+- Adding a "Show .txt" button to the Get Symbol window.
 
