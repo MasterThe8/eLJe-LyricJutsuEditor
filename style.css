@@ -414,3 +414,24 @@ a {
 .wa-hov:hover{
     color: #0ff;
 }
+
+.lyric-tutor .tutor-section h3{
+    font-size: 24px;
+}
+
+.lyric-tutor .tutor-section span{
+    font-weight: normal;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.credits{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
