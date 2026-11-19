@@ -27,16 +27,18 @@ from ui.jutsu_actions import JutsuActionsMixin
 from ui.live_preview_actions import LivePreviewMixin
 from ui.preview import build_preview_html
 from ui.theme import app_icon, editor_font, mono_font, theme_events
+from ui.update_actions import UpdateCheckMixin
 from ui.widgets.code_editor import CodeEditor
+from ui.widgets.common import DoubleClickLabel
 from ui.widgets.directory_panel import DirectoryPanel
 from ui.widgets.highlighter import LyricHighlighter
 from ui.widgets.side_panel import SidePanel
 
 
 class MainWindow(ActionsMixin, FileActionsMixin, DialogLaunchersMixin, JutsuActionsMixin, LivePreviewMixin,
-                 QMainWindow):
+                 UpdateCheckMixin, QMainWindow):
     """Jendela utama. Perilaku dipecah ke mixin di actions.py, file_actions.py, dialog_launchers.py,
-    jutsu_actions.py, live_preview_actions.py."""
+    jutsu_actions.py, live_preview_actions.py, update_actions.py."""
 
     def __init__(self, theme_manager=None):
         super().__init__()
@@ -55,6 +57,7 @@ class MainWindow(ActionsMixin, FileActionsMixin, DialogLaunchersMixin, JutsuActi
         self._init_live_preview()
         self._build_docks()
         self._build_central()
+        self._init_update_check()
         self._build_statusbar()
         self._build_tag_shortcuts()
         self._wire_signals()
@@ -132,8 +135,9 @@ class MainWindow(ActionsMixin, FileActionsMixin, DialogLaunchersMixin, JutsuActi
         for lbl in (self.lbl_events, self.lbl_lyrics, self.lbl_pos, self.lbl_enc):
             lbl.setObjectName("statusChip")
             sb.addPermanentWidget(lbl)
-        version = QLabel(APP_VERSION)
+        version = DoubleClickLabel(APP_VERSION)
         version.setObjectName("versionChip")
+        version.double_clicked.connect(self.check_for_updates)      # fitur tersembunyi: klik ganda = Check Update
         sb.addPermanentWidget(version)
         sb.showMessage("Ready", 3000)
 

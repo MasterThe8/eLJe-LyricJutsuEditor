@@ -1,7 +1,7 @@
 """Widget/factory kecil yang dipakai di banyak tempat."""
 from __future__ import annotations
 
-from PySide6.QtCore import QSize, Qt
+from PySide6.QtCore import QSize, Qt, Signal
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QFrame,
@@ -33,6 +33,19 @@ def make_button(text: str, kind: str = "", icon_name: str | None = None) -> QPus
         b.setIconSize(QSize(16, 16))
     b.setCursor(Qt.CursorShape.PointingHandCursor)
     return b
+
+
+class DoubleClickLabel(QLabel):
+    """QLabel yang memancarkan ``double_clicked`` saat diklik ganda (tombol kiri).
+
+    Sengaja tanpa kursor tangan / tooltip: dipakai sebagai pemicu fitur tersembunyi (mis. chip versi di status bar)."""
+
+    double_clicked = Signal()
+
+    def mouseDoubleClickEvent(self, event) -> None:
+        if event.button() == Qt.MouseButton.LeftButton:
+            self.double_clicked.emit()
+        super().mouseDoubleClickEvent(event)
 
 
 def soft_wrap(lbl: QLabel, wrap: bool = True) -> QLabel:
