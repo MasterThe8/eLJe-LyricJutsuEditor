@@ -1,1 +1,8 @@
 jutsu-reference-vid/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+setting.ini
